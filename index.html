@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Especialistas BH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --surface-2: #f0ede6;
+  --ink: #1d1c1a;
+  --ink-2: #5d5a53;
+  --ink-3: #8c887f;
+  --line: #e3dfd6;
+  --accent: #1f5f5b;
+  --accent-soft: #dcebe8;
+  --endo: #1f5f5b;
+  --endo-soft: #dcebe8;
+  --nutro: #9a5a12;
+  --nutro-soft: #f6e6cf;
+  --sus: #2d5b9a;
+  --sus-soft: #e0e9f6;
+  --shadow: 0 1px 2px rgba(29,28,26,.04), 0 4px 16px rgba(29,28,26,.05);
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151614; --surface: #1d1f1c; --surface-2: #252824; --ink: #ecebe6; --ink-2: #b2afa7;
+    --ink-3: #85827a; --line: #2f322e; --accent: #7cc4bc; --accent-soft: #1f3533;
+    --endo: #7cc4bc; --endo-soft: #1f3533; --nutro: #e5b06a; --nutro-soft: #3a2d1b;
+    --sus: #8fb3e8; --sus-soft: #1f2a3b; --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151614; --surface: #1d1f1c; --surface-2: #252824; --ink: #ecebe6; --ink-2: #b2afa7;
+  --ink-3: #85827a; --line: #2f322e; --accent: #7cc4bc; --accent-soft: #1f3533;
+  --endo: #7cc4bc; --endo-soft: #1f3533; --nutro: #e5b06a; --nutro-soft: #3a2d1b;
+  --sus: #8fb3e8; --sus-soft: #1f2a3b; --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* Cabeçalho */
+header { padding: 56px 0 28px; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+h1 {
+  font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(34px, 5vw, 54px);
+  line-height: 1.05; letter-spacing: -.02em; margin: 10px 0 14px; max-width: 16ch;
+}
+.lede { color: var(--ink-2); max-width: 62ch; margin: 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 36px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--ink-3); }
+
+/* Barra de filtros */
+.toolbar {
+  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+}
+.toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 14px; padding-bottom: 14px; }
+.search { flex: 1 1 280px; position: relative; }
+.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
+input[type="search"], select {
+  width: 100%; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+  color: var(--ink); font: inherit; padding: 0 12px;
+}
+input[type="search"] { padding-left: 38px; }
+select { width: auto; min-width: 170px; max-width: 100%; cursor: pointer; }
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 10px; padding: 3px; gap: 2px; }
+.seg button {
+  border: 0; background: transparent; color: var(--ink-2); font: inherit; font-size: 14px; font-weight: 500;
+  height: 36px; padding: 0 14px; border-radius: 8px; cursor: pointer; white-space: nowrap;
+}
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.check { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); cursor: pointer; user-select: none; height: 42px; }
+.check input { width: 17px; height: 17px; accent-color: var(--accent); margin: 0; }
+
+/* Resultados */
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 22px 0 14px; color: var(--ink-3); font-size: 14px; }
+.meta strong { color: var(--ink); font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; padding-bottom: 40px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+.card-head { display: flex; gap: 14px; align-items: flex-start; }
+.avatar {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 600; font-size: 15px; letter-spacing: .02em; background: var(--endo-soft); color: var(--endo);
+}
+.avatar.nutro { background: var(--nutro-soft); color: var(--nutro); }
+.card h2 { font-size: 17px; line-height: 1.3; font-weight: 600; margin: 0 0 4px; overflow-wrap: anywhere; }
+.crm { font: 12.5px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--ink-3); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 12px; font-weight: 500; padding: 3px 9px; border-radius: 999px; background: var(--endo-soft); color: var(--endo); }
+.tag.nutro { background: var(--nutro-soft); color: var(--nutro); }
+.tag.sus { background: var(--sus-soft); color: var(--sus); }
+
+.locais { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.local { padding: 12px 0; border-top: 1px solid var(--line); }
+.local:first-child { border-top: 0; padding-top: 0; }
+.local-nome { font-weight: 500; font-size: 14px; display: flex; gap: 8px; align-items: baseline; justify-content: space-between; }
+.local-nome span { overflow-wrap: anywhere; }
+.sus-dot { flex: none; font-size: 11px; font-weight: 600; color: var(--sus); background: var(--sus-soft); padding: 1px 7px; border-radius: 999px; }
+.addr { color: var(--ink-2); font-size: 13.5px; margin: 2px 0 8px; }
+.links { display: flex; flex-wrap: wrap; gap: 6px; }
+.links a {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 13px; text-decoration: none; color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; max-width: 100%; background: var(--surface);
+  transition: border-color .15s, background .15s;
+}
+.links a:hover { border-color: var(--accent); background: var(--accent-soft); }
+.links a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.links svg { flex: none; color: var(--ink-3); }
+details > summary {
+  list-style: none; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--accent);
+  padding: 10px 0 0; border-top: 1px solid var(--line);
+}
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary { margin-bottom: 4px; }
+
+.empty, .erro { text-align: center; padding: 64px 20px; color: var(--ink-2); grid-column: 1 / -1; }
+.erro code { background: var(--surface-2); padding: 2px 6px; border-radius: 6px; }
+.more { display: flex; justify-content: center; padding-bottom: 48px; }
+.more button {
+  font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  height: 44px; padding: 0 22px; border-radius: 10px; cursor: pointer;
+}
+.more button:hover { border-color: var(--accent); }
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--ink-3); font-size: 13px; }
+footer p { margin: 0 0 6px; max-width: 80ch; }
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  header { padding-top: 36px; }
+  .grid { grid-template-columns: 1fr; }
+  .seg { width: 100%; }
+  .seg button { flex: 1; padding: 0 8px; }
+  select { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="eyebrow">Belo Horizonte · MG</div>
+  <h1>Endocrinologistas e nutrólogos em BH</h1>
+  <p class="lede">Médicos com vínculo ativo em estabelecimentos de saúde de Belo Horizonte, segundo o Cadastro Nacional de Estabelecimentos de Saúde (CNES). Os contatos são os informados por cada local de atendimento.</p>
+  <div class="stats" id="stats" aria-live="polite"></div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Buscar por nome, CRM, clínica ou bairro" aria-label="Buscar">
+    </label>
+    <div class="seg" role="group" aria-label="Especialidade">
+      <button type="button" data-esp="" aria-pressed="true">Todas</button>
+      <button type="button" data-esp="Endocrinologia e Metabologia" aria-pressed="false">Endocrinologia</button>
+      <button type="button" data-esp="Nutrologia" aria-pressed="false">Nutrologia</button>
+    </div>
+    <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
+    <label class="check"><input type="checkbox" id="sus"> Atende SUS</label>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="meta"><div id="count" aria-live="polite"></div></div>
+  <div class="grid" id="grid"></div>
+  <div class="more" id="more" hidden><button type="button">Mostrar mais</button></div>
+</main>
+
+<footer class="wrap">
+  <p id="fonte"></p>
+  <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
+</footer>
+
+<script>
+const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
+const MINUSCULAS = new Set(["da", "de", "do", "das", "dos", "e", "a", "o", "em"]);
+const SIGLAS = new Set(["UFMG", "EBSERH", "SUS", "UPA", "UBS", "SA", "S/A", "ME", "EPP", "FHEMIG", "CTI", "BH", "MG", "II", "III", "IV", "CEO", "IPSEMG", "UNIMED", "AMMG", "CRM"]);
+const PAGINA = 60;
+
+const icone = {
+  tel: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mail: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
+  web: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+  map: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+};
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const semAcento = s => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const titulo = s => String(s ?? "").split(/\s+/).filter(Boolean).map((p, i) => {
+  const up = p.toUpperCase();
+  if (SIGLAS.has(up.replace(/[.,]/g, ""))) return up;
+  const low = p.toLowerCase();
+  if (i > 0 && MINUSCULAS.has(low)) return low;
+  return low.charAt(0).toUpperCase() + low.slice(1);
+}).join(" ");
+const iniciais = nome => nome.split(/\s+/).filter(p => !MINUSCULAS.has(p.toLowerCase())).map(p => p[0]).filter(Boolean).slice(0, 1)
+  .concat(nome.split(/\s+/).slice(-1).map(p => p[0])).join("").toUpperCase();
+const cep = c => (c && c.length === 8) ? `${c.slice(0, 5)}-${c.slice(5)}` : (c || "");
+const telHref = t => { const d = t.replace(/\D/g, ""); return (d.length === 10 || d.length === 11) ? `tel:+55${d}` : null; };
+const siteHref = s => /^https?:\/\//i.test(s) ? s : `https://${s.replace(/^\/+/, "")}`;
+const mapaHref = l => {
+  const q = (l.latitude && l.longitude) ? `${l.latitude},${l.longitude}` : `${l.endereco}, ${l.bairro}, Belo Horizonte - MG`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+};
+
+const estado = { q: "", esp: "", bairro: "", sus: false, limite: PAGINA };
+let medicos = [];
+
+function htmlLocal(l) {
+  const links = [];
+  if (l.telefone) {
+    const href = telHref(l.telefone);
+    links.push(href
+      ? `<a href="${href}">${icone.tel}<span>${esc(l.telefone)}</span></a>`
+      : `<a href="tel:${esc(l.telefone.replace(/[^\d+]/g, ""))}">${icone.tel}<span>${esc(l.telefone)}</span></a>`);
+  }
+  if (l.email) links.push(`<a href="mailto:${esc(l.email)}" title="${esc(l.email)}">${icone.mail}<span>${esc(l.email)}</span></a>`);
+  if (l.site) links.push(`<a href="${esc(siteHref(l.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
+  links.push(`<a href="${esc(mapaHref(l))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
+  const endereco = [titulo(l.endereco), titulo(l.bairro), cep(l.cep)].filter(Boolean).join(" · ");
+  return `<li class="local">
+    <div class="local-nome"><span>${esc(titulo(l.estabelecimento))}</span>${l.atende_sus ? '<span class="sus-dot" title="Atende pelo SUS neste local">SUS</span>' : ""}</div>
+    <div class="addr">${esc(endereco)}</div>
+    <div class="links">${links.join("")}</div>
+  </li>`;
+}
+
+function htmlCard(m) {
+  const nutro = m.especialidades.length === 1 && m.especialidades[0] === "Nutrologia";
+  const tags = m.especialidades.map(e => `<span class="tag${e === "Nutrologia" ? " nutro" : ""}">${esc(ESP_CURTA[e] || e)}</span>`).join("");
+  const visiveis = m.locais.slice(0, 2).map(htmlLocal).join("");
+  const resto = m.locais.slice(2);
+  const extra = resto.length
+    ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(htmlLocal).join("")}</ul></details>`
+    : "";
+  return `<article class="card">
+    <div class="card-head">
+      <div class="avatar${nutro ? " nutro" : ""}" aria-hidden="true">${esc(iniciais(m.nome))}</div>
+      <div>
+        <h2>${esc(titulo(m.nome))}</h2>
+        <div class="crm">CRM ${esc(m.crm)}</div>
+      </div>
+    </div>
+    <div class="tags">${tags}</div>
+    <ul class="locais">${visiveis}</ul>
+    ${extra}
+  </article>`;
+}
+
+function filtrar() {
+  const termos = semAcento(estado.q).split(/\s+/).filter(Boolean);
+  return medicos.filter(m =>
+    (!estado.esp || m.especialidades.includes(estado.esp)) &&
+    (!estado.bairro || m.locais.some(l => l.bairro === estado.bairro)) &&
+    (!estado.sus || m.locais.some(l => l.atende_sus)) &&
+    termos.every(t => m._busca.includes(t))
+  );
+}
+
+function render() {
+  const lista = filtrar();
+  const grid = document.getElementById("grid");
+  grid.innerHTML = lista.length
+    ? lista.slice(0, estado.limite).map(htmlCard).join("")
+    : '<div class="empty">Nenhum médico encontrado com esses filtros.</div>';
+  document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "médico" : "médicos"}`;
+  document.getElementById("more").hidden = lista.length <= estado.limite;
+}
+
+function stats(dados) {
+  const conta = esp => medicos.filter(m => m.especialidades.includes(esp)).length;
+  const locais = new Set(medicos.flatMap(m => m.locais.map(l => l.cnes))).size;
+  const itens = [
+    [medicos.length, "médicos"],
+    [conta("Endocrinologia e Metabologia"), "endocrinologistas"],
+    [conta("Nutrologia"), "nutrólogos"],
+    [locais, "locais de atendimento"],
+  ];
+  document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
+  const c = dados.competencia || "";
+  document.getElementById("fonte").textContent =
+    `Fonte: ${dados.fonte}${c ? `, competência ${c.slice(4)}/${c.slice(0, 4)}` : ""}.`;
+}
+
+function bairros() {
+  const nomes = [...new Set(medicos.flatMap(m => m.locais.map(l => l.bairro)).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "pt-BR"));
+  document.getElementById("bairro").insertAdjacentHTML("beforeend",
+    nomes.map(b => `<option value="${esc(b)}">${esc(titulo(b))}</option>`).join(""));
+}
+
+function ligar() {
+  let t;
+  document.getElementById("q").addEventListener("input", e => {
+    clearTimeout(t);
+    t = setTimeout(() => { estado.q = e.target.value; estado.limite = PAGINA; render(); }, 120);
+  });
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    estado.esp = b.dataset.esp; estado.limite = PAGINA; render();
+  }));
+  document.getElementById("bairro").addEventListener("change", e => { estado.bairro = e.target.value; estado.limite = PAGINA; render(); });
+  document.getElementById("sus").addEventListener("change", e => { estado.sus = e.target.checked; estado.limite = PAGINA; render(); });
+  document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
+}
+
+fetch("medicos_bh.json")
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(dados => {
+    medicos = dados.medicos.map(m => ({
+      ...m,
+      _busca: semAcento([m.nome, m.crm, ...m.especialidades, ...m.locais.flatMap(l => [l.estabelecimento, l.bairro, l.endereco])].join(" ")),
+    }));
+    stats(dados); bairros(); ligar(); render();
+  })
+  .catch(() => {
+    document.getElementById("grid").innerHTML = `<div class="erro">Não foi possível carregar <code>medicos_bh.json</code>.<br>
+      Abra a página por um servidor local: rode <code>python3 -m http.server -d site</code> na pasta do projeto e acesse <code>http://localhost:8000</code>.</div>`;
+  });
+</script>
+</body>
+</html>
