@@ -377,4 +377,5 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 
 /* "Marcar como contatado" só depois de escolher o consultor */
 .contato-btn.bloqueado { color: var(--ink-3); background: var(--surface-2); border-style: dashed; cursor: help; font-weight: 400; }
+.contato-btn span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .contato-btn.bloqueado:hover { color: var(--ink-2); border-color: var(--ink-3); }

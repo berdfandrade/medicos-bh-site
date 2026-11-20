@@ -382,6 +382,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
 const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
 icone.ok = svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>');
 icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
+icone.cadeado = svg('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>');
 icone.pessoa = svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
 
 /**
@@ -462,7 +463,7 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar, podeMarcar = () => t
     const quando = valores.valor(id), fim = feminino ? "a" : "o";
     if (!quando && !podeMarcar(id)) {
       return `<button type="button" class="contato-btn bloqueado" data-escolher-consultor aria-disabled="true" title="Escolha o consultor do contato antes de marcar">`
-        + `${icone.marcar}<span>Escolha um consultor para marcar como contatad${fim}</span></button>`;
+        + `${icone.cadeado}<span>Escolha o consultor primeiro</span></button>`;
     }
     return `<button type="button" class="contato-btn" data-contato-id="${esc(id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de fazer o contato"}">`
       + (quando ? `${icone.ok}<span>Contatad${fim} em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatad${fim}</span>`) + `</button>`;
