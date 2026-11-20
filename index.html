@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=3927afc8">
+<link rel="stylesheet" href="estilo.css?v=10f27bc3">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -28,10 +28,15 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input type="search" id="q" placeholder="Nome, CRM, clínica ou bairro" aria-label="Buscar">
     </label>
-    <div class="seg" role="group" aria-label="Especialidade">
+    <div class="seg" role="group" aria-label="Especialidade" id="esp">
       <button type="button" data-esp="" aria-pressed="true">Todas</button>
       <button type="button" data-esp="Endocrinologia e Metabologia" aria-pressed="false">Endocrinologia</button>
       <button type="button" data-esp="Nutrologia" aria-pressed="false">Nutrologia</button>
+    </div>
+    <div class="seg" role="group" aria-label="Contato" id="contato">
+      <button type="button" data-contato="" aria-pressed="true">Todos</button>
+      <button type="button" data-contato="nao" aria-pressed="false">A contatar</button>
+      <button type="button" data-contato="sim" aria-pressed="false">Contatados</button>
     </div>
     <div class="filtros">
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
@@ -52,6 +57,8 @@
 <main class="wrap">
   <section class="wa-painel" id="wa-painel"></section>
 
+  <div class="nuvem" id="nuvem" role="status"></div>
+
   <div class="meta">
     <div id="count" aria-live="polite"></div>
     <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
@@ -65,7 +72,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=b7d68068"></script>
+<script src="comum.js?v=ad9d1817"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -79,8 +86,16 @@ const mapaHref = l => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 };
 
-const estado = { q: "", esp: "", bairro: "", sus: false, cel: false, limite: PAGINA };
+const estado = { q: "", esp: "", bairro: "", sus: false, cel: false, contato: "", limite: PAGINA };
 let medicos = [];
+
+const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
+const contatos = criarContatos({
+  lista: "medicos",
+  chaveLocal: "medicos.contatados",
+  aviso: document.getElementById("nuvem"),
+  aoMudar: () => { if (medicos.length) render(); },
+});
 
 const painel = criarPainelWhatsApp({
   el: document.getElementById("wa-painel"),
@@ -131,7 +146,8 @@ function htmlCard(m) {
   const extra = resto.length
     ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(local).join("")}</ul></details>`
     : "";
-  return `<article class="card">
+  const id = idMedico(m);
+  return `<article class="card${contatos.quando(id) ? " contatada" : ""}">
     <div class="card-head">
       <div class="avatar${nutro ? " nutro" : ""}" aria-hidden="true">${esc(iniciais(m.nome))}</div>
       <div>
@@ -142,6 +158,7 @@ function htmlCard(m) {
     <div class="tags">${tags}</div>
     <ul class="locais">${visiveis}</ul>
     ${extra}
+    ${contatos.botao(id, false)}
   </article>`;
 }
 
@@ -152,6 +169,7 @@ function filtrar() {
     (!estado.bairro || m.locais.some(l => l.bairro === estado.bairro)) &&
     (!estado.sus || m.locais.some(l => l.atende_sus)) &&
     (!estado.cel || m.locais.some(l => l.celulares.length)) &&
+    (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(idMedico(m)))) &&
     termos.every(t => m._busca.includes(t))
   );
 }
@@ -163,7 +181,10 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlCard).join("")
     : '<div class="empty">Nenhum médico encontrado com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "médico" : "médicos"}`;
-  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.bairro || estado.sus || estado.cel);
+  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.bairro || estado.sus || estado.cel || estado.contato);
+  const feitos = medicos.filter(m => contatos.quando(idMedico(m))).length;
+  document.querySelector('[data-contato="nao"]').textContent = `A contatar (${medicos.length - feitos})`;
+  document.querySelector('[data-contato="sim"]').textContent = `Contatados (${feitos})`;
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
@@ -175,7 +196,8 @@ function aplicar(mudanca) {
   Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
-  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
+  document.querySelectorAll("#esp button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
+  document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   document.getElementById("bairro").value = estado.bairro;
   document.getElementById("sus").setAttribute("aria-pressed", String(estado.sus));
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
@@ -210,11 +232,13 @@ function ligar() {
     clearTimeout(t);
     t = setTimeout(() => aplicar({ q: e.target.value }), 120);
   });
-  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
+  document.querySelectorAll("#esp button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
+  document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
+  contatos.ligar(document.getElementById("grid"));
   document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
   document.getElementById("sus").addEventListener("click", () => aplicar({ sus: !estado.sus }));
   document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
-  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", bairro: "", sus: false, cel: false }));
+  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", bairro: "", sus: false, cel: false, contato: "" }));
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
 

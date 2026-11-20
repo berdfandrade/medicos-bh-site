@@ -23,8 +23,6 @@ const icone = {
   wa: svg('<path d="M3 21l1.7-4.6A9 9 0 1 1 8.2 19.6L3 21z"/>'),
   mail: svg('<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'),
   web: svg('<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>'),
-  ok: svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>'),
-  marcar: svg('<circle cx="12" cy="12" r="10"/>'),
   map: svg('<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>'),
 };
 
@@ -157,4 +155,94 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   atualizar();
 
   return { mensagem: item => montar(estado.texto, item), atualizar };
+}
+
+/**
+ * Marcação de "já contatado", salva na API (Postgres) para aparecer em qualquer aparelho.
+ * Este navegador guarda uma cópia para abrir rápido; o que for marcado sem conexão sobe na próxima sincronização.
+ *  lista       "clinicas" ou "medicos" (rota da API)
+ *  chaveLocal  chave da cópia no localStorage
+ *  aviso       elemento que mostra um aviso só quando algo não pôde ser salvo
+ *  aoMudar     chamado quando as marcações mudam, para refazer os cards e contadores
+ */
+const API_CONTATOS = guardado.ler("contatos.api", "https://api-production-e7b4ca28.up.railway.app"); // "contatos.api" aponta para uma API local de teste
+const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
+icone.ok = svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>');
+icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
+
+function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
+  const mapa = (() => { try { return JSON.parse(guardado.ler(chaveLocal, "{}")) || {}; } catch { return {}; } })();
+  const salvarLocal = () => guardado.gravar(chaveLocal, JSON.stringify(mapa));
+  let sincronizando = false;
+
+  async function chamar(metodo, id = "", data = "") {
+    const url = `${API_CONTATOS}/contatados/${lista}${id ? `/${encodeURIComponent(id)}` : ""}${data ? `?data=${data}` : ""}`;
+    const r = await fetch(url, { method: metodo, cache: "no-store" });
+    if (!r.ok) throw new Error(`${metodo} ${r.status}`);
+    return r.status === 204 ? null : r.json();
+  }
+
+  function avisar(mostrar) {
+    aviso.innerHTML = mostrar
+      ? `${svg('<circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/>')}<span>Não foi possível salvar as marcações agora.</span><button type="button" class="limpar">Tentar de novo</button>`
+      : "";
+    aviso.querySelector("button")?.addEventListener("click", sincronizar);
+  }
+
+  // Traz as marcações salvas; as que só existem neste aparelho são enviadas junto.
+  async function sincronizar() {
+    if (sincronizando) return;
+    sincronizando = true;
+    try {
+      const remotas = await chamar("GET");
+      const locais = Object.entries(mapa).filter(([id]) => !(id in remotas));
+      await Promise.all(locais.map(([id, d]) => chamar("PUT", id, d)));
+      for (const id of Object.keys(mapa)) delete mapa[id];
+      Object.assign(mapa, remotas, Object.fromEntries(locais));
+      salvarLocal();
+      avisar(false);
+    } catch (erro) {
+      console.error(erro);
+      avisar(true);
+    } finally {
+      sincronizando = false;
+    }
+    aoMudar();
+  }
+
+  function alternar(id) {
+    const antes = mapa[id];
+    if (antes) delete mapa[id];
+    else mapa[id] = new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
+    salvarLocal();
+    aoMudar();
+    chamar(antes ? "DELETE" : "PUT", id, antes ? "" : mapa[id])
+      .then(() => avisar(false))
+      .catch(erro => { // desfaz na tela para não mostrar algo que não foi salvo
+        console.error(erro);
+        if (antes) mapa[id] = antes; else delete mapa[id];
+        salvarLocal();
+        avisar(true);
+        aoMudar();
+      });
+  }
+
+  // Botão do card. feminino: "contatada" (clínica) ou "contatado" (médico).
+  function botao(id, feminino) {
+    const quando = mapa[id], fim = feminino ? "a" : "o";
+    return `<button type="button" class="contato-btn" data-contato-id="${esc(id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de fazer o contato"}">`
+      + (quando ? `${icone.ok}<span>Contatad${fim} em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatad${fim}</span>`) + `</button>`;
+  }
+
+  // Um clique em qualquer botão de contato dentro de `el` marca ou desmarca.
+  function ligar(el) {
+    el.addEventListener("click", e => {
+      const b = e.target.closest(".contato-btn");
+      if (b) alternar(b.dataset.contatoId);
+    });
+  }
+
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) sincronizar(); }); // traz o que foi marcado em outro aparelho
+  sincronizar();
+  return { quando: id => mapa[id], botao, ligar };
 }

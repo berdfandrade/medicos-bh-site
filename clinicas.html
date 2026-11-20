@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=3927afc8">
+<link rel="stylesheet" href="estilo.css?v=10f27bc3">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -33,11 +33,14 @@
       <button type="button" data-contato="nao" aria-pressed="false">A contatar</button>
       <button type="button" data-contato="sim" aria-pressed="false">Contatadas</button>
     </div>
-    <div class="chips" role="group" aria-label="Filtros">
-      <button type="button" class="chip" id="cel" aria-pressed="false">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
-        Tem celular
-      </button>
+    <div class="filtros">
+      <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
+      <div class="chips" role="group" aria-label="Filtros">
+        <button type="button" class="chip" id="cel" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          Tem celular
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -45,7 +48,7 @@
 <main class="wrap">
   <section class="wa-painel" id="wa-painel"></section>
 
-  <div class="nuvem" id="nuvem" aria-live="polite"></div>
+  <div class="nuvem" id="nuvem" role="status"></div>
 
   <div class="meta">
     <div id="count" aria-live="polite"></div>
@@ -61,78 +64,22 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=b7d68068"></script>
+<script src="comum.js?v=ad9d1817"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
-const estado = { q: "", cel: false, contato: "", limite: PAGINA };
+const estado = { q: "", bairro: "", cel: false, contato: "", limite: PAGINA };
 let clinicas = [];
 
-// Clínicas já contatadas: { place_id: "AAAA-MM-DD" }. Com a chave de acesso, ficam salvas na API
-// (Postgres) e aparecem em qualquer aparelho; este navegador guarda uma cópia para abrir rápido.
-const API = guardado.ler("clinicas.api", "https://api-production-e7b4ca28.up.railway.app"); // "clinicas.api" no localStorage aponta para uma API local de teste
-const CHAVE_CONTATADAS = "clinicas.contatadas";
-const contatadas = (() => { try { return JSON.parse(guardado.ler(CHAVE_CONTATADAS, "{}")) || {}; } catch { return {}; } })();
-const nuvem = { chave: guardado.ler("clinicas.chave", ""), status: "", formulario: false };
+// "R. da Bahia, 2696 - Sl 904 - Lourdes, Belo Horizonte - MG, ..." -> "Lourdes"
+const bairroDe = endereco => (String(endereco ?? "").match(/ - ([^,]+), Belo Horizonte\b/)?.[1] ?? "").split(" - ").pop().trim();
 
-async function chamarApi(metodo, caminho, chave = nuvem.chave) {
-  const r = await fetch(API + caminho, { method: metodo, headers: { "X-Chave": chave }, cache: "no-store" });
-  if (r.status === 401) throw Object.assign(new Error("chave"), { chave: true });
-  if (!r.ok) throw new Error(r.status);
-  return r.status === 204 ? null : r.json();
-}
-
-// Traz as marcações da nuvem; as feitas antes neste aparelho, sem conexão, são enviadas junto.
-async function sincronizar(chave = nuvem.chave) {
-  if (!chave) return renderNuvem();
-  nuvem.status = "carregando"; renderNuvem();
-  try {
-    const remotas = await chamarApi("GET", "/contatadas", chave);
-    const locais = Object.entries(contatadas).filter(([id]) => !(id in remotas));
-    await Promise.all(locais.map(([id, d]) => chamarApi("PUT", `/contatadas/${encodeURIComponent(id)}?data=${d}`, chave)));
-    for (const id of Object.keys(contatadas)) delete contatadas[id];
-    Object.assign(contatadas, remotas, Object.fromEntries(locais));
-    guardado.gravar(CHAVE_CONTATADAS, JSON.stringify(contatadas));
-    nuvem.chave = chave; guardado.gravar("clinicas.chave", chave);
-    nuvem.status = "ok"; nuvem.formulario = false;
-  } catch (e) {
-    nuvem.status = e.chave ? "chave" : "offline";
-    if (e.chave) { nuvem.formulario = true; if (chave === nuvem.chave) { nuvem.chave = ""; guardado.gravar("clinicas.chave", ""); } }
-  }
-  renderNuvem();
-  if (clinicas.length) render();
-}
-
-function renderNuvem() {
-  const el = document.getElementById("nuvem");
-  const icoNuvem = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5z"/></svg>';
-  if (nuvem.formulario) {
-    el.className = "nuvem aberta";
-    el.innerHTML = `<form id="nuvem-form">${icoNuvem}<label for="nuvem-chave">Chave de acesso</label>
-      <input id="nuvem-chave" type="password" autocomplete="current-password" required placeholder="Cole a chave aqui">
-      <button type="submit" class="wa-botao">Conectar</button>
-      <button type="button" class="limpar" id="nuvem-cancelar">Cancelar</button></form>
-      ${nuvem.status === "chave" ? '<small class="erro-campo">Chave inválida. Confira e tente de novo.</small>' : '<small>Com a chave, as clínicas marcadas ficam salvas na nuvem e aparecem no celular e no computador.</small>'}`;
-    el.querySelector("#nuvem-form").addEventListener("submit", ev => { ev.preventDefault(); sincronizar(el.querySelector("#nuvem-chave").value.trim()); });
-    el.querySelector("#nuvem-cancelar").addEventListener("click", () => { nuvem.formulario = false; nuvem.status = nuvem.chave ? nuvem.status : ""; renderNuvem(); });
-    el.querySelector("#nuvem-chave").focus();
-    return;
-  }
-  const textos = {
-    "": ["", "Marcações salvas só neste aparelho.", '<button type="button" class="limpar" id="nuvem-conectar">Conectar à nuvem</button>'],
-    carregando: ["", "Sincronizando com a nuvem…", ""],
-    ok: ["ok", "Marcações salvas na nuvem.", '<button type="button" class="limpar" id="nuvem-sair">Desconectar</button>'],
-    offline: ["alerta", "Sem conexão com a nuvem: as marcações não estão sendo salvas.", '<button type="button" class="limpar" id="nuvem-tentar">Tentar de novo</button>'],
-    chave: ["alerta", "Chave de acesso inválida.", '<button type="button" class="limpar" id="nuvem-conectar">Conectar à nuvem</button>'],
-  };
-  const [classe, texto, acao] = textos[nuvem.status];
-  el.className = `nuvem ${classe}`;
-  el.innerHTML = `${icoNuvem}<span>${texto}</span>${acao}`;
-  el.querySelector("#nuvem-conectar")?.addEventListener("click", () => { nuvem.formulario = true; renderNuvem(); });
-  el.querySelector("#nuvem-tentar")?.addEventListener("click", () => sincronizar());
-  el.querySelector("#nuvem-sair")?.addEventListener("click", () => { nuvem.chave = ""; guardado.gravar("clinicas.chave", ""); nuvem.status = ""; renderNuvem(); });
-}
-const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
+const contatos = criarContatos({
+  lista: "clinicas",
+  chaveLocal: "clinicas.contatadas",
+  aviso: document.getElementById("nuvem"),
+  aoMudar: () => { if (clinicas.length) render(); },
+});
 
 const mapaHref = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`;
 
@@ -155,10 +102,7 @@ function htmlClinica(c) {
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  const quando = contatadas[c.place_id];
-  const contato = `<button type="button" class="contato-btn" data-id="${esc(c.place_id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de falar com a clínica"}">`
-    + (quando ? `${icone.ok}<span>Contatada em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatada</span>`) + `</button>`;
-  return `<article class="card clinica-card${quando ? " contatada" : ""}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div>${contato}</div></article>`;
+  return `<article class="card clinica-card${contatos.quando(c.place_id) ? " contatada" : ""}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div>${contatos.botao(c.place_id, true)}</div></article>`;
 }
 
 function filtrar(lista) {
@@ -166,8 +110,9 @@ function filtrar(lista) {
   const numero = termo.replace(/\D/g, "");
   const porTelefone = numero && /^[\d ()+-]+$/.test(termo);
   return lista.filter(c =>
+    (!estado.bairro || c.bairro === estado.bairro) &&
     (!estado.cel || c.celulares.length) &&
-    (!estado.contato || (estado.contato === "sim") === Boolean(contatadas[c.place_id])) &&
+    (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(c.place_id))) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
       : semAcento(`${c.nome} ${c.endereco || ""}`).includes(termo)))
@@ -180,8 +125,8 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlClinica).join("")
     : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
-  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.cel || estado.contato);
-  const feitas = clinicas.filter(c => contatadas[c.place_id]).length;
+  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.bairro || estado.cel || estado.contato);
+  const feitas = clinicas.filter(c => contatos.quando(c.place_id)).length;
   document.querySelector('[data-contato="nao"]').textContent = `A contatar (${clinicas.length - feitas})`;
   document.querySelector('[data-contato="sim"]').textContent = `Contatadas (${feitas})`;
   const restantes = lista.length - estado.limite;
@@ -194,6 +139,7 @@ function aplicar(mudanca) {
   Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
+  document.getElementById("bairro").value = estado.bairro;
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   render();
@@ -208,40 +154,30 @@ function stats() {
   document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
 }
 
+function bairros() {
+  const contagem = {};
+  for (const c of clinicas) if (c.bairro) contagem[c.bairro] = (contagem[c.bairro] || 0) + 1;
+  document.getElementById("bairro").insertAdjacentHTML("beforeend", Object.keys(contagem)
+    .sort((a, b) => a.localeCompare(b, "pt-BR"))
+    .map(b => `<option value="${esc(b)}">${esc(b)} (${contagem[b]})</option>`).join(""));
+}
+
 let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
-document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false, contato: "" }));
+document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
+document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", bairro: "", cel: false, contato: "" }));
 document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
-document.getElementById("grid").addEventListener("click", e => {
-  const botao = e.target.closest(".contato-btn");
-  if (!botao) return;
-  const id = botao.dataset.id;
-  const antes = contatadas[id];
-  if (antes) delete contatadas[id];
-  else contatadas[id] = new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
-  guardado.gravar(CHAVE_CONTATADAS, JSON.stringify(contatadas));
-  render();
-  if (!nuvem.chave) return;
-  chamarApi(antes ? "DELETE" : "PUT", `/contatadas/${encodeURIComponent(id)}${antes ? "" : `?data=${contatadas[id]}`}`)
-    .then(() => { if (nuvem.status !== "ok") { nuvem.status = "ok"; renderNuvem(); } })
-    .catch(erro => { // desfaz na tela para não mostrar algo que não foi salvo
-      if (antes) contatadas[id] = antes; else delete contatadas[id];
-      guardado.gravar(CHAVE_CONTATADAS, JSON.stringify(contatadas));
-      nuvem.status = erro.chave ? "chave" : "offline"; renderNuvem(); render();
-    });
-});
+contatos.ligar(document.getElementById("grid"));
 document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 
-sincronizar();
-document.addEventListener("visibilitychange", () => { if (!document.hidden && nuvem.chave && nuvem.status !== "carregando") sincronizar(); });
 
 fetch("clinicas.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(dados => {
-    clinicas = dados.clinicas;
+    clinicas = dados.clinicas.map(c => ({ ...c, bairro: bairroDe(c.endereco) }));
     document.getElementById("fonte").textContent = `Fonte: ${dados.fonte}.`;
-    stats(); render();
+    stats(); bairros(); render();
   })
   .catch(erro => {
     console.error(erro);
