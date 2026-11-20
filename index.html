@@ -50,6 +50,44 @@
 </div>
 
 <main class="wrap">
+  <section class="wa-painel" aria-labelledby="wa-titulo">
+    <details id="wa-details" open>
+      <summary>
+        <span class="wa-selo" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.7-4.6A9 9 0 1 1 8.2 19.6L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-1 .8a4 4 0 0 1-2.1-2.1l.8-1-1-2L9 9.5z"/></svg></span>
+        <span class="wa-cabeca">
+          <span class="wa-titulo" id="wa-titulo">Mensagem padrão do WhatsApp</span>
+          <span class="wa-sub">Escreva uma vez: o botão <b>WhatsApp</b> de cada médico abre a conversa com o texto já personalizado.</span>
+        </span>
+        <svg class="wa-seta" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="wa-corpo">
+        <div class="wa-editor">
+          <label class="wa-rotulo" for="wa-texto">1. Escreva a mensagem</label>
+          <textarea id="wa-texto" rows="7" spellcheck="true"></textarea>
+          <div class="wa-tokens" role="group" aria-label="Inserir campo personalizado">
+            <span>Inserir no texto:</span>
+            <button type="button" data-token="{nome}">Nome do médico</button>
+            <button type="button" data-token="{primeiro_nome}">Primeiro nome</button>
+            <button type="button" data-token="{especialidade}">Especialidade</button>
+            <button type="button" data-token="{local}">Local de atendimento</button>
+          </div>
+          <p class="wa-dica">Os campos entre chaves são trocados pelos dados de cada médico. Use <code>*texto*</code> para negrito.</p>
+          <button type="button" class="limpar" id="wa-restaurar">Restaurar texto padrão</button>
+        </div>
+        <div class="wa-previa">
+          <div class="wa-rotulo">2. Confira a prévia <span class="wa-exemplo">exemplo com <b id="wa-exemplo"></b></span></div>
+          <div class="wa-tela"><div class="wa-bolha" id="wa-bolha"></div></div>
+          <label class="wa-rotulo" for="wa-numero">3. Teste no seu WhatsApp</label>
+          <div class="wa-teste">
+            <input type="tel" id="wa-numero" inputmode="tel" autocomplete="off" aria-describedby="wa-numero-ajuda">
+            <a class="wa-botao" id="wa-testar" target="_blank" rel="noopener">Testar no WhatsApp</a>
+          </div>
+          <small id="wa-numero-ajuda" class="wa-ajuda">Abre o WhatsApp com a prévia acima para este número de teste.</small>
+        </div>
+      </div>
+    </details>
+  </section>
+
   <div class="meta">
     <div id="count" aria-live="polite"></div>
     <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
@@ -74,6 +112,7 @@ const icone = {
   cel: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>',
   mail: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
   web: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>',
+  wa: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21l1.7-4.6A9 9 0 1 1 8.2 19.6L3 21z"/></svg>',
   map: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>',
 };
 
@@ -99,9 +138,107 @@ const mapaHref = l => {
 const estado = { q: "", esp: "", bairro: "", sus: false, cel: false, limite: PAGINA };
 let medicos = [];
 
-function htmlLocal(l) {
+/* ---------- Mensagem padrão do WhatsApp ---------- */
+const MENSAGEM_PADRAO = "Olá, {nome}! Tudo bem?\n\nVi que você atua em *{especialidade}* aqui em Belo Horizonte e gostaria de conversar com você.\n\nPodemos falar por aqui?";
+const NUMERO_TESTE_PADRAO = "(31) 9163-9519";
+
+// Preferências de quem usa a página, guardadas só neste navegador.
+const guardado = {
+  ler(chave, padrao) { try { return localStorage.getItem(chave) ?? padrao; } catch { return padrao; } },
+  gravar(chave, valor) { try { localStorage.setItem(chave, valor); } catch { /* modo privado: segue sem guardar */ } },
+};
+const wa = {
+  texto: guardado.ler("wa.texto", MENSAGEM_PADRAO),
+  numero: guardado.ler("wa.numero", NUMERO_TESTE_PADRAO),
+};
+
+// "(31) 9163-9519" -> "5531991639519". Celular antigo de 8 dígitos ganha o 9 (mesma regra de telefones.py).
+function digitosWhatsApp(telefone) {
+  let d = String(telefone).replace(/\D/g, "").replace(/^0+/, "");
+  if ((d.length === 12 || d.length === 13) && d.startsWith("55")) d = d.slice(2);
+  if (d.length === 8 || d.length === 9) d = "31" + d;
+  if (d.length === 10 && /[6-9]/.test(d[2])) d = d.slice(0, 2) + "9" + d.slice(2);
+  return d.length === 11 && d[2] === "9" ? "55" + d : null;
+}
+const waHref = (telefone, mensagem) => {
+  const d = digitosWhatsApp(telefone);
+  return d ? `https://wa.me/${d}?text=${encodeURIComponent(mensagem)}` : null;
+};
+
+function montarMensagem(m, l) {
+  const nome = titulo(m.nome);
+  return wa.texto
+    .replaceAll("{nome}", nome)
+    .replaceAll("{primeiro_nome}", nome.split(" ")[0])
+    .replaceAll("{especialidade}", m.especialidades.map(e => ESP_CURTA[e] || e).join(" e "))
+    .replaceAll("{local}", titulo(l?.estabelecimento || ""));
+}
+
+// Mostra a mensagem como o WhatsApp mostra: quebras de linha, *negrito* e _itálico_.
+const formatarWhatsApp = texto => esc(texto)
+  .replace(/\*([^*\n]+)\*/g, "<strong>$1</strong>")
+  .replace(/(^|\s)_([^_\n]+)_/g, "$1<em>$2</em>");
+
+function exemploPrevia() {
+  const lista = medicos.length ? filtrar() : [];
+  const m = lista.find(x => x.locais.some(l => l.celulares.length)) || lista[0] || medicos[0];
+  if (!m) return null;
+  return { m, l: m.locais.find(l => l.celulares.length) || m.locais[0] };
+}
+
+function atualizarPrevia() {
+  const ex = exemploPrevia();
+  const texto = ex ? montarMensagem(ex.m, ex.l) : wa.texto;
+  document.getElementById("wa-bolha").innerHTML = formatarWhatsApp(texto) || '<span class="wa-vazio">Sua mensagem aparece aqui.</span>';
+  document.getElementById("wa-exemplo").textContent = ex ? titulo(ex.m.nome) : "";
+  const botao = document.getElementById("wa-testar");
+  const href = waHref(wa.numero, texto);
+  const ajuda = document.getElementById("wa-numero-ajuda");
+  if (href && wa.texto.trim()) {
+    botao.href = href; botao.removeAttribute("aria-disabled");
+    ajuda.textContent = "Abre o WhatsApp com a prévia acima para este número de teste.";
+    ajuda.classList.remove("erro-campo");
+  } else {
+    botao.removeAttribute("href"); botao.setAttribute("aria-disabled", "true");
+    ajuda.textContent = wa.texto.trim() ? "Digite um celular com DDD, por exemplo (31) 99163-9519." : "Escreva a mensagem para poder testar.";
+    ajuda.classList.add("erro-campo");
+  }
+}
+
+function ligarMensagem() {
+  const texto = document.getElementById("wa-texto");
+  const numero = document.getElementById("wa-numero");
+  const details = document.getElementById("wa-details");
+  texto.value = wa.texto;
+  numero.value = wa.numero;
+  if (guardado.ler("wa.aberto", "1") === "0") details.open = false;
+  details.addEventListener("toggle", () => guardado.gravar("wa.aberto", details.open ? "1" : "0"));
+
+  let t;
+  const mudouTexto = () => {
+    wa.texto = texto.value;
+    guardado.gravar("wa.texto", wa.texto);
+    atualizarPrevia();
+    clearTimeout(t);
+    t = setTimeout(render, 250); // atualiza os links dos cards
+  };
+  texto.addEventListener("input", mudouTexto);
+  numero.addEventListener("input", () => { wa.numero = numero.value; guardado.gravar("wa.numero", wa.numero); atualizarPrevia(); });
+  document.querySelectorAll(".wa-tokens button").forEach(b => b.addEventListener("click", () => {
+    texto.focus();
+    texto.setRangeText(b.dataset.token, texto.selectionStart, texto.selectionEnd, "end");
+    mudouTexto();
+  }));
+  document.getElementById("wa-restaurar").addEventListener("click", () => { texto.value = MENSAGEM_PADRAO; mudouTexto(); });
+  atualizarPrevia();
+}
+
+function htmlLocal(l, m) {
   const links = [];
-  for (const t of l.celulares) links.push(`<a href="${telHref(t)}" title="Celular">${icone.cel}<span>${esc(t)}</span></a>`);
+  for (const t of l.celulares) {
+    links.push(`<a href="${telHref(t)}" title="Celular">${icone.cel}<span>${esc(t)}</span></a>`);
+    links.push(`<a class="wa-link" href="${esc(waHref(t, montarMensagem(m, l)))}" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp com a mensagem padrão">${icone.wa}<span>WhatsApp</span></a>`);
+  }
   for (const t of l.fixos) links.push(`<a href="${telHref(t)}" title="Telefone fixo">${icone.tel}<span>${esc(t)}</span></a>`);
   if (l.email) links.push(`<a href="mailto:${esc(l.email)}" title="${esc(l.email)}">${icone.mail}<span>${esc(l.email)}</span></a>`);
   if (l.site) links.push(`<a href="${esc(siteHref(l.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
@@ -117,10 +254,11 @@ function htmlLocal(l) {
 function htmlCard(m) {
   const nutro = m.especialidades.length === 1 && m.especialidades[0] === "Nutrologia";
   const tags = m.especialidades.map(e => `<span class="tag${e === "Nutrologia" ? " nutro" : ""}">${esc(ESP_CURTA[e] || e)}</span>`).join("");
-  const visiveis = m.locais.slice(0, 2).map(htmlLocal).join("");
+  const local = l => htmlLocal(l, m);
+  const visiveis = m.locais.slice(0, 2).map(local).join("");
   const resto = m.locais.slice(2);
   const extra = resto.length
-    ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(htmlLocal).join("")}</ul></details>`
+    ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(local).join("")}</ul></details>`
     : "";
   return `<article class="card">
     <div class="card-head">
@@ -158,6 +296,7 @@ function render() {
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
+  atualizarPrevia();
 }
 
 // Altera o estado dos filtros e reflete nos controles da barra.
@@ -207,6 +346,8 @@ function ligar() {
   document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", bairro: "", sus: false, cel: false }));
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
+
+ligarMensagem();
 
 // no-cache: sempre confere com o servidor (ETag) se o JSON mudou, para a página
 // nunca combinar uma versão nova do HTML com um JSON antigo guardado no navegador.
