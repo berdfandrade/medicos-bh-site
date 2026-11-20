@@ -453,12 +453,17 @@ function criarValoresNaApi({ rota, parametro, chaveLocal, aviso, aoMudar }) {
 }
 
 // Marcação de "já contatado": guarda a data do contato.
-function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
+// podeMarcar(id): só deixa marcar depois de escolhido o consultor (desmarcar é sempre possível).
+function criarContatos({ lista, chaveLocal, aviso, aoMudar, podeMarcar = () => true }) {
   const valores = criarValoresNaApi({ rota: `/contatados/${lista}`, parametro: "data", chaveLocal, aviso, aoMudar });
 
   // Botão do card. feminino: "contatada" (clínica) ou "contatado" (médico).
   function botao(id, feminino) {
     const quando = valores.valor(id), fim = feminino ? "a" : "o";
+    if (!quando && !podeMarcar(id)) {
+      return `<button type="button" class="contato-btn bloqueado" data-escolher-consultor aria-disabled="true" title="Escolha o consultor do contato antes de marcar">`
+        + `${icone.marcar}<span>Escolha um consultor para marcar como contatad${fim}</span></button>`;
+    }
     return `<button type="button" class="contato-btn" data-contato-id="${esc(id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de fazer o contato"}">`
       + (quando ? `${icone.ok}<span>Contatad${fim} em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatad${fim}</span>`) + `</button>`;
   }
@@ -466,7 +471,7 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
   // Um clique em qualquer botão de contato dentro de `el` marca (com a data de hoje) ou desmarca.
   function ligar(el) {
     el.addEventListener("click", e => {
-      const b = e.target.closest(".contato-btn");
+      const b = e.target.closest(".contato-btn:not(.bloqueado)");
       if (!b) return;
       const id = b.dataset.contatoId;
       valores.definir(id, valores.valor(id) ? "" : new Date().toLocaleDateString("sv")); // AAAA-MM-DD no fuso local

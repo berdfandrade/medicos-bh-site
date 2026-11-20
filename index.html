@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=73df8908">
+<link rel="stylesheet" href="estilo.css?v=09e4a78c">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -74,7 +74,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=f0c4f9ec"></script>
+<script src="comum.js?v=7f1a1517"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -97,6 +97,7 @@ const contatos = criarContatos({
   chaveLocal: "medicos.contatados",
   aviso: document.getElementById("nuvem"),
   aoMudar: () => { if (medicos.length) render(); },
+  podeMarcar: id => Boolean(responsaveis.de(id)),
 });
 const responsaveis = criarResponsaveis({
   lista: "medicos",

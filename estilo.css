@@ -374,3 +374,7 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .responsavel select { grid-column: 1 / -1; width: 100%; min-width: 0; height: 42px; font-size: 15px; }
 .responsavel-dica { font-style: normal; font-size: 12px; color: var(--ink-3); }
 .responsavel-dica::before { content: "· "; }
+
+/* "Marcar como contatado" só depois de escolher o consultor */
+.contato-btn.bloqueado { color: var(--ink-3); background: var(--surface-2); border-style: dashed; cursor: help; font-weight: 400; }
+.contato-btn.bloqueado:hover { color: var(--ink-2); border-color: var(--ink-3); }
