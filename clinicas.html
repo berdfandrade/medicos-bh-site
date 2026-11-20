@@ -46,13 +46,7 @@
   </div>
   <div class="clinicas-grid" id="grid"></div>
 
-  <details class="outros" id="outros">
-    <summary>
-      <span class="outros-titulo" id="outros-titulo"></span>
-      <span class="outros-sub">Mais clínicas e consultórios encontrados no Google Maps, com nome, telefone e endereço da ficha pública de cada um. Toque para ver.</span>
-    </summary>
-    <div class="clinicas-grid" id="grid-outros"></div>
-  </details>
+  <div class="more" id="more" hidden><button type="button">Mostrar mais</button></div>
 </main>
 
 <footer class="wrap">
@@ -63,7 +57,8 @@
 <script src="comum.js?v=10e0b0f8"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
-const estado = { q: "", cel: false };
+const PAGINA = 60;
+const estado = { q: "", cel: false, limite: PAGINA };
 let clinicas = [];
 
 const mapaHref = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`;
@@ -89,11 +84,8 @@ function htmlClinica(c) {
   const links = [htmlTelefones(c.celulares, c.fixos, painel.mensagem(c))];
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
-  const cabeca = c.nome
-    ? `<h3>${esc(c.nome)}</h3>`
-    : `<h3 class="sem-nome-h3">Local ${esc(c.codigo)}</h3><div class="crm">Nome não cadastrado · veja no mapa</div>`;
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  return `<article class="card clinica-card${c.nome ? "" : " clinica-sem-nome"}">${foto}<div class="clinica-corpo">${cabeca}${endereco}<div class="links">${links.join("")}</div></div></article>`;
+  return `<article class="card clinica-card">${foto}<div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div></div></article>`;
 }
 
 function filtrar(lista) {
@@ -108,36 +100,21 @@ function filtrar(lista) {
   );
 }
 
-// Lista principal (fichas selecionadas, com foto e telefone) e "outros" (locais do
-// Google Maps, que ficam na seção recolhida). `codigo` marca os da segunda lista.
-const principais = () => clinicas.filter(c => !c.codigo);
-const outros = () => clinicas.filter(c => c.codigo);
-
 function render() {
-  const lista = filtrar(principais());
-  const extras = filtrar(outros());
-  const filtrando = Boolean(estado.q.trim() || estado.cel);
+  const lista = filtrar(clinicas);
   document.getElementById("grid").innerHTML = lista.length
-    ? lista.map(htmlClinica).join("")
-    : `<div class="empty">Nenhuma clínica na lista principal${extras.length ? " — veja os resultados em “Outros locais” abaixo" : " com esses filtros"}.</div>`;
-  document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`
-    + (filtrando ? ` · <strong>${extras.length}</strong> em outros locais` : "");
-  document.getElementById("limpar").hidden = !filtrando;
-
-  const secao = document.getElementById("outros");
-  secao.hidden = !extras.length;
-  document.getElementById("outros-titulo").textContent = filtrando
-    ? `${extras.length} ${extras.length === 1 ? "resultado" : "resultados"} em outros locais`
-    : `Outros ${extras.length} locais`;
-  // ao buscar, abre a seção se o resultado estiver nela
-  if (estado.q.trim() && extras.length && !secao.open) secao.open = true;
-  // monta os cards escondidos só quando a seção está aberta
-  document.getElementById("grid-outros").innerHTML = secao.open ? extras.map(htmlClinica).join("") : "";
+    ? lista.slice(0, estado.limite).map(htmlClinica).join("")
+    : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
+  document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
+  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.cel);
+  const restantes = lista.length - estado.limite;
+  document.getElementById("more").hidden = restantes <= 0;
+  document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
   painel.atualizar();
 }
 
 function aplicar(mudanca) {
-  Object.assign(estado, mudanca);
+  Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
@@ -148,8 +125,7 @@ function stats() {
   const itens = [
     [clinicas.length, "clínicas e consultórios"],
     [clinicas.filter(c => c.celulares.length).length, "com celular (WhatsApp)"],
-    [principais().length, "na lista principal"],
-    [outros().length, "em outros locais"],
+    [clinicas.filter(c => c.celulares.length || c.fixos.length).length, "com telefone"],
   ];
   document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
 }
@@ -158,7 +134,7 @@ let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
 document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false }));
-document.getElementById("outros").addEventListener("toggle", render);
+document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 
 fetch("clinicas.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
