@@ -127,6 +127,7 @@ details[open] > summary { margin-bottom: 4px; }
 .empty, .erro { text-align: center; padding: 64px 20px; color: var(--ink-2); grid-column: 1 / -1; }
 .erro code { background: var(--surface-2); padding: 2px 6px; border-radius: 6px; }
 .more { display: flex; justify-content: center; padding-bottom: 48px; }
+.more[hidden] { display: none; }
 .more button {
   font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
   height: 44px; padding: 0 22px; border-radius: 10px; cursor: pointer;
