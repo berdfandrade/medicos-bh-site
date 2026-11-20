@@ -63,12 +63,15 @@ const formatarWhatsApp = texto => esc(texto)
   .replace(/(^|\s)_([^_\n]+)_/g, "$1<em>$2</em>");
 
 // Botões de telefone de um card: celular (+ WhatsApp com a mensagem) e fixo.
+// mensagem null: o WhatsApp aparece indisponível até escolherem o consultor do contato.
 function htmlTelefones(celulares, fixos, mensagem) {
   const links = [];
   for (const t of celulares) {
     links.push(`<a href="${telHref(t)}" title="Celular">${icone.cel}<span>${esc(t)}</span></a>`);
-    const href = waHref(t, mensagem);
-    if (href) links.push(`<a class="wa-link" href="${esc(href)}" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp com a mensagem padrão">${icone.wa}<span>WhatsApp</span></a>`);
+    if (!digitosWhatsApp(t)) continue;
+    links.push(mensagem === null
+      ? `<button type="button" class="wa-link wa-bloqueado" data-escolher-consultor aria-disabled="true" title="Escolha o consultor do contato para liberar o WhatsApp">${icone.wa}<span>WhatsApp</span></button>`
+      : `<a class="wa-link" href="${esc(waHref(t, mensagem))}" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp com a mensagem do consultor">${icone.wa}<span>WhatsApp</span></a>`);
   }
   for (const t of fixos) links.push(`<a href="${telHref(t)}" title="Telefone fixo">${icone.tel}<span>${esc(t)}</span></a>`);
   return links.join("");
@@ -364,10 +367,12 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   atualizar();
   carregarDaApi();
 
-  // Mensagem do card: a do responsável pelo contato, ou a geral.
+  // Mensagem do card: a do consultor do contato (ou a geral, se ele não tiver uma própria).
+  // Sem consultor escolhido: null, e o botão do WhatsApp fica indisponível.
   return {
     mensagem: item => {
       const responsavel = responsavelDe(item) || "";
+      if (!responsavel) return null;
       return completarCampos(montar(textoPara(estado.textos, responsavel), item), { responsavel });
     },
     atualizar,
@@ -481,7 +486,7 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     const atual = valores.valor(id) || "";
     const nomes = CONFIG.equipe;
     const opcoes = ["", ...nomes, ...(atual && !nomes.includes(atual) ? [atual] : [])];
-    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>
+    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>${atual ? "" : '<em class="responsavel-dica">libera o WhatsApp</em>'}
       <select data-responsavel-id="${esc(id)}" aria-label="Consultor do contato">
         ${opcoes.map(n => `<option value="${esc(n)}"${n === atual ? " selected" : ""}>${n ? esc(n) : "Ninguém ainda"}</option>`).join("")}
       </select></label>`;
@@ -491,6 +496,16 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     el.addEventListener("change", e => {
       const sel = e.target.closest("select[data-responsavel-id]");
       if (sel) valores.definir(sel.dataset.responsavelId, sel.value);
+    });
+    // WhatsApp indisponível: leva até o campo do consultor no mesmo card e destaca.
+    el.addEventListener("click", e => {
+      const b = e.target.closest("[data-escolher-consultor]");
+      if (!b) return;
+      const campo = b.closest(".card")?.querySelector(".responsavel");
+      if (!campo) return;
+      campo.scrollIntoView({ block: "center", behavior: "smooth" });
+      campo.querySelector("select").focus();
+      campo.classList.remove("chamar"); void campo.offsetWidth; campo.classList.add("chamar");
     });
   }
 

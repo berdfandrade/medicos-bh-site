@@ -360,3 +360,15 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
   color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
 }
 .wa-quem button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+/* WhatsApp indisponível até escolher o consultor */
+.links .wa-link.wa-bloqueado {
+  display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 8px;
+  background: var(--surface-2); border: 1px dashed var(--line); color: var(--ink-3); cursor: help;
+}
+.links .wa-link.wa-bloqueado svg { color: var(--ink-3); }
+.links .wa-link.wa-bloqueado:hover { filter: none; border-color: var(--ink-3); }
+.responsavel-dica { flex: none; font-style: normal; font-size: 11.5px; color: var(--ink-3); }
+.responsavel.chamar select { animation: chamar 1.2s ease; }
+@keyframes chamar { 0%, 60% { box-shadow: 0 0 0 3px var(--wa); border-color: var(--wa); } 100% { box-shadow: none; } }
+@media (prefers-reduced-motion: reduce) { .responsavel.chamar select { animation: none; outline: 2px solid var(--wa); } }
