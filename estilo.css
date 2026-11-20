@@ -265,7 +265,7 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
   font: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; transition: border-color .15s, background .15s, color .15s;
 }
 .contato-btn svg { flex: none; }
-.clinica-corpo .contato-btn { margin-top: 14px; }
+.clinica-corpo .card-acoes { margin-top: 14px; }
 .contato-btn:hover { border-color: var(--accent); color: var(--accent); }
 .contato-btn[aria-pressed="true"] { border-style: solid; border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .card.contatada { border-color: var(--accent); }

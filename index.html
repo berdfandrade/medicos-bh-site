@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=61a0661e">
+<link rel="stylesheet" href="estilo.css?v=e262089c">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -74,7 +74,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=79df057d"></script>
+<script src="comum.js?v=44aa0c72"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -92,8 +92,6 @@ const estado = { q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false,
 let medicos = [];
 
 const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
-const EQUIPE = ["Luciano", "Mauro", "Marino"]; // quem pode ficar responsável pelo contato
-const SEM_RESPONSAVEL = "-";
 const contatos = criarContatos({
   lista: "medicos",
   chaveLocal: "medicos.contatados",
@@ -102,7 +100,6 @@ const contatos = criarContatos({
 });
 const responsaveis = criarResponsaveis({
   lista: "medicos",
-  nomes: EQUIPE,
   chaveLocal: "medicos.responsaveis",
   aviso: document.getElementById("nuvem"),
   aoMudar: () => { if (medicos.length) render(); },
@@ -186,7 +183,7 @@ function filtrar() {
     (!estado.sus || m.locais.some(l => l.atende_sus)) &&
     (!estado.cel || m.locais.some(l => l.celulares.length)) &&
     (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(idMedico(m)))) &&
-    (!estado.responsavel || (responsaveis.de(idMedico(m)) || SEM_RESPONSAVEL) === estado.responsavel) &&
+    responsaveis.passa(idMedico(m), estado.responsavel) &&
     termos.every(t => m._busca.includes(t))
   );
 }
@@ -202,7 +199,7 @@ function render() {
   const feitos = medicos.filter(m => contatos.quando(idMedico(m))).length;
   document.querySelector('[data-contato="nao"]').textContent = `A contatar (${medicos.length - feitos})`;
   document.querySelector('[data-contato="sim"]').textContent = `Contatados (${feitos})`;
-  opcoesResponsavel();
+  responsaveis.preencherFiltro(document.getElementById("responsavel"), medicos.map(idMedico), estado.responsavel);
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
@@ -220,18 +217,6 @@ function aplicar(mudanca) {
   document.getElementById("sus").setAttribute("aria-pressed", String(estado.sus));
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   render();
-}
-
-// Filtro por responsável, com quantos médicos cada um tem.
-function opcoesResponsavel() {
-  const sel = document.getElementById("responsavel");
-  const conta = {};
-  for (const m of medicos) { const r = responsaveis.de(idMedico(m)) || SEM_RESPONSAVEL; conta[r] = (conta[r] || 0) + 1; }
-  const nomes = [...EQUIPE, ...Object.keys(conta).filter(n => n !== SEM_RESPONSAVEL && !EQUIPE.includes(n))];
-  sel.innerHTML = '<option value="">Todos os responsáveis</option>'
-    + nomes.map(n => `<option value="${esc(n)}">${esc(n)} (${conta[n] || 0})</option>`).join("")
-    + `<option value="${SEM_RESPONSAVEL}">Sem responsável (${conta[SEM_RESPONSAVEL] || 0})</option>`;
-  sel.value = estado.responsavel;
 }
 
 function stats(dados) {

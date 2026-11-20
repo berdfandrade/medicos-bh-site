@@ -327,7 +327,10 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
 }
 
 // Quem da equipe vai fazer o contato com cada item.
-function criarResponsaveis({ lista, nomes, chaveLocal, aviso, aoMudar }) {
+const EQUIPE = ["Luciano", "Mauro", "Marino"];
+const SEM_RESPONSAVEL = "-"; // valor do filtro "Sem responsável"
+
+function criarResponsaveis({ lista, nomes = EQUIPE, chaveLocal, aviso, aoMudar }) {
   const valores = criarValoresNaApi({ rota: `/responsaveis/${lista}`, parametro: "nome", chaveLocal, aviso, aoMudar });
 
   function seletor(id) {
@@ -346,7 +349,21 @@ function criarResponsaveis({ lista, nomes, chaveLocal, aviso, aoMudar }) {
     });
   }
 
-  return { de: valores.valor, seletor, ligar };
+  // Opções do filtro da barra, com quantos itens cada pessoa tem.
+  function preencherFiltro(sel, ids, atual) {
+    const conta = {};
+    for (const id of ids) { const r = valores.valor(id) || SEM_RESPONSAVEL; conta[r] = (conta[r] || 0) + 1; }
+    const todos = [...nomes, ...Object.keys(conta).filter(n => n !== SEM_RESPONSAVEL && !nomes.includes(n))];
+    sel.innerHTML = '<option value="">Todos os responsáveis</option>'
+      + todos.map(n => `<option value="${esc(n)}">${esc(n)} (${conta[n] || 0})</option>`).join("")
+      + `<option value="${SEM_RESPONSAVEL}">Sem responsável (${conta[SEM_RESPONSAVEL] || 0})</option>`;
+    sel.value = atual;
+  }
+
+  // O item passa no filtro escolhido na barra ("" = todos).
+  const passa = (id, filtro) => !filtro || (valores.valor(id) || SEM_RESPONSAVEL) === filtro;
+
+  return { de: valores.valor, seletor, ligar, preencherFiltro, passa };
 }
 
 // Regionais administrativas de BH (regioes.py preenche "regiao" nos JSON).
