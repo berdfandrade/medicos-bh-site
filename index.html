@@ -74,7 +74,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=e1019956"></script>
+<script src="comum.js?v=f0c4f9ec"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -169,7 +169,7 @@ function htmlCard(m) {
     <ul class="locais">${visiveis}</ul>
     ${extra}
     <div class="card-acoes">
-      ${responsaveis.seletor(id)}
+      ${responsaveis.seletor(id, m.locais.some(l => l.celulares.length))}
       ${contatos.botao(id, false)}
     </div>
   </article>`;

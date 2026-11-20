@@ -482,11 +482,12 @@ const SEM_RESPONSAVEL = "-"; // valor do filtro "Sem responsável"
 function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
   const valores = criarValoresNaApi({ rota: `/responsaveis/${lista}`, parametro: "nome", chaveLocal, aviso, aoMudar });
 
-  function seletor(id) {
+  // temWhatsApp: só contatos com celular mostram a dica de que o consultor libera o WhatsApp.
+  function seletor(id, temWhatsApp) {
     const atual = valores.valor(id) || "";
     const nomes = CONFIG.equipe;
     const opcoes = ["", ...nomes, ...(atual && !nomes.includes(atual) ? [atual] : [])];
-    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>${atual ? "" : '<em class="responsavel-dica">escolha para liberar o WhatsApp</em>'}
+    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>${atual || !temWhatsApp ? "" : '<em class="responsavel-dica">escolha para liberar o WhatsApp</em>'}
       <select data-responsavel-id="${esc(id)}" aria-label="Consultor do contato">
         ${opcoes.map(n => `<option value="${esc(n)}"${n === atual ? " selected" : ""}>${n ? esc(n) : "Ninguém ainda"}</option>`).join("")}
       </select></label>`;
