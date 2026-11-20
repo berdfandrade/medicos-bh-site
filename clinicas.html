@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=6f586988">
+<link rel="stylesheet" href="estilo.css?v=4bd9dd45">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -28,6 +28,11 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input type="search" id="q" placeholder="Nome, bairro ou telefone" aria-label="Buscar clínica">
     </label>
+    <div class="seg" role="group" aria-label="Contato" id="contato">
+      <button type="button" data-contato="" aria-pressed="true">Todas</button>
+      <button type="button" data-contato="nao" aria-pressed="false">A contatar</button>
+      <button type="button" data-contato="sim" aria-pressed="false">Contatadas</button>
+    </div>
     <div class="chips" role="group" aria-label="Filtros">
       <button type="button" class="chip" id="cel" aria-pressed="false">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
@@ -54,12 +59,17 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=10e0b0f8"></script>
+<script src="comum.js?v=b7d68068"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
-const estado = { q: "", cel: false, limite: PAGINA };
+const estado = { q: "", cel: false, contato: "", limite: PAGINA };
 let clinicas = [];
+
+// Clínicas já contatadas: { place_id: "AAAA-MM-DD" }, guardadas neste navegador.
+const CHAVE_CONTATADAS = "clinicas.contatadas";
+const contatadas = (() => { try { return JSON.parse(guardado.ler(CHAVE_CONTATADAS, "{}")) || {}; } catch { return {}; } })();
+const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
 
 const mapaHref = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`;
 
@@ -82,7 +92,10 @@ function htmlClinica(c) {
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  return `<article class="card clinica-card"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div></div></article>`;
+  const quando = contatadas[c.place_id];
+  const contato = `<button type="button" class="contato-btn" data-id="${esc(c.place_id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de falar com a clínica"}">`
+    + (quando ? `${icone.ok}<span>Contatada em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatada</span>`) + `</button>`;
+  return `<article class="card clinica-card${quando ? " contatada" : ""}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div>${contato}</div></article>`;
 }
 
 function filtrar(lista) {
@@ -91,6 +104,7 @@ function filtrar(lista) {
   const porTelefone = numero && /^[\d ()+-]+$/.test(termo);
   return lista.filter(c =>
     (!estado.cel || c.celulares.length) &&
+    (!estado.contato || (estado.contato === "sim") === Boolean(contatadas[c.place_id])) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
       : semAcento(`${c.nome} ${c.endereco || ""}`).includes(termo)))
@@ -103,7 +117,10 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlClinica).join("")
     : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
-  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.cel);
+  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.cel || estado.contato);
+  const feitas = clinicas.filter(c => contatadas[c.place_id]).length;
+  document.querySelector('[data-contato="nao"]').textContent = `A contatar (${clinicas.length - feitas})`;
+  document.querySelector('[data-contato="sim"]').textContent = `Contatadas (${feitas})`;
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
@@ -115,6 +132,7 @@ function aplicar(mudanca) {
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
+  document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   render();
 }
 
@@ -130,7 +148,17 @@ function stats() {
 let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
-document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false }));
+document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false, contato: "" }));
+document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
+document.getElementById("grid").addEventListener("click", e => {
+  const botao = e.target.closest(".contato-btn");
+  if (!botao) return;
+  const id = botao.dataset.id;
+  if (contatadas[id]) delete contatadas[id];
+  else contatadas[id] = new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
+  guardado.gravar(CHAVE_CONTATADAS, JSON.stringify(contatadas));
+  render();
+});
 document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 
 fetch("clinicas.json", { cache: "no-cache" })
