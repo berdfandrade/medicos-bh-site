@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=10f27bc3">
+<link rel="stylesheet" href="estilo.css?v=55818042">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -72,7 +72,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=ad9d1817"></script>
+<script src="comum.js?v=93c4bac6"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -101,7 +101,7 @@ const painel = criarPainelWhatsApp({
   el: document.getElementById("wa-painel"),
   chave: "wa",
   textoPadrao: MENSAGEM_PADRAO,
-  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada médico abre a conversa com o texto já personalizado.",
+  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada médico abre a conversa com o texto já personalizado. Fica salva para todos os aparelhos.",
   campos: [
     { token: "{nome}", rotulo: "Nome do médico" },
     { token: "{primeiro_nome}", rotulo: "Primeiro nome" },
@@ -122,6 +122,7 @@ const painel = criarPainelWhatsApp({
     return m ? { item: { m, l: m.locais.find(l => l.celulares.length) || m.locais[0] }, nome: titulo(m.nome) } : null;
   },
   aoMudar: () => render(),
+  lista: "medicos",
 });
 
 function htmlLocal(l, m) {

@@ -32,6 +32,18 @@ const guardado = {
   gravar(chave, valor) { try { localStorage.setItem(chave, valor); } catch { /* modo privado: segue sem guardar */ } },
 };
 
+// API (FastAPI + Postgres no Railway) que guarda contatos e mensagens padrão para todos os aparelhos.
+// "api.base" no localStorage aponta para uma API local de teste.
+const API_BASE = guardado.ler("api.base", "https://api-production-e7b4ca28.up.railway.app");
+async function chamarApi(metodo, caminho, corpo) {
+  const r = await fetch(API_BASE + caminho, {
+    method: metodo, cache: "no-store",
+    ...(corpo === undefined ? {} : { headers: { "Content-Type": "application/json" }, body: JSON.stringify(corpo) }),
+  });
+  if (!r.ok) throw new Error(`${metodo} ${caminho}: ${r.status}`);
+  return r.status === 204 ? null : r.json();
+}
+
 // "(31) 9163-9519" -> "5531991639519". Celular antigo de 8 dígitos ganha o 9 (mesma regra de telefones.py).
 function digitosWhatsApp(telefone) {
   let d = String(telefone).replace(/\D/g, "").replace(/^0+/, "");
@@ -71,8 +83,9 @@ function htmlTelefones(celulares, fixos, mensagem) {
  *  montar      (texto, item) => mensagem com os campos trocados pelos dados do item
  *  exemplo     () => { item, nome } usado na prévia, ou null enquanto não há dados
  *  aoMudar     chamado (com atraso) quando o texto muda, para refazer os cards
+ *  lista       "clinicas" ou "medicos": a mensagem é salva na API e vale em todos os aparelhos
  */
-function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar, exemplo, aoMudar }) {
+function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar, exemplo, aoMudar, lista }) {
   const estado = {
     texto: guardado.ler(`${chave}.texto`, textoPadrao),
     numero: guardado.ler("wa.numero", NUMERO_TESTE_PADRAO),
@@ -97,7 +110,10 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
             ${campos.map(c => `<button type="button" data-token="${esc(c.token)}">${esc(c.rotulo)}</button>`).join("")}
           </div>
           <p class="wa-dica">Os campos entre chaves são trocados pelos dados de cada contato. Use <code>*texto*</code> para negrito.</p>
-          <button type="button" class="limpar" id="wa-restaurar">Restaurar texto padrão</button>
+          <div class="wa-rodape">
+            <span class="wa-salvo" id="wa-salvo" role="status"></span>
+            <button type="button" class="limpar" id="wa-restaurar">Restaurar texto padrão</button>
+          </div>
         </div>
         <div class="wa-previa">
           <div class="wa-rotulo">2. Confira a prévia <span class="wa-exemplo">exemplo com <b id="wa-exemplo"></b></span></div>
@@ -136,6 +152,55 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
     ajuda.classList.toggle("erro-campo", !href);
   }
 
+  // Salvamento automático na API: o texto vale para todos os aparelhos, sem botão de salvar.
+  const salvo = $("wa-salvo");
+  const ok = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
+  let pendente = null, enviado = null;
+  function mostrarSalvo(tipo) {
+    salvo.className = `wa-salvo ${tipo}`;
+    salvo.innerHTML = {
+      salvando: "Salvando…",
+      salvo: `${ok}Salva · vale em todos os aparelhos`,
+      erro: 'Não foi possível salvar. <button type="button" class="limpar">Tentar de novo</button>',
+    }[tipo];
+    salvo.querySelector("button")?.addEventListener("click", salvarNaApi);
+  }
+  async function salvarNaApi() {
+    clearTimeout(pendente); pendente = null;
+    const texto = estado.texto;
+    mostrarSalvo("salvando");
+    try {
+      await chamarApi("PUT", `/mensagens/${lista}`, { texto });
+      enviado = texto;
+      if (estado.texto === texto) mostrarSalvo("salvo");
+    } catch (erro) {
+      console.error(erro);
+      mostrarSalvo("erro");
+    }
+  }
+  // Traz a mensagem salva (por exemplo, editada em outro aparelho), se ninguém estiver digitando aqui.
+  async function carregarDaApi() {
+    if (pendente) return;
+    try {
+      const { texto: remoto } = await chamarApi("GET", `/mensagens/${lista}`);
+      if (pendente) return;
+      if (remoto === null) { // primeira vez: sobe o texto que já estava personalizado neste aparelho
+        if (estado.texto !== textoPadrao) await salvarNaApi(); else mostrarSalvo("salvo");
+        return;
+      }
+      enviado = remoto;
+      if (remoto !== estado.texto) {
+        texto.value = estado.texto = remoto;
+        guardado.gravar(`${chave}.texto`, remoto);
+        atualizar(); aoMudar();
+      }
+      mostrarSalvo("salvo");
+    } catch (erro) {
+      console.error(erro);
+      mostrarSalvo("erro");
+    }
+  }
+
   let t;
   const mudouTexto = () => {
     estado.texto = texto.value;
@@ -143,6 +208,10 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
     atualizar();
     clearTimeout(t);
     t = setTimeout(aoMudar, 250); // atualiza os links dos cards
+    clearTimeout(pendente);
+    if (estado.texto === enviado) { pendente = null; mostrarSalvo("salvo"); return; }
+    mostrarSalvo("salvando");
+    pendente = setTimeout(salvarNaApi, 800);
   };
   texto.addEventListener("input", mudouTexto);
   numero.addEventListener("input", () => { estado.numero = numero.value; guardado.gravar("wa.numero", estado.numero); atualizar(); });
@@ -152,7 +221,10 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
     mudouTexto();
   }));
   $("wa-restaurar").addEventListener("click", () => { texto.value = textoPadrao; mudouTexto(); });
+  window.addEventListener("pagehide", () => { if (pendente) salvarNaApi(); });
+  document.addEventListener("visibilitychange", () => { if (document.hidden) { if (pendente) salvarNaApi(); } else carregarDaApi(); });
   atualizar();
+  carregarDaApi();
 
   return { mensagem: item => montar(estado.texto, item), atualizar };
 }
@@ -165,7 +237,6 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
  *  aviso       elemento que mostra um aviso só quando algo não pôde ser salvo
  *  aoMudar     chamado quando as marcações mudam, para refazer os cards e contadores
  */
-const API_CONTATOS = guardado.ler("contatos.api", "https://api-production-e7b4ca28.up.railway.app"); // "contatos.api" aponta para uma API local de teste
 const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
 icone.ok = svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>');
 icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
@@ -175,12 +246,8 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
   const salvarLocal = () => guardado.gravar(chaveLocal, JSON.stringify(mapa));
   let sincronizando = false;
 
-  async function chamar(metodo, id = "", data = "") {
-    const url = `${API_CONTATOS}/contatados/${lista}${id ? `/${encodeURIComponent(id)}` : ""}${data ? `?data=${data}` : ""}`;
-    const r = await fetch(url, { method: metodo, cache: "no-store" });
-    if (!r.ok) throw new Error(`${metodo} ${r.status}`);
-    return r.status === 204 ? null : r.json();
-  }
+  const chamar = (metodo, id = "", data = "") =>
+    chamarApi(metodo, `/contatados/${lista}${id ? `/${encodeURIComponent(id)}` : ""}${data ? `?data=${data}` : ""}`);
 
   function avisar(mostrar) {
     aviso.innerHTML = mostrar

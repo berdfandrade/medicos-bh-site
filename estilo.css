@@ -275,3 +275,10 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .nuvem:empty { display: none; }
 .nuvem svg { flex: none; color: #c2410c; }
 .nuvem .limpar { padding: 0; }
+
+/* Mensagem padrão salva sozinha na API */
+.wa-rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; }
+.wa-salvo { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--ink-3); min-height: 1.5em; }
+.wa-salvo.salvo { color: var(--accent); }
+.wa-salvo.erro { color: #c2410c; }
+.wa-salvo .limpar { padding: 0; font-size: 13px; }
