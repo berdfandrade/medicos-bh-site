@@ -199,14 +199,14 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .clinica-corpo .crm { margin: -8px 0 14px; }
 .clinica-sem-nome .sem-nome-h3 { color: var(--ink-2); }
 
-/* Locais sem nome (seção recolhida das clínicas) */
-.sem-nome { border-top: 1px solid var(--line); margin-top: 8px; }
-.sem-nome[hidden] { display: none; }
-.sem-nome > summary { display: flex; flex-direction: column; gap: 2px; padding: 18px 0; border-top: 0; color: var(--ink); }
-.sem-nome-titulo { font-weight: 600; font-size: 16px; color: var(--accent); }
-.sem-nome-titulo::before { content: "+ "; }
-.sem-nome[open] .sem-nome-titulo::before { content: "− "; }
-.sem-nome-sub { font-weight: 400; font-size: 13.5px; color: var(--ink-3); }
+/* Outros locais (seção recolhida das clínicas) */
+.outros { border-top: 1px solid var(--line); margin-top: 8px; }
+.outros[hidden] { display: none; }
+.outros > summary { display: flex; flex-direction: column; gap: 2px; padding: 18px 0; border-top: 0; color: var(--ink); }
+.outros-titulo { font-weight: 600; font-size: 16px; color: var(--accent); }
+.outros-titulo::before { content: "+ "; }
+.outros[open] .outros-titulo::before { content: "− "; }
+.outros-sub { font-weight: 400; font-size: 13.5px; color: var(--ink-3); }
 
 /* Mensagem padrão do WhatsApp */
 .wa-painel { margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }

@@ -26,7 +26,7 @@
   <div class="wrap">
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Nome da clínica ou telefone" aria-label="Buscar clínica">
+      <input type="search" id="q" placeholder="Nome, bairro ou telefone" aria-label="Buscar clínica">
     </label>
     <div class="chips" role="group" aria-label="Filtros">
       <button type="button" class="chip" id="cel" aria-pressed="false">
@@ -46,12 +46,12 @@
   </div>
   <div class="clinicas-grid" id="grid"></div>
 
-  <details class="sem-nome" id="sem-nome">
+  <details class="outros" id="outros">
     <summary>
-      <span class="sem-nome-titulo" id="sem-nome-titulo"></span>
-      <span class="sem-nome-sub">Locais encontrados no Google Maps sem nome nem telefone cadastrados. Abra o mapa para ver os dados de cada um.</span>
+      <span class="outros-titulo" id="outros-titulo"></span>
+      <span class="outros-sub">Mais clínicas e consultórios encontrados no Google Maps, com nome, telefone e endereço da ficha pública de cada um. Toque para ver.</span>
     </summary>
-    <div class="clinicas-grid" id="grid-sem-nome"></div>
+    <div class="clinicas-grid" id="grid-outros"></div>
   </details>
 </main>
 
@@ -76,7 +76,7 @@ const painel = criarPainelWhatsApp({
   campos: [{ token: "{nome}", rotulo: "Nome da clínica" }],
   montar: (texto, c) => texto.replaceAll("{nome}", c.nome),
   exemplo: () => {
-    const c = filtrar(clinicas).find(x => x.nome && x.celulares.length) || clinicas.find(x => x.celulares.length);
+    const c = filtrar(clinicas).find(x => x.celulares.length) || clinicas.find(x => x.celulares.length);
     return c ? { item: c, nome: c.nome } : null;
   },
   aoMudar: () => render(),
@@ -104,24 +104,35 @@ function filtrar(lista) {
     (!estado.cel || c.celulares.length) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
-      : semAcento(c.nome).includes(termo)))
+      : semAcento(`${c.nome} ${c.endereco || ""}`).includes(termo)))
   );
 }
 
-function render() {
-  const comNome = filtrar(clinicas.filter(c => c.nome));
-  const semNome = filtrar(clinicas.filter(c => !c.nome));
-  document.getElementById("grid").innerHTML = comNome.length
-    ? comNome.map(htmlClinica).join("")
-    : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
-  document.getElementById("count").innerHTML = `<strong>${comNome.length}</strong> ${comNome.length === 1 ? "clínica" : "clínicas"} com telefone`;
-  document.getElementById("limpar").hidden = !(estado.q || estado.cel);
+// Lista principal (fichas selecionadas, com foto e telefone) e "outros" (locais do
+// Google Maps, que ficam na seção recolhida). `codigo` marca os da segunda lista.
+const principais = () => clinicas.filter(c => !c.codigo);
+const outros = () => clinicas.filter(c => c.codigo);
 
-  const secao = document.getElementById("sem-nome");
-  secao.hidden = !semNome.length;
-  document.getElementById("sem-nome-titulo").textContent = `Outros ${semNome.length} locais sem nome cadastrado`;
-  // monta os cards escondidos só quando a seção é aberta
-  document.getElementById("grid-sem-nome").innerHTML = secao.open ? semNome.map(htmlClinica).join("") : "";
+function render() {
+  const lista = filtrar(principais());
+  const extras = filtrar(outros());
+  const filtrando = Boolean(estado.q.trim() || estado.cel);
+  document.getElementById("grid").innerHTML = lista.length
+    ? lista.map(htmlClinica).join("")
+    : `<div class="empty">Nenhuma clínica na lista principal${extras.length ? " — veja os resultados em “Outros locais” abaixo" : " com esses filtros"}.</div>`;
+  document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`
+    + (filtrando ? ` · <strong>${extras.length}</strong> em outros locais` : "");
+  document.getElementById("limpar").hidden = !filtrando;
+
+  const secao = document.getElementById("outros");
+  secao.hidden = !extras.length;
+  document.getElementById("outros-titulo").textContent = filtrando
+    ? `${extras.length} ${extras.length === 1 ? "resultado" : "resultados"} em outros locais`
+    : `Outros ${extras.length} locais`;
+  // ao buscar, abre a seção se o resultado estiver nela
+  if (estado.q.trim() && extras.length && !secao.open) secao.open = true;
+  // monta os cards escondidos só quando a seção está aberta
+  document.getElementById("grid-outros").innerHTML = secao.open ? extras.map(htmlClinica).join("") : "";
   painel.atualizar();
 }
 
@@ -134,11 +145,11 @@ function aplicar(mudanca) {
 }
 
 function stats() {
-  const comNome = clinicas.filter(c => c.nome);
   const itens = [
-    [comNome.length, "clínicas com telefone"],
-    [comNome.filter(c => c.celulares.length).length, "com celular"],
-    [clinicas.length - comNome.length, "outros locais no mapa"],
+    [clinicas.length, "clínicas e consultórios"],
+    [clinicas.filter(c => c.celulares.length).length, "com celular (WhatsApp)"],
+    [principais().length, "na lista principal"],
+    [outros().length, "em outros locais"],
   ];
   document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
 }
@@ -147,7 +158,7 @@ let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
 document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false }));
-document.getElementById("sem-nome").addEventListener("toggle", render);
+document.getElementById("outros").addEventListener("toggle", render);
 
 fetch("clinicas.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })

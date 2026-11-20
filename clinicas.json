@@ -871,3204 +871,4065 @@
   },
   {
    "place_id": "ChIJobbq9ZiXpgAROr5DDqmVJ9A",
-   "nome": "",
+   "nome": "Emagrecentro Prado - BH",
    "codigo": "001",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3567-0250"
+   ],
+   "site": "https://linktr.ee/emagrecentroprado",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Amazonas, 3336 - Prado, Belo Horizonte - MG, 30411-220, Brasil"
   },
   {
    "place_id": "ChIJNwXB7kOZpgARudGjk4lIHak",
-   "nome": "",
+   "nome": "EMAGRECENTRO BH",
    "codigo": "003",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3245-6117"
+   ],
+   "site": "https://api.whatsapp.com/send?phone=5531992265952",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Manaus, 300 - São Lucas, Belo Horizonte - MG, 30150-350, Brasil"
   },
   {
    "place_id": "ChIJCQ5tcj-XpgARGc1A-vWfIwo",
-   "nome": "",
+   "nome": "Dra. Tatiana Rage - Emagrecimento em Belo Horizonte",
    "codigo": "004",
-   "celulares": [],
+   "celulares": [
+    "(31) 99677-6451"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/dratatianarage/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Barbacena, 600 - Santo Agostinho, Belo Horizonte - MG, 30140-074, Brasil"
   },
   {
    "place_id": "ChIJ6ROAWteZpgAR5AeFMI54zMU",
-   "nome": "",
+   "nome": "Clínica Less - Emagrecimento de Alta Performance e Medicina Integrativa",
    "codigo": "005",
-   "celulares": [],
+   "celulares": [
+    "(31) 98737-0711"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.clinicaless.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Levindo Lopes, 333 - 1505 - Funcionários, Belo Horizonte - MG, 30140-170, Brasil"
   },
   {
    "place_id": "ChIJ-34ysCGXpgARdZgwuty-EFk",
-   "nome": "",
+   "nome": "Sirlene Dutra - Clinica de Emagrecimento em BH",
    "codigo": "006",
-   "celulares": [],
+   "celulares": [
+    "(31) 99203-7523"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicasirlenedutra.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Felipe dos Santos, 521 - Sl 404 - Lourdes, Belo Horizonte - MG, 30180-160, Brasil"
   },
   {
    "place_id": "ChIJASqF7UeRpgARBlF4WrKrc9g",
-   "nome": "",
+   "nome": "Emagrecer BH",
    "codigo": "007",
-   "celulares": [],
+   "celulares": [
+    "(31) 98401-1193"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://instagram.com/clinicaemagrecerbh",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Altamiro Avelino Soares, 801 - Sl 201 - Castelo, Belo Horizonte - MG, 31330-000, Brasil"
   },
   {
    "place_id": "ChIJrbL3QwCXpgARbFM8mPTsYD8",
-   "nome": "",
+   "nome": "Ricardo Almeida Clinic - Estética Avançada",
    "codigo": "008",
    "celulares": [],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/ricardoalmeidaclinic",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santos, 531 - Jardim America, Belo Horizonte - MG, 30421-386, Brasil"
   },
   {
    "place_id": "ChIJKeXnDEmXpgARkoUTsV_WhT8",
-   "nome": "",
+   "nome": "Magrass Barro Preto",
    "codigo": "009",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3143-9561"
+   ],
+   "site": "https://magrassbarropreto.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Mato Grosso, 369 - Barro Preto, Belo Horizonte - MG, 30190-081, Brasil"
   },
   {
    "place_id": "ChIJVVWFf-6XpgARLrQB5ovD_kw",
-   "nome": "",
+   "nome": "Clínica de Emagrecimento e Estética em BH | Dra. Daniela Moreira | Nutrologia e Terapias Hormonais",
    "codigo": "010",
-   "celulares": [],
+   "celulares": [
+    "(31) 97255-8017"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://dradanielamoreira.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 26 - room 101 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
    "place_id": "ChIJF3AN0GeXpgARscRQGhvpmjU",
-   "nome": "",
+   "nome": "SaneBody Medicina Estética & Emagrecimento",
    "codigo": "011",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3036-7400"
+   ],
+   "site": "http://www.sanebody.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Amazonas, 2102 - Santo Agostinho, Belo Horizonte - MG, 30180-001, Brasil"
   },
   {
    "place_id": "ChIJtUIGf8uXpgARk44anRxai4c",
-   "nome": "",
+   "nome": "Dra Fernanda Campos Nutrologia em Belo Horizonte - Mg | Emagrecimento | Reposição Hormonal | Hipertorfia",
    "codigo": "012",
-   "celulares": [],
+   "celulares": [
+    "(31) 99643-1673"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drafernandacamposnutrologia.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Timbiras, 3156 - Sl 405 - Barro Preto, Belo Horizonte - MG, 30140-062, Brasil"
   },
   {
    "place_id": "ChIJI4N7Gwe9pgARPYy43ylpeRA",
-   "nome": "",
+   "nome": "EMAGRECENTRO BARREIRO",
    "codigo": "014",
-   "celulares": [],
+   "celulares": [
+    "(31) 97579-4750"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://emagrecentro.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Flávio Marques Lisboa, 511 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
    "place_id": "ChIJF8kb53ORpgARSMvNQNLawx0",
-   "nome": "",
+   "nome": "Emagrecentro Planalto - BH",
    "codigo": "015",
-   "celulares": [],
+   "celulares": [
+    "(31) 99542-5531"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://emagrecentroplanaltobh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Gen. Olímpio Mourão Filho, 575 - Planalto, Belo Horizonte - MG, 31720-200, Brasil"
   },
   {
    "place_id": "ChIJScewnMGZpgARg8rIGkuGwu0",
-   "nome": "",
+   "nome": "Instituto Dr. Bruno Lage - Emagrecimento em BH",
    "codigo": "016",
-   "celulares": [],
+   "celulares": [
+    "(31) 98307-2070"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://goo.su/dSTZpL",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Getúlio Vargas, 489 - Edifício ABC 65 - Sala 602 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
    "place_id": "ChIJO_uhd_aZpgARTbA4dJSMG-0",
-   "nome": "",
+   "nome": "Dr Jean Marcelo - Referência em Emagrecimento e longevidade em Belo Horizonte",
    "codigo": "017",
-   "celulares": [],
+   "celulares": [
+    "(31) 98648-0220"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Andradas, 3323 - Sl 1301 - Santa Tereza, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
    "place_id": "ChIJG1HcMvmapgARhQUOntyh53M",
-   "nome": "",
+   "nome": "Clínica de Emagrecimento",
    "codigo": "018",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3047-5002"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Vicente Risola, 1515 - Santa Ines, Belo Horizonte - MG, 31080-160, Brasil"
   },
   {
    "place_id": "ChIJdfcQZTSYpgARNw-yMK_fOfo",
-   "nome": "",
+   "nome": "Clínica Camila Katsuragi - Estética BH - Celulite Zero - Criomodelagem BH",
    "codigo": "019",
-   "celulares": [],
+   "celulares": [
+    "(31) 99977-3009"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 2000 - Sl 511 to - Gutierrez, Belo Horizonte - MG, 30360-670, Brasil"
   },
   {
    "place_id": "ChIJE4jnfLKXpgARsZV3-iJpFyk",
-   "nome": "",
+   "nome": "Keola Emagrecimento e Estética Avançada",
    "codigo": "020",
-   "celulares": [],
+   "celulares": [
+    "(31) 99863-7961"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.keola.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alvarenga Peixoto, n 695 - Lourdes, Belo Horizonte - MG, 30180-124, Brasil"
   },
   {
    "place_id": "ChIJYwoG1pmXpgAR0saIEQlZ3tc",
-   "nome": "",
+   "nome": "Estética Avançada e Endolaser BH- Emanuelle Silva",
    "codigo": "022",
-   "celulares": [],
+   "celulares": [
+    "(31) 99758-0147"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://emanuellesilvaesteticabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 1710 - 5° andar sala 504 - Gutierrez, Belo Horizonte - MG, 30441-194, Brasil"
   },
   {
    "place_id": "ChIJo12qtqSXpgAR9rHg21qOQbU",
-   "nome": "",
+   "nome": "Dra. Amanda Lino - Consultório de Nutrologia e Estética",
    "codigo": "023",
-   "celulares": [],
+   "celulares": [
+    "(31) 99391-2188"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alvarenga Peixoto, 695 - Lourdes, Belo Horizonte - MG, 30140-081, Brasil"
   },
   {
    "place_id": "ChIJv872TfGbpgARaOy7wVjU-2E",
-   "nome": "",
+   "nome": "Emagrecentro União BH",
    "codigo": "024",
-   "celulares": [],
+   "celulares": [
+    "(31) 99329-3932"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://emagrecentrouniao.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alberto Cintra, 131 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
    "place_id": "ChIJIyGaqeSXpgAR2ZnEC2tkN1Q",
-   "nome": "",
+   "nome": "Clínica Christine Bittencourt Estética Avançada",
    "codigo": "026",
-   "celulares": [],
+   "celulares": [
+    "(31) 99322-9508"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/christinebittencourt/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Silva Lobo, 1685 - Lj 13 - Grajaú, Belo Horizonte - MG, 30431-262, Brasil"
   },
   {
    "place_id": "ChIJkRp1TLKRpgART7oKNGe2Dxg",
-   "nome": "",
+   "nome": "Emagrecentro Castelo",
    "codigo": "027",
-   "celulares": [],
+   "celulares": [
+    "(31) 99701-2830"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://emagrecentro.com.br/unidades/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Engenheiros, 1442 - Castelo, Belo Horizonte - MG, 30840-372, Brasil"
   },
   {
    "place_id": "ChIJ-eOT7tqXpgAR8FJMOGg2bUg",
-   "nome": "",
+   "nome": "Instituto Dra Larissa Vilela",
    "codigo": "028",
-   "celulares": [],
+   "celulares": [
+    "(31) 98107-3418"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/larissavilela.med/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Augusto de Lima, 1568 - Sl 707 - Barro Preto, Belo Horizonte - MG, 30190-003, Brasil"
   },
   {
    "place_id": "ChIJSwAx0uuZpgAR9oX_n25i5Ow",
-   "nome": "",
+   "nome": "Sander Medical Center",
    "codigo": "029",
-   "celulares": [],
+   "celulares": [
+    "(31) 98010-5000"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.sandermedicalcenter.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Bernardo Monteiro, 1265 - Funcionários, Belo Horizonte - MG, 30150-285, Brasil"
   },
   {
    "place_id": "ChIJb-kyX5-ZpgAR1mtJSfTs_aE",
-   "nome": "",
+   "nome": "Dra Marcelle Lacerda - Nutrologia e Emagrecimento, BH e Online",
    "codigo": "030",
-   "celulares": [],
+   "celulares": [
+    "(31) 99780-8287"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dramarcellelacerda.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio Grande do Norte, 57 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJwVL32FiXpgARgEoYkkN9faQ",
-   "nome": "",
+   "nome": "Thalysa Donato Estética Integrativa",
    "codigo": "031",
-   "celulares": [],
+   "celulares": [
+    "(31) 97156-7232"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Maria Beatriz, 260 - Lj 3 - Havaí, Belo Horizonte - MG, 30555-140, Brasil"
   },
   {
    "place_id": "ChIJtYPbsiGZpgARYg8dbXXG0c0",
-   "nome": "",
+   "nome": "Nutricionista Fábio Magalhães / Especializado em emagrecimento feminino e tratamento da obesidade",
    "codigo": "033",
-   "celulares": [],
+   "celulares": [
+    "(31) 99080-0036"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.fabiomagalhaesnutri.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Prof. Alfredo Balena, 189 - 11°, andar - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJOe2UKmmZpgARUX7VD-M8yqw",
-   "nome": "",
+   "nome": "Ingrid Martins - Saúde, bem estar e estética. Atendimento em Belo Horizonte e Mariana.",
    "codigo": "034",
-   "celulares": [],
+   "celulares": [
+    "(31) 98203-4114"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://instagram.com/martins_ims?igshid=OGQ5ZDc2ODk2ZA==",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alvarenga Peixoto, 683 - Lourdes, Belo Horizonte - MG, 30180-124, Brasil"
   },
   {
    "place_id": "ChIJm2T-DlGZpgARg4mbn3sQSdI",
-   "nome": "",
+   "nome": "Dr. Iago Cardim - Emagrecimento & Protocolos de Performance",
    "codigo": "035",
-   "celulares": [],
+   "celulares": [
+    "(31) 98001-7997"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.clinicacardimsantana.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Piauí, 345 - Sl 904 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJo-iJznuXpgARGwxD2Rk4a4s",
-   "nome": "",
+   "nome": "Clínica Bella Carvalho Estética",
    "codigo": "036",
-   "celulares": [],
+   "celulares": [
+    "(31) 99215-3102"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 359 - 2º andar - Barro Preto, Belo Horizonte - MG, 30190-110, Brasil"
   },
   {
    "place_id": "ChIJs0VRBk2XpgAR198J8N4clTs",
-   "nome": "",
+   "nome": "Estética Rafaella Karine - Botox em BH",
    "codigo": "037",
-   "celulares": [],
+   "celulares": [
+    "(31) 99935-1627"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://wa.me/5531999351627",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Maria Macedo, 233 - Nova Suíça, Belo Horizonte - MG, 30421-223, Brasil"
   },
   {
    "place_id": "ChIJVf-RwFiZpgARS-Yn4yaWty4",
-   "nome": "",
+   "nome": "Clínica de Emagrecimento e Soroterapia em BH - Lexus",
    "codigo": "038",
-   "celulares": [],
+   "celulares": [
+    "(31) 99890-5545"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://lexus.medbr.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Otoni, 735 - Sl 706 e 712 - Santa Efigênia, Belo Horizonte - MG, 31150-270, Brasil"
   },
   {
    "place_id": "ChIJMYVeO7SZpgAR95R1UZiLX5g",
-   "nome": "",
+   "nome": "Instituto Luiz Jabbur",
    "codigo": "039",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3284-1000"
+   ],
+   "site": "https://institutoluizjabbur.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Bandeirantes, 1725 - Sion, Belo Horizonte - MG, 30310-403, Brasil"
   },
   {
    "place_id": "ChIJd25ukzeXpgARGiugr5dA-IE",
-   "nome": "",
+   "nome": "Clínica AVE",
    "codigo": "040",
-   "celulares": [],
+   "celulares": [
+    "(31) 99634-9514"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://keepo.io/aveclinica",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Álvares Cabral, 1030 - Lourdes, Belo Horizonte - MG, 30140-121, Brasil"
   },
   {
    "place_id": "ChIJOZ5vlpCZpgAR3AmATxqvYTE",
-   "nome": "",
+   "nome": "Clínica Endos BH | Centro Gástrico e Clínica Médica",
    "codigo": "041",
-   "celulares": [],
+   "celulares": [
+    "(31) 98483-1560"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio Grande do Norte, 205 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJpz2mp5OXpgARuuBNVUw_l88",
-   "nome": "",
+   "nome": "Dra Larissa Reis Estética Avançada",
    "codigo": "042",
-   "celulares": [],
+   "celulares": [
+    "(31) 98239-3923"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Augusto de Lima, 1646 - Barro Preto, Belo Horizonte - MG, 30190-003, Brasil"
   },
   {
    "place_id": "ChIJ29MsjeCZpgARBimbQfgT9Mw",
-   "nome": "",
+   "nome": "Dra. Andrinne Araújo - Estética Avançada | Botox | Harmonização facial | Rejuvenescimento | Emagrecimento | Capilar",
    "codigo": "044",
-   "celulares": [],
+   "celulares": [
+    "(31) 97132-3105"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Andradas, 3323 - 16 Andar - Santa Efigênia, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
    "place_id": "ChIJTbgVvraRpgARjlsAfk5Jl50",
-   "nome": "",
+   "nome": "Emagrecimento bh Dr.Fábio Henrique Nunes de Oliveira",
    "codigo": "045",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3335-6488"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Carlos Sá, 266 - Santa Amelia, Belo Horizonte - MG, 31550-200, Brasil"
   },
   {
    "place_id": "ChIJkd-guViZpgAR1D7Hwhoov7A",
-   "nome": "",
+   "nome": "Dr. Ramon Rodrigues | Medicina Integrativa",
    "codigo": "046",
-   "celulares": [],
+   "celulares": [
+    "(31) 98025-0040"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drramonrodrigues.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 2000 - Cidade Jardim, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
    "place_id": "ChIJs4sDA-GZpgARYvOjd9h7zd0",
-   "nome": "",
+   "nome": "NUTRISHAPE",
    "codigo": "047",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3019-0606"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Timbiras, 1936 - 208 - Funcionários, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
    "place_id": "ChIJTyY17kmbpgAR88y5WNWVzxk",
-   "nome": "",
+   "nome": "Psicanalista e Terapeuta Integrativo - Guilherme Moura",
    "codigo": "048",
-   "celulares": [],
+   "celulares": [
+    "(31) 98318-7561"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/guilhermemoura.tgi/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Monte Carmelo, 180 - Sl 02 - Floresta, Belo Horizonte - MG, 30190-910, Brasil"
   },
   {
    "place_id": "ChIJ67MVoeGZpgAREobFPeVEdDE",
-   "nome": "",
+   "nome": "Clínica Alimentare Saúde Integrada",
    "codigo": "049",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3075-9004"
+   ],
+   "site": "https://www.alimentaresaude.com.br/index.asp?",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. São Paulo, 1321 - 9º andar - Lourdes, Belo Horizonte - MG, 30170-131, Brasil"
   },
   {
    "place_id": "ChIJNZ025UOZpgARmkStaTG2ddQ",
-   "nome": "",
+   "nome": "Consultorio de Nutrição Sarah Mansur - Especialista em Saúde da Mulher e Emagrecimento Feminino",
    "codigo": "052",
-   "celulares": [],
+   "celulares": [
+    "(31) 99999-5522"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://linktr.ee/nutricionistasarahmansur",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Álvares Cabral, 344 - Sl 1709 - Lourdes, Belo Horizonte - MG, 30170-911, Brasil"
   },
   {
    "place_id": "ChIJ-WKQoreZpgARsSkrDDnAOQM",
-   "nome": "",
+   "nome": "Clínica Penchel",
    "codigo": "054",
-   "celulares": [],
+   "celulares": [
+    "(31) 99756-3519"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicapenchel.com.br/site/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Bandeirantes, 766 - Mangabeiras, Belo Horizonte - MG, 30210-420, Brasil"
   },
   {
    "place_id": "ChIJZaosHKWZpgARAoiCzHCY6B8",
-   "nome": "",
+   "nome": "Dra. Isabela Mattar - endocrinologista",
    "codigo": "055",
    "celulares": [],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio Grande do Sul, 1040 - Sl 14 - Santo Agostinho, Belo Horizonte - MG, 30170-115, Brasil"
   },
   {
    "place_id": "ChIJ3eafdNKZpgAR4LSFsir7rxo",
-   "nome": "",
+   "nome": "Instituto Etherea Estética e Saúde Integrativa",
    "codigo": "056",
-   "celulares": [],
+   "celulares": [
+    "(31) 99940-2200"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santa Catarina, 557 - Lourdes, Belo Horizonte - MG, 30170-081, Brasil"
   },
   {
    "place_id": "ChIJgyim8VCXpgARRRx7WrfMq60",
-   "nome": "",
+   "nome": "Lina Estética Avançada - BH",
    "codigo": "057",
-   "celulares": [],
+   "celulares": [
+    "(31) 97337-4105"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua: São Paulo, 1932 - Sl 202 - Lourdes, Belo Horizonte - MG, 30170-135, Brasil"
   },
   {
    "place_id": "ChIJ4wl5k6qZpgAR7-7-WctHtXY",
-   "nome": "",
+   "nome": "Slim Estética Integrativa | Clínica de Estética BH | Estética BH |",
    "codigo": "059",
-   "celulares": [],
+   "celulares": [
+    "(31) 97171-0215"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/slimesteticaintegrativa/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Augusto de Lima, 479 - Sl 915 - Lourdes, Belo Horizonte - MG, 30190-001, Brasil"
   },
   {
    "place_id": "ChIJ2VpQmmiXpgARyDypO5Bv8-4",
-   "nome": "",
+   "nome": "CTMO - Centro de Tratamento Multidisciplinar da Obesidade",
    "codigo": "060",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3245-6815"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - salas 304 e 610 - Santo Agostinho, Belo Horizonte - MG, 30180-098, Brasil"
   },
   {
    "place_id": "ChIJ86YOne6ZpgARllj0Sx3qzbs",
-   "nome": "",
+   "nome": "Instituto de Diabetes e Obesidade - Endocrinologista, Cirurgião geral, Nutricionista, Nefrologista e Diabetologia.",
    "codigo": "062",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3224-3201"
+   ],
+   "site": "https://www.ido-bh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio Grande do Norte, 57 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJiUAxq-2ZpgAR_HNxxpf_y4o",
-   "nome": "",
+   "nome": "BAROS - Cirurgia da Obesidade e Diabetes e Cirurgia Digestiva Minimamente Invasivas e Robótica",
    "codigo": "063",
-   "celulares": [],
+   "celulares": [
+    "(31) 99562-8411"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.bariatricaemetabolicabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 - Sl 1302 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJfWtaKl-XpgAR4Wt1TZv20rM",
-   "nome": "",
+   "nome": "CITO - Centro Intensivo de Tratamento da Obesidade",
    "codigo": "064",
-   "celulares": [],
+   "celulares": [
+    "(31) 98218-5640"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://suntor.com.br/cito/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Wilson Rocha Lima, 80 - Santa Lúcia, Belo Horizonte - MG, 30494-460, Brasil"
   },
   {
    "place_id": "ChIJ441QTkqZpgAREWB_nOI5yLA",
-   "nome": "",
+   "nome": "Dra. Beatriz Xavier - Emagrecimento | Bem-estar | Saúde hormonal | Lipedema",
    "codigo": "065",
-   "celulares": [],
+   "celulares": [
+    "(31) 98337-8562"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drabeatrizxavier.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Praça Carlos Chagas, 49 - Santo Agostinho, Belo Horizonte - MG, 30170-020, Brasil"
   },
   {
    "place_id": "ChIJP7JmBeCZpgARB1E-7NrpXqo",
-   "nome": "",
+   "nome": "Clinica Marcos Santos",
    "codigo": "066",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3646-8595"
+   ],
+   "site": "http://www.clinicamarcossantos.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Timbiras, 1925 - Sl 1103 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
    "place_id": "ChIJs2D-Tx-XpgARi7EcRSF2UCs",
-   "nome": "",
+   "nome": "Dr. André Moreira - Endocrinologia em Belo Horizonte",
    "codigo": "067",
-   "celulares": [],
+   "celulares": [
+    "(31) 99891-5922"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.drandremoreira.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3140 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJiZPPJfuXpgARoj5pxEIqMXY",
-   "nome": "",
+   "nome": "Instituto Dr. Bernardo Guimarães - Unidade Belo Horizonte",
    "codigo": "069",
-   "celulares": [],
+   "celulares": [
+    "(31) 97258-9190"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://institutobernardoguimaraes.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Barbacena, 600 - Sl 105 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
    "place_id": "ChIJWQZJu_-XpgAR6BTrvrF9k00",
-   "nome": "",
+   "nome": "Dra. Georgia B. Sena L. Fernandes",
    "codigo": "071",
    "celulares": [],
    "fixos": [],
-   "site": "",
+   "site": "https://www.georgiaendocrino.com.br/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=1472043404545207722",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 2000 - Torre 2 - Estoril, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
    "place_id": "ChIJ2xjv-7KXpgARBCyYOufXrzU",
-   "nome": "",
+   "nome": "Dra Jussara Sousa | Clínica de Nutrologia",
    "codigo": "072",
-   "celulares": [],
+   "celulares": [
+    "(31) 98482-8832"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drajussarasousa.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3140 - Sl 323 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJkWnEjqdRpgARQwKUCOQmY2Y",
-   "nome": "",
+   "nome": "Dra. Débora Moura Endocrinologia e Emagrecimento Saudável",
    "codigo": "075",
-   "celulares": [],
+   "celulares": [
+    "(31) 98238-1621"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://deboramouraendocrino.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3140 - Sl 201 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
    "place_id": "ChIJFQY7z66XpgARO4lcn-ZOGkM",
-   "nome": "",
+   "nome": "Dr Leonardo Ribeiro - Endocrinologia em Belo Horizonte",
    "codigo": "076",
-   "celulares": [],
+   "celulares": [
+    "(31) 99620-8735"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://wa.link/lugplz",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Barbacena, 600 - Sl 817 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
    "place_id": "ChIJJ8syU3SZpgARM-Gn98TkMdc",
-   "nome": "",
+   "nome": "Mauro Jácome",
    "codigo": "077",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3384-3771"
+   ],
+   "site": "http://www.maurojacome.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Fernandes Tourinho, 164 - 4° andar - Santo Agostinho, Belo Horizonte - MG, 30180-000, Brasil"
   },
   {
    "place_id": "ChIJ0YXR82eXpgAR74-GD0mObyo",
-   "nome": "",
+   "nome": "Consultório Dr Marcelo Gomes Girundi",
    "codigo": "079",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3292-5929"
+   ],
+   "site": "https://marcelogirundi.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 CONJ 601 - 604 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJnzAeUmyXpgAR0npQtoEokb8",
-   "nome": "",
+   "nome": "Dr.Rodrigo Abreu- Nutrólogo em BH, Medicina esportiva e Reposição Hormonal, Emagrecimento",
    "codigo": "081",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3371-4422"
+   ],
+   "site": "https://drrodrigonutrologia.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Ouro Preto, 1596 - Sl 1604 - Santo Agostinho, Belo Horizonte - MG, 30170-048, Brasil"
   },
   {
    "place_id": "ChIJkRp-M2qXpgAR89LhfMwbN1A",
-   "nome": "",
+   "nome": "Dra Janaína Koenen Endocrinologista em Belo Horizonte, Diabetes Tipo 2 - Câncer - Obesidade - Endometriose",
    "codigo": "082",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3586-2246"
+   ],
+   "site": "https://www.janainakoenen.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 1580 - 12º andar - Cidade Jardim, Belo Horizonte - MG, 30441-194, Brasil"
   },
   {
    "place_id": "ChIJuy4jYKqZpgARxCNdqP1X1ds",
-   "nome": "",
+   "nome": "Dr. Marcos Reis e Dra Carolina Trancoso - Cirurgia Bariátrica",
    "codigo": "083",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 2552-4823"
+   ],
+   "site": "http://www.drmarcosreis.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santa Rita Durão, 20 - Funcionários, Belo Horizonte - MG, 30140-110, Brasil"
   },
   {
    "place_id": "ChIJLy09sGeXpgARkS7RyZnvcAg",
-   "nome": "",
+   "nome": "Consultório Dr. Roberto Cabezas",
    "codigo": "084",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3273-7489"
+   ],
+   "site": "http://www.robertocabezas.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Edifício Life Center - Av. do Contorno, 4747 - 16o andar - Serra, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJD30BxIyZpgARq0z_1ErqvuE",
-   "nome": "",
+   "nome": "GastroObeso BH",
    "codigo": "085",
-   "celulares": [],
+   "celulares": [
+    "(31) 97119-2910"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Amazonas, 298 - 14 andar - Centro, Belo Horizonte - MG, 30180-000, Brasil"
   },
   {
    "place_id": "ChIJGZrwL-OZpgARonydA-oDufs",
-   "nome": "",
+   "nome": "SINUTRIR - Saúde e Resultado",
    "codigo": "086",
-   "celulares": [],
+   "celulares": [
+    "(31) 99102-4150"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.sinutrir.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Ceará, 1822 - Savassi, Belo Horizonte - MG, 30150-318, Brasil"
   },
   {
    "place_id": "ChIJUdl__3KXpgARG1hqSQrSQls",
-   "nome": "",
+   "nome": "Dr. Daniel Assumpção | Cirurgião Geral e do Aparelho Digestivo | Cirurgia Bariátrica em Belo Horizonte",
    "codigo": "088",
-   "celulares": [],
+   "celulares": [
+    "(31) 98116-7151"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drdanielassumpcao.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Gonçalves Dias, 82 - 4º andar - Funcionários, Belo Horizonte - MG, 30140-090, Brasil"
   },
   {
    "place_id": "ChIJt0FhfFaXpgARAInINLgnfSQ",
-   "nome": "",
+   "nome": "Nutricionista Victoria Caixeta - Cirurgia Bariátrica e emagrecimento saudavel",
    "codigo": "089",
-   "celulares": [],
+   "celulares": [
+    "(31) 98641-1442"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://instagram.com/nutrivictoriacaixeta?igshid=1mklq0oxxfhs4",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJ74fZmVCZpgARDnOXQriWlAo",
-   "nome": "",
+   "nome": "Instituto Malta - Saúde Integrada e Performance",
    "codigo": "090",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3324-0047"
+   ],
+   "site": "https://sarahmalta.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 462 - Sl 210 - Funcionários, Belo Horizonte - MG, 30140-070, Brasil"
   },
   {
    "place_id": "ChIJ75O4jJ6XpgAR5BCdp99uALs",
-   "nome": "",
+   "nome": "Dr. Fabiano Robert, Nutrólogo",
    "codigo": "091",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3291-0754"
+   ],
+   "site": "https://www.doctoralia.com.br/perfil/fabiano-robert?utm_source=google&utm_medium=gmb&utm_campaign=313384&utm_content=website",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
    "place_id": "ChIJAQAwmmiXpgARGtmGSFB0CvI",
-   "nome": "",
+   "nome": "Dr. Octaviano Cruz, Nutrólogo",
    "codigo": "093",
    "celulares": [],
    "fixos": [],
-   "site": "",
+   "site": "https://www.doctoralia.com.br/perfil/octaviano-cruz?utm_source=google&utm_medium=gmb&utm_campaign=272863&utm_content=website",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
    "place_id": "ChIJUVcAw8mZpgARD9mEA1q6VmM",
-   "nome": "",
+   "nome": "Dra Roberta Rocha",
    "codigo": "096",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3264-5696"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Edifício Lifecenter - Av. do Contorno, 4747 - SALA 704 - Serra, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJ15_AF4CZpgAR3o_pL6aQupQ",
-   "nome": "",
+   "nome": "SEVEN GLOW",
    "codigo": "099",
-   "celulares": [],
+   "celulares": [
+    "(31) 99248-9072"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Timbiras, 2072 - 10º andar - Sala 1007 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
    "place_id": "ChIJuQ9Iqo6ZpgARtl_UhAUEuzg",
-   "nome": "",
+   "nome": "Dr. William Bicalho Hastenreiter, Nutrólogo",
    "codigo": "100",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3327-9303"
+   ],
+   "site": "https://drwh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. do Contorno, 4747 - Sala 404 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJeVdChauZpgARSbzPi37x3Kg",
-   "nome": "",
+   "nome": "Dra Natalia Abreu - Atendimentos de Nutrologia em BH",
    "codigo": "101",
-   "celulares": [],
+   "celulares": [
+    "(31) 99519-9284"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dra.nataliaabreu.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Brasil, 691 - Sl 401 - Santa Efigênia, Belo Horizonte - MG, 30140-000, Brasil"
   },
   {
    "place_id": "ChIJo7PIQcWbpgARym80nQO3_HA",
-   "nome": "",
+   "nome": "Nutricionista Lorena Rosa - Especialista em Emagrecimento e Bariátrica",
    "codigo": "102",
-   "celulares": [],
+   "celulares": [
+    "(31) 99766-7888"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Bernardo Guimarães, 874 - Funcionários, Belo Horizonte - MG, 30140-081, Brasil"
   },
   {
    "place_id": "ChIJLaeLTV-XpgAR68r7QgtCxQo",
-   "nome": "",
+   "nome": "Dra. Gabriela Costa de Andrade, Endocrinologista, Tireoide, Barro Preto, BH",
    "codigo": "103",
-   "celulares": [],
+   "celulares": [
+    "(31) 97124-8886"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.doctoralia.com.br/perfil/gabriela-costa-de-andrade?utm_source=google&utm_medium=gmb&utm_campaign=757453&utm_content=website",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Uberaba, 436 - Sala 404 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
    "place_id": "ChIJAYbHao-XpgARie4O82SNIkg",
-   "nome": "",
+   "nome": "Caroline Corradi Nutrologia",
    "codigo": "104",
-   "celulares": [],
+   "celulares": [
+    "(31) 99753-4442"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.carolinecorradi.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Fernandes Tourinho, 929 - Lourdes, Belo Horizonte - MG, 30112-000, Brasil"
   },
   {
    "place_id": "ChIJ4TEy1pKVpgARnceGwTbBLcc",
-   "nome": "",
+   "nome": "Endocrinologista Dr Fabrício Vilela Bíscaro",
    "codigo": "106",
-   "celulares": [],
+   "celulares": [
+    "(31) 98783-3398"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Edifício LifeCenter - Av. do Contorno, 4747 - 16 andar - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJDQqAWx6ZpgAR6CoIUGpOlUg",
-   "nome": "",
+   "nome": "Dr. Breno Bessa - Endocrinologista e Nutrólogo",
    "codigo": "107",
-   "celulares": [],
+   "celulares": [
+    "(31) 93500-6026"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.doctoralia.com.br/breno-figueiredo-bessa/endocrinologista/belo-horizonte",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Piauí, 345 - Sl 501 - Santa Efigênia, Belo Horizonte - MG, 30150-320, Brasil"
   },
   {
    "place_id": "ChIJYYxK29CZpgARYWwb-BCg0RQ",
-   "nome": "",
+   "nome": "Dra. Ana Pizelli - Nutrologia de alta performance, emagrecimento e hormônios em Belo Horizonte",
    "codigo": "109",
-   "celulares": [],
+   "celulares": [
+    "(31) 99090-8377"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
    "place_id": "ChIJv0qW7DWXpgARo0QNSc1WbRI",
-   "nome": "",
+   "nome": "Dr. Gustavo Ryan - Emagrecimento, nutrologia, endocrinologia em BH/MG",
    "codigo": "110",
-   "celulares": [],
+   "celulares": [
+    "(31) 99840-0426"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 2000 - Estoril, Belo Horizonte - MG, 30380-103, Brasil"
   },
   {
    "place_id": "ChIJxw8czveZpgARzAz66JPc960",
-   "nome": "",
+   "nome": "Dra. Laila Rahme | Nutrologia e Endocrinologia",
    "codigo": "111",
-   "celulares": [],
+   "celulares": [
+    "(31) 98899-0177"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dralailarahme.com.br/bio/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Jorn. Djalma Andrade, 377 - Sl 201 - Belvedere, Belo Horizonte - MG, 30320-340, Brasil"
   },
   {
    "place_id": "ChIJibaOXF2XpgAREFIcuke4KoA",
-   "nome": "",
+   "nome": "Dra Sabrina Barros - Nutróloga",
    "codigo": "113",
-   "celulares": [],
+   "celulares": [
+    "(31) 99988-1001"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drasabrinabarros.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - Sl 805 - Santo Agostinho, Belo Horizonte - MG, 30180-098, Brasil"
   },
   {
    "place_id": "ChIJ5z4kUpOZpgARe5tqekiEkQ4",
-   "nome": "",
+   "nome": "Nutrológica Clínica Médica",
    "codigo": "114",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3195-0229"
+   ],
+   "site": "https://clinicanutrologica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Boa Esperança, 95 - Carmo, Belo Horizonte - MG, 30310-730, Brasil"
   },
   {
    "place_id": "ChIJE1PobwKZpgARuXMG17K9-H8",
-   "nome": "",
+   "nome": "Dr. Otávio Santiago | Emagrecimento | Menopausa",
    "codigo": "115",
-   "celulares": [],
+   "celulares": [
+    "(31) 98207-0853"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sen. Lima Guimarães, 94 - Estoril, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
    "place_id": "ChIJmTmTc9uRpgAR7B0WlkFLvRM",
-   "nome": "",
+   "nome": "Dra. Isabella Lima – Dermatologia, Nutrologia e Emagrecimento",
    "codigo": "116",
-   "celulares": [],
+   "celulares": [
+    "(31) 98646-4476"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://instagram.com/draisabellalimaa",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Del Rey, 111 - Lj 02 - Caiçaras, Belo Horizonte - MG, 30775-240, Brasil"
   },
   {
    "place_id": "ChIJw5mR3fFi-a4RaYA2nqsCDKw",
-   "nome": "",
+   "nome": "Dra. Michely Baptistele | Especialista em Emagrecimento e Hipertrofia",
    "codigo": "117",
-   "celulares": [],
+   "celulares": [
+    "(31) 98352-1492"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dramichelybaptistele.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Getúlio Vargas, 489 - Sl 602 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
    "place_id": "ChIJuQKDOWGZpgARwo7EaLbAM7s",
-   "nome": "",
+   "nome": "Instituto Dr. Rômulo Alves",
    "codigo": "118",
-   "celulares": [],
+   "celulares": [
+    "(31) 97123-2202"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://institutodrromuloalves.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio Grande do Norte, 867 / 602 - Funcionários, Belo Horizonte - MG, 30130-131, Brasil"
   },
   {
    "place_id": "ChIJq-v7mFWZpgAReebIN_Uy0rQ",
-   "nome": "",
+   "nome": "LN Medicina Integrada - Nutrologia e Medicina Esportiva",
    "codigo": "119",
-   "celulares": [],
+   "celulares": [
+    "(31) 99579-9897"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drleonidasneto.com.br/sobre/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
    "place_id": "ChIJkSej6QiXpgARCcpnWvJ9MJE",
-   "nome": "",
+   "nome": "Nutrólogo em BH - Dra Lorenza Arruda",
    "codigo": "120",
-   "celulares": [],
+   "celulares": [
+    "(31) 99530-4020"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.asbasesdavidaplena.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Getúlio Vargas, 254 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
    "place_id": "ChIJYR8y1meXpgARU6DCJ6jJeCo",
-   "nome": "",
+   "nome": "Clínica Ágape",
    "codigo": "121",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3291-0754"
+   ],
+   "site": "http://agapeclinica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
    "place_id": "ChIJIeBGXF2XpgARQeOOnGTrcF4",
-   "nome": "",
+   "nome": "Instituto Mineiro de Nutrologia",
    "codigo": "122",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3565-7500"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3018 - sala 807 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJw4Dfn36XpgARNCuG1GrQG2Q",
-   "nome": "",
+   "nome": "Dr. Daniel Bernucci - Nutrólogo e Médico Integrativo",
    "codigo": "123",
-   "celulares": [],
+   "celulares": [
+    "(31) 99989-9111"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drdanielbernucci.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio de Janeiro, 2702 - 9 andar - Funcionários, Belo Horizonte - MG, 30112-901, Brasil"
   },
   {
    "place_id": "ChIJx5xj1vSXpgARywTfiM8b32o",
-   "nome": "",
+   "nome": "Luciana Peluso Nutricionista - Emagrecimento e Saúde",
    "codigo": "124",
-   "celulares": [],
+   "celulares": [
+    "(31) 99296-7804"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://instagram.com/@lpnutricionista",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Eng. Godofredo dos Santos, 43 - Lj 14 - Estoril, Belo Horizonte - MG, 30494-220, Brasil"
   },
   {
    "place_id": "ChIJ6RjQu46XpgARqO9k_-qhk6g",
-   "nome": "",
+   "nome": "Dra. Cristiane Sousa Rocha Ribeiro, Nutrólogo",
    "codigo": "125",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3291-0754"
+   ],
+   "site": "https://www.doctoralia.com.br/perfil/cristiane-sousa-rocha-ribeiro?utm_source=google&utm_medium=gmb&utm_campaign=39556&utm_content=website",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
    "place_id": "ChIJ__8PZtCZpgAR6XGxL4tjyl0",
-   "nome": "",
+   "nome": "Dra Marilia Gramiscelli",
    "codigo": "126",
-   "celulares": [],
+   "celulares": [
+    "(31) 97577-1157"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://dramariliagramiscelli.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Roma, 561 - sala 203 - Santa Lúcia, Belo Horizonte - MG, 30360-680, Brasil"
   },
   {
    "place_id": "ChIJFYn0W1KXpgARNm133rTCSzc",
-   "nome": "",
+   "nome": "Dra. Bruna Micheli",
    "codigo": "127",
-   "celulares": [],
+   "celulares": [
+    "(31) 97235-6350"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.drabrunamicheli.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Consultório 4 - Rua Maria Luiza Santiago, 200 - Sl 1701 - Santa Lúcia, Belo Horizonte - MG, 30360-740, Brasil"
   },
   {
    "place_id": "ChIJw6v6DWabpgARZu0kFAZi9NQ",
-   "nome": "",
+   "nome": "Dr. Leônidas Neto - Emagrecimento em Mangabeiras - Hipertrofia - Nutrologia - Medicina Esportiva em Mangabeiras",
    "codigo": "129",
-   "celulares": [],
+   "celulares": [
+    "(31) 99579-9897"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/drleonidasneto/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
    "place_id": "ChIJhebpV7GZpgARsLQJBqq9Kwc",
-   "nome": "",
+   "nome": "L'ÂME Clínica",
    "codigo": "130",
-   "celulares": [],
+   "celulares": [
+    "(31) 98899-0177"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.lameclinica.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Jorn. Djalma Andrade, 377 - Sl 201, A - Belvedere, Belo Horizonte - MG, 30320-340, Brasil"
   },
   {
    "place_id": "ChIJJd__GV6XpgAR4c21cwTeU1s",
-   "nome": "",
+   "nome": "Dr Geraldo Augusto | Instituto Bodyface Medicina e Estética",
    "codigo": "131",
-   "celulares": [],
+   "celulares": [
+    "(31) 98316-8348"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/institutobodyfaceibf/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Aimorés, 3140 - 8 - Edifício Medplex - Sala 808 - Barro Preto, Belo Horizonte - MG, 30190-134, Brasil"
   },
   {
    "place_id": "ChIJEZGlPzSXpgARQsLoSR5pxlo",
-   "nome": "",
+   "nome": "CLÍNICA PERFORMANCE - BURITIS",
    "codigo": "132",
-   "celulares": [],
+   "celulares": [
+    "(31) 98408-3017"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.clinicaperformance.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 1175 - Loja 04 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
    "place_id": "ChIJy8siAyaXpgARwc_ui5Po3-k",
-   "nome": "",
+   "nome": "Dr Arthur Estevam",
    "codigo": "133",
-   "celulares": [],
+   "celulares": [
+    "(31) 99987-7119"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/drarthurestevam/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rod. Stael Mary Bicalho Motta Magalhães, 385 - Sl 514 - Belvedere, Belo Horizonte - MG, 30320-570, Brasil"
   },
   {
    "place_id": "ChIJ103Heh2ZpgARyc-1wMY_gVY",
-   "nome": "",
+   "nome": "Dr. Guilherme Ferreira Mattos",
    "codigo": "134",
-   "celulares": [],
+   "celulares": [
+    "(31) 99988-9621"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.ferreiramattos.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Olegário Maciel, 1808 - 6º andar - Santo Agostinho, Belo Horizonte - MG, 30180-110, Brasil"
   },
   {
    "place_id": "ChIJ27ULl0GZpgARoy-kkrYyiZI",
-   "nome": "",
+   "nome": "Clínica Nutrologe",
    "codigo": "135",
-   "celulares": [],
+   "celulares": [
+    "(31) 99567-1113"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Jorge Fontana, 80 - Sl 1110 - Belvedere, Belo Horizonte - MG, 30320-670, Brasil"
   },
   {
    "place_id": "ChIJt3q5RQCXpgARQ0v69szSFfI",
-   "nome": "",
+   "nome": "Instituto Abreu",
    "codigo": "136",
-   "celulares": [],
+   "celulares": [
+    "(31) 98988-6316"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Ouro Preto, 1596 - Sl 1604 - Santo Agostinho, Belo Horizonte - MG, 30170-041, Brasil"
   },
   {
    "place_id": "ChIJGVVm2rI4mGQRsCRdPLY7yYQ",
-   "nome": "",
+   "nome": "Núcleo Dr. Luís Guilherme Menegucci",
    "codigo": "138",
-   "celulares": [],
+   "celulares": [
+    "(31) 99817-2707"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Felipe dos Santos, 901 - 2º Andar - Belo Horizonte, MG, 30180-165, Brasil"
   },
   {
    "place_id": "ChIJCQ8LW3KZpgARZP_pZdwEyfU",
-   "nome": "",
+   "nome": "Dra Thaïs Magalhães - Endocrinologista",
    "codigo": "141",
-   "celulares": [],
+   "celulares": [
+    "(31) 99393-7565"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.drathaismagalhaes.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Albita, n° 131 - Sl 307 - Cruzeiro, Belo Horizonte - MG, 30310-160, Brasil"
   },
   {
    "place_id": "ChIJq4ZxM3C9pgARsgxEqVMlT2I",
-   "nome": "",
+   "nome": "Sempre Bela Estética - Barreiro - BH | Enzimas e Vasinhos",
    "codigo": "142",
-   "celulares": [],
+   "celulares": [
+    "(31) 99804-1090"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://semprebelabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alcindo Viêira, 545 - Barreiro, Belo Horizonte - MG, 30640-100, Brasil"
   },
   {
    "place_id": "ChIJzUWQGwC9pgARBzEAzo_Maw4",
-   "nome": "",
+   "nome": "CLÍNICA VOCÊ MAIS MAGRA",
    "codigo": "143",
-   "celulares": [],
+   "celulares": [
+    "(31) 97567-2564"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://sites.google.com/view/vocemaismagraplus/nossos-produtos",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Waldyr Soeiro Emrich, 3350 - Santa Helena, Belo Horizonte - MG, 30610-530, Brasil"
   },
   {
    "place_id": "ChIJTU1us-O9pgARWEzLJcXFDXM",
-   "nome": "",
+   "nome": "Belo Corpo",
    "codigo": "144",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3055-3414"
+   ],
+   "site": "http://www.belocorpobh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Ribeiro da Luz, 374 - Barreiro, Belo Horizonte - MG, 30640-040, Brasil"
   },
   {
    "place_id": "ChIJb4g4yMKXpgARSLXj5B4epbg",
-   "nome": "",
+   "nome": "Dra Rose Malagoli",
    "codigo": "145",
-   "celulares": [],
+   "celulares": [
+    "(31) 99182-0740"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.cosmedicestetica.com.br/%20%20https://drarosemalagoli.com.br/soroterapia-3/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 42 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
    "place_id": "ChIJzftZEi-9pgARb0Zm3lHh-IE",
-   "nome": "",
+   "nome": "Clínica Médica no Barreiro | Elos Núcleo de Saúde",
    "codigo": "146",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 2555-1510"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Barão de Coromandel, 455 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
    "place_id": "ChIJvVnGTgu-pgARyeiAR8hyP6s",
-   "nome": "",
+   "nome": "Corpuns Clean - Unidade Barreiro",
    "codigo": "147",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3384-7769"
+   ],
+   "site": "http://corpunsclean.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Sinfrônio Brochado, 1211 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
    "place_id": "ChIJe6C_SkG_pgAR_pxBsI8Zxvo",
-   "nome": "",
+   "nome": "Clínica Modular Life - Estética e Laser",
    "codigo": "148",
-   "celulares": [],
+   "celulares": [
+    "(31) 99925-1956"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/modular.life/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Afonso Vaz de Melo, 163 - Barreiro, Belo Horizonte - MG, 30640-070, Brasil"
   },
   {
    "place_id": "ChIJEX51DZa9pgARQ2e0u03Mp7A",
-   "nome": "",
+   "nome": "Leves | Estética e Bem-Estar",
    "codigo": "149",
-   "celulares": [],
+   "celulares": [
+    "(31) 99664-1265"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/leves.barreiro/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Sinfrônio Brochado, 630 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
    "place_id": "ChIJKfU_7Gi9pgAR98OVcE5zKZM",
-   "nome": "",
+   "nome": "Studio Fernanda Rabelo | Ozônioterapia, Estética Facial e Corporal, Criolipólise,",
    "codigo": "150",
-   "celulares": [],
+   "celulares": [
+    "(31) 97586-9706"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://studiofernandarabelo.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Agnelo Macedo, 215 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
    "place_id": "ChIJNxbWfL29pgARPotlNDQ4B3M",
-   "nome": "",
+   "nome": "Clínica da Cidade Belo Horizonte - Barreiro",
    "codigo": "151",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 2180-1593"
+   ],
+   "site": "https://clinicadacidade.com.br/centro-medico/belo-horizonte-barreiro/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Flávio Marques Lisboa, 233 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
    "place_id": "ChIJh7PtueO9pgARpYo_FXRV1fg",
-   "nome": "",
+   "nome": "Clínica Médica Agnus Dei",
    "codigo": "155",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3389-1001"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
    "place_id": "ChIJj4A5xuG9pgARzMmmtAqCSWk",
-   "nome": "",
+   "nome": "Dra Hedila Rangel Tavares Ramos",
    "codigo": "156",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3384-8265"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Flávio Marques Lisboa, 152 - Sl 208 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
    "place_id": "ChIJa-diD5OXpgARx8df9QUK1Tc",
-   "nome": "",
+   "nome": "Naturallis estética de emagrecimento. “Beleza natural, resultados reais.” “Seu corpo em equilíbrio, sua autoestima em alta.”",
    "codigo": "157",
-   "celulares": [],
+   "celulares": [
+    "(31) 98496-0042"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Padre José Maurício, n° 310 - Cs - Vista Alegre, Belo Horizonte - MG, 30514-000, Brasil"
   },
   {
    "place_id": "ChIJ7QfIQpu9pgARzFXfF0wPWgU",
-   "nome": "",
+   "nome": "Saúde integrativa - Dra Juliana Alves",
    "codigo": "159",
-   "celulares": [],
+   "celulares": [
+    "(31) 99719-2008"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Olinto Meireles, 1574 - Sl 406 - Barreiro, Belo Horizonte - MG, 30626-040, Brasil"
   },
   {
    "place_id": "ChIJmwWVs-O9pgARduXqX6dlW6w",
-   "nome": "",
+   "nome": "CLÍNICAS SANTA LÚCIA",
    "codigo": "160",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3389-6700"
+   ],
+   "site": "http://clinicasantaluciabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Ribeiro da Luz, 363 - Barreiro, Belo Horizonte - MG, 30640-040, Brasil"
   },
   {
    "place_id": "ChIJhY4Sd3aWpgARDwC4dQxoaE4",
-   "nome": "",
+   "nome": "BELA PERFORMANCE CLÍNICA DE ESTÉTICA AVANÇADA",
    "codigo": "162",
-   "celulares": [],
+   "celulares": [
+    "(31) 98547-7916"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/belaperformancebh/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Estér Augusta Ribeiro, 415, Camargos Rua Gentil Portugal do Brasil,166, Camargos Rua Maria Heilbuth Surette 209, Buritis - Camargos, Belo Horizonte - MG, 30525-490, Brasil"
   },
   {
    "place_id": "ChIJ-T1MQM6XpgARE9Mtt3ScxmQ",
-   "nome": "",
+   "nome": "Elaine Cristina Nutricionista em BH - Personal Diet - Emagrecimento - Reeducação Alimentar - Consultoria Nutricional em BH",
    "codigo": "163",
-   "celulares": [],
+   "celulares": [
+    "(31) 98446-4068"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://elainecristinanutri.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Aggeo Pio Sobrinho, 204 - Sl 505 - Buritis, Belo Horizonte - MG, 30575-834, Brasil"
   },
   {
    "place_id": "ChIJ_chq7oK9pgARXDCT76Rh9Hw",
-   "nome": "",
+   "nome": "Nutricionista Esportivo e Emagrecimento M. Ramos",
    "codigo": "164",
    "celulares": [],
    "fixos": [],
-   "site": "",
+   "site": "https://www.doctoralia.com.br/wagner-thiago-alves-santos/ortopedista-traumatologista-cirurgiao-da-mao/belo-horizonte",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Honório Hermeto, 45 - 3 nivel - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
    "place_id": "ChIJXa5TIeK9pgARajYDVjdk-iI",
-   "nome": "",
+   "nome": "AMOR Saúde Barreiro",
    "codigo": "165",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3389-6000"
+   ],
+   "site": "https://amorsaude.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Honório Hermeto, 161 - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
    "place_id": "ChIJs1JBI-S9pgARFLnNYJItaAE",
-   "nome": "",
+   "nome": "Clínica de Estética Bela Forma",
    "codigo": "166",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 2511-9725"
+   ],
+   "site": "https://www.belaformaestetica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. José Brandão, 315 - 701 - Barreiro, Belo Horizonte - MG, 30640-020, Brasil"
   },
   {
    "place_id": "ChIJr4lEoIa9pgAR2CB379zlNC8",
-   "nome": "",
+   "nome": "Clínica Versa",
    "codigo": "167",
-   "celulares": [],
+   "celulares": [
+    "(31) 98271-9714"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.clinicaversa.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 3282 - 11 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
    "place_id": "ChIJnfeSPka9pgARXRuff-Dj_T0",
-   "nome": "",
+   "nome": "Dr. Mauro Jácome - Gastroenterologista - Barreiro",
    "codigo": "169",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3384-7119"
+   ],
+   "site": "https://dr.maurojacome.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
    "place_id": "ChIJJ3r-ueO9pgARKB9L0VFIyfE",
-   "nome": "",
+   "nome": "Cronos Endoscopia",
    "codigo": "170",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3384-6375"
+   ],
+   "site": "http://www.cronosendoscopia.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
    "place_id": "ChIJW_DP0iG9pgARWs_mEfvkMLQ",
-   "nome": "",
+   "nome": "Nutricionista Helen Vieira",
    "codigo": "172",
-   "celulares": [],
+   "celulares": [
+    "(31) 98675-1235"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.nutrihelenvieira.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Sinfrônio Brochado, 624 - Sl 611 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
    "place_id": "ChIJE61tSHO-pgARE6IOsag32qM",
-   "nome": "",
+   "nome": "Atend+ Atendimento Médico e Ocupacional",
    "codigo": "173",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3384-8773"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Barão de Coromandel, 530 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
    "place_id": "ChIJZRZtMdiXpgAREZqXp2b9q-A",
-   "nome": "",
+   "nome": "Dr. Elias Jose Milagres Reis | Nutrólogo em Belo Horizonte",
    "codigo": "174",
-   "celulares": [],
+   "celulares": [
+    "(31) 98552-0812"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dreliasreis.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3140 - Sl 519 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJ0_dbVOiZpgAR0WLBekc2QeQ",
-   "nome": "",
+   "nome": "Estética Savassi - Dr Antônio Rabello - Clinica de Emagrecimento em Bh",
    "codigo": "177",
-   "celulares": [],
+   "celulares": [
+    "(31) 99969-0481"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://esteticasavassi.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Getúlio Vargas, 1300 - Sl 1501 - Savassi, Belo Horizonte - MG, 30112-024, Brasil"
   },
   {
    "place_id": "ChIJw8Mbp4DceQ0RZ_9O0stRwVs",
-   "nome": "",
+   "nome": "NR Estética Avançada e Emagrecimento",
    "codigo": "178",
-   "celulares": [],
+   "celulares": [
+    "(31) 98499-2555"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://nrestetica.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Antônio de Albuquerque, 156 - Sl 609 - Funcionários, Belo Horizonte - MG, 30112-010, Brasil"
   },
   {
    "place_id": "ChIJ98rGVdyZpgAR7kVuRVNniNw",
-   "nome": "",
+   "nome": "Clínica Amanda Mentalize",
    "codigo": "179",
-   "celulares": [],
+   "celulares": [
+    "(31) 99959-1540"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.instagram.com/clinicaamandamentalize",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Getúlio Vargas, 668 - Sl 1406 - Funcionários, Belo Horizonte - MG, 30112-021, Brasil"
   },
   {
    "place_id": "ChIJ5ShRZ1iZpgARJ9nA6ZcOF_M",
-   "nome": "",
+   "nome": "Espaço My Body",
    "codigo": "180",
-   "celulares": [],
+   "celulares": [
+    "(31) 99325-4646"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. do Contorno, 7069 - Sala 1201 - Lourdes, Belo Horizonte - MG, 30110-043, Brasil"
   },
   {
    "place_id": "ChIJTRaa0aaXpgARBTHChOCR27A",
-   "nome": "",
+   "nome": "Vittare Clinic",
    "codigo": "181",
-   "celulares": [],
+   "celulares": [
+    "(31) 99550-6564"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Praça Carlos Chagas, 49 - Santo Agostinho, Belo Horizonte - MG, 30170-913, Brasil"
   },
   {
    "place_id": "ChIJuYKNQAmZpgARXFMgz26Exco",
-   "nome": "",
+   "nome": "Dra. Laura Ferreira | Emagrecimento e Dermatologia",
    "codigo": "182",
-   "celulares": [],
+   "celulares": [
+    "(31) 98288-9740"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://dralauraferreira.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio de Janeiro, 1005 - 8 andar, sala 803 - Centro, Belo Horizonte - MG, 30160-041, Brasil"
   },
   {
    "place_id": "ChIJXb-6UuiZpgARKccM5NVfjJ8",
-   "nome": "",
+   "nome": "ELEVE-SE ESTÉTICA E BEM-ESTAR",
    "codigo": "184",
-   "celulares": [],
+   "celulares": [
+    "(31) 99000-0719"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sergipe, 120 - Centro, Belo Horizonte - MG, 30130-170, Brasil"
   },
   {
    "place_id": "ChIJhWJH46eXpgARnH8LXWcZ4Jw",
-   "nome": "",
+   "nome": "Tavares Estética - Espaço de Estética e Saúde",
    "codigo": "185",
-   "celulares": [],
+   "celulares": [
+    "(31) 98888-8900"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/tavaresesteticaa/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Goitacazes, 333 - Sl 601 - Centro, Belo Horizonte - MG, 30190-050, Brasil"
   },
   {
    "place_id": "ChIJVX7UtuiZpgARqqNw3LHDSHo",
-   "nome": "",
+   "nome": "Liah Estética BH",
    "codigo": "186",
-   "celulares": [],
+   "celulares": [
+    "(31) 99080-7282"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/liahesteticabh?igsh=bjR5ZmNyY2g5aWgx",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santa Catarina, 557 - Centro, Belo Horizonte - MG, 30170-050, Brasil"
   },
   {
    "place_id": "ChIJ___vM-qZpgARQ4cKDZsn9Qw",
-   "nome": "",
+   "nome": "Instituto Rafael Fantin",
    "codigo": "187",
-   "celulares": [],
+   "celulares": [
+    "(31) 99449-0577"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://institutorafaelfantin.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 462 - Funcionários, Belo Horizonte - MG, 30140-070, Brasil"
   },
   {
    "place_id": "ChIJX0PyXv6ZpgARa3c5vZSUQVU",
-   "nome": "",
+   "nome": "Clínica de Nutrição Dr Daniel Caldeira",
    "codigo": "188",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3335-3535"
+   ],
+   "site": "https://linktr.ee/caldeira655",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Augusto de Lima, 655 - Sl 512 - Centro, Belo Horizonte - MG, 30190-005, Brasil"
   },
   {
    "place_id": "ChIJIWwhMACZpgARLz7O_nLBYeM",
-   "nome": "",
+   "nome": "CLINICA UNIEMAGRECE",
    "codigo": "189",
    "celulares": [],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alagoas, 506 - Funcionários, Belo Horizonte - MG, 30130-162, Brasil"
   },
   {
    "place_id": "ChIJ5z5--2eXpgARhDG8WsjHTDg",
-   "nome": "",
+   "nome": "Núcleo HB • Dra Hellisse Bastos",
    "codigo": "190",
-   "celulares": [],
+   "celulares": [
+    "(31) 98308-2494"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://hellisse.med.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 2001 - Sl 704 - Lourdes, Belo Horizonte - MG, 30140-072, Brasil"
   },
   {
    "place_id": "ChIJO018aMaZpgARTTpq2uAFHLw",
-   "nome": "",
+   "nome": "Beleza Completa Savassi",
    "codigo": "193",
-   "celulares": [],
+   "celulares": [
+    "(31) 99567-4526"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicabelezacompleta.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alagoas, 1283 - sobreloja 2 - Savassi, Belo Horizonte - MG, 30130-168, Brasil"
   },
   {
    "place_id": "ChIJWVd-Hl6XpgARjN19Q4Dw8S4",
-   "nome": "",
+   "nome": "Clínica Mude",
    "codigo": "195",
-   "celulares": [],
+   "celulares": [
+    "(31) 99555-7599"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://tinyurl.com/clinica-mude-estetica",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Edifício Golden Offices - Av. Olegário Maciel, 1217 - 5º Andar - Lourdes, Belo Horizonte - MG, 30180-111, Brasil"
   },
   {
    "place_id": "ChIJpcsEnPKZpgARcOcJYzidi-A",
-   "nome": "",
+   "nome": "Amarante Estética e Saúde",
    "codigo": "196",
-   "celulares": [],
+   "celulares": [
+    "(31) 99977-0688"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sergipe, 1333 - Sl 401 - Savassi, Belo Horizonte - MG, 30140-091, Brasil"
   },
   {
    "place_id": "ChIJW62QHaeZpgARHRL6K30l1s4",
-   "nome": "",
+   "nome": "Dr. Victor Aquino",
    "codigo": "198",
-   "celulares": [],
+   "celulares": [
+    "(31) 98403-5991"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drvictorraquino.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Nossa Sra. do Carmo, 90 - São Pedro, Belo Horizonte - MG, 30330-000, Brasil"
   },
   {
    "place_id": "ChIJdfDwmbuZpgARksVlXNy4O5E",
-   "nome": "",
+   "nome": "Clínica SlimCode – Emagrecimento de precisão",
    "codigo": "199",
-   "celulares": [],
+   "celulares": [
+    "(32) 99948-5033"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://drviniciussoares.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Andradas, 3323 - Sala 701 - Santa Efigênia, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
    "place_id": "ChIJD8OzsIyZpgARmxhNwFFQTHA",
-   "nome": "",
+   "nome": "Instituto Evolut - Dr. Rerisson Barros",
    "codigo": "202",
-   "celulares": [],
+   "celulares": [
+    "(31) 99194-0930"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://evolutbh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Instituto Evolut - Dr. Rerisson Barros - Av. dos Andradas, 3323 - Santa Tereza, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
    "place_id": "ChIJKzjOFO6XpgAR2eY4XJNC-I0",
-   "nome": "",
+   "nome": "Dra. Carolina Almeida Vieira",
    "codigo": "203",
-   "celulares": [],
+   "celulares": [
+    "(31) 98491-7739"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://dracarolinaendocrino.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Ouro Preto, 1016 - sala 405 - Santo Agostinho, Belo Horizonte - MG, 30180-001, Brasil"
   },
   {
    "place_id": "ChIJ3eDClmeXpgAReX6YPS2djzw",
-   "nome": "",
+   "nome": "Dra. Rosana Amato",
    "codigo": "205",
-   "celulares": [],
+   "celulares": [
+    "(31) 98119-6474"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 - Sl 1401 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJ4fF_DbGZpgARbgHt6-WA9Wo",
-   "nome": "",
+   "nome": "Dr. Bruno Fabrino",
    "codigo": "207",
-   "celulares": [],
+   "celulares": [
+    "(31) 99588-5161"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. dos Andradas, 3323 - Sl 905 - Centro, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
    "place_id": "ChIJIYleRWeZpgARIVQYGRNxnT4",
-   "nome": "",
+   "nome": "Dra Eliana Teixeira",
    "codigo": "209",
-   "celulares": [],
+   "celulares": [
+    "(31) 99567-1113"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Jorge Fontana, 80 - Sl 1110 - Belvedere, Belo Horizonte - MG, 30320-670, Brasil"
   },
   {
    "place_id": "ChIJB7JAeZCbpgARdAGdvc6RM5M",
-   "nome": "",
+   "nome": "Estética Tainá Souza -Clinica de Emagrecimento,massagem,drenagem,gordura localizada,detox,limpeza de pele,celulite",
    "codigo": "210",
-   "celulares": [],
+   "celulares": [
+    "(31) 99642-9363"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://tainasouzaesteticaavancada.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Dr. Júlio Otaviano Ferreira, 241 - Cidade Nova, Belo Horizonte - MG, 31170-200, Brasil"
   },
   {
    "place_id": "ChIJTxzFO7ebpgARVCufInF7APA",
-   "nome": "",
+   "nome": "Clínica Médica e Emagrecimento Dr Luiz Carlos Paschoal",
    "codigo": "211",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3487-1703"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Silva Alvarenga, 420 - Sl 02 - São Geraldo, Belo Horizonte - MG, 31050-640, Brasil"
   },
   {
    "place_id": "ChIJMRf3J1OapgARBYv8muHrWRs",
-   "nome": "",
+   "nome": "Clinica Vi Corpelle Emagrecimento - Nutrição e Estética",
    "codigo": "212",
-   "celulares": [],
+   "celulares": [
+    "(31) 97186-6489"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Contagem, 829 - Santa Ines, Belo Horizonte - MG, 31080-055, Brasil"
   },
   {
    "place_id": "ChIJl2U4u2ybpgARg9ObDVaBayw",
-   "nome": "",
+   "nome": "Clínica ALLMA - Dra. Ariadna Antunes | Estética & Emagrecimento",
    "codigo": "213",
-   "celulares": [],
+   "celulares": [
+    "(31) 99254-0966"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Cristiano Machado, 1794 - Lj 13 - Cidade Nova, Belo Horizonte - MG, 31170-024, Brasil"
   },
   {
    "place_id": "ChIJkyROMiSZpgARbP2xS2ZcoDQ",
-   "nome": "",
+   "nome": "Suavite Clínica de Nutrição e Estética",
    "codigo": "215",
-   "celulares": [],
+   "celulares": [
+    "(31) 99283-3625"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Rio de Janeiro, 390 - Centro, Belo Horizonte - MG, 30160-040, Brasil"
   },
   {
    "place_id": "ChIJqeUsouyZpgARxu7ldoHsKn0",
-   "nome": "",
+   "nome": "Dr Thiago Carneiro - Endocrinologia - Especialista em Emagrecimento em Belo Horizonte",
    "codigo": "216",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3189-0606"
+   ],
+   "site": "https://www.instagram.com/odrthiagocarneiro?igsh=dzF3NGtjaTgyOW9n",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. do Contorno, 4640 - Sl 502 - (Andar 13 - Santa Efigênia, Belo Horizonte - MG, 30110-001, Brasil"
   },
   {
    "place_id": "ChIJOQ6WEPSbpgARUf3wBhh5hm4",
-   "nome": "",
+   "nome": "Estética Dra. Franciele Arcanjo – Estética Avançada BH",
    "codigo": "217",
-   "celulares": [],
+   "celulares": [
+    "(31) 99316-7097"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/biomedicafrancielearcanjo?igsh=cDV2eWlldmJhcnN2&utm_source=qr",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Olímpia, 18 - Sl 506 - Boa Vista, Belo Horizonte - MG, 31060-250, Brasil"
   },
   {
    "place_id": "ChIJQVs7G7GZpgAR2zg0M3jzy1w",
-   "nome": "",
+   "nome": "Clínica Medlife Wellness - Reposição Hormonal e Emagrecimento em Belo Horizonte",
    "codigo": "218",
-   "celulares": [],
+   "celulares": [
+    "(31) 99916-6534"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinica.drabrunamariza.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Tab. Ferreira de Carvalho, 960 - Cidade Nova, Belo Horizonte - MG, 31170-180, Brasil"
   },
   {
    "place_id": "ChIJaeJGb_eZpgARnol9GNqXihs",
-   "nome": "",
+   "nome": "Dra. Acácia Estanislau, Nutrólogo",
    "codigo": "219",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3195-0229"
+   ],
+   "site": "https://www.clinicanutrologica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Francisco Sales, 1614/803 - Santa Efigênia, Belo Horizonte - MG, 30150-220, Brasil"
   },
   {
    "place_id": "ChIJd8zmB4yZpgARysiNAl1Fwes",
-   "nome": "",
+   "nome": "Dr. Bruno Flauzino de Carvalho",
    "codigo": "220",
-   "celulares": [],
+   "celulares": [
+    "(31) 99590-1002"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/dr.brunoflauzino/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. do Contorno, 4747 - Sl 407 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJX2WOUNObpgARb5KJSht6utg",
-   "nome": "",
+   "nome": "Núcleo Nutroderma",
    "codigo": "221",
-   "celulares": [],
+   "celulares": [
+    "(31) 99717-5557"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Joviano Naves, 15 - Sl 05 - Palmares, Belo Horizonte - MG, 31155-710, Brasil"
   },
   {
    "place_id": "ChIJketFYpmRpgARLfdg7nDz1Qs",
-   "nome": "",
+   "nome": "Bem Ser Saúde, Performance e Longevidade - Medicina, Nutrição, Psicologia, Massoterapia e Terapia Integrativa",
    "codigo": "222",
-   "celulares": [],
+   "celulares": [
+    "(31) 97100-5400"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Alfredo Camarate, 539 - Sl 13 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
    "place_id": "ChIJd5qIPpuXpgAR11wGJ-jUpac",
-   "nome": "",
+   "nome": "Yuna Medicina Funcional e Lifestyle",
    "codigo": "223",
-   "celulares": [],
+   "celulares": [
+    "(31) 98119-6474"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/reel/DRP6GcbDvqH/?igsh=MW9vYnduNW8wdHZrcw==",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 - 1401 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJAy3oXj6ZpgARn1Gs_QEy5xs",
-   "nome": "",
+   "nome": "Aranilda Nazareth | Endolaser | Estética Corporal e Facial | Pós-operatório | Nutrição e Emagrecimento | Limpeza de Pele",
    "codigo": "224",
-   "celulares": [],
+   "celulares": [
+    "(31) 99383-6555"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://linktr.ee/aranildanazareth",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Francisco Sá, 1213 - Sl 502 - Gutierrez, Belo Horizonte - MG, 30441-021, Brasil"
   },
   {
    "place_id": "ChIJu3O3Jd2XpgARJHgjzJ2dYSQ",
-   "nome": "",
+   "nome": "Clinica JOBO - Emagrecimento, Performance e Envelhecimento Saudável",
    "codigo": "225",
-   "celulares": [],
+   "celulares": [
+    "(31) 99821-7672"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/clinica_jobo?rpxt=dG8wNWh3c29kZWYx&utm_source=qr",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Uberaba, 370 - 4º Andar, Sala 404 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
    "place_id": "ChIJPcS-kHuQpgARrTPudqBzGh8",
-   "nome": "",
+   "nome": "Keola Clínica Emagrecimento e Estética Avançada",
    "codigo": "226",
-   "celulares": [],
+   "celulares": [
+    "(31) 99863-7961"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.keola.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Izabel Bueno, 693 - Jaraguá, Belo Horizonte - MG, 31270-030, Brasil"
   },
   {
    "place_id": "ChIJJd6EKN-VpgARoPzXpdH66lE",
-   "nome": "",
+   "nome": "Clínica de Estética Carolina Jory - Especialista em Criomodelagem BH",
    "codigo": "227",
-   "celulares": [],
+   "celulares": [
+    "(31) 99391-7755"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://linktr.ee/carolinajory_estetica",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Sebastião de Brito, 1185 - Dona Clara, Belo Horizonte - MG, 31260-000, Brasil"
   },
   {
    "place_id": "ChIJ02vvKKybpgARxoZiYFAhVOo",
-   "nome": "",
+   "nome": "Renov Estética Avançada",
    "codigo": "229",
-   "celulares": [],
+   "celulares": [
+    "(31) 99462-2096"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Jacuí, 3468 - Ipiranga, Belo Horizonte - MG, 31160-190, Brasil"
   },
   {
    "place_id": "ChIJz4TA4vqRpgARNvDbVlV7UVs",
-   "nome": "",
+   "nome": "Clinica Dinali Estética avançada e Emagrecimento",
    "codigo": "230",
-   "celulares": [],
+   "celulares": [
+    "(31) 98372-3780"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Américo Vespúcio, 914 - Sl 203 - Nova Cachoeirinha, Belo Horizonte - MG, 31230-250, Brasil"
   },
   {
    "place_id": "ChIJfSmeHnObpgARc9jva_O4B3w",
-   "nome": "",
+   "nome": "Naiara Alves Nutricionista Emagrecimento e Rotina em Belo Horizonte",
    "codigo": "231",
-   "celulares": [],
+   "celulares": [
+    "(31) 99711-2806"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://nutrinaiara.my.canva.site/site-da-naiara-alves-nutricionista",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Clara Nunes, 11 - Renascença, Belo Horizonte - MG, 31130-680, Brasil"
   },
   {
    "place_id": "ChIJe25RM1ebpgARFShfV5BIIwU",
-   "nome": "",
+   "nome": "SOU Clinic",
    "codigo": "232",
-   "celulares": [],
+   "celulares": [
+    "(31) 98274-8449"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/souclinic_?igsh=MTFld2EycTAzOHJqeQ%3D%3D&utm_source=qr",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Condomínio Wall Street - Av. do Contorno, 8000 - Sl 802 - Santo Agostinho, Belo Horizonte - MG, 30110-932, Brasil"
   },
   {
    "place_id": "ChIJrUoLU1mXpgARHmZZ_62_aUA",
-   "nome": "",
+   "nome": "Dra.Eliane de Lima Estética avançada",
    "codigo": "233",
-   "celulares": [],
+   "celulares": [
+    "(31) 98530-9697"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Barcelos, 1230 - Nova Suíça, Belo Horizonte - MG, 30421-124, Brasil"
   },
   {
    "place_id": "ChIJ8Z2zAo2bpgARf1Ry88k2SfI",
-   "nome": "",
+   "nome": "Valériah Sales Estética",
    "codigo": "234",
-   "celulares": [],
+   "celulares": [
+    "(31) 99110-3899"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://valeriasales.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Guanhães, 171 - Colégio Batista, Belo Horizonte - MG, 31110-160, Brasil"
   },
   {
    "place_id": "ChIJEwCKQ-SWpgARkRY1Nx9bJv4",
-   "nome": "",
+   "nome": "Espaço Vida Clínica de Estética Avançada Belo Horizonte",
    "codigo": "236",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3375-7774"
+   ],
+   "site": "https://espacovidabh.com.br/servicos",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Cascavel, 98 - Coração Eucarístico, Belo Horizonte - MG, 30535-670, Brasil"
   },
   {
    "place_id": "ChIJ32oQwMeXpgAR96mTZzjeYkE",
-   "nome": "",
+   "nome": "EMOS Clínica Médica",
    "codigo": "238",
-   "celulares": [],
+   "celulares": [
+    "(31) 99831-9187"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicaemos.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Álvares Cabral, 1833 - Sl 301 - Lourdes, Belo Horizonte - MG, 30170-001, Brasil"
   },
   {
    "place_id": "ChIJ1bqX6HaXpgARmgdJtVMDGB4",
-   "nome": "",
+   "nome": "Instituto Essence - Dr. João Augusto - Psiquiatria, Emagrecimento & Bem Estar",
    "codigo": "239",
-   "celulares": [],
+   "celulares": [
+    "(31) 99595-5469"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Ed. Medplex - Av. Barbacena, 600 - 6ª ANDAR - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
    "place_id": "ChIJJdwzkdKbpgARVpZHLhWCk6c",
-   "nome": "",
+   "nome": "Dra. Pabline Martins — Estética Avançada & Harmonização Facial | Cidade Nova BH",
    "codigo": "240",
-   "celulares": [],
+   "celulares": [
+    "(31) 99797-6719"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.drapablinemartins.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Dr. Júlio Otaviano Ferreira, 867 - Cidade Nova, Belo Horizonte - MG, 31170-200, Brasil"
   },
   {
    "place_id": "ChIJX7cxMLKXpgARP5kBi6UPo1E",
-   "nome": "",
+   "nome": "Clínica Sales",
    "codigo": "241",
-   "celulares": [],
+   "celulares": [
+    "(31) 99109-2195"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Henrique Gorceix, 538 - Padre Eustáquio, Belo Horizonte - MG, 30720-416, Brasil"
   },
   {
    "place_id": "ChIJq6p6_WeXpgARWjPYXqUPefY",
-   "nome": "",
+   "nome": "Dr. Pedro Henrique Vilela Moreira, Cirurgião geral",
    "codigo": "242",
-   "celulares": [],
+   "celulares": [
+    "(31) 99635-9537"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://linktr.ee/drpedrohvilela",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Paracatu, 872 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
    "place_id": "ChIJ8Yu7zIKXpgARS60t2MbkB_s",
-   "nome": "",
+   "nome": "Clínica Ana Paula Souza Estética e Emagrecimento | Centro de saúde e beleza |",
    "codigo": "243",
-   "celulares": [],
+   "celulares": [
+    "(31) 98612-2454"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://instagram.com/clinicaanapaulasouza?igshid=13oe6j7yw3ta3",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Padre Eustáquio, 1133 - Lj 9 - Carlos Prates, Belo Horizonte - MG, 30710-580, Brasil"
   },
   {
    "place_id": "ChIJxzpRT2-XpgARWgj1PKNdCkk",
-   "nome": "",
+   "nome": "Clínica Nora - Saúde Integrativa",
    "codigo": "244",
-   "celulares": [],
+   "celulares": [
+    "(31) 99073-2702"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/clinica_nora/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Raja Gabáglia, 2000 - Sl 525, Torre 1 - Estoril, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
    "place_id": "ChIJr4adfrWXpgARKYzAYJ-5wJ0",
-   "nome": "",
+   "nome": "Estética Avançada - Dra. Priscilla Rezende",
    "codigo": "245",
-   "celulares": [],
+   "celulares": [
+    "(31) 98991-6187"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.priscillarezende.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Guarujá, 07 - sala 01 - Nova Suíça, Belo Horizonte - MG, 30421-037, Brasil"
   },
   {
    "place_id": "ChIJvXA3KdCQpgARTtJNfZbbbdI",
-   "nome": "",
+   "nome": "Linea Corpore",
    "codigo": "246",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 4103-3131"
+   ],
+   "site": "http://www.lineacorpore.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua do Pássaro-Preto, 250 - Alto Caiçaras, Belo Horizonte - MG, 30750-590, Brasil"
   },
   {
    "place_id": "ChIJ7RMTAfmTpgARfVL8ctnfsRU",
-   "nome": "",
+   "nome": "Clínica de Estética Essence Vitá = Castelo - Endolaser Criolipólise Diástase Pochete Gordura localizada",
    "codigo": "247",
-   "celulares": [],
+   "celulares": [
+    "(31) 99636-9280"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://essencevita.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Pres. Tancredo Neves, 2387 - Lj 12 - Castelo, Belo Horizonte - MG, 31330-430, Brasil"
   },
   {
    "place_id": "ChIJD-woKT2XpgARFYfr2ZGFh4I",
-   "nome": "",
+   "nome": "Magrass BH Abilío Machado",
    "codigo": "248",
-   "celulares": [],
+   "celulares": [
+    "(31) 99199-6706"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.magrass.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Abílio Machado, 1252 - Inconfidência, Belo Horizonte - MG, 30820-272, Brasil"
   },
   {
    "place_id": "ChIJRcqTSQGXpgARsOhQZqFBgLI",
-   "nome": "",
+   "nome": "Aline Magesty Emagrecimento Estética",
    "codigo": "250",
-   "celulares": [],
+   "celulares": [
+    "(31) 97574-7664"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.telelistas.net/locais/mg/belo+horizonte/clinicas+e+servicos+de+emagrecimento/bu-5742470/aline+magesty+emagrecimento+estetica+em+estoril",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Avenida Barão Homem de Melo, 4386 3º andar/ Sala: 302 - Estoril, Belo Horizonte - MG, 30494-270, Brasil"
   },
   {
    "place_id": "ChIJB4z8ZsuWpgARWpq4kg7_6wo",
-   "nome": "",
+   "nome": "Estética Bem Viver",
    "codigo": "252",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3032-4886"
+   ],
+   "site": "http://www.bemviverestetica.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Maurete José dos Santos, 61 sala 14 Manacás - Castelo, Belo Horizonte - MG, 30840-560, Brasil"
   },
   {
    "place_id": "ChIJ26YDzZ2XpgARBEjkmXviDTw",
-   "nome": "",
+   "nome": "Sublime Laser e Estética",
    "codigo": "253",
-   "celulares": [],
+   "celulares": [
+    "(31) 99480-9169"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/sublime.laserestetica",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Padre Eustáquio, 2480 - Sl 202 - Padre Eustáquio, Belo Horizonte - MG, 30720-100, Brasil"
   },
   {
    "place_id": "ChIJwWnIYx2XpgARULa_4M_JAp8",
-   "nome": "",
+   "nome": "Ana Carolina Avellar - Nutricionista em BH: Emagrecimento e Lipedema",
    "codigo": "254",
-   "celulares": [],
+   "celulares": [
+    "(31) 98616-0523"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.anacarolinaavellar.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Padre Eustáquio, 2086 - Padre Eustáquio, Belo Horizonte - MG, 30720-100, Brasil"
   },
   {
    "place_id": "ChIJleQ_SMOXpgAR5Hy2GX4l5uY",
-   "nome": "",
+   "nome": "Dra Waldilene Felicidade| Estética Facial e Corporal , tratamentos para rejuvenescimento, tratamentos corporais!",
    "codigo": "255",
-   "celulares": [],
+   "celulares": [
+    "(31) 98745-1516"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/walfelicidade",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Bandolins, 45 - Califórnia, Belo Horizonte - MG, 30850-470, Brasil"
   },
   {
    "place_id": "ChIJq6paG2WXpgARXcQ_tMqwxSY",
-   "nome": "",
+   "nome": "MyBeleza - Santo Agostinho - Depilação a Laser, Emagrecimento, Botox e Ultraformer",
    "codigo": "257",
-   "celulares": [],
+   "celulares": [
+    "(31) 99834-6921"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.mybeleza.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Álvares Cabral, 1835 - Santo Agostinho, Belo Horizonte - MG, 30170-916, Brasil"
   },
   {
    "place_id": "ChIJhzKLdWiXpgARl8MIA1hsEq0",
-   "nome": "",
+   "nome": "Magrass Luxemburgo",
    "codigo": "258",
-   "celulares": [],
+   "celulares": [
+    "(31) 98111-5938"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/magrassluxemburgo?igsh=OXhzajNsNWZ2MjFr",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Prudente de Morais, 1154 - Lj 04 - Coracao de Jesus, Belo Horizonte - MG, 30380-252, Brasil"
   },
   {
    "place_id": "ChIJlfyKwyiXpgAR3FoxAFEXDak",
-   "nome": "",
+   "nome": "Clínica de Harmonização e Estética Avançada em BH | Diana Mahé | Botox Preenchimento Bioestimulador PDRN US Microfocado Laser",
    "codigo": "259",
-   "celulares": [],
+   "celulares": [
+    "(31) 99715-2215"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicadianamahe.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Cananéia, 12 - Caiçaras, Belo Horizonte - MG, 30770-120, Brasil"
   },
   {
    "place_id": "ChIJAUZj9meZpgARWVyulglYOqU",
-   "nome": "",
+   "nome": "Dra. Dayana Baltazar",
    "codigo": "260",
-   "celulares": [],
+   "celulares": [
+    "(31) 99951-3352"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Instituto Faustino - R. Araguari, 1156 - sala 1404 Medicina, Saúde e Estilo de Vida Clínica Dra. Mariangela - Rua Reginaldo Reis, 175 A - Centro, Jaboticatubas - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJM6lmi9WZpgARJKslKHmAdlc",
-   "nome": "",
+   "nome": "Consultório Dra.Leticia Penna",
    "codigo": "262",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3225-0666"
+   ],
+   "site": "https://www.instagram.com/draleticiapenna",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Araguari, 1156 - Sl 1102 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJ38qbAi-ZpgARwdPg046D3Ac",
-   "nome": "",
+   "nome": "Clínica Revittá",
    "codigo": "265",
-   "celulares": [],
+   "celulares": [
+    "(31) 99698-7200"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/aclinicarevitta?igsh=MTRiZXRub245NnZkdg==",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua dos Timbiras, 2072 - sala 1207 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
    "place_id": "ChIJbToQdGyXpgARMLvD-OM_4Do",
-   "nome": "",
+   "nome": "Dra. Ana Carolina Martins Endocrinologista em Belo Horizonte",
    "codigo": "266",
-   "celulares": [],
+   "celulares": [
+    "(31) 98239-1901"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://draanacarolmartins.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Uberaba, 370 - sl 1001 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
    "place_id": "ChIJf49pY5WXpgARPga7s9aC6Xc",
-   "nome": "",
+   "nome": "Wilma Matos - Nutricionista | Lipedema tratamento | Nutrição bariátrica",
    "codigo": "267",
-   "celulares": [],
+   "celulares": [
+    "(31) 99089-3183"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://wilmamatosnutri.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3140 - 6 andar, sala 608 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJE2bwo0qFpgARVzlHIRlB2tE",
-   "nome": "",
+   "nome": "Cirlene Gervásio - Estética Avançada",
    "codigo": "268",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3436-2242"
+   ],
+   "site": "http://cirlenegervasio.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. José Lins do Rêgo, 244 - Tupi, Belo Horizonte - MG, 31842-350, Brasil"
   },
   {
    "place_id": "ChIJcxwhJ_uRpgARY3SgVEBjeg4",
-   "nome": "",
+   "nome": "Renovare Medicina & Estética Avançada",
    "codigo": "269",
-   "celulares": [],
+   "celulares": [
+    "(31) 99630-1552"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/renovaremedicinaestetica/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dom Pedro I, Nª 402 - Sala 307 - Itapoã, Belo Horizonte - MG, 31710-971, Brasil"
   },
   {
    "place_id": "ChIJRWDUo4-apgARoMdpq6hy8-0",
-   "nome": "",
+   "nome": "Biocenter Centro de Biomedicina Estética",
    "codigo": "270",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3426-6524"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. José Francisco da Silva, 114 - Maria Virgínia, Belo Horizonte - MG, 31155-600, Brasil"
   },
   {
    "place_id": "ChIJhUXV6UuQpgARjalHjkQQOEY",
-   "nome": "",
+   "nome": "Clínica Bem Estar - Dermatologia, Estética e Emagrecimento.",
    "codigo": "272",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3567-3041"
+   ],
+   "site": "http://www.clinicabemestarbh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 2085 - Lj 07 - Santa Amelia, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
    "place_id": "ChIJ3eMbT4CbpgARH850DBPScd8",
-   "nome": "",
+   "nome": "Ana Maciel Estética",
    "codigo": "273",
-   "celulares": [],
+   "celulares": [
+    "(31) 99132-6101"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Queluzita, 34 - Sl 1111 - Fernão Dias, Belo Horizonte - MG, 31910-252, Brasil"
   },
   {
    "place_id": "ChIJ15rcGxuRpgARfFK-Dqbe3Cg",
-   "nome": "",
+   "nome": "By Life Clinic",
    "codigo": "274",
-   "celulares": [],
+   "celulares": [
+    "(31) 99365-0035"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/bylife_clinic",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "edifício Hyde Park - R. Boaventura, 1167 - Sl 802 - Indaiá, Belo Horizonte - MG, 31270-020, Brasil"
   },
   {
    "place_id": "ChIJ__PprR6PpgARmnndi81BUgY",
-   "nome": "",
+   "nome": "Reginalda Vertelo Estética",
    "codigo": "275",
-   "celulares": [],
+   "celulares": [
+    "(31) 99796-1105"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://api.whatsapp.com/send?phone=5531997961105&text=Vi%20seu%20contato%20no%20google.",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alfredo Santos Neves, 50 - Cenaculo, Belo Horizonte - MG, 31615-390, Brasil"
   },
   {
    "place_id": "ChIJsRtoLtORpgARg61ONx_v1qw",
-   "nome": "",
+   "nome": "Espaço Alliviar",
    "codigo": "277",
-   "celulares": [],
+   "celulares": [
+    "(31) 99231-4700"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://alliviarestetica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dr. Cristiano Guimarães, 1752 - Sl 2 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
    "place_id": "ChIJEUF6e4abpgARuctXxparzHc",
-   "nome": "",
+   "nome": "Estetica Karen Teresa Saúde Integrativa",
    "codigo": "278",
-   "celulares": [],
+   "celulares": [
+    "(31) 98547-6272"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://sistema.heon.com.br/auto-agendamento?especialista=karinha261_487242&clinica=2467737",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Pitias, 299 - Nazare, Belo Horizonte - MG, 31990-240, Brasil"
   },
   {
    "place_id": "ChIJq6o6XWmapgARw4UWHS43IBw",
-   "nome": "",
+   "nome": "My Beleza Cidade Nova - Depilação a Laser, Emagrecimento, Botox e Ultraformer",
    "codigo": "279",
-   "celulares": [],
+   "celulares": [
+    "(31) 98766-8625"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.mybeleza.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alberto Cintra, 206 - Lj 04 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
    "place_id": "ChIJoURr9NCZpgARjAalJcu0g5U",
-   "nome": "",
+   "nome": "Dra. Ana Paula Ribas - Estética Avançada",
    "codigo": "281",
-   "celulares": [],
+   "celulares": [
+    "(31) 98814-5004"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://anapaularibas.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alberto Cintra, 210 - Sl 420 - Cidade Nova, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
    "place_id": "ChIJSd3CyyqRpgARVpEQ1pCPl5c",
-   "nome": "",
+   "nome": "Dermoklinica",
    "codigo": "282",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3586-6211"
+   ],
+   "site": "https://instagram.com/dermoklinica?igshid=YmMyMTA2M2Y=",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Maestro Francisco Flôres, 253 - São Luiz, Belo Horizonte - MG, 31270-670, Brasil"
   },
   {
    "place_id": "ChIJv-tGRuSbpgARjcchfTN-CO8",
-   "nome": "",
+   "nome": "Clínica Lilian Vilarino - Estética avançada e integrativa",
    "codigo": "283",
-   "celulares": [],
+   "celulares": [
+    "(31) 99503-6040"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Cacuera, 881 - Sl 302 - Jaraguá, Belo Horizonte - MG, 31270-350, Brasil"
   },
   {
    "place_id": "ChIJz-8349ObpgARonuRBipfy44",
-   "nome": "",
+   "nome": "Dra Larissa Guimarães Estética Avançada | Clínica de Estética no Guarani BH",
    "codigo": "284",
-   "celulares": [],
+   "celulares": [
+    "(31) 99855-7720"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dralarissaqguimaraes.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Waldomiro Lobo, 55 - 1º piso - Guarani, Belo Horizonte - MG, 31814-620, Brasil"
   },
   {
    "place_id": "ChIJJdrmjs-bpgARNfeUdmMKv6o",
-   "nome": "",
+   "nome": "Clínica Estética Camila Queiroz",
    "codigo": "285",
-   "celulares": [],
+   "celulares": [
+    "(31) 99277-5020"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dracamilaqueiroz.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alberto Cintra, 35 - Sl 701 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
    "place_id": "ChIJ4-Pw8AqRpgARevKaaOguAQQ",
-   "nome": "",
+   "nome": "Dra. Ana Carolina Morcatti",
    "codigo": "286",
-   "celulares": [],
+   "celulares": [
+    "(31) 98316-9926"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://anacarolinamorcatti.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Cel. José Dias Bicalho, 322A - São José, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
    "place_id": "ChIJX3N3MT-bpgARvsiXk0v504U",
-   "nome": "",
+   "nome": "i9 Fashion Clinic - Estética e Saúde",
    "codigo": "287",
-   "celulares": [],
+   "celulares": [
+    "(31) 99984-7275"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/i9fashionclinic?igsh=a2RhaHBjM2Fza2Nu",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Pitt, 543 - antigo 315 loja 2 - União, Belo Horizonte - MG, 31170-610, Brasil"
   },
   {
    "place_id": "ChIJ87jhWe6PpgAReXXP8OYm0zQ",
-   "nome": "",
+   "nome": "Dr. Fausto Freitas Grossi Clínica Médica",
    "codigo": "288",
-   "celulares": [],
+   "celulares": [
+    "(31) 98296-1366"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santo Antônio, 237 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
    "place_id": "ChIJ5Xr2fhxgKGcRPFZIh-X1NYA",
-   "nome": "",
+   "nome": "Dra. Caroline Rodrigues",
    "codigo": "289",
-   "celulares": [],
+   "celulares": [
+    "(31) 99500-5432"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/dracaarolineer/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Gen. Olímpio Mourão Filho, 788 - Itapoã, Belo Horizonte - MG, 31720-200, Brasil"
   },
   {
    "place_id": "ChIJSci7Bn-XpgARP1BOTO-gSAQ",
-   "nome": "",
+   "nome": "Espaço Elev - Saúde e beleza",
    "codigo": "290",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3281-9154"
+   ],
+   "site": "https://www.instagram.com/nutridanimoraes/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sen. Lima Guimarães, 108 - Sl 603 - Buritis, Belo Horizonte - MG, 30455-600, Brasil"
   },
   {
    "place_id": "ChIJpYd1ISCXpgAREUamzYC5-RY",
-   "nome": "",
+   "nome": "Clínica Dra Caroline Chaves Maia",
    "codigo": "291",
-   "celulares": [],
+   "celulares": [
+    "(31) 99198-2335"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Barão Homem de Melo, 4386 - Estoril, Belo Horizonte - MG, 30494-270, Brasil"
   },
   {
    "place_id": "ChIJHWJd2caXpgARs7DhHZZMl5o",
-   "nome": "",
+   "nome": "Dra. Fernanda Almeida | Medicina Personalizada e Preventiva BH",
    "codigo": "292",
-   "celulares": [],
+   "celulares": [
+    "(31) 98215-1693"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drafernandaalmeidaa.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Ed. Empresarial Heitor Villa Lobos - Av. Barão Homem de Melo, 4391 - Sl 609 - Estoril, Belo Horizonte - MG, 30494-275, Brasil"
   },
   {
    "place_id": "ChIJO46dpPyXpgARx2uPuHUvShg",
-   "nome": "",
+   "nome": "Luciana Guerreiro",
    "codigo": "293",
-   "celulares": [],
+   "celulares": [
+    "(31) 99590-3434"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.lucianaguerreiro.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Cristiano Moreira Sales, 150 - SALA 603 - Estoril, Belo Horizonte - MG, 30494-360, Brasil"
   },
   {
    "place_id": "ChIJQaHKLlSXpgARo7Yp4fCec2g",
-   "nome": "",
+   "nome": "Dra Rosa Gomes",
    "codigo": "295",
-   "celulares": [],
+   "celulares": [
+    "(31) 98666-2564"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.doutorarosagomes.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Edésio Fernandes, 163 - Estoril, Belo Horizonte - MG, 30494-450, Brasil"
   },
   {
    "place_id": "ChIJvVpeT6SXpgARHm7fbfsKFYI",
-   "nome": "",
+   "nome": "Clinica Estetíca Virtuosa - Buritis",
    "codigo": "296",
-   "celulares": [],
+   "celulares": [
+    "(31) 97349-3427"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://instagram.com/virtuosa.belohorizonteburitis",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 545 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
    "place_id": "ChIJjao2S4SXpgARgtk2_BnEdac",
-   "nome": "",
+   "nome": "Clínica de Estética Face & Body Estética Avançada",
    "codigo": "297",
-   "celulares": [],
+   "celulares": [
+    "(31) 97111-2220"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://facebodyestetica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 2220 - Lj 11 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
    "place_id": "ChIJw2tOPQ7-MgIRbbusZCYsLOI",
-   "nome": "",
+   "nome": "Sheyla Rocha Estética Avançada",
    "codigo": "298",
-   "celulares": [],
+   "celulares": [
+    "(31) 99895-1397"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sêneca, 36 G - Nova Cintra, Belo Horizonte - MG, 30516-260, Brasil"
   },
   {
    "place_id": "ChIJ3Zvxq4qXpgAR3JsVHBJTBO4",
-   "nome": "",
+   "nome": "Clínica de Estética Dra. Keller Carvalho - Betânia",
    "codigo": "299",
-   "celulares": [],
+   "celulares": [
+    "(31) 98292-1167"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.kellercarvalhoestetica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Meca, 20 - Betânia, Belo Horizonte - MG, 30590-390, Brasil"
   },
   {
    "place_id": "ChIJrwvTQWmXpgARivhUfJaXGtI",
-   "nome": "",
+   "nome": "Espaço Corpo e Mente - BH",
    "codigo": "300",
-   "celulares": [],
+   "celulares": [
+    "(31) 99120-4878"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://api.whatsapp.com/send/?phone=5531991204878&text&type=phone_number&app_absent=0",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Professor Mário Werneck, 2170 - Sala405 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
    "place_id": "ChIJxz8YariXpgARKC16di4Rr4o",
-   "nome": "",
+   "nome": "Endocrinologia e metabologia - Dra. Larissa Vieira",
    "codigo": "302",
-   "celulares": [],
+   "celulares": [
+    "(31) 98726-0837"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/dra.larissa.vieira/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. dos Aimorés, 3018 - sala 603 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJveFxQuiXpgARM2sKfI4VEFk",
-   "nome": "",
+   "nome": "Clínica Henrique Santiago",
    "codigo": "303",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3318-4811"
+   ],
+   "site": "https://www.facebook.com/drhenriquesantiago/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Sen. Lima Guimarães, 108 - Estoril, Belo Horizonte - MG, 30455-600, Brasil"
   },
   {
    "place_id": "ChIJJ09JCwiXpgARBbKBnEZpNxU",
-   "nome": "",
+   "nome": "Espaço Aurium",
    "codigo": "304",
-   "celulares": [],
+   "celulares": [
+    "(31) 99615-8935"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://espacoaurium.growdoc.com.br/?utm_source=google&utm_campaign=gmn",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Condomínio Parque - Avenida - Avenida Raja Gabáglia, 2000 Torre 2, Sala 540 - Alpes, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
    "place_id": "ChIJUQ59VPmRpgARC5SNcrGJ3Wg",
-   "nome": "",
+   "nome": "INSPIRAR ESTÉTICA E EMAGRECIMENTO - unidade pampulha",
    "codigo": "305",
-   "celulares": [],
+   "celulares": [
+    "(31) 99515-1218"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Monteiro Lobato, 315 - Ouro Preto, Belo Horizonte - MG, 31310-530, Brasil"
   },
   {
    "place_id": "ChIJhZYxaoWRpgARVZrkGK8cyMQ",
-   "nome": "",
+   "nome": "Clínica Marina Ceruti - Botox - Harmonização Facial",
    "codigo": "306",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3324-5369"
+   ],
+   "site": "https://clinicamarinaceruti.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 4273 - Sl 309 - Itapoã, Belo Horizonte - MG, 31710-400, Brasil"
   },
   {
    "place_id": "ChIJUbP07yjNBIURWAhiqDZkaAA",
-   "nome": "",
+   "nome": "Liorá Spa & Estética|Limpeza de Pele|Depilação a Laser|Remoção de Tatuagem e Micro|Head SPA|Maquiagem|Cabeleireira|Noivas",
    "codigo": "307",
-   "celulares": [],
+   "celulares": [
+    "(31) 98316-9926"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://wa.me/5531983169926",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Cel. José Dias Bicalho, 322 A Pampulha - São Luiz, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
    "place_id": "ChIJx9dJZACRpgARuVFlgn2x00o",
-   "nome": "",
+   "nome": "Be Essence Laser e Estética - Clínica de Estética Pampulha",
    "codigo": "308",
-   "celulares": [],
+   "celulares": [
+    "(31) 99357-0577"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://linktr.ee/essencebe.bh",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Cel. José Dias Bicalho, 843 - São José, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
    "place_id": "ChIJrzgfRCSRpgARlWqN0VHJmCI",
-   "nome": "",
+   "nome": "Clinica de Estética - Andreia Carla",
    "codigo": "309",
-   "celulares": [],
+   "celulares": [
+    "(31) 99595-1229"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "470 A - R. Clélia - Pampulha, Belo Horizonte - MG, 31530-530, Brasil"
   },
   {
    "place_id": "ChIJwfnbzZORpgARyWdH6TxeQRs",
-   "nome": "",
+   "nome": "Estetica BH Marcella Fernandes - Limpeza de Pele - Drenagem Linfática - Massagem Relaxante - Pampulha",
    "codigo": "310",
-   "celulares": [],
+   "celulares": [
+    "(31) 98381-8989"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://instagram.com/dramarcellafs",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Antônio Abrahão Caram, 620 - Sl 208 - São José, Belo Horizonte - MG, 31275-000, Brasil"
   },
   {
    "place_id": "ChIJPXM3FweRpgARujwCVT5It04",
-   "nome": "",
+   "nome": "Espaço Simetria",
    "codigo": "311",
-   "celulares": [],
+   "celulares": [
+    "(31) 99296-4938"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/espacosimetriia/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 1813 - Lj 7 - Santa Amelia, Belo Horizonte - MG, 31550-000, Brasil"
   },
   {
    "place_id": "ChIJj9S1JRyQpgARcAcu4QYLMX4",
-   "nome": "",
+   "nome": "CLINICA MÉDICA CAMPINAS",
    "codigo": "312",
-   "celulares": [],
+   "celulares": [
+    "(31) 98608-4233"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.doctoralia.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Boaventura, 1620 - Sl 06 - P, Belo Horizonte - MG, 31255-210, Brasil"
   },
   {
    "place_id": "ChIJB7BmLm2RpgARSTzpJU3LRA4",
-   "nome": "",
+   "nome": "Instituto LD",
    "codigo": "314",
-   "celulares": [],
+   "celulares": [
+    "(31) 99336-8426"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 2432 - Lj 13 - Jardim Atlântico, Belo Horizonte - MG, 31560-000, Brasil"
   },
   {
    "place_id": "ChIJX-OMnIWRpgARclZvLwJ164U",
-   "nome": "",
+   "nome": "My Beleza Ouro Preto | Depilação a Laser, Emagrecimento, Botox e Ultraformer",
    "codigo": "315",
-   "celulares": [],
+   "celulares": [
+    "(31) 97148-2695"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.mybeleza.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Conceição do Mato Dentro, 449 - Ouro Preto, Belo Horizonte - MG, 31310-240, Brasil"
   },
   {
    "place_id": "ChIJ1RHsMeqPpgARUemCb1ncm6Y",
-   "nome": "",
+   "nome": "Dra. Nayana Horta | Harmonização Facial em Belo Horizonte",
    "codigo": "316",
-   "celulares": [],
+   "celulares": [
+    "(31) 97194-2085"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Izabel Bueno, 817 - Jaraguá, Belo Horizonte - MG, 31270-065, Brasil"
   },
   {
    "place_id": "ChIJD8cqIReVpgARQc8Y0x5cC2w",
-   "nome": "",
+   "nome": "Seque Emagrecimento Saudável e Estética",
    "codigo": "317",
-   "celulares": [],
+   "celulares": [
+    "(31) 99292-8501"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Estér Augusta Ribeiro, 163 - Lj 1101 - Camargos, Belo Horizonte - MG, 30525-490, Brasil"
   },
   {
    "place_id": "ChIJ_UO0O5yRpgARdwyK6-4O-Pc",
-   "nome": "",
+   "nome": "Clínica Apex",
    "codigo": "318",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3019-3134"
+   ],
+   "site": "https://clinicaapex.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Alfredo Camarate, 462 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
    "place_id": "ChIJr7yHAeqXpgAR--weytQhv7o",
-   "nome": "",
+   "nome": "Consultório Felipe Motta",
    "codigo": "319",
-   "celulares": [],
+   "celulares": [
+    "(33) 99199-6528"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://drfelipemotta.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Clínica Apex - Av. Alfredo Camarate, 462 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
    "place_id": "ChIJlc-IysebpgAR1nlLox5Tbjc",
-   "nome": "",
+   "nome": "Clínica Estética em BH",
    "codigo": "320",
-   "celulares": [],
+   "celulares": [
+    "(31) 98943-5282"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://clinicaesteticabh.com/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Alberto Cintra, 210 - Sl 513 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
    "place_id": "ChIJ46LrFhyPpgAReu9E9KQ5gdU",
-   "nome": "",
+   "nome": "Clínica Harmony Estética Avançada",
    "codigo": "321",
-   "celulares": [],
+   "celulares": [
+    "(31) 99626-7706"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://ahz.bio/esteticabrunaprado",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 4075 - Sl 9 - Itapoã, Belo Horizonte - MG, 31710-400, Brasil"
   },
   {
    "place_id": "ChIJf4Cpr8aRpgARH78sdsfOuIg",
-   "nome": "",
+   "nome": "Olga Lima - Psicóloga e Nutricionista",
    "codigo": "322",
-   "celulares": [],
+   "celulares": [
+    "(31) 98542-8626"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Expedicionário Paulo de Oliveira, 325 - Sl 11 - Pampulha, Belo Horizonte - MG, 31310-080, Brasil"
   },
   {
    "place_id": "ChIJT-Hh8eyRpgARqLdeuAMga1E",
-   "nome": "",
+   "nome": "Clínica Bárbara Carvalhais",
    "codigo": "323",
-   "celulares": [],
+   "celulares": [
+    "(31) 99508-7213"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Pioneiros da Paz, 314B - Santa Amelia, Belo Horizonte - MG, 31555-320, Brasil"
   },
   {
    "place_id": "ChIJPTRgSPORpgARIdBwxlq4mSM",
-   "nome": "",
+   "nome": "Clínica Elai",
    "codigo": "324",
-   "celulares": [],
+   "celulares": [
+    "(31) 98463-8884"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dr. Cristiano Guimarães, 2517 - Sl 6 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
    "place_id": "ChIJqYd2eTmRpgAR8ecayxtetJ0",
-   "nome": "",
+   "nome": "Talita Gontijo Saúde Integrativa & Estética | Castelo, Pampulha",
    "codigo": "325",
-   "celulares": [],
+   "celulares": [
+    "(31) 99975-2370"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://claude.ai/artifact/SumspmYYChxHAbwBtBDUJj",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Pres. Tancredo Neves, 2640 - Sl 704 - Castelo, Belo Horizonte - MG, 31330-472, Brasil"
   },
   {
    "place_id": "ChIJlVaEIUmQpgAR3-rTTm_V1SM",
-   "nome": "",
+   "nome": ".",
    "codigo": "326",
    "celulares": [],
-   "fixos": [],
+   "fixos": [
+    "(31) 3564-7935"
+   ],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 2316 - 211 - Jardim Atlântico, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
    "place_id": "ChIJiT_0dFyRpgARZVVAaQm3ilA",
-   "nome": "",
+   "nome": "Nutricionista Dalila Angélico | Clínica LeveMente",
    "codigo": "327",
-   "celulares": [],
+   "celulares": [
+    "(31) 99173-3953"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://instagram.com/dalila.nutri?igshid=MzRlODBiNWFlZA==",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Jornalista Waldir Lau, 350 - Planalto, Belo Horizonte - MG, 31710-560, Brasil"
   },
   {
    "place_id": "ChIJtW0dZsSRpgARbNrjJnCY6GU",
-   "nome": "",
+   "nome": "Dra. Maria Fernanda Malagoli dos Santos",
    "codigo": "328",
-   "celulares": [],
+   "celulares": [
+    "(31) 98376-3129"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://facilconsulta.com.br/site/profissional/maria-fernanda-malagoli-dos-santos",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Portugal, 2085 - Santa Amelia, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
    "place_id": "ChIJj3OruLKRpgARARgrKJAHgRA",
-   "nome": "",
+   "nome": "Physico - Centro de Avaliação Física e Nutricional",
    "codigo": "329",
-   "celulares": [],
+   "celulares": [
+    "(31) 98266-4869"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.clinicaphysico.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dr. Cristiano Guimarães, Nº1958 - SL 402 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
    "place_id": "ChIJAxJdLauZpgARHUTqqjOOQws",
-   "nome": "",
+   "nome": "Thairine Pacheco Nutricionista",
    "codigo": "330",
-   "celulares": [],
+   "celulares": [
+    "(31) 98687-6550"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.thairinenutricionista.com/?utm_source=google&utm_medium=organic&utm_campaign=perfil_empresa_bh",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Izabel Bueno, 579 - Sl 109 - Jaraguá, Belo Horizonte - MG, 31270-065, Brasil"
   },
   {
    "place_id": "ChIJixQmW_GPpgARQzTuq7xf_7g",
-   "nome": "",
+   "nome": "Uniclínica BH - Clínica de Especialidades Médicas, Laboratório e Ultrassons",
    "codigo": "333",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3656-4448"
+   ],
+   "site": "http://www.uniclinicabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. das Gabirobas, 84 - Venda Nova, Belo Horizonte - MG, 31744-012, Brasil"
   },
   {
    "place_id": "ChIJUWMHk-mPpgARoiJa2MFmc-o",
-   "nome": "",
+   "nome": "MultiClinica",
    "codigo": "334",
-   "celulares": [],
+   "celulares": [
+    "(31) 98874-1796"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "http://www.multiclinicabh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santa Cruz, 153 - Venda Nova, Belo Horizonte - MG, 31515-060, Brasil"
   },
   {
    "place_id": "ChIJq3UjxvqPpgARn-GcZg3Sv5o",
-   "nome": "",
+   "nome": "Dra. Vanessa Jesus Clínica Estética",
    "codigo": "335",
-   "celulares": [],
+   "celulares": [
+    "(31) 97574-9172"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dravanessa-clinica.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Vênus, 190 - Parque São Pedro, Belo Horizonte - MG, 31610-260, Brasil"
   },
   {
    "place_id": "ChIJhaBJ9MqPpgAReQV-BoGgtnQ",
-   "nome": "",
+   "nome": "clinica de estetica em bh - Spa Hegai",
    "codigo": "336",
-   "celulares": [],
+   "celulares": [
+    "(31) 97581-3015"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Irineu Pinto n65B - Venda Nova, Belo Horizonte - MG, 31510-020, Brasil"
   },
   {
    "place_id": "ChIJmygUluWPpgAR-yB7MLMgNUA",
-   "nome": "",
+   "nome": "Neo Clinic",
    "codigo": "337",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 2125-0500"
+   ],
+   "site": "http://www.neoclinicbh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santo Antônio, 66 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
    "place_id": "ChIJq7M-yu-PpgARHvCKlzIYFJs",
-   "nome": "",
+   "nome": "Coop Saúde",
    "codigo": "338",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3408-7400"
+   ],
+   "site": "http://coopsaudevendanova.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Boa Vista, 73 - Venda Nova, Belo Horizonte - MG, 30515-090, Brasil"
   },
   {
    "place_id": "ChIJuxKMoyCQpgAR7rMlhz4SUFU",
-   "nome": "",
+   "nome": "Centro Clínico Venda Nova | Hapvida NotreDame",
    "codigo": "339",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 4090-2290"
+   ],
+   "site": "https://www.gndiminas.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Dr. Álvaro Camargos, 2002 - Santa Branca, Belo Horizonte - MG, 31515-252, Brasil"
   },
   {
    "place_id": "ChIJ1WSHJYSPpgARWOFqMfJtfWg",
-   "nome": "",
+   "nome": "Humberto Endocrinologia e Emagrecimento Venda Nova",
    "codigo": "340",
-   "celulares": [],
+   "celulares": [
+    "(31) 97220-8245"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.doctoralia.com.br/humberto-batista-ferreira/endocrinologista/belo-horizonte-ribeirao-das-neves-juiz-de-fora",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Vilarinho, 1601 - Piso 3, sala 309 - Venda Nova, Belo Horizonte - MG, 30650-250, Brasil"
   },
   {
    "place_id": "ChIJS0tbXTGPpgARFCnztU91kTA",
-   "nome": "",
+   "nome": "Dra. Debora",
    "codigo": "341",
-   "celulares": [],
+   "celulares": [
+    "(31) 98567-1275"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Geraldo Alexandre Ferreira, 13 - São Pedro (Venda Nova), Belo Horizonte - MG, 31610-580, Brasil"
   },
   {
    "place_id": "ChIJM074oJGPpgARgbSaRT7PJ4w",
-   "nome": "",
+   "nome": "Innove Estética Facial e Corporal",
    "codigo": "342",
-   "celulares": [],
+   "celulares": [
+    "(31) 98576-7327"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Antônia de Carvalho, 15 - Minas Caixa, Belo Horizonte - MG, 31615-090, Brasil"
   },
   {
    "place_id": "ChIJN6ucdwCPpgAR1VG2uRvhDis",
-   "nome": "",
+   "nome": "Nutricionista Drielly Nepomuceno",
    "codigo": "343",
-   "celulares": [],
+   "celulares": [
+    "(31) 99667-2326"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://beacons.ai/drielly.nutricionista",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Vilarinho, 1051 - Sl 12 - Venda Nova, Belo Horizonte - MG, 31610-070, Brasil"
   },
   {
    "place_id": "ChIJWcacRPwWDIARSS_ybFGYcs0",
-   "nome": "",
+   "nome": "Janaina Rungue Nutricionista - by Nutrivida",
    "codigo": "344",
-   "celulares": [],
+   "celulares": [
+    "(31) 99966-1453"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://janainarungue.my.canva.site/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Camilla Rodrigues Pilates e Funcional - R. Santo Antônio, 155 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
    "place_id": "ChIJYeMzJe6PpgARs6ZBK-zQl1k",
-   "nome": "",
+   "nome": "Nutricionista Danúbia Napoli",
    "codigo": "345",
-   "celulares": [],
+   "celulares": [
+    "(31) 98659-8839"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://dietbox.me/pt-BR/danubia-napoliana-luiz?fbclid=PAAab8D5G9YNgsyL18-OWtDiHE_-FkEA3-wdyCYfWUMbh48y9tnLVNrCZb19U",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Padre Pedro Pinto, 6640B - Lagoinha (Venda Nova), Belo Horizonte - MG, 31610-100, Brasil"
   },
   {
    "place_id": "ChIJDdREv_uPpgARzb0-zhhEJuY",
-   "nome": "",
+   "nome": "Espaço Simone Graciano",
    "codigo": "346",
-   "celulares": [],
+   "celulares": [
+    "(31) 98753-2000"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/simonegraciano_/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Emídio Furtado, 40 - Letícia, Belo Horizonte - MG, 31570-120, Brasil"
   },
   {
    "place_id": "ChIJd0mjheyPpgARSVAHltpyhZE",
-   "nome": "",
+   "nome": "Dra. Raquel Barreto",
    "codigo": "347",
-   "celulares": [],
+   "celulares": [
+    "(31) 99546-4645"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Onófre Mendes Júnior, 13 - Sl 10 segundo andar - Candelária, Belo Horizonte - MG, 31535-522, Brasil"
   },
   {
    "place_id": "ChIJDZdjaM6RpgARHn8vmEBTO-A",
-   "nome": "",
+   "nome": "Giovanna Mendes - Nutricionista",
    "codigo": "348",
-   "celulares": [],
+   "celulares": [
+    "(31) 99709-4868"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/giovannamendes.nutri?cplk=MW0xMGwwcnU0OXRqZA%3D%3D&utm_source=qr",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dr. Cristiano Guimarães, 336 - Planalto, Belo Horizonte - MG, 31744-144, Brasil"
   },
   {
    "place_id": "ChIJYaUsTuWPpgARonIrbcvubrw",
-   "nome": "",
+   "nome": "Dra. Paloma Moraes - Harmonização facial e estética regenerativa",
    "codigo": "349",
-   "celulares": [],
+   "celulares": [
+    "(31) 98645-3935"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://linktr.ee/Palomamoraes",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Visc. de Taunay, 582 - São João Batista, Belo Horizonte - MG, 31525-020, Brasil"
   },
   {
    "place_id": "ChIJsRl6e9KXpgARDtHGks3tQL8",
-   "nome": "",
+   "nome": "Lorrainy Gonçalves - Estética Inteligente",
    "codigo": "350",
-   "celulares": [],
+   "celulares": [
+    "(31) 97161-5115"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Dom Pedro I, 2077 - São João Batista, Belo Horizonte - MG, 31710-971, Brasil"
   },
   {
    "place_id": "ChIJjYlRzYqPpgARscLG_AOZNRw",
-   "nome": "",
+   "nome": "Estética Cíntia Reis | Drenagem Linfática | Limpeza de pele | Criolipólise em Belo Horizonte",
    "codigo": "351",
-   "celulares": [],
+   "celulares": [
+    "(31) 98863-5611"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://tinyurl.com/CintiaReis",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Des. Onófre Mendes Júnior, 190 - Loja 8 - São João Batista, Belo Horizonte - MG, 31535-510, Brasil"
   },
   {
    "place_id": "ChIJb4YzutSPpgAR_uMgXKbn0Ok",
-   "nome": "",
+   "nome": "INTATOS Estética Avançada",
    "codigo": "352",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3452-6407"
+   ],
+   "site": "https://www.intatos.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Rua Newton da Costa Silveira, 376 - Santa Monica, Belo Horizonte - MG, 31535-030, Brasil"
   },
   {
    "place_id": "ChIJ57Re03mPpgARACtof1p_VUM",
-   "nome": "",
+   "nome": "Nutricionista Esportivo Venda Nova",
    "codigo": "353",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3244-1818"
+   ],
+   "site": "https://www.doctoralia.com.br/clinicas/instituto-saude",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Vilarinho, 1601 - nivel 3 sala 309 - Venda Nova, Belo Horizonte - MG, 31650-250, Brasil"
   },
   {
    "place_id": "ChIJJXHWrNGPpgAR5OY-8mIHmHY",
-   "nome": "",
+   "nome": "Chris Rabelo Corpo & Mente",
    "codigo": "354",
-   "celulares": [],
+   "celulares": [
+    "(31) 99351-0101"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. João Samaha, 1380 - sobre loja - São João Batista, Belo Horizonte - MG, 31520-100, Brasil"
   },
   {
    "place_id": "ChIJKcteNjuZpgARuOdMSD06GP4",
-   "nome": "",
+   "nome": "Consultório Dra. Priscilla Souza - Nutricionista",
    "codigo": "356",
-   "celulares": [],
+   "celulares": [
+    "(31) 99857-7732"
+   ],
    "fixos": [],
-   "site": "",
+   "site": "https://www.instagram.com/priscilla.asouzanutri/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Padre Pedro Pinto, 447 - Sl 06 - Venda Nova, Belo Horizonte - MG, 31515-000, Brasil"
   },
   {
    "place_id": "ChIJb7p_Jo6PpgARxSOmSsFkL9M",
-   "nome": "",
+   "nome": "RAIO-X NEO CLINIC VENDA NOVA",
    "codigo": "358",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 2125-0500"
+   ],
+   "site": "https://neoclinicbh.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "R. Santo Antônio, 66 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
    "place_id": "ChIJRTGAgMCZpgARPHpXDG-ZPOw",
-   "nome": "",
+   "nome": "Soloh Consultórios",
    "codigo": "360",
-   "celulares": [],
+   "celulares": [
+    "(31) 97190-5502"
+   ],
    "fixos": [],
    "site": "",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. do Contorno, 7069 - Sl. 312 - Lourdes, Belo Horizonte - MG, 30110-043, Brasil"
   },
   {
    "place_id": "ChIJp1mU_Z-XpgAR-hFpuLCP4RA",
-   "nome": "",
+   "nome": "Dr. Bernardo Decina",
    "codigo": "361",
    "celulares": [],
-   "fixos": [],
-   "site": "",
+   "fixos": [
+    "(31) 3243-0856"
+   ],
+   "site": "https://drbernardodecina.com.br/",
    "foto": "",
    "foto_alt": "",
-   "foto_credito": ""
+   "foto_credito": "",
+   "endereco": "Av. Olegário Maciel, 1453 - Lourdes, Belo Horizonte - MG, 30180-111, Brasil"
   }
  ]
 }
