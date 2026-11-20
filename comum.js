@@ -558,3 +558,11 @@ function preencherLocalidades(selRegiao, selBairro, itens, locaisDe, { regiao, b
     + bairros.map(b => opcao(b, rotuloBairro(b), conta(l => l.bairro === b && (!regiao || l.regiao === regiao)))).join("");
   selBairro.value = bairro;
 }
+
+// Barra de busca com a escolha "Nome | Bairro": marca o botão escolhido e troca o texto de exemplo.
+function sincronizarBusca(por, exemplos, item) {
+  document.querySelectorAll(".busca-por button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.por === por)));
+  const q = document.getElementById("q");
+  q.placeholder = exemplos[por];
+  q.setAttribute("aria-label", por === "bairro" ? `Buscar ${item} pelo bairro` : `Buscar ${item} pelo nome`);
+}

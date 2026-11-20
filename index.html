@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=a02d8efc">
+<link rel="stylesheet" href="estilo.css?v=65b57c4e">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -26,7 +26,11 @@
   <div class="wrap">
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Nome, CRM, clínica ou bairro" aria-label="Buscar">
+      <input type="search" id="q" placeholder="Nome do médico" aria-label="Buscar médico pelo nome" autocomplete="off">
+      <span class="busca-por" role="group" aria-label="Buscar por">
+        <button type="button" data-por="nome" aria-pressed="true">Nome</button>
+        <button type="button" data-por="bairro" aria-pressed="false">Bairro</button>
+      </span>
     </label>
     <div class="seg" role="group" aria-label="Especialidade" id="esp">
       <button type="button" data-esp="" aria-pressed="true">Todas</button>
@@ -74,7 +78,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=52e86fe3"></script>
+<script src="comum.js?v=95106459"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -88,7 +92,7 @@ const mapaHref = l => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 };
 
-const estado = { q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "", limite: PAGINA };
+const estado = { q: "", por: "nome", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "", limite: PAGINA };
 let medicos = [];
 
 const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
@@ -178,6 +182,7 @@ function htmlCard(m) {
 
 function filtrar() {
   const termos = semAcento(estado.q).split(/\s+/).filter(Boolean);
+  const achou = texto => termos.every(t => semAcento(texto).includes(t));
   return medicos.filter(m =>
     (!estado.esp || m.especialidades.includes(estado.esp)) &&
     ((!estado.regiao && !estado.bairro) || m.locais.some(l =>
@@ -186,7 +191,7 @@ function filtrar() {
     (!estado.cel || m.locais.some(l => l.celulares.length)) &&
     (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(idMedico(m)))) &&
     responsaveis.passa(idMedico(m), estado.responsavel) &&
-    termos.every(t => m._busca.includes(t))
+    (!termos.length || (estado.por === "bairro" ? m.locais.some(l => achou(l.bairro)) : achou(m.nome)))
   );
 }
 
@@ -213,6 +218,7 @@ function aplicar(mudanca) {
   Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
+  sincronizarBusca(estado.por, { nome: "Nome do médico", bairro: "Nome do bairro" }, "médico");
   document.querySelectorAll("#esp button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
   document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   localidades();
@@ -245,6 +251,11 @@ function ligar() {
     clearTimeout(t);
     t = setTimeout(() => aplicar({ q: e.target.value }), 120);
   });
+  document.querySelectorAll(".busca-por button").forEach(b => b.addEventListener("click", () => {
+    aplicar({ por: b.dataset.por });
+    document.getElementById("q").focus();
+  }));
+
   document.querySelectorAll("#esp button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
   document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
   contatos.ligar(document.getElementById("grid"));
@@ -265,7 +276,6 @@ fetch("medicos_bh.json", { cache: "no-cache" })
   .then(dados => {
     medicos = dados.medicos.map(m => ({
       ...m,
-      _busca: semAcento([m.nome, m.crm, ...m.especialidades, ...m.locais.flatMap(l => [l.estabelecimento, l.bairro, l.endereco, l.regiao])].join(" ")),
     }));
     stats(dados); localidades(); ligar(); render();
   })

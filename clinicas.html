@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=a02d8efc">
+<link rel="stylesheet" href="estilo.css?v=65b57c4e">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -26,7 +26,11 @@
   <div class="wrap">
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Nome, bairro ou telefone" aria-label="Buscar clínica">
+      <input type="search" id="q" placeholder="Nome da clínica" aria-label="Buscar clínica pelo nome" autocomplete="off">
+      <span class="busca-por" role="group" aria-label="Buscar por">
+        <button type="button" data-por="nome" aria-pressed="true">Nome</button>
+        <button type="button" data-por="bairro" aria-pressed="false">Bairro</button>
+      </span>
     </label>
     <div class="seg" role="group" aria-label="Contato" id="contato">
       <button type="button" data-contato="" aria-pressed="true">Todas</button>
@@ -66,11 +70,11 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=52e86fe3"></script>
+<script src="comum.js?v=95106459"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
-const estado = { q: "", regiao: "", bairro: "", cel: false, contato: "", responsavel: "", limite: PAGINA };
+const estado = { q: "", por: "nome", regiao: "", bairro: "", cel: false, contato: "", responsavel: "", limite: PAGINA };
 let clinicas = [];
 
 const contatos = criarContatos({
@@ -116,7 +120,7 @@ function htmlClinica(c) {
 function filtrar(lista) {
   const termo = semAcento(estado.q.trim());
   const numero = termo.replace(/\D/g, "");
-  const porTelefone = numero && /^[\d ()+-]+$/.test(termo);
+  const porTelefone = estado.por === "nome" && numero && /^[\d ()+-]+$/.test(termo); // número digitado: busca pelo telefone
   return lista.filter(c =>
     (!estado.regiao || c.regiao === estado.regiao) &&
     (!estado.bairro || c.bairro === estado.bairro) &&
@@ -125,7 +129,7 @@ function filtrar(lista) {
     responsaveis.passa(c.place_id, estado.responsavel) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
-      : semAcento(`${c.nome} ${c.endereco || ""}`).includes(termo)))
+      : semAcento(estado.por === "bairro" ? (c.bairro || c.endereco || "") : c.nome).includes(termo)))
   );
 }
 
@@ -150,6 +154,7 @@ function aplicar(mudanca) {
   Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
+  sincronizarBusca(estado.por, { nome: "Nome da clínica", bairro: "Nome do bairro" }, "clínica");
   localidades();
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
@@ -170,6 +175,10 @@ const localidades = () => preencherLocalidades(
 
 let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
+document.querySelectorAll(".busca-por button").forEach(b => b.addEventListener("click", () => {
+  aplicar({ por: b.dataset.por });
+  document.getElementById("q").focus();
+}));
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
 document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
 document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
