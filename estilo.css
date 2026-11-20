@@ -268,3 +268,18 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .contato-btn[aria-pressed="true"] { border-style: solid; border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
 .clinica-card.contatada { border-color: var(--accent); }
 .clinica-card.contatada h3::after { content: " ✓"; color: var(--accent); font-size: .8em; }
+
+/* Sincronização das marcações com a API */
+.nuvem { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 16px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--ink-2); font-size: 14px; }
+.nuvem:empty { display: none; }
+.nuvem svg { flex: none; color: var(--ink-3); }
+.nuvem .limpar { padding: 0; }
+.nuvem.ok svg { color: var(--accent); }
+.nuvem.alerta { border-color: #c2410c; }
+.nuvem.alerta svg { color: #c2410c; }
+.nuvem form { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; width: 100%; }
+.nuvem label { font-weight: 500; color: var(--ink); }
+.nuvem input { flex: 1 1 200px; width: auto; height: 38px; }
+.nuvem .wa-botao { height: 38px; padding: 0 16px; border: 0; border-radius: 8px; font: inherit; font-weight: 600; cursor: pointer; }
+.nuvem small { width: 100%; color: var(--ink-3); font-size: 12.5px; }
+.nuvem small.erro-campo { color: #c2410c; }
