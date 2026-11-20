@@ -9,9 +9,7 @@
     "(31) 3318-3838"
    ],
    "site": "https://www.clinicacredidio.com.br/",
-   "foto": "fotos-clinicas/139.webp",
-   "foto_alt": "Clínica Credidio",
-   "foto_credito": "https://www.clinicacredidio.com.br/"
+   "endereco": "Rua Pium-Í, 1123 - Cruzeiro, Belo Horizonte - MG, 30310-080, Brasil"
   },
   {
    "place_id": "ChIJKdslCRyZpgARV_-VK5x8qnc",
@@ -23,9 +21,7 @@
     "(31) 2551-7930"
    ],
    "site": "https://clinicadelavie.com.br/",
-   "foto": "fotos-clinicas/196.webp",
-   "foto_alt": "Recepção da Clínica Delavie",
-   "foto_credito": "https://clinicadelavie.com.br/"
+   "endereco": "R. da Bahia, 2696 - Sl 904 - Lourdes, Belo Horizonte - MG, 30160-019, Brasil"
   },
   {
    "place_id": "ChIJHTwgf7aapgARIuf1tCsJkvw",
@@ -35,9 +31,7 @@
     "(31) 3433-2530"
    ],
    "site": "https://clinicaguarani.com.br/",
-   "foto": "fotos-clinicas/279.webp",
-   "foto_alt": "Recepção e corredor da Clínica Guarani",
-   "foto_credito": "https://clinicaguarani.com.br/"
+   "endereco": "R. Macaúbas, 295 - Guarani, Belo Horizonte - MG, 31840-180, Brasil"
   },
   {
    "place_id": "ChIJN8F_8-WZpgAR6CS6xemF3x4",
@@ -47,9 +41,7 @@
    ],
    "fixos": [],
    "site": "https://drgetuliosantos.com.br/",
-   "foto": "fotos-clinicas/136.webp",
-   "foto_alt": "Dr. Getúlio Santos sentado à mesa do consultório, com a vista de Belo Horizonte ao fundo",
-   "foto_credito": "https://drgetuliosantos.com.br/"
+   "endereco": "Clinica Kocher - R. Fernandes Tourinho, 370 - 6º andar - Savassi, Belo Horizonte - MG, 30112-004, Brasil"
   },
   {
    "place_id": "ChIJxzQhehiZpgARm0N4bxqUXKg",
@@ -59,9 +51,7 @@
    ],
    "fixos": [],
    "site": "https://drviniciusandrade.com.br/",
-   "foto": "fotos-clinicas/12.webp",
-   "foto_alt": "Recepção da Clínica Essence Health, consultório do Dr. Vinícius Andrade em Belo Horizonte",
-   "foto_credito": "https://drviniciusandrade.com.br/"
+   "endereco": "Av. Luiz Paulo Franco, 603 - Conj 1303 - Belvedere, Belo Horizonte - MG, 30320-570, Brasil"
   },
   {
    "place_id": "ChIJo71GQXqRpgAR6y52dlKL6xs",
@@ -71,9 +61,7 @@
    ],
    "fixos": [],
    "site": "https://www.esteticaraissarodrigues.com.br/",
-   "foto": "fotos-clinicas/275.webp",
-   "foto_alt": "Interior da Clínica",
-   "foto_credito": "https://www.esteticaraissarodrigues.com.br/"
+   "endereco": "Av. Sebastião de Brito, 598 - Sl 202 - Dona Clara, Belo Horizonte - MG, 31260-000, Brasil"
   },
   {
    "place_id": "ChIJcVmsedGXpgARGIjsKjomS84",
@@ -83,9 +71,7 @@
    ],
    "fixos": [],
    "site": "https://dralummamenezes.com.br/",
-   "foto": "fotos-clinicas/234.webp",
-   "foto_alt": "Dra. Lumma Menezes no consultório, em Belo Horizonte",
-   "foto_credito": "https://dralummamenezes.com.br/"
+   "endereco": "R. dos Aimorés, 3140 - 6º andar sala 608 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJyW4jfyeXpgARBxICHYQsvuE",
@@ -95,9 +81,7 @@
    ],
    "fixos": [],
    "site": "https://luannakayrisnutri.com.br/",
-   "foto": "fotos-clinicas/262.webp",
-   "foto_alt": "Luanna Kayris no consultório, de vestido azul, sorrindo com um tablet e uma caneta na mão.",
-   "foto_credito": "https://luannakayrisnutri.com.br/"
+   "endereco": "Av. dos Engenheiros, 431 - Castelo, Belo Horizonte - MG, 30840-563, Brasil"
   },
   {
    "place_id": "ChIJ9cCkcc2XpgARfk0OUYoLZUo",
@@ -107,9 +91,7 @@
    ],
    "fixos": [],
    "site": "https://drpedromiguel.com.br/",
-   "foto": "fotos-clinicas/91.webp",
-   "foto_alt": "Dr. Pedro Miguel, nutricionista clínico e esportivo em seu consultório em Belo Horizonte",
-   "foto_credito": "https://drpedromiguel.com.br/"
+   "endereco": "R. Matias Cardoso, 63 - Santo Agostinho, Belo Horizonte - MG, 30170-914, Brasil"
   },
   {
    "place_id": "ChIJ7en5FHq9pgARrjDZHZWkorM",
@@ -119,9 +101,7 @@
    ],
    "fixos": [],
    "site": "https://nutricao.info/alitakfuri",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Domiciano Viêira, 101 - Barreiro, Belo Horizonte - MG, 30642-040, Brasil"
   },
   {
    "place_id": "ChIJJ7pgszaZpgARk8sp2bJ2lcQ",
@@ -131,9 +111,7 @@
    ],
    "fixos": [],
    "site": "https://www.bellastima.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Antônio de Albuquerque, 717 - Sl 604 - Funcionários, Belo Horizonte - MG, 30112-011, Brasil"
   },
   {
    "place_id": "ChIJPy_CP-6PpgARqqGaEgnKooU",
@@ -143,9 +121,7 @@
     "(31) 3298-5500"
    ],
    "site": "https://www.cedus.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Padre Pedro Pinto, 457 - Venda Nova, Belo Horizonte - MG, 31515-000, Brasil"
   },
   {
    "place_id": "ChIJIfFW2dyXpgAR4drBfiIOBOE",
@@ -155,9 +131,7 @@
     "(31) 3337-3000"
    ],
    "site": "https://drburitis.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Rua Walter Guimarães Figueiredo, 90 - Buritis, Belo Horizonte - MG, 30492-030, Brasil"
   },
   {
    "place_id": "ChIJEzM4Pr2XpgARTw0XxNAakP8",
@@ -167,9 +141,7 @@
    ],
    "fixos": [],
    "site": "https://clinicaesteticabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Maria Macedo, nº 233 - sala: 710 - Nova Suíça, Belo Horizonte - MG, 30421-223, Brasil"
   },
   {
    "place_id": "ChIJoUJm5GCZpgARYB66i1U2e4I",
@@ -181,9 +153,7 @@
    ],
    "fixos": [],
    "site": "https://www.climedicabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Ceará, 1431 - Funcionários, Belo Horizonte - MG, 30150-311, Brasil"
   },
   {
    "place_id": "ChIJYeFAUDKRpgARZx7wUhPlwTg",
@@ -193,9 +163,7 @@
    ],
    "fixos": [],
    "site": "https://clinicadeesteticaembh.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Dep. Anuar Menhem, 675 - Lj B - Santa Amelia, Belo Horizonte - MG, 31560-200, Brasil"
   },
   {
    "place_id": "ChIJrdpIXYSFpgARVkFMLRSgnwU",
@@ -205,9 +173,7 @@
    ],
    "fixos": [],
    "site": "https://clinicavellise.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. do Contorno, 7069 - Lourdes, Belo Horizonte - MG, 30110-043, Brasil"
   },
   {
    "place_id": "ChIJOQyA1mWXpgARcBuwNaHeA6w",
@@ -219,9 +185,7 @@
     "(31) 3564-7111"
    ],
    "site": "https://clinlife.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Sergipe, 853 - Savassi, Belo Horizonte - MG, 30130-171, Brasil"
   },
   {
    "place_id": "ChIJ_1hnMuyZpgARPN79qJTGI_o",
@@ -231,9 +195,7 @@
     "(31) 3273-7489"
    ],
    "site": "https://bhariatrica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Edificio Life Center - Av. do Contorno, 4747 - 16º andar - Serra, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJ0YXR82eXpgARFOUk4ccmEGg",
@@ -244,9 +206,7 @@
     "(31) 3337-2000"
    ],
    "site": "https://clinicacirurgicatraumaone.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Araguari, 1156 - 6 ANDAR - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJKYc3z4KXpgARVFZifAwJ39g",
@@ -257,9 +217,7 @@
     "(31) 3337-2000"
    ],
    "site": "https://clinicacirurgicatraumaone.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Araguari, 1156 - Conj 604 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJ2aLkPcCXpgARk80MCwXUs3Q",
@@ -269,9 +227,7 @@
    ],
    "fixos": [],
    "site": "https://draellenduraes.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. dos Aimorés, 3018 - sala 807 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJBSChg7SRpgARU3qLbCN8TbI",
@@ -283,9 +239,7 @@
     "(31) 2517-1577"
    ],
    "site": "https://clinicaesense.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. dos Engenheiros, 719 - Alípio de Melo, Belo Horizonte - MG, 30840-300, Brasil"
   },
   {
    "place_id": "ChIJ322V116XpgARheHjuLesCjk",
@@ -297,9 +251,7 @@
     "(31) 3546-6767"
    ],
    "site": "https://www.especialmed.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Augusto de Lima, 1113 - Barro Preto, Belo Horizonte - MG, 30190-002, Brasil"
   },
   {
    "place_id": "ChIJt2DucNuZpgARApKm37scXLw",
@@ -310,9 +262,7 @@
    ],
    "fixos": [],
    "site": "https://www.clinicalev.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Alagoas, 961 - Savassi, Belo Horizonte - MG, 30130-160, Brasil"
   },
   {
    "place_id": "ChIJxc3YP7C_pgAR1bT3ZdEkgHw",
@@ -322,9 +272,7 @@
    ],
    "fixos": [],
    "site": "https://clini.site/nataliasclinica",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Três de Maio - Santa Helena, Belo Horizonte - MG, 30642-180, Brasil"
   },
   {
    "place_id": "ChIJg7__SHO-pgARk2K83OxI4HI",
@@ -334,9 +282,7 @@
     "(31) 2526-7070"
    ],
    "site": "https://www.clinicaolasaude.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Sinfrônio Brochado, 1400 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
    "place_id": "ChIJAQDQqeqZpgARsUmBw_IyP68",
@@ -346,9 +292,7 @@
     "(31) 3281-8063"
    ],
    "site": "https://clinicasantesaude.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Of. do Contorno, 4480 - Room 701/702 - Santa Efigênia, Belo Horizonte - MG, 30110-042, Brasil"
   },
   {
    "place_id": "ChIJLfqWWe6PpgAR0ULRjTf7zss",
@@ -358,9 +302,7 @@
     "(31) 3457-4424"
    ],
    "site": "https://www.clinicavidanova.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Santo Antônio, 205 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
    "place_id": "ChIJi12iR72ZpgARpAW9GQu-7lk",
@@ -370,9 +312,7 @@
    ],
    "fixos": [],
    "site": "https://consultoriobh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Antônio de Albuquerque, 749 - Salas 505/506 - Savassi, Belo Horizonte - MG, 30112-011, Brasil"
   },
   {
    "place_id": "ChIJlTEaUCS_pgARQ2N4xG0TC84",
@@ -382,9 +322,7 @@
    ],
    "fixos": [],
    "site": "https://nutribacelar.vercel.app/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Rua Benedito dos Santos, 515 - Barreiro, Belo Horizonte - MG, 30640-140, Brasil"
   },
   {
    "place_id": "ChIJAe33cT2ZpgARKrkis-YSyy8",
@@ -394,9 +332,7 @@
    ],
    "fixos": [],
    "site": "https://dradrianofranco.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Santa Rita Durão, 20 - Sl 702 - Funcionários, Belo Horizonte - MG, 30140-110, Brasil"
   },
   {
    "place_id": "ChIJqbXpJNCXpgAR3davd3h45SA",
@@ -408,9 +344,7 @@
     "(31) 3268-2169"
    ],
    "site": "https://eduardogarcia.med.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. dos Aimorés, 3140 - Sala 608 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJe3a3i7-ZpgARVMu2qzEvZxg",
@@ -420,9 +354,7 @@
    ],
    "fixos": [],
    "site": "https://drreneberindoague.bhariatrica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Edifício Life Center - Av. do Contorno, 4747 - Sala 1607 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJ337JbVKZpgARNsINglIURIw",
@@ -432,9 +364,7 @@
    ],
    "fixos": [],
    "site": "https://drviniciusmagno.med.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Santa Rita Durão, 444 - Funcionários, Belo Horizonte - MG, 30140-111, Brasil"
   },
   {
    "place_id": "ChIJJU_jGOaZpgARukhJmJWZ4e8",
@@ -445,9 +375,7 @@
    ],
    "fixos": [],
    "site": "https://draisabellamarx.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Wilson Rocha Lima, 80 - Santa Lúcia, Belo Horizonte - MG, 30494-460, Brasil"
   },
   {
    "place_id": "ChIJPXTWV_WXpgARyP0w95OVrUc",
@@ -457,9 +385,7 @@
    ],
    "fixos": [],
    "site": "https://drarenatasaudedamulher.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Paracatu, 1154 - Barro Preto, Belo Horizonte - MG, 30180-091, Brasil"
   },
   {
    "place_id": "ChIJkTx6jleXpgARAVMBMw3TLaU",
@@ -469,9 +395,7 @@
    ],
    "fixos": [],
    "site": "https://sheylacordeironutri.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. dos Aimorés, 3140 - | Sala 608 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
    "place_id": "ChIJ5VAsJcCZpgARI2_460iUXr8",
@@ -481,9 +405,7 @@
    ],
    "fixos": [],
    "site": "https://giselewerneck.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Rio de Janeiro, 2702 - 9º andar - Lourdes, Belo Horizonte - MG, 30160-040, Brasil"
   },
   {
    "place_id": "ChIJ-784FEeZpgARlX5MJcbodfs",
@@ -496,9 +418,7 @@
     "(31) 2118-5555"
    ],
    "site": "https://leticiabrantendocrinologia.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Alagoas, 601 - Funcionários, Belo Horizonte - MG, 30130-160, Brasil"
   },
   {
    "place_id": "ChIJbV9U1yePpgARysjT8jfSHek",
@@ -508,9 +428,7 @@
    ],
    "fixos": [],
    "site": "https://www.dramarcelacamargo.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Dr. Cristiano Guimarães, 928 - Planalto, Belo Horizonte - MG, 31741-161, Brasil"
   },
   {
    "place_id": "ChIJJUzROYqXpgARZHSd6_eQAD0",
@@ -522,9 +440,7 @@
     "(31) 3374-4422"
    ],
    "site": "https://www.medicinadeprecisao.net/home",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. do Contorno, 7069 - Sl 910 - Lourdes, Belo Horizonte - MG, 30110-017, Brasil"
   },
   {
    "place_id": "ChIJdxStyBa9pgARvC6kZYRK_Nc",
@@ -534,9 +450,7 @@
    ],
    "fixos": [],
    "site": "https://doutoramariatereza.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Des. Ribeiro da Luz, 363 - Sl 102 - Barreiro, Belo Horizonte - MG, 30640-040, Brasil"
   },
   {
    "place_id": "ChIJOTw1n12ZpgARSx8dRLppdJA",
@@ -546,9 +460,7 @@
    ],
    "fixos": [],
    "site": "https://dranatalialaender.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Francisco Sales, 1463 - Santa Efigênia, Belo Horizonte - MG, 30150-225, Brasil"
   },
   {
    "place_id": "ChIJH2RtCPGZpgARHIP2CCle7KM",
@@ -558,9 +470,7 @@
    ],
    "fixos": [],
    "site": "https://drapaulahaass.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Clínica Bhariátrica - Av. do Contorno, 4747 - Salas 1607-1612 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
    "place_id": "ChIJBf9AxJWXpgARP95-yoc3MiY",
@@ -570,9 +480,7 @@
    ],
    "fixos": [],
    "site": "https://rafaelaoliveira.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. da Bahia, 2696 - Lourdes, Belo Horizonte - MG, 30160-012, Brasil"
   },
   {
    "place_id": "ChIJ4ae32UCZpgARUFClSxONngQ",
@@ -582,9 +490,7 @@
    ],
    "fixos": [],
    "site": "https://conversa-direta-nutri.lovable.app/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Afonso Pena, 4273 - Sl 602Belo - Horizonte, Belo Horizonte - MG, 30130-008, Brasil"
   },
   {
    "place_id": "ChIJXayv19OPpgARMylMO7qjwsQ",
@@ -594,9 +500,7 @@
    ],
    "fixos": [],
    "site": "https://www.espacoplenitudebh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Dr. Américo Gasparini, 31 - São João Batista, Belo Horizonte - MG, 31520-270, Brasil"
   },
   {
    "place_id": "ChIJd7EiSuqZpgAR0-MpjvbrMP4",
@@ -606,9 +510,7 @@
    ],
    "fixos": [],
    "site": "https://www.hellenvalenutricionista.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Rio Grande do Norte, 726 - Sl 304 - Funcionários, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJsd2r-M2ZpgARpnNPD0QoBK4",
@@ -618,9 +520,7 @@
    ],
    "fixos": [],
    "site": "https://institutoamericano.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Bernardo Guimarães, 874 - Savassi, Belo Horizonte - MG, 30140-081, Brasil"
   },
   {
    "place_id": "ChIJc25bK2-XpgARLv7bWg2UM2U",
@@ -630,9 +530,7 @@
    ],
    "fixos": [],
    "site": "https://institutofaustino.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Araguari, 1156 - Sl 1404 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
    "place_id": "ChIJWSiHtWyXpgARYwGtbGTQtVc",
@@ -642,9 +540,7 @@
    ],
    "fixos": [],
    "site": "https://draclara.lovable.app/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Barão Homem de Melo, 4494 - Nova Granada, Belo Horizonte - MG, 30494-270, Brasil"
   },
   {
    "place_id": "ChIJi4hhhOWXpgAR6HqhK75ZVGo",
@@ -654,9 +550,7 @@
    ],
    "fixos": [],
    "site": "https://institutoklein.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. do Contorno, 5616 - Savassi, Belo Horizonte - MG, 30110-036, Brasil"
   },
   {
    "place_id": "ChIJw9SNI92ZpgAR38FdsbSEjVE",
@@ -669,9 +563,7 @@
     "(31) 3262-3220"
    ],
    "site": "https://www.endocrinologia.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Alagoas, 601 - Savassi, Belo Horizonte - MG, 34580-220, Brasil"
   },
   {
    "place_id": "ChIJ2-G7Kl6XpgARQDiEQgvSTQo",
@@ -681,9 +573,7 @@
    ],
    "fixos": [],
    "site": "https://imobesidade.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Olegário Maciel, 1479 - Lourdes, Belo Horizonte - MG, 30180-111, Brasil"
   },
   {
    "place_id": "ChIJE6gAAe2ZpgARqZnNvMJvlKg",
@@ -695,9 +585,7 @@
     "(31) 3243-5951"
    ],
    "site": "https://nankran.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. dos Aimorés, 3018 - Sl 606 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
    "place_id": "ChIJ3aEce6a9pgARJaWKqby5UJk",
@@ -707,9 +595,7 @@
     "(31) 3244-1818"
    ],
    "site": "https://www.clinicasinstitutosaude.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Honório Hermeto, 45 - Sl 306 - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
    "place_id": "ChIJ84qF_FS9pgARUVHosg3NNGU",
@@ -719,9 +605,7 @@
     "(31) 3244-1818"
    ],
    "site": "https://www.clinicasinstitutosaude.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Vilarinho, 1601 - Venda Nova, Belo Horizonte - MG, 31615-250, Brasil"
   },
   {
    "place_id": "ChIJkY6U6Fm9pgARg5RaHvlmi_E",
@@ -731,9 +615,7 @@
     "(31) 3244-1818"
    ],
    "site": "https://www.clinicasinstitutosaude.com.br/cidade/belo-horizonte",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Honório Hermeto, 45 - Sl 306 - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
    "place_id": "ChIJ-a1-_X0fbYsRAQvv0INzzBA",
@@ -743,9 +625,7 @@
    ],
    "fixos": [],
    "site": "https://www.lacliniquebh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Raja Gabáglia, 2000 - Estoril, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
    "place_id": "ChIJUxeuqBmXpgARW2pSPScLKEQ",
@@ -755,9 +635,7 @@
     "(31) 3023-6558"
    ],
    "site": "https://www.lorenalaylaestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "http://www.lorenalaylaestetica.com.br - R. Mato Grosso, 800 - Sala 405 - Santo Agostinho, Belo Horizonte - MG, 30190-081, Brasil"
   },
   {
    "place_id": "ChIJRaZlgXmNpgARS-UZI9KlmCQ",
@@ -767,9 +645,7 @@
    ],
    "fixos": [],
    "site": "https://www.dramelissafreitas.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Rio Grande do Norte, 23 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
    "place_id": "ChIJOy4PZSSYpgARakozj5fAUvY",
@@ -779,9 +655,7 @@
     "(31) 3283-9773"
    ],
    "site": "https://metabolica.med.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Rio Grande do Norte, 1435 - Sl 607 - Savassi, Belo Horizonte - MG, 30130-138, Brasil"
   },
   {
    "place_id": "ChIJr6ZrPo2XpgARh2vJbUUOXZU",
@@ -791,9 +665,7 @@
    ],
    "fixos": [],
    "site": "https://micaeleramosnutricionista.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Padre Eustáquio, 2926 - Sl 206 - Padre Eustáquio, Belo Horizonte - MG, 30535-490, Brasil"
   },
   {
    "place_id": "ChIJzbU98O6XpgARt18rND2fpqs",
@@ -803,9 +675,7 @@
    ],
    "fixos": [],
    "site": "https://esteticasouzapri.wixsite.com/pri-souza-clinica-es",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Capim Branco, 407 - Vista Alegre, Belo Horizonte - MG, 30518-020, Brasil"
   },
   {
    "place_id": "ChIJd4j8SkiXpgAR3C4fvQINXdI",
@@ -815,9 +685,7 @@
     "(31) 2555-3324"
    ],
    "site": "https://www.sigmaestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Cambuquira, 668 - Carlos Prates, Belo Horizonte - MG, 30710-565, Brasil"
   },
   {
    "place_id": "ChIJvzGbe9-ZpgARvJzxdSk1N5E",
@@ -827,9 +695,7 @@
    ],
    "fixos": [],
    "site": "https://www.spatraining.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. São Paulo, 1966 - 401 - Lourdes, Belo Horizonte - MG, 30170-135, Brasil"
   },
   {
    "place_id": "ChIJh26ubGeXpgARhOeIp6v76MY",
@@ -839,9 +705,7 @@
    ],
    "fixos": [],
    "site": "https://www.silviaferolla.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. Bernardo Guimarães, 2717 - Sl 1101 - Santo Agostinho, Belo Horizonte - MG, 30140-082, Brasil"
   },
   {
    "place_id": "ChIJNwbc4MaZpgARdIcFOt3zlqY",
@@ -853,9 +717,7 @@
     "(31) 2551-6612"
    ],
    "site": "https://villecorpus.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "R. dos Aimorés, 2001 - Salas 1104 - Lourdes, Belo Horizonte - MG, 30140-072, Brasil"
   },
   {
    "place_id": "ChIJ-UDZq6yXpgARTAGxQAAvIpk",
@@ -865,9 +727,7 @@
    ],
    "fixos": [],
    "site": "https://www.vittaformaestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": ""
+   "endereco": "Av. Francisco Sá, 1213 - Sl 304 - Gutierrez, Belo Horizonte - MG, 30441-021, Brasil"
   },
   {
    "place_id": "ChIJobbq9ZiXpgAROr5DDqmVJ9A",
@@ -878,9 +738,6 @@
     "(31) 3567-0250"
    ],
    "site": "https://linktr.ee/emagrecentroprado",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Amazonas, 3336 - Prado, Belo Horizonte - MG, 30411-220, Brasil"
   },
   {
@@ -892,9 +749,6 @@
     "(31) 3245-6117"
    ],
    "site": "https://api.whatsapp.com/send?phone=5531992265952",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Manaus, 300 - São Lucas, Belo Horizonte - MG, 30150-350, Brasil"
   },
   {
@@ -906,9 +760,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/dratatianarage/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Barbacena, 600 - Santo Agostinho, Belo Horizonte - MG, 30140-074, Brasil"
   },
   {
@@ -920,9 +771,6 @@
    ],
    "fixos": [],
    "site": "http://www.clinicaless.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Levindo Lopes, 333 - 1505 - Funcionários, Belo Horizonte - MG, 30140-170, Brasil"
   },
   {
@@ -934,9 +782,6 @@
    ],
    "fixos": [],
    "site": "https://clinicasirlenedutra.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Felipe dos Santos, 521 - Sl 404 - Lourdes, Belo Horizonte - MG, 30180-160, Brasil"
   },
   {
@@ -948,9 +793,6 @@
    ],
    "fixos": [],
    "site": "http://instagram.com/clinicaemagrecerbh",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Altamiro Avelino Soares, 801 - Sl 201 - Castelo, Belo Horizonte - MG, 31330-000, Brasil"
   },
   {
@@ -960,9 +802,6 @@
    "celulares": [],
    "fixos": [],
    "site": "https://www.instagram.com/ricardoalmeidaclinic",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santos, 531 - Jardim America, Belo Horizonte - MG, 30421-386, Brasil"
   },
   {
@@ -974,9 +813,6 @@
     "(31) 3143-9561"
    ],
    "site": "https://magrassbarropreto.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Mato Grosso, 369 - Barro Preto, Belo Horizonte - MG, 30190-081, Brasil"
   },
   {
@@ -988,9 +824,6 @@
    ],
    "fixos": [],
    "site": "http://dradanielamoreira.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 26 - room 101 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
@@ -1002,9 +835,6 @@
     "(31) 3036-7400"
    ],
    "site": "http://www.sanebody.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Amazonas, 2102 - Santo Agostinho, Belo Horizonte - MG, 30180-001, Brasil"
   },
   {
@@ -1016,9 +846,6 @@
    ],
    "fixos": [],
    "site": "https://drafernandacamposnutrologia.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Timbiras, 3156 - Sl 405 - Barro Preto, Belo Horizonte - MG, 30140-062, Brasil"
   },
   {
@@ -1030,9 +857,6 @@
    ],
    "fixos": [],
    "site": "https://emagrecentro.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Flávio Marques Lisboa, 511 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
@@ -1044,9 +868,6 @@
    ],
    "fixos": [],
    "site": "http://emagrecentroplanaltobh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Gen. Olímpio Mourão Filho, 575 - Planalto, Belo Horizonte - MG, 31720-200, Brasil"
   },
   {
@@ -1058,9 +879,6 @@
    ],
    "fixos": [],
    "site": "https://goo.su/dSTZpL",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Getúlio Vargas, 489 - Edifício ABC 65 - Sala 602 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
@@ -1072,9 +890,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Andradas, 3323 - Sl 1301 - Santa Tereza, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
@@ -1086,9 +901,6 @@
     "(31) 3047-5002"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Vicente Risola, 1515 - Santa Ines, Belo Horizonte - MG, 31080-160, Brasil"
   },
   {
@@ -1100,9 +912,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 2000 - Sl 511 to - Gutierrez, Belo Horizonte - MG, 30360-670, Brasil"
   },
   {
@@ -1114,9 +923,6 @@
    ],
    "fixos": [],
    "site": "http://www.keola.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alvarenga Peixoto, n 695 - Lourdes, Belo Horizonte - MG, 30180-124, Brasil"
   },
   {
@@ -1128,9 +934,6 @@
    ],
    "fixos": [],
    "site": "http://emanuellesilvaesteticabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 1710 - 5° andar sala 504 - Gutierrez, Belo Horizonte - MG, 30441-194, Brasil"
   },
   {
@@ -1142,9 +945,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alvarenga Peixoto, 695 - Lourdes, Belo Horizonte - MG, 30140-081, Brasil"
   },
   {
@@ -1156,9 +956,6 @@
    ],
    "fixos": [],
    "site": "https://emagrecentrouniao.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alberto Cintra, 131 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
@@ -1170,9 +967,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/christinebittencourt/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Silva Lobo, 1685 - Lj 13 - Grajaú, Belo Horizonte - MG, 30431-262, Brasil"
   },
   {
@@ -1184,9 +978,6 @@
    ],
    "fixos": [],
    "site": "https://emagrecentro.com.br/unidades/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Engenheiros, 1442 - Castelo, Belo Horizonte - MG, 30840-372, Brasil"
   },
   {
@@ -1198,9 +989,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/larissavilela.med/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Augusto de Lima, 1568 - Sl 707 - Barro Preto, Belo Horizonte - MG, 30190-003, Brasil"
   },
   {
@@ -1212,9 +1000,6 @@
    ],
    "fixos": [],
    "site": "http://www.sandermedicalcenter.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Bernardo Monteiro, 1265 - Funcionários, Belo Horizonte - MG, 30150-285, Brasil"
   },
   {
@@ -1226,9 +1011,6 @@
    ],
    "fixos": [],
    "site": "https://dramarcellelacerda.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio Grande do Norte, 57 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
@@ -1240,9 +1022,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Maria Beatriz, 260 - Lj 3 - Havaí, Belo Horizonte - MG, 30555-140, Brasil"
   },
   {
@@ -1254,9 +1033,6 @@
    ],
    "fixos": [],
    "site": "https://www.fabiomagalhaesnutri.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Prof. Alfredo Balena, 189 - 11°, andar - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
@@ -1268,9 +1044,6 @@
    ],
    "fixos": [],
    "site": "https://instagram.com/martins_ims?igshid=OGQ5ZDc2ODk2ZA==",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alvarenga Peixoto, 683 - Lourdes, Belo Horizonte - MG, 30180-124, Brasil"
   },
   {
@@ -1282,9 +1055,6 @@
    ],
    "fixos": [],
    "site": "https://www.clinicacardimsantana.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Piauí, 345 - Sl 904 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
@@ -1296,9 +1066,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 359 - 2º andar - Barro Preto, Belo Horizonte - MG, 30190-110, Brasil"
   },
   {
@@ -1310,9 +1077,6 @@
    ],
    "fixos": [],
    "site": "https://wa.me/5531999351627",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Maria Macedo, 233 - Nova Suíça, Belo Horizonte - MG, 30421-223, Brasil"
   },
   {
@@ -1324,9 +1088,6 @@
    ],
    "fixos": [],
    "site": "https://lexus.medbr.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Otoni, 735 - Sl 706 e 712 - Santa Efigênia, Belo Horizonte - MG, 31150-270, Brasil"
   },
   {
@@ -1338,9 +1099,6 @@
     "(31) 3284-1000"
    ],
    "site": "https://institutoluizjabbur.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Bandeirantes, 1725 - Sion, Belo Horizonte - MG, 30310-403, Brasil"
   },
   {
@@ -1352,9 +1110,6 @@
    ],
    "fixos": [],
    "site": "http://keepo.io/aveclinica",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Álvares Cabral, 1030 - Lourdes, Belo Horizonte - MG, 30140-121, Brasil"
   },
   {
@@ -1366,9 +1121,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio Grande do Norte, 205 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
@@ -1380,9 +1132,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Augusto de Lima, 1646 - Barro Preto, Belo Horizonte - MG, 30190-003, Brasil"
   },
   {
@@ -1394,9 +1143,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Andradas, 3323 - 16 Andar - Santa Efigênia, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
@@ -1408,9 +1154,6 @@
     "(31) 3335-6488"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Carlos Sá, 266 - Santa Amelia, Belo Horizonte - MG, 31550-200, Brasil"
   },
   {
@@ -1422,9 +1165,6 @@
    ],
    "fixos": [],
    "site": "https://drramonrodrigues.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 2000 - Cidade Jardim, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
@@ -1436,9 +1176,6 @@
     "(31) 3019-0606"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Timbiras, 1936 - 208 - Funcionários, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
@@ -1450,9 +1187,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/guilhermemoura.tgi/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Monte Carmelo, 180 - Sl 02 - Floresta, Belo Horizonte - MG, 30190-910, Brasil"
   },
   {
@@ -1464,9 +1198,6 @@
     "(31) 3075-9004"
    ],
    "site": "https://www.alimentaresaude.com.br/index.asp?",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. São Paulo, 1321 - 9º andar - Lourdes, Belo Horizonte - MG, 30170-131, Brasil"
   },
   {
@@ -1478,9 +1209,6 @@
    ],
    "fixos": [],
    "site": "http://linktr.ee/nutricionistasarahmansur",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Álvares Cabral, 344 - Sl 1709 - Lourdes, Belo Horizonte - MG, 30170-911, Brasil"
   },
   {
@@ -1492,9 +1220,6 @@
    ],
    "fixos": [],
    "site": "https://clinicapenchel.com.br/site/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Bandeirantes, 766 - Mangabeiras, Belo Horizonte - MG, 30210-420, Brasil"
   },
   {
@@ -1504,9 +1229,6 @@
    "celulares": [],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio Grande do Sul, 1040 - Sl 14 - Santo Agostinho, Belo Horizonte - MG, 30170-115, Brasil"
   },
   {
@@ -1518,9 +1240,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santa Catarina, 557 - Lourdes, Belo Horizonte - MG, 30170-081, Brasil"
   },
   {
@@ -1532,9 +1251,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua: São Paulo, 1932 - Sl 202 - Lourdes, Belo Horizonte - MG, 30170-135, Brasil"
   },
   {
@@ -1546,9 +1262,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/slimesteticaintegrativa/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Augusto de Lima, 479 - Sl 915 - Lourdes, Belo Horizonte - MG, 30190-001, Brasil"
   },
   {
@@ -1560,9 +1273,6 @@
     "(31) 3245-6815"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - salas 304 e 610 - Santo Agostinho, Belo Horizonte - MG, 30180-098, Brasil"
   },
   {
@@ -1574,9 +1284,6 @@
     "(31) 3224-3201"
    ],
    "site": "https://www.ido-bh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio Grande do Norte, 57 - Santa Efigênia, Belo Horizonte - MG, 30130-130, Brasil"
   },
   {
@@ -1588,9 +1295,6 @@
    ],
    "fixos": [],
    "site": "http://www.bariatricaemetabolicabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 - Sl 1302 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -1602,9 +1306,6 @@
    ],
    "fixos": [],
    "site": "https://suntor.com.br/cito/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Wilson Rocha Lima, 80 - Santa Lúcia, Belo Horizonte - MG, 30494-460, Brasil"
   },
   {
@@ -1616,9 +1317,6 @@
    ],
    "fixos": [],
    "site": "https://drabeatrizxavier.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Praça Carlos Chagas, 49 - Santo Agostinho, Belo Horizonte - MG, 30170-020, Brasil"
   },
   {
@@ -1630,9 +1328,6 @@
     "(31) 3646-8595"
    ],
    "site": "http://www.clinicamarcossantos.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Timbiras, 1925 - Sl 1103 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
@@ -1644,9 +1339,6 @@
    ],
    "fixos": [],
    "site": "https://www.drandremoreira.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3140 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -1658,9 +1350,6 @@
    ],
    "fixos": [],
    "site": "https://institutobernardoguimaraes.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Barbacena, 600 - Sl 105 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
@@ -1670,9 +1359,6 @@
    "celulares": [],
    "fixos": [],
    "site": "https://www.georgiaendocrino.com.br/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=1472043404545207722",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 2000 - Torre 2 - Estoril, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
@@ -1684,9 +1370,6 @@
    ],
    "fixos": [],
    "site": "https://drajussarasousa.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3140 - Sl 323 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -1698,9 +1381,6 @@
    ],
    "fixos": [],
    "site": "https://deboramouraendocrino.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3140 - Sl 201 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
@@ -1712,9 +1392,6 @@
    ],
    "fixos": [],
    "site": "https://wa.link/lugplz",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Barbacena, 600 - Sl 817 - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
@@ -1726,9 +1403,6 @@
     "(31) 3384-3771"
    ],
    "site": "http://www.maurojacome.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Fernandes Tourinho, 164 - 4° andar - Santo Agostinho, Belo Horizonte - MG, 30180-000, Brasil"
   },
   {
@@ -1740,9 +1414,6 @@
     "(31) 3292-5929"
    ],
    "site": "https://marcelogirundi.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 CONJ 601 - 604 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -1754,9 +1425,6 @@
     "(31) 3371-4422"
    ],
    "site": "https://drrodrigonutrologia.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Ouro Preto, 1596 - Sl 1604 - Santo Agostinho, Belo Horizonte - MG, 30170-048, Brasil"
   },
   {
@@ -1768,9 +1436,6 @@
     "(31) 3586-2246"
    ],
    "site": "https://www.janainakoenen.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 1580 - 12º andar - Cidade Jardim, Belo Horizonte - MG, 30441-194, Brasil"
   },
   {
@@ -1782,9 +1447,6 @@
     "(31) 2552-4823"
    ],
    "site": "http://www.drmarcosreis.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santa Rita Durão, 20 - Funcionários, Belo Horizonte - MG, 30140-110, Brasil"
   },
   {
@@ -1796,9 +1458,6 @@
     "(31) 3273-7489"
    ],
    "site": "http://www.robertocabezas.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Edifício Life Center - Av. do Contorno, 4747 - 16o andar - Serra, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
@@ -1810,9 +1469,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Amazonas, 298 - 14 andar - Centro, Belo Horizonte - MG, 30180-000, Brasil"
   },
   {
@@ -1824,9 +1480,6 @@
    ],
    "fixos": [],
    "site": "http://www.sinutrir.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Ceará, 1822 - Savassi, Belo Horizonte - MG, 30150-318, Brasil"
   },
   {
@@ -1838,9 +1491,6 @@
    ],
    "fixos": [],
    "site": "https://drdanielassumpcao.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Gonçalves Dias, 82 - 4º andar - Funcionários, Belo Horizonte - MG, 30140-090, Brasil"
   },
   {
@@ -1852,9 +1502,6 @@
    ],
    "fixos": [],
    "site": "https://instagram.com/nutrivictoriacaixeta?igshid=1mklq0oxxfhs4",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -1866,9 +1513,6 @@
     "(31) 3324-0047"
    ],
    "site": "https://sarahmalta.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 462 - Sl 210 - Funcionários, Belo Horizonte - MG, 30140-070, Brasil"
   },
   {
@@ -1880,9 +1524,6 @@
     "(31) 3291-0754"
    ],
    "site": "https://www.doctoralia.com.br/perfil/fabiano-robert?utm_source=google&utm_medium=gmb&utm_campaign=313384&utm_content=website",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
@@ -1892,9 +1533,6 @@
    "celulares": [],
    "fixos": [],
    "site": "https://www.doctoralia.com.br/perfil/octaviano-cruz?utm_source=google&utm_medium=gmb&utm_campaign=272863&utm_content=website",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
@@ -1906,9 +1544,6 @@
     "(31) 3264-5696"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Edifício Lifecenter - Av. do Contorno, 4747 - SALA 704 - Serra, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
@@ -1920,9 +1555,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Timbiras, 2072 - 10º andar - Sala 1007 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
@@ -1934,9 +1566,6 @@
     "(31) 3327-9303"
    ],
    "site": "https://drwh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. do Contorno, 4747 - Sala 404 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
@@ -1948,9 +1577,6 @@
    ],
    "fixos": [],
    "site": "https://dra.nataliaabreu.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Brasil, 691 - Sl 401 - Santa Efigênia, Belo Horizonte - MG, 30140-000, Brasil"
   },
   {
@@ -1962,9 +1588,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Bernardo Guimarães, 874 - Funcionários, Belo Horizonte - MG, 30140-081, Brasil"
   },
   {
@@ -1976,9 +1599,6 @@
    ],
    "fixos": [],
    "site": "https://www.doctoralia.com.br/perfil/gabriela-costa-de-andrade?utm_source=google&utm_medium=gmb&utm_campaign=757453&utm_content=website",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Uberaba, 436 - Sala 404 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
@@ -1990,9 +1610,6 @@
    ],
    "fixos": [],
    "site": "https://www.carolinecorradi.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Fernandes Tourinho, 929 - Lourdes, Belo Horizonte - MG, 30112-000, Brasil"
   },
   {
@@ -2004,9 +1621,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Edifício LifeCenter - Av. do Contorno, 4747 - 16 andar - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
@@ -2018,9 +1632,6 @@
    ],
    "fixos": [],
    "site": "https://www.doctoralia.com.br/breno-figueiredo-bessa/endocrinologista/belo-horizonte",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Piauí, 345 - Sl 501 - Santa Efigênia, Belo Horizonte - MG, 30150-320, Brasil"
   },
   {
@@ -2032,9 +1643,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
@@ -2046,9 +1654,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 2000 - Estoril, Belo Horizonte - MG, 30380-103, Brasil"
   },
   {
@@ -2060,9 +1665,6 @@
    ],
    "fixos": [],
    "site": "https://dralailarahme.com.br/bio/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Jorn. Djalma Andrade, 377 - Sl 201 - Belvedere, Belo Horizonte - MG, 30320-340, Brasil"
   },
   {
@@ -2074,9 +1676,6 @@
    ],
    "fixos": [],
    "site": "https://drasabrinabarros.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - Sl 805 - Santo Agostinho, Belo Horizonte - MG, 30180-098, Brasil"
   },
   {
@@ -2088,9 +1687,6 @@
     "(31) 3195-0229"
    ],
    "site": "https://clinicanutrologica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Boa Esperança, 95 - Carmo, Belo Horizonte - MG, 30310-730, Brasil"
   },
   {
@@ -2102,9 +1698,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sen. Lima Guimarães, 94 - Estoril, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
@@ -2116,9 +1709,6 @@
    ],
    "fixos": [],
    "site": "https://instagram.com/draisabellalimaa",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Del Rey, 111 - Lj 02 - Caiçaras, Belo Horizonte - MG, 30775-240, Brasil"
   },
   {
@@ -2130,9 +1720,6 @@
    ],
    "fixos": [],
    "site": "https://dramichelybaptistele.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Getúlio Vargas, 489 - Sl 602 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
@@ -2144,9 +1731,6 @@
    ],
    "fixos": [],
    "site": "http://institutodrromuloalves.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio Grande do Norte, 867 / 602 - Funcionários, Belo Horizonte - MG, 30130-131, Brasil"
   },
   {
@@ -2158,9 +1742,6 @@
    ],
    "fixos": [],
    "site": "https://drleonidasneto.com.br/sobre/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
@@ -2172,9 +1753,6 @@
    ],
    "fixos": [],
    "site": "https://www.asbasesdavidaplena.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Getúlio Vargas, 254 - Funcionários, Belo Horizonte - MG, 30112-020, Brasil"
   },
   {
@@ -2186,9 +1764,6 @@
     "(31) 3291-0754"
    ],
    "site": "http://agapeclinica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
@@ -2200,9 +1775,6 @@
     "(31) 3565-7500"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3018 - sala 807 - Santo Agostinho, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -2214,9 +1786,6 @@
    ],
    "fixos": [],
    "site": "https://drdanielbernucci.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio de Janeiro, 2702 - 9 andar - Funcionários, Belo Horizonte - MG, 30112-901, Brasil"
   },
   {
@@ -2228,9 +1797,6 @@
    ],
    "fixos": [],
    "site": "http://instagram.com/@lpnutricionista",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Eng. Godofredo dos Santos, 43 - Lj 14 - Estoril, Belo Horizonte - MG, 30494-220, Brasil"
   },
   {
@@ -2242,9 +1808,6 @@
     "(31) 3291-0754"
    ],
    "site": "https://www.doctoralia.com.br/perfil/cristiane-sousa-rocha-ribeiro?utm_source=google&utm_medium=gmb&utm_campaign=39556&utm_content=website",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 1154 - sala 507 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
@@ -2256,9 +1819,6 @@
    ],
    "fixos": [],
    "site": "http://dramariliagramiscelli.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Roma, 561 - sala 203 - Santa Lúcia, Belo Horizonte - MG, 30360-680, Brasil"
   },
   {
@@ -2270,9 +1830,6 @@
    ],
    "fixos": [],
    "site": "https://www.drabrunamicheli.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Consultório 4 - Rua Maria Luiza Santiago, 200 - Sl 1701 - Santa Lúcia, Belo Horizonte - MG, 30360-740, Brasil"
   },
   {
@@ -2284,9 +1841,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/drleonidasneto/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Bandeirantes, 1448 - Mangabeiras, Belo Horizonte - MG, 30315-032, Brasil"
   },
   {
@@ -2298,9 +1852,6 @@
    ],
    "fixos": [],
    "site": "https://www.lameclinica.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Jorn. Djalma Andrade, 377 - Sl 201, A - Belvedere, Belo Horizonte - MG, 30320-340, Brasil"
   },
   {
@@ -2312,9 +1863,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/institutobodyfaceibf/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Aimorés, 3140 - 8 - Edifício Medplex - Sala 808 - Barro Preto, Belo Horizonte - MG, 30190-134, Brasil"
   },
   {
@@ -2326,9 +1874,6 @@
    ],
    "fixos": [],
    "site": "http://www.clinicaperformance.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 1175 - Loja 04 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
@@ -2340,9 +1885,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/drarthurestevam/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rod. Stael Mary Bicalho Motta Magalhães, 385 - Sl 514 - Belvedere, Belo Horizonte - MG, 30320-570, Brasil"
   },
   {
@@ -2354,9 +1896,6 @@
    ],
    "fixos": [],
    "site": "http://www.ferreiramattos.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Olegário Maciel, 1808 - 6º andar - Santo Agostinho, Belo Horizonte - MG, 30180-110, Brasil"
   },
   {
@@ -2368,9 +1907,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Jorge Fontana, 80 - Sl 1110 - Belvedere, Belo Horizonte - MG, 30320-670, Brasil"
   },
   {
@@ -2382,9 +1918,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Ouro Preto, 1596 - Sl 1604 - Santo Agostinho, Belo Horizonte - MG, 30170-041, Brasil"
   },
   {
@@ -2396,9 +1929,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Felipe dos Santos, 901 - 2º Andar - Belo Horizonte, MG, 30180-165, Brasil"
   },
   {
@@ -2410,9 +1940,6 @@
    ],
    "fixos": [],
    "site": "http://www.drathaismagalhaes.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Albita, n° 131 - Sl 307 - Cruzeiro, Belo Horizonte - MG, 30310-160, Brasil"
   },
   {
@@ -2424,9 +1951,6 @@
    ],
    "fixos": [],
    "site": "https://semprebelabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alcindo Viêira, 545 - Barreiro, Belo Horizonte - MG, 30640-100, Brasil"
   },
   {
@@ -2438,9 +1962,6 @@
    ],
    "fixos": [],
    "site": "https://sites.google.com/view/vocemaismagraplus/nossos-produtos",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Waldyr Soeiro Emrich, 3350 - Santa Helena, Belo Horizonte - MG, 30610-530, Brasil"
   },
   {
@@ -2452,9 +1973,6 @@
     "(31) 3055-3414"
    ],
    "site": "http://www.belocorpobh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Ribeiro da Luz, 374 - Barreiro, Belo Horizonte - MG, 30640-040, Brasil"
   },
   {
@@ -2466,9 +1984,6 @@
    ],
    "fixos": [],
    "site": "https://www.cosmedicestetica.com.br/%20%20https://drarosemalagoli.com.br/soroterapia-3/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 42 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
@@ -2480,9 +1995,6 @@
     "(31) 2555-1510"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Barão de Coromandel, 455 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
@@ -2494,9 +2006,6 @@
     "(31) 3384-7769"
    ],
    "site": "http://corpunsclean.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Sinfrônio Brochado, 1211 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
@@ -2508,9 +2017,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/modular.life/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Afonso Vaz de Melo, 163 - Barreiro, Belo Horizonte - MG, 30640-070, Brasil"
   },
   {
@@ -2522,9 +2028,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/leves.barreiro/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Sinfrônio Brochado, 630 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
@@ -2536,9 +2039,6 @@
    ],
    "fixos": [],
    "site": "https://studiofernandarabelo.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Agnelo Macedo, 215 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
@@ -2550,9 +2050,6 @@
     "(31) 2180-1593"
    ],
    "site": "https://clinicadacidade.com.br/centro-medico/belo-horizonte-barreiro/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Flávio Marques Lisboa, 233 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
@@ -2564,9 +2061,6 @@
     "(31) 3389-1001"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
@@ -2578,9 +2072,6 @@
     "(31) 3384-8265"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Flávio Marques Lisboa, 152 - Sl 208 - Barreiro, Belo Horizonte - MG, 30640-050, Brasil"
   },
   {
@@ -2592,9 +2083,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Padre José Maurício, n° 310 - Cs - Vista Alegre, Belo Horizonte - MG, 30514-000, Brasil"
   },
   {
@@ -2606,9 +2094,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Olinto Meireles, 1574 - Sl 406 - Barreiro, Belo Horizonte - MG, 30626-040, Brasil"
   },
   {
@@ -2620,9 +2105,6 @@
     "(31) 3389-6700"
    ],
    "site": "http://clinicasantaluciabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Ribeiro da Luz, 363 - Barreiro, Belo Horizonte - MG, 30640-040, Brasil"
   },
   {
@@ -2634,9 +2116,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/belaperformancebh/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Estér Augusta Ribeiro, 415, Camargos Rua Gentil Portugal do Brasil,166, Camargos Rua Maria Heilbuth Surette 209, Buritis - Camargos, Belo Horizonte - MG, 30525-490, Brasil"
   },
   {
@@ -2648,9 +2127,6 @@
    ],
    "fixos": [],
    "site": "https://elainecristinanutri.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Aggeo Pio Sobrinho, 204 - Sl 505 - Buritis, Belo Horizonte - MG, 30575-834, Brasil"
   },
   {
@@ -2660,9 +2136,6 @@
    "celulares": [],
    "fixos": [],
    "site": "https://www.doctoralia.com.br/wagner-thiago-alves-santos/ortopedista-traumatologista-cirurgiao-da-mao/belo-horizonte",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Honório Hermeto, 45 - 3 nivel - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
@@ -2674,9 +2147,6 @@
     "(31) 3389-6000"
    ],
    "site": "https://amorsaude.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Honório Hermeto, 161 - Barreiro, Belo Horizonte - MG, 30640-110, Brasil"
   },
   {
@@ -2688,9 +2158,6 @@
     "(31) 2511-9725"
    ],
    "site": "https://www.belaformaestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. José Brandão, 315 - 701 - Barreiro, Belo Horizonte - MG, 30640-020, Brasil"
   },
   {
@@ -2702,9 +2169,6 @@
    ],
    "fixos": [],
    "site": "http://www.clinicaversa.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 3282 - 11 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
@@ -2716,9 +2180,6 @@
     "(31) 3384-7119"
    ],
    "site": "https://dr.maurojacome.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
@@ -2730,9 +2191,6 @@
     "(31) 3384-6375"
    ],
    "site": "http://www.cronosendoscopia.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Joaquim de Figueiredo, 157 - Barreiro, Belo Horizonte - MG, 30640-090, Brasil"
   },
   {
@@ -2744,9 +2202,6 @@
    ],
    "fixos": [],
    "site": "http://www.nutrihelenvieira.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Sinfrônio Brochado, 624 - Sl 611 - Barreiro, Belo Horizonte - MG, 30640-000, Brasil"
   },
   {
@@ -2758,9 +2213,6 @@
     "(31) 3384-8773"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Barão de Coromandel, 530 - Barreiro, Belo Horizonte - MG, 30640-060, Brasil"
   },
   {
@@ -2772,9 +2224,6 @@
    ],
    "fixos": [],
    "site": "https://dreliasreis.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3140 - Sl 519 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -2786,9 +2235,6 @@
    ],
    "fixos": [],
    "site": "https://esteticasavassi.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Getúlio Vargas, 1300 - Sl 1501 - Savassi, Belo Horizonte - MG, 30112-024, Brasil"
   },
   {
@@ -2800,9 +2246,6 @@
    ],
    "fixos": [],
    "site": "https://nrestetica.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Antônio de Albuquerque, 156 - Sl 609 - Funcionários, Belo Horizonte - MG, 30112-010, Brasil"
   },
   {
@@ -2814,9 +2257,6 @@
    ],
    "fixos": [],
    "site": "http://www.instagram.com/clinicaamandamentalize",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Getúlio Vargas, 668 - Sl 1406 - Funcionários, Belo Horizonte - MG, 30112-021, Brasil"
   },
   {
@@ -2828,9 +2268,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. do Contorno, 7069 - Sala 1201 - Lourdes, Belo Horizonte - MG, 30110-043, Brasil"
   },
   {
@@ -2842,9 +2279,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Praça Carlos Chagas, 49 - Santo Agostinho, Belo Horizonte - MG, 30170-913, Brasil"
   },
   {
@@ -2856,9 +2290,6 @@
    ],
    "fixos": [],
    "site": "http://dralauraferreira.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio de Janeiro, 1005 - 8 andar, sala 803 - Centro, Belo Horizonte - MG, 30160-041, Brasil"
   },
   {
@@ -2870,9 +2301,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sergipe, 120 - Centro, Belo Horizonte - MG, 30130-170, Brasil"
   },
   {
@@ -2884,9 +2312,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/tavaresesteticaa/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Goitacazes, 333 - Sl 601 - Centro, Belo Horizonte - MG, 30190-050, Brasil"
   },
   {
@@ -2898,9 +2323,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/liahesteticabh?igsh=bjR5ZmNyY2g5aWgx",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santa Catarina, 557 - Centro, Belo Horizonte - MG, 30170-050, Brasil"
   },
   {
@@ -2912,9 +2334,6 @@
    ],
    "fixos": [],
    "site": "https://institutorafaelfantin.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 462 - Funcionários, Belo Horizonte - MG, 30140-070, Brasil"
   },
   {
@@ -2926,9 +2345,6 @@
     "(31) 3335-3535"
    ],
    "site": "https://linktr.ee/caldeira655",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Augusto de Lima, 655 - Sl 512 - Centro, Belo Horizonte - MG, 30190-005, Brasil"
   },
   {
@@ -2938,9 +2354,6 @@
    "celulares": [],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alagoas, 506 - Funcionários, Belo Horizonte - MG, 30130-162, Brasil"
   },
   {
@@ -2952,9 +2365,6 @@
    ],
    "fixos": [],
    "site": "http://hellisse.med.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 2001 - Sl 704 - Lourdes, Belo Horizonte - MG, 30140-072, Brasil"
   },
   {
@@ -2966,9 +2376,6 @@
    ],
    "fixos": [],
    "site": "https://clinicabelezacompleta.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alagoas, 1283 - sobreloja 2 - Savassi, Belo Horizonte - MG, 30130-168, Brasil"
   },
   {
@@ -2980,9 +2387,6 @@
    ],
    "fixos": [],
    "site": "https://tinyurl.com/clinica-mude-estetica",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Edifício Golden Offices - Av. Olegário Maciel, 1217 - 5º Andar - Lourdes, Belo Horizonte - MG, 30180-111, Brasil"
   },
   {
@@ -2994,9 +2398,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sergipe, 1333 - Sl 401 - Savassi, Belo Horizonte - MG, 30140-091, Brasil"
   },
   {
@@ -3008,9 +2409,6 @@
    ],
    "fixos": [],
    "site": "https://drvictorraquino.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Nossa Sra. do Carmo, 90 - São Pedro, Belo Horizonte - MG, 30330-000, Brasil"
   },
   {
@@ -3022,9 +2420,6 @@
    ],
    "fixos": [],
    "site": "http://drviniciussoares.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Andradas, 3323 - Sala 701 - Santa Efigênia, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
@@ -3036,9 +2431,6 @@
    ],
    "fixos": [],
    "site": "https://evolutbh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Instituto Evolut - Dr. Rerisson Barros - Av. dos Andradas, 3323 - Santa Tereza, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
@@ -3050,9 +2442,6 @@
    ],
    "fixos": [],
    "site": "http://dracarolinaendocrino.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Ouro Preto, 1016 - sala 405 - Santo Agostinho, Belo Horizonte - MG, 30180-001, Brasil"
   },
   {
@@ -3064,9 +2453,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 - Sl 1401 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -3078,9 +2464,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. dos Andradas, 3323 - Sl 905 - Centro, Belo Horizonte - MG, 31010-560, Brasil"
   },
   {
@@ -3092,9 +2475,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Jorge Fontana, 80 - Sl 1110 - Belvedere, Belo Horizonte - MG, 30320-670, Brasil"
   },
   {
@@ -3106,9 +2486,6 @@
    ],
    "fixos": [],
    "site": "http://tainasouzaesteticaavancada.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Dr. Júlio Otaviano Ferreira, 241 - Cidade Nova, Belo Horizonte - MG, 31170-200, Brasil"
   },
   {
@@ -3120,9 +2497,6 @@
     "(31) 3487-1703"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Silva Alvarenga, 420 - Sl 02 - São Geraldo, Belo Horizonte - MG, 31050-640, Brasil"
   },
   {
@@ -3134,9 +2508,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Contagem, 829 - Santa Ines, Belo Horizonte - MG, 31080-055, Brasil"
   },
   {
@@ -3148,9 +2519,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Cristiano Machado, 1794 - Lj 13 - Cidade Nova, Belo Horizonte - MG, 31170-024, Brasil"
   },
   {
@@ -3162,9 +2530,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Rio de Janeiro, 390 - Centro, Belo Horizonte - MG, 30160-040, Brasil"
   },
   {
@@ -3176,9 +2541,6 @@
     "(31) 3189-0606"
    ],
    "site": "https://www.instagram.com/odrthiagocarneiro?igsh=dzF3NGtjaTgyOW9n",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. do Contorno, 4640 - Sl 502 - (Andar 13 - Santa Efigênia, Belo Horizonte - MG, 30110-001, Brasil"
   },
   {
@@ -3190,9 +2552,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/biomedicafrancielearcanjo?igsh=cDV2eWlldmJhcnN2&utm_source=qr",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Olímpia, 18 - Sl 506 - Boa Vista, Belo Horizonte - MG, 31060-250, Brasil"
   },
   {
@@ -3204,9 +2563,6 @@
    ],
    "fixos": [],
    "site": "https://clinica.drabrunamariza.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Tab. Ferreira de Carvalho, 960 - Cidade Nova, Belo Horizonte - MG, 31170-180, Brasil"
   },
   {
@@ -3218,9 +2574,6 @@
     "(31) 3195-0229"
    ],
    "site": "https://www.clinicanutrologica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Francisco Sales, 1614/803 - Santa Efigênia, Belo Horizonte - MG, 30150-220, Brasil"
   },
   {
@@ -3232,9 +2585,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/dr.brunoflauzino/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. do Contorno, 4747 - Sl 407 - Funcionários, Belo Horizonte - MG, 30110-921, Brasil"
   },
   {
@@ -3246,9 +2596,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Joviano Naves, 15 - Sl 05 - Palmares, Belo Horizonte - MG, 31155-710, Brasil"
   },
   {
@@ -3260,9 +2607,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Alfredo Camarate, 539 - Sl 13 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
@@ -3274,9 +2618,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/reel/DRP6GcbDvqH/?igsh=MW9vYnduNW8wdHZrcw==",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 - 1401 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -3288,9 +2629,6 @@
    ],
    "fixos": [],
    "site": "http://linktr.ee/aranildanazareth",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Francisco Sá, 1213 - Sl 502 - Gutierrez, Belo Horizonte - MG, 30441-021, Brasil"
   },
   {
@@ -3302,9 +2640,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/clinica_jobo?rpxt=dG8wNWh3c29kZWYx&utm_source=qr",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Uberaba, 370 - 4º Andar, Sala 404 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
@@ -3316,9 +2651,6 @@
    ],
    "fixos": [],
    "site": "http://www.keola.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Izabel Bueno, 693 - Jaraguá, Belo Horizonte - MG, 31270-030, Brasil"
   },
   {
@@ -3330,9 +2662,6 @@
    ],
    "fixos": [],
    "site": "https://linktr.ee/carolinajory_estetica",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Sebastião de Brito, 1185 - Dona Clara, Belo Horizonte - MG, 31260-000, Brasil"
   },
   {
@@ -3344,9 +2673,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Jacuí, 3468 - Ipiranga, Belo Horizonte - MG, 31160-190, Brasil"
   },
   {
@@ -3358,9 +2684,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Américo Vespúcio, 914 - Sl 203 - Nova Cachoeirinha, Belo Horizonte - MG, 31230-250, Brasil"
   },
   {
@@ -3372,9 +2695,6 @@
    ],
    "fixos": [],
    "site": "https://nutrinaiara.my.canva.site/site-da-naiara-alves-nutricionista",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Clara Nunes, 11 - Renascença, Belo Horizonte - MG, 31130-680, Brasil"
   },
   {
@@ -3386,9 +2706,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/souclinic_?igsh=MTFld2EycTAzOHJqeQ%3D%3D&utm_source=qr",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Condomínio Wall Street - Av. do Contorno, 8000 - Sl 802 - Santo Agostinho, Belo Horizonte - MG, 30110-932, Brasil"
   },
   {
@@ -3400,9 +2717,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Barcelos, 1230 - Nova Suíça, Belo Horizonte - MG, 30421-124, Brasil"
   },
   {
@@ -3414,9 +2728,6 @@
    ],
    "fixos": [],
    "site": "https://valeriasales.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Guanhães, 171 - Colégio Batista, Belo Horizonte - MG, 31110-160, Brasil"
   },
   {
@@ -3428,9 +2739,6 @@
     "(31) 3375-7774"
    ],
    "site": "https://espacovidabh.com.br/servicos",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Cascavel, 98 - Coração Eucarístico, Belo Horizonte - MG, 30535-670, Brasil"
   },
   {
@@ -3442,9 +2750,6 @@
    ],
    "fixos": [],
    "site": "https://clinicaemos.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Álvares Cabral, 1833 - Sl 301 - Lourdes, Belo Horizonte - MG, 30170-001, Brasil"
   },
   {
@@ -3456,9 +2761,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Ed. Medplex - Av. Barbacena, 600 - 6ª ANDAR - Santo Agostinho, Belo Horizonte - MG, 30180-060, Brasil"
   },
   {
@@ -3470,9 +2772,6 @@
    ],
    "fixos": [],
    "site": "https://www.drapablinemartins.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Dr. Júlio Otaviano Ferreira, 867 - Cidade Nova, Belo Horizonte - MG, 31170-200, Brasil"
   },
   {
@@ -3484,9 +2783,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Henrique Gorceix, 538 - Padre Eustáquio, Belo Horizonte - MG, 30720-416, Brasil"
   },
   {
@@ -3498,9 +2794,6 @@
    ],
    "fixos": [],
    "site": "https://linktr.ee/drpedrohvilela",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Paracatu, 872 - Barro Preto, Belo Horizonte - MG, 30180-090, Brasil"
   },
   {
@@ -3512,9 +2805,6 @@
    ],
    "fixos": [],
    "site": "https://instagram.com/clinicaanapaulasouza?igshid=13oe6j7yw3ta3",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Padre Eustáquio, 1133 - Lj 9 - Carlos Prates, Belo Horizonte - MG, 30710-580, Brasil"
   },
   {
@@ -3526,9 +2816,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/clinica_nora/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Raja Gabáglia, 2000 - Sl 525, Torre 1 - Estoril, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
@@ -3540,9 +2827,6 @@
    ],
    "fixos": [],
    "site": "http://www.priscillarezende.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Guarujá, 07 - sala 01 - Nova Suíça, Belo Horizonte - MG, 30421-037, Brasil"
   },
   {
@@ -3554,9 +2838,6 @@
     "(31) 4103-3131"
    ],
    "site": "http://www.lineacorpore.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua do Pássaro-Preto, 250 - Alto Caiçaras, Belo Horizonte - MG, 30750-590, Brasil"
   },
   {
@@ -3568,9 +2849,6 @@
    ],
    "fixos": [],
    "site": "https://essencevita.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Pres. Tancredo Neves, 2387 - Lj 12 - Castelo, Belo Horizonte - MG, 31330-430, Brasil"
   },
   {
@@ -3582,9 +2860,6 @@
    ],
    "fixos": [],
    "site": "https://www.magrass.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Abílio Machado, 1252 - Inconfidência, Belo Horizonte - MG, 30820-272, Brasil"
   },
   {
@@ -3596,9 +2871,6 @@
    ],
    "fixos": [],
    "site": "https://www.telelistas.net/locais/mg/belo+horizonte/clinicas+e+servicos+de+emagrecimento/bu-5742470/aline+magesty+emagrecimento+estetica+em+estoril",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Avenida Barão Homem de Melo, 4386 3º andar/ Sala: 302 - Estoril, Belo Horizonte - MG, 30494-270, Brasil"
   },
   {
@@ -3610,9 +2882,6 @@
     "(31) 3032-4886"
    ],
    "site": "http://www.bemviverestetica.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Maurete José dos Santos, 61 sala 14 Manacás - Castelo, Belo Horizonte - MG, 30840-560, Brasil"
   },
   {
@@ -3624,9 +2893,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/sublime.laserestetica",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Padre Eustáquio, 2480 - Sl 202 - Padre Eustáquio, Belo Horizonte - MG, 30720-100, Brasil"
   },
   {
@@ -3638,9 +2904,6 @@
    ],
    "fixos": [],
    "site": "https://www.anacarolinaavellar.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Padre Eustáquio, 2086 - Padre Eustáquio, Belo Horizonte - MG, 30720-100, Brasil"
   },
   {
@@ -3652,9 +2915,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/walfelicidade",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Bandolins, 45 - Califórnia, Belo Horizonte - MG, 30850-470, Brasil"
   },
   {
@@ -3666,9 +2926,6 @@
    ],
    "fixos": [],
    "site": "http://www.mybeleza.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Álvares Cabral, 1835 - Santo Agostinho, Belo Horizonte - MG, 30170-916, Brasil"
   },
   {
@@ -3680,9 +2937,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/magrassluxemburgo?igsh=OXhzajNsNWZ2MjFr",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Prudente de Morais, 1154 - Lj 04 - Coracao de Jesus, Belo Horizonte - MG, 30380-252, Brasil"
   },
   {
@@ -3694,9 +2948,6 @@
    ],
    "fixos": [],
    "site": "https://clinicadianamahe.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Cananéia, 12 - Caiçaras, Belo Horizonte - MG, 30770-120, Brasil"
   },
   {
@@ -3708,9 +2959,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Instituto Faustino - R. Araguari, 1156 - sala 1404 Medicina, Saúde e Estilo de Vida Clínica Dra. Mariangela - Rua Reginaldo Reis, 175 A - Centro, Jaboticatubas - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -3722,9 +2970,6 @@
     "(31) 3225-0666"
    ],
    "site": "https://www.instagram.com/draleticiapenna",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Araguari, 1156 - Sl 1102 - Santo Agostinho, Belo Horizonte - MG, 30190-111, Brasil"
   },
   {
@@ -3736,9 +2981,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/aclinicarevitta?igsh=MTRiZXRub245NnZkdg==",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua dos Timbiras, 2072 - sala 1207 - Lourdes, Belo Horizonte - MG, 30140-061, Brasil"
   },
   {
@@ -3750,9 +2992,6 @@
    ],
    "fixos": [],
    "site": "https://draanacarolmartins.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Uberaba, 370 - sl 1001 - Barro Preto, Belo Horizonte - MG, 30180-080, Brasil"
   },
   {
@@ -3764,9 +3003,6 @@
    ],
    "fixos": [],
    "site": "http://wilmamatosnutri.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3140 - 6 andar, sala 608 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -3778,9 +3014,6 @@
     "(31) 3436-2242"
    ],
    "site": "http://cirlenegervasio.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. José Lins do Rêgo, 244 - Tupi, Belo Horizonte - MG, 31842-350, Brasil"
   },
   {
@@ -3792,9 +3025,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/renovaremedicinaestetica/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dom Pedro I, Nª 402 - Sala 307 - Itapoã, Belo Horizonte - MG, 31710-971, Brasil"
   },
   {
@@ -3806,9 +3036,6 @@
     "(31) 3426-6524"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. José Francisco da Silva, 114 - Maria Virgínia, Belo Horizonte - MG, 31155-600, Brasil"
   },
   {
@@ -3820,9 +3047,6 @@
     "(31) 3567-3041"
    ],
    "site": "http://www.clinicabemestarbh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 2085 - Lj 07 - Santa Amelia, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
@@ -3834,9 +3058,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Queluzita, 34 - Sl 1111 - Fernão Dias, Belo Horizonte - MG, 31910-252, Brasil"
   },
   {
@@ -3848,9 +3069,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/bylife_clinic",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "edifício Hyde Park - R. Boaventura, 1167 - Sl 802 - Indaiá, Belo Horizonte - MG, 31270-020, Brasil"
   },
   {
@@ -3862,9 +3080,6 @@
    ],
    "fixos": [],
    "site": "https://api.whatsapp.com/send?phone=5531997961105&text=Vi%20seu%20contato%20no%20google.",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alfredo Santos Neves, 50 - Cenaculo, Belo Horizonte - MG, 31615-390, Brasil"
   },
   {
@@ -3876,9 +3091,6 @@
    ],
    "fixos": [],
    "site": "https://alliviarestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dr. Cristiano Guimarães, 1752 - Sl 2 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
@@ -3890,9 +3102,6 @@
    ],
    "fixos": [],
    "site": "https://sistema.heon.com.br/auto-agendamento?especialista=karinha261_487242&clinica=2467737",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Pitias, 299 - Nazare, Belo Horizonte - MG, 31990-240, Brasil"
   },
   {
@@ -3904,9 +3113,6 @@
    ],
    "fixos": [],
    "site": "http://www.mybeleza.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alberto Cintra, 206 - Lj 04 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
@@ -3918,9 +3124,6 @@
    ],
    "fixos": [],
    "site": "https://anapaularibas.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alberto Cintra, 210 - Sl 420 - Cidade Nova, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
@@ -3932,9 +3135,6 @@
     "(31) 3586-6211"
    ],
    "site": "https://instagram.com/dermoklinica?igshid=YmMyMTA2M2Y=",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Maestro Francisco Flôres, 253 - São Luiz, Belo Horizonte - MG, 31270-670, Brasil"
   },
   {
@@ -3946,9 +3146,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Cacuera, 881 - Sl 302 - Jaraguá, Belo Horizonte - MG, 31270-350, Brasil"
   },
   {
@@ -3960,9 +3157,6 @@
    ],
    "fixos": [],
    "site": "https://dralarissaqguimaraes.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Waldomiro Lobo, 55 - 1º piso - Guarani, Belo Horizonte - MG, 31814-620, Brasil"
   },
   {
@@ -3974,9 +3168,6 @@
    ],
    "fixos": [],
    "site": "https://dracamilaqueiroz.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alberto Cintra, 35 - Sl 701 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
@@ -3988,9 +3179,6 @@
    ],
    "fixos": [],
    "site": "https://anacarolinamorcatti.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Cel. José Dias Bicalho, 322A - São José, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
@@ -4002,9 +3190,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/i9fashionclinic?igsh=a2RhaHBjM2Fza2Nu",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Pitt, 543 - antigo 315 loja 2 - União, Belo Horizonte - MG, 31170-610, Brasil"
   },
   {
@@ -4016,9 +3201,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santo Antônio, 237 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
@@ -4030,9 +3212,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/dracaarolineer/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Gen. Olímpio Mourão Filho, 788 - Itapoã, Belo Horizonte - MG, 31720-200, Brasil"
   },
   {
@@ -4044,9 +3223,6 @@
     "(31) 3281-9154"
    ],
    "site": "https://www.instagram.com/nutridanimoraes/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sen. Lima Guimarães, 108 - Sl 603 - Buritis, Belo Horizonte - MG, 30455-600, Brasil"
   },
   {
@@ -4058,9 +3234,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Barão Homem de Melo, 4386 - Estoril, Belo Horizonte - MG, 30494-270, Brasil"
   },
   {
@@ -4072,9 +3245,6 @@
    ],
    "fixos": [],
    "site": "https://drafernandaalmeidaa.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Ed. Empresarial Heitor Villa Lobos - Av. Barão Homem de Melo, 4391 - Sl 609 - Estoril, Belo Horizonte - MG, 30494-275, Brasil"
   },
   {
@@ -4086,9 +3256,6 @@
    ],
    "fixos": [],
    "site": "https://www.lucianaguerreiro.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Cristiano Moreira Sales, 150 - SALA 603 - Estoril, Belo Horizonte - MG, 30494-360, Brasil"
   },
   {
@@ -4100,9 +3267,6 @@
    ],
    "fixos": [],
    "site": "http://www.doutorarosagomes.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Edésio Fernandes, 163 - Estoril, Belo Horizonte - MG, 30494-450, Brasil"
   },
   {
@@ -4114,9 +3278,6 @@
    ],
    "fixos": [],
    "site": "http://instagram.com/virtuosa.belohorizonteburitis",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 545 - Buritis, Belo Horizonte - MG, 30455-610, Brasil"
   },
   {
@@ -4128,9 +3289,6 @@
    ],
    "fixos": [],
    "site": "https://facebodyestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 2220 - Lj 11 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
@@ -4142,9 +3300,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sêneca, 36 G - Nova Cintra, Belo Horizonte - MG, 30516-260, Brasil"
   },
   {
@@ -4156,9 +3311,6 @@
    ],
    "fixos": [],
    "site": "https://www.kellercarvalhoestetica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Meca, 20 - Betânia, Belo Horizonte - MG, 30590-390, Brasil"
   },
   {
@@ -4170,9 +3322,6 @@
    ],
    "fixos": [],
    "site": "https://api.whatsapp.com/send/?phone=5531991204878&text&type=phone_number&app_absent=0",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Professor Mário Werneck, 2170 - Sala405 - Buritis, Belo Horizonte - MG, 30575-180, Brasil"
   },
   {
@@ -4184,9 +3333,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/dra.larissa.vieira/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. dos Aimorés, 3018 - sala 603 - Barro Preto, Belo Horizonte - MG, 30140-073, Brasil"
   },
   {
@@ -4198,9 +3344,6 @@
     "(31) 3318-4811"
    ],
    "site": "https://www.facebook.com/drhenriquesantiago/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Sen. Lima Guimarães, 108 - Estoril, Belo Horizonte - MG, 30455-600, Brasil"
   },
   {
@@ -4212,9 +3355,6 @@
    ],
    "fixos": [],
    "site": "https://espacoaurium.growdoc.com.br/?utm_source=google&utm_campaign=gmn",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Condomínio Parque - Avenida - Avenida Raja Gabáglia, 2000 Torre 2, Sala 540 - Alpes, Belo Horizonte - MG, 30494-170, Brasil"
   },
   {
@@ -4226,9 +3366,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Monteiro Lobato, 315 - Ouro Preto, Belo Horizonte - MG, 31310-530, Brasil"
   },
   {
@@ -4240,9 +3377,6 @@
     "(31) 3324-5369"
    ],
    "site": "https://clinicamarinaceruti.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 4273 - Sl 309 - Itapoã, Belo Horizonte - MG, 31710-400, Brasil"
   },
   {
@@ -4254,9 +3388,6 @@
    ],
    "fixos": [],
    "site": "https://wa.me/5531983169926",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Cel. José Dias Bicalho, 322 A Pampulha - São Luiz, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
@@ -4268,9 +3399,6 @@
    ],
    "fixos": [],
    "site": "https://linktr.ee/essencebe.bh",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Cel. José Dias Bicalho, 843 - São José, Belo Horizonte - MG, 31275-050, Brasil"
   },
   {
@@ -4282,9 +3410,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "470 A - R. Clélia - Pampulha, Belo Horizonte - MG, 31530-530, Brasil"
   },
   {
@@ -4296,9 +3421,6 @@
    ],
    "fixos": [],
    "site": "http://instagram.com/dramarcellafs",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Antônio Abrahão Caram, 620 - Sl 208 - São José, Belo Horizonte - MG, 31275-000, Brasil"
   },
   {
@@ -4310,9 +3432,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/espacosimetriia/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 1813 - Lj 7 - Santa Amelia, Belo Horizonte - MG, 31550-000, Brasil"
   },
   {
@@ -4324,9 +3443,6 @@
    ],
    "fixos": [],
    "site": "http://www.doctoralia.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Boaventura, 1620 - Sl 06 - P, Belo Horizonte - MG, 31255-210, Brasil"
   },
   {
@@ -4338,9 +3454,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 2432 - Lj 13 - Jardim Atlântico, Belo Horizonte - MG, 31560-000, Brasil"
   },
   {
@@ -4352,9 +3465,6 @@
    ],
    "fixos": [],
    "site": "https://www.mybeleza.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Conceição do Mato Dentro, 449 - Ouro Preto, Belo Horizonte - MG, 31310-240, Brasil"
   },
   {
@@ -4366,9 +3476,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Izabel Bueno, 817 - Jaraguá, Belo Horizonte - MG, 31270-065, Brasil"
   },
   {
@@ -4380,9 +3487,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Estér Augusta Ribeiro, 163 - Lj 1101 - Camargos, Belo Horizonte - MG, 30525-490, Brasil"
   },
   {
@@ -4394,9 +3498,6 @@
     "(31) 3019-3134"
    ],
    "site": "https://clinicaapex.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Alfredo Camarate, 462 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
@@ -4408,9 +3509,6 @@
    ],
    "fixos": [],
    "site": "https://drfelipemotta.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Clínica Apex - Av. Alfredo Camarate, 462 - São Luiz, Belo Horizonte - MG, 31310-000, Brasil"
   },
   {
@@ -4422,9 +3520,6 @@
    ],
    "fixos": [],
    "site": "https://clinicaesteticabh.com/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Alberto Cintra, 210 - Sl 513 - União, Belo Horizonte - MG, 31160-370, Brasil"
   },
   {
@@ -4436,9 +3531,6 @@
    ],
    "fixos": [],
    "site": "https://ahz.bio/esteticabrunaprado",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 4075 - Sl 9 - Itapoã, Belo Horizonte - MG, 31710-400, Brasil"
   },
   {
@@ -4450,9 +3542,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Expedicionário Paulo de Oliveira, 325 - Sl 11 - Pampulha, Belo Horizonte - MG, 31310-080, Brasil"
   },
   {
@@ -4464,9 +3553,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Pioneiros da Paz, 314B - Santa Amelia, Belo Horizonte - MG, 31555-320, Brasil"
   },
   {
@@ -4478,9 +3564,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dr. Cristiano Guimarães, 2517 - Sl 6 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
@@ -4492,9 +3575,6 @@
    ],
    "fixos": [],
    "site": "https://claude.ai/artifact/SumspmYYChxHAbwBtBDUJj",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Pres. Tancredo Neves, 2640 - Sl 704 - Castelo, Belo Horizonte - MG, 31330-472, Brasil"
   },
   {
@@ -4506,9 +3586,6 @@
     "(31) 3564-7935"
    ],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 2316 - 211 - Jardim Atlântico, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
@@ -4520,9 +3597,6 @@
    ],
    "fixos": [],
    "site": "https://instagram.com/dalila.nutri?igshid=MzRlODBiNWFlZA==",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Jornalista Waldir Lau, 350 - Planalto, Belo Horizonte - MG, 31710-560, Brasil"
   },
   {
@@ -4534,9 +3608,6 @@
    ],
    "fixos": [],
    "site": "https://facilconsulta.com.br/site/profissional/maria-fernanda-malagoli-dos-santos",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Portugal, 2085 - Santa Amelia, Belo Horizonte - MG, 31555-000, Brasil"
   },
   {
@@ -4548,9 +3619,6 @@
    ],
    "fixos": [],
    "site": "http://www.clinicaphysico.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dr. Cristiano Guimarães, Nº1958 - SL 402 - Planalto, Belo Horizonte - MG, 31720-300, Brasil"
   },
   {
@@ -4562,9 +3630,6 @@
    ],
    "fixos": [],
    "site": "https://www.thairinenutricionista.com/?utm_source=google&utm_medium=organic&utm_campaign=perfil_empresa_bh",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Izabel Bueno, 579 - Sl 109 - Jaraguá, Belo Horizonte - MG, 31270-065, Brasil"
   },
   {
@@ -4576,9 +3641,6 @@
     "(31) 3656-4448"
    ],
    "site": "http://www.uniclinicabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. das Gabirobas, 84 - Venda Nova, Belo Horizonte - MG, 31744-012, Brasil"
   },
   {
@@ -4590,9 +3652,6 @@
    ],
    "fixos": [],
    "site": "http://www.multiclinicabh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santa Cruz, 153 - Venda Nova, Belo Horizonte - MG, 31515-060, Brasil"
   },
   {
@@ -4604,9 +3663,6 @@
    ],
    "fixos": [],
    "site": "https://dravanessa-clinica.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Vênus, 190 - Parque São Pedro, Belo Horizonte - MG, 31610-260, Brasil"
   },
   {
@@ -4618,9 +3674,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Irineu Pinto n65B - Venda Nova, Belo Horizonte - MG, 31510-020, Brasil"
   },
   {
@@ -4632,9 +3685,6 @@
     "(31) 2125-0500"
    ],
    "site": "http://www.neoclinicbh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santo Antônio, 66 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
@@ -4646,9 +3696,6 @@
     "(31) 3408-7400"
    ],
    "site": "http://coopsaudevendanova.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Boa Vista, 73 - Venda Nova, Belo Horizonte - MG, 30515-090, Brasil"
   },
   {
@@ -4660,9 +3707,6 @@
     "(31) 4090-2290"
    ],
    "site": "https://www.gndiminas.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Dr. Álvaro Camargos, 2002 - Santa Branca, Belo Horizonte - MG, 31515-252, Brasil"
   },
   {
@@ -4674,9 +3718,6 @@
    ],
    "fixos": [],
    "site": "https://www.doctoralia.com.br/humberto-batista-ferreira/endocrinologista/belo-horizonte-ribeirao-das-neves-juiz-de-fora",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Vilarinho, 1601 - Piso 3, sala 309 - Venda Nova, Belo Horizonte - MG, 30650-250, Brasil"
   },
   {
@@ -4688,9 +3729,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Geraldo Alexandre Ferreira, 13 - São Pedro (Venda Nova), Belo Horizonte - MG, 31610-580, Brasil"
   },
   {
@@ -4702,9 +3740,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Antônia de Carvalho, 15 - Minas Caixa, Belo Horizonte - MG, 31615-090, Brasil"
   },
   {
@@ -4716,9 +3751,6 @@
    ],
    "fixos": [],
    "site": "https://beacons.ai/drielly.nutricionista",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Vilarinho, 1051 - Sl 12 - Venda Nova, Belo Horizonte - MG, 31610-070, Brasil"
   },
   {
@@ -4730,9 +3762,6 @@
    ],
    "fixos": [],
    "site": "https://janainarungue.my.canva.site/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Camilla Rodrigues Pilates e Funcional - R. Santo Antônio, 155 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
@@ -4744,9 +3773,6 @@
    ],
    "fixos": [],
    "site": "https://dietbox.me/pt-BR/danubia-napoliana-luiz?fbclid=PAAab8D5G9YNgsyL18-OWtDiHE_-FkEA3-wdyCYfWUMbh48y9tnLVNrCZb19U",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Padre Pedro Pinto, 6640B - Lagoinha (Venda Nova), Belo Horizonte - MG, 31610-100, Brasil"
   },
   {
@@ -4758,9 +3784,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/simonegraciano_/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Emídio Furtado, 40 - Letícia, Belo Horizonte - MG, 31570-120, Brasil"
   },
   {
@@ -4772,9 +3795,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Onófre Mendes Júnior, 13 - Sl 10 segundo andar - Candelária, Belo Horizonte - MG, 31535-522, Brasil"
   },
   {
@@ -4786,9 +3806,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/giovannamendes.nutri?cplk=MW0xMGwwcnU0OXRqZA%3D%3D&utm_source=qr",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dr. Cristiano Guimarães, 336 - Planalto, Belo Horizonte - MG, 31744-144, Brasil"
   },
   {
@@ -4800,9 +3817,6 @@
    ],
    "fixos": [],
    "site": "https://linktr.ee/Palomamoraes",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Visc. de Taunay, 582 - São João Batista, Belo Horizonte - MG, 31525-020, Brasil"
   },
   {
@@ -4814,9 +3828,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Dom Pedro I, 2077 - São João Batista, Belo Horizonte - MG, 31710-971, Brasil"
   },
   {
@@ -4828,9 +3839,6 @@
    ],
    "fixos": [],
    "site": "https://tinyurl.com/CintiaReis",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Des. Onófre Mendes Júnior, 190 - Loja 8 - São João Batista, Belo Horizonte - MG, 31535-510, Brasil"
   },
   {
@@ -4842,9 +3850,6 @@
     "(31) 3452-6407"
    ],
    "site": "https://www.intatos.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Rua Newton da Costa Silveira, 376 - Santa Monica, Belo Horizonte - MG, 31535-030, Brasil"
   },
   {
@@ -4856,9 +3861,6 @@
     "(31) 3244-1818"
    ],
    "site": "https://www.doctoralia.com.br/clinicas/instituto-saude",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Vilarinho, 1601 - nivel 3 sala 309 - Venda Nova, Belo Horizonte - MG, 31650-250, Brasil"
   },
   {
@@ -4870,9 +3872,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. João Samaha, 1380 - sobre loja - São João Batista, Belo Horizonte - MG, 31520-100, Brasil"
   },
   {
@@ -4884,9 +3883,6 @@
    ],
    "fixos": [],
    "site": "https://www.instagram.com/priscilla.asouzanutri/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Padre Pedro Pinto, 447 - Sl 06 - Venda Nova, Belo Horizonte - MG, 31515-000, Brasil"
   },
   {
@@ -4898,9 +3894,6 @@
     "(31) 2125-0500"
    ],
    "site": "https://neoclinicbh.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "R. Santo Antônio, 66 - Venda Nova, Belo Horizonte - MG, 31515-100, Brasil"
   },
   {
@@ -4912,9 +3905,6 @@
    ],
    "fixos": [],
    "site": "",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. do Contorno, 7069 - Sl. 312 - Lourdes, Belo Horizonte - MG, 30110-043, Brasil"
   },
   {
@@ -4926,9 +3916,6 @@
     "(31) 3243-0856"
    ],
    "site": "https://drbernardodecina.com.br/",
-   "foto": "",
-   "foto_alt": "",
-   "foto_credito": "",
    "endereco": "Av. Olegário Maciel, 1453 - Lourdes, Belo Horizonte - MG, 30180-111, Brasil"
   }
  ]

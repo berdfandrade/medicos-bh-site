@@ -78,14 +78,11 @@ const painel = criarPainelWhatsApp({
 });
 
 function htmlClinica(c) {
-  const foto = c.foto
-    ? `<figure><img src="${esc(c.foto)}" alt="${esc(c.foto_alt)}" loading="lazy">${c.foto_credito ? `<figcaption><a href="${esc(c.foto_credito)}" target="_blank" rel="noopener">Foto do site oficial</a></figcaption>` : ""}</figure>`
-    : "";
   const links = [htmlTelefones(c.celulares, c.fixos, painel.mensagem(c))];
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  return `<article class="card clinica-card">${foto}<div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div></div></article>`;
+  return `<article class="card clinica-card"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div></div></article>`;
 }
 
 function filtrar(lista) {
