@@ -83,13 +83,14 @@ const guardarConfig = valor => { Object.assign(CONFIG, soConfig(valor)); guardad
 // Troca os campos comuns às duas páginas: {responsavel} e {empresa}.
 function completarCampos(texto, { responsavel = "", config = CONFIG }) {
   return texto
-    .replaceAll("{responsavel}", responsavel)
+    .replaceAll("{consultor}", responsavel)
+    .replaceAll("{responsavel}", responsavel) // nome antigo do campo, ainda aceito
     .replaceAll("{empresa}", config.empresa.trim())
     .replace(/[ \t]{2,}/g, " ").replace(/ ([,.!?])/g, "$1"); // campo vazio não deixa espaço sobrando
 }
 
 const CAMPOS_COMUNS = [
-  { token: "{responsavel}", rotulo: "Responsável", dica: "quem está com o contato" },
+  { token: "{consultor}", rotulo: "Consultor", dica: "consultor que está com o contato" },
   { token: "{empresa}", rotulo: "Empresa", dica: "definida abaixo" },
 ];
 
@@ -161,7 +162,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
         <div class="wa-config-corpo">
           <section>
             <h3>Mensagens desta página</h3>
-            <p class="wa-dica">Cada contato recebe a mensagem do seu responsável. Quem não tiver mensagem própria, ou o contato sem responsável, usa a <b>Geral</b>.</p>
+            <p class="wa-dica">Cada contato recebe a mensagem do seu consultor. Consultor sem mensagem própria, ou contato sem consultor, usa a <b>Geral</b>.</p>
             <div class="wa-abas" id="wa-abas" role="tablist" aria-label="Mensagem de"></div>
             <textarea id="wa-texto" rows="7" spellcheck="true" aria-label="Texto da mensagem"></textarea>
             <div class="wa-aba-acoes" id="wa-aba-acoes"></div>
@@ -178,8 +179,8 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
               <input id="wa-empresa" maxlength="120" placeholder="Ex.: Clínica Bem-Estar"></label>
           </section>
           <section>
-            <h3>Equipe</h3>
-            <label class="wa-campo">Quem pode ficar responsável pelos contatos <small>um nome por linha, vale nas duas páginas</small>
+            <h3>Consultores</h3>
+            <label class="wa-campo">Consultores que atendem os contatos <small>um nome por linha, vale nas duas páginas</small>
               <textarea id="wa-equipe" rows="4"></textarea></label>
           </section>
         </div>
@@ -218,7 +219,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
     const proprias = CONFIG.equipe.filter(n => estado.textos.por_responsavel[n]?.trim());
     $("wa-resumo").innerHTML = [
       CONFIG.empresa && `Empresa: <b>${esc(CONFIG.empresa)}</b>`,
-      `Mensagem própria: ${proprias.map(esc).join(", ") || "ninguém (todos usam a Geral)"}`,
+      `Consultores com mensagem própria: ${proprias.map(esc).join(", ") || "ninguém (todos usam a Geral)"}`,
     ].filter(Boolean).join("<br>");
     const botao = $("wa-testar"), ajuda = $("wa-numero-ajuda");
     const href = mensagem.trim() ? waHref(estado.numero, mensagem) : null;
@@ -480,8 +481,8 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     const atual = valores.valor(id) || "";
     const nomes = CONFIG.equipe;
     const opcoes = ["", ...nomes, ...(atual && !nomes.includes(atual) ? [atual] : [])];
-    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Responsável</span>
-      <select data-responsavel-id="${esc(id)}" aria-label="Responsável pelo contato">
+    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>
+      <select data-responsavel-id="${esc(id)}" aria-label="Consultor do contato">
         ${opcoes.map(n => `<option value="${esc(n)}"${n === atual ? " selected" : ""}>${n ? esc(n) : "Ninguém ainda"}</option>`).join("")}
       </select></label>`;
   }
@@ -499,9 +500,9 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     for (const id of ids) { const r = valores.valor(id) || SEM_RESPONSAVEL; conta[r] = (conta[r] || 0) + 1; }
     const nomes = CONFIG.equipe;
     const todos = [...nomes, ...Object.keys(conta).filter(n => n !== SEM_RESPONSAVEL && !nomes.includes(n))];
-    sel.innerHTML = '<option value="">Todos os responsáveis</option>'
+    sel.innerHTML = '<option value="">Todos os consultores</option>'
       + todos.map(n => `<option value="${esc(n)}">${esc(n)} (${conta[n] || 0})</option>`).join("")
-      + `<option value="${SEM_RESPONSAVEL}">Sem responsável (${conta[SEM_RESPONSAVEL] || 0})</option>`;
+      + `<option value="${SEM_RESPONSAVEL}">Sem consultor (${conta[SEM_RESPONSAVEL] || 0})</option>`;
     sel.value = atual;
   }
 

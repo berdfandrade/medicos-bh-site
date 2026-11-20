@@ -41,7 +41,7 @@
     <div class="filtros">
       <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
-      <select id="responsavel" aria-label="Responsável pelo contato"><option value="">Todos os responsáveis</option></select>
+      <select id="responsavel" aria-label="Consultor do contato"><option value="">Todos os consultores</option></select>
       <div class="chips" role="group" aria-label="Filtros">
         <button type="button" class="chip" id="sus" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>
@@ -74,7 +74,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=3190e015"></script>
+<script src="comum.js?v=9fdceca4"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -109,7 +109,7 @@ const painel = criarPainelWhatsApp({
   el: document.getElementById("wa-painel"),
   chave: "wa",
   textoPadrao: MENSAGEM_PADRAO,
-  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada médico abre a conversa com o texto já personalizado. Em <b>Configurações</b> você define uma mensagem para cada responsável, a empresa e a equipe.",
+  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada médico abre a conversa com o texto já personalizado. Em <b>Configurações</b> você define uma mensagem para cada consultor, a empresa e quem são os consultores.",
   campos: [
     { token: "{nome}", rotulo: "Nome do médico" },
     { token: "{primeiro_nome}", rotulo: "Primeiro nome" },
