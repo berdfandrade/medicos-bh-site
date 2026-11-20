@@ -26,21 +26,34 @@
   <div class="wrap">
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Buscar por nome, CRM, clínica ou bairro" aria-label="Buscar">
+      <input type="search" id="q" placeholder="Nome, CRM, clínica ou bairro" aria-label="Buscar">
     </label>
     <div class="seg" role="group" aria-label="Especialidade">
       <button type="button" data-esp="" aria-pressed="true">Todas</button>
       <button type="button" data-esp="Endocrinologia e Metabologia" aria-pressed="false">Endocrinologia</button>
       <button type="button" data-esp="Nutrologia" aria-pressed="false">Nutrologia</button>
     </div>
-    <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
-    <label class="check"><input type="checkbox" id="sus"> Atende SUS</label>
-    <label class="check"><input type="checkbox" id="cel"> Tem celular</label>
+    <div class="filtros">
+      <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
+      <div class="chips" role="group" aria-label="Filtros">
+        <button type="button" class="chip" id="sus" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>
+          Atende SUS
+        </button>
+        <button type="button" class="chip" id="cel" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          Tem celular
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
 <main class="wrap">
-  <div class="meta"><div id="count" aria-live="polite"></div></div>
+  <div class="meta">
+    <div id="count" aria-live="polite"></div>
+    <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+  </div>
   <div class="grid" id="grid"></div>
   <div class="more" id="more" hidden><button type="button">Mostrar mais</button></div>
 </main>
@@ -141,7 +154,22 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlCard).join("")
     : '<div class="empty">Nenhum médico encontrado com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "médico" : "médicos"}`;
-  document.getElementById("more").hidden = lista.length <= estado.limite;
+  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.bairro || estado.sus || estado.cel);
+  const restantes = lista.length - estado.limite;
+  document.getElementById("more").hidden = restantes <= 0;
+  document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
+}
+
+// Altera o estado dos filtros e reflete nos controles da barra.
+function aplicar(mudanca) {
+  Object.assign(estado, mudanca, { limite: PAGINA });
+  const q = document.getElementById("q");
+  if (q.value !== estado.q) q.value = estado.q;
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
+  document.getElementById("bairro").value = estado.bairro;
+  document.getElementById("sus").setAttribute("aria-pressed", String(estado.sus));
+  document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
+  render();
 }
 
 function stats(dados) {
@@ -151,7 +179,7 @@ function stats(dados) {
     [medicos.length, "médicos"],
     [conta("Endocrinologia e Metabologia"), "endocrinologistas"],
     [conta("Nutrologia"), "nutrólogos"],
-    [locais, "locais de atendimento"],
+    [locais, "locais"],
   ];
   document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
   const c = dados.competencia || "";
@@ -170,15 +198,13 @@ function ligar() {
   let t;
   document.getElementById("q").addEventListener("input", e => {
     clearTimeout(t);
-    t = setTimeout(() => { estado.q = e.target.value; estado.limite = PAGINA; render(); }, 120);
+    t = setTimeout(() => aplicar({ q: e.target.value }), 120);
   });
-  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
-    document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    estado.esp = b.dataset.esp; estado.limite = PAGINA; render();
-  }));
-  document.getElementById("bairro").addEventListener("change", e => { estado.bairro = e.target.value; estado.limite = PAGINA; render(); });
-  document.getElementById("sus").addEventListener("change", e => { estado.sus = e.target.checked; estado.limite = PAGINA; render(); });
-  document.getElementById("cel").addEventListener("change", e => { estado.cel = e.target.checked; estado.limite = PAGINA; render(); });
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
+  document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
+  document.getElementById("sus").addEventListener("click", () => aplicar({ sus: !estado.sus }));
+  document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
+  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", bairro: "", sus: false, cel: false }));
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
 
