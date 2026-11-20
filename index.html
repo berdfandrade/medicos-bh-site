@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=5ed3c7af">
+<link rel="stylesheet" href="estilo.css?v=16cbb3d1">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -69,7 +69,10 @@
 
   <div class="meta">
     <div id="count" aria-live="polite"></div>
-    <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+    <div class="meta-acoes">
+      <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+      <button type="button" class="adicionar" id="adicionar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar médico</button>
+    </div>
   </div>
   <div class="grid" id="grid"></div>
   <div class="more" id="more" hidden><button type="button">Mostrar mais</button></div>
@@ -80,7 +83,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=98f831de"></script>
+<script src="comum.js?v=f55525d4"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -97,7 +100,7 @@ const mapaHref = l => {
 const estado = { q: "", por: "nome", esp: "", regiao: "", bairro: "", sus: false, cel: false, etapa: "", responsavel: "", ordem: "nome", limite: PAGINA };
 let medicos = [];
 
-const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
+const idMedico = m => m.id || m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"; adicionados: "manual-..."
 const etapas = criarEtapas({
   lista: "medicos",
   chaveLocal: "medicos.etapas",
@@ -169,12 +172,13 @@ function htmlCard(m) {
       <div class="avatar${nutro ? " nutro" : ""}" aria-hidden="true">${esc(iniciais(m.nome))}</div>
       <div>
         <h2>${esc(titulo(m.nome))}</h2>
-        <div class="crm">CRM ${esc(m.crm)}</div>
+        ${m.crm ? `<div class="crm">CRM ${esc(m.crm)}</div>` : ""}
       </div>
     </div>
     <div class="tags">${tags}</div>
     <ul class="locais">${visiveis}</ul>
     ${extra}
+    ${htmlManual(m)}
     <div class="card-acoes">
       ${responsaveis.seletor(id, m.locais.some(l => l.celulares.length))}
       ${etapas.seletor(id)}
@@ -259,6 +263,16 @@ function ligar() {
 
   document.querySelectorAll("#esp button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
   etapas.ligar(document.getElementById("grid"));
+  criarFormularioNovo({
+    tipo: "medicos",
+    botao: document.getElementById("adicionar"),
+    bairros: () => medicos.flatMap(m => m.locais.map(l => ({ bairro: l.bairro, regiao: l.regiao }))),
+    aoAdicionar: m => { // mostra o médico novo na lista
+      medicos = [...medicos, m].sort(porNome);
+      aplicar({ q: m.nome, por: "nome", esp: "", regiao: "", bairro: "", sus: false, cel: false, etapa: "", responsavel: "" });
+    },
+  });
+  ligarApagar(document.getElementById("grid"), "medicos", id => { medicos = medicos.filter(m => m.id !== id); aplicar({}); });
   responsaveis.ligar(document.getElementById("grid"));
   document.getElementById("responsavel").addEventListener("change", e => aplicar({ responsavel: e.target.value }));
   document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
@@ -269,15 +283,16 @@ function ligar() {
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
 
-// no-cache: sempre confere com o servidor (ETag) se o JSON mudou, para a página
-// nunca combinar uma versão nova do HTML com um JSON antigo guardado no navegador.
-fetch("medicos_bh.json", { cache: "no-cache" })
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(dados => {
-    medicos = dados.medicos.map(m => ({
-      ...m,
-    }));
-    stats(dados); localidades(); ligar(); render();
+// Lista do banco (API); sem conexão, o JSON publicado (só leitura).
+carregarItens("medicos", {
+  arquivo: "medicos_bh.json",
+  meta: j => ({ fonte: j.fonte, competencia: j.competencia }),
+  itens: j => j.medicos.map(m => ({ ...m, id: idMedico(m), origem: "importado" })),
+})
+  .then(({ meta, itens, daApi }) => {
+    medicos = itens.sort(porNome);
+    stats(meta); localidades(); ligar(); render();
+    if (!daApi) somenteLeitura("médicos");
   })
   .catch(erro => {
     console.error(erro);

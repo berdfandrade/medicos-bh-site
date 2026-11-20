@@ -679,3 +679,196 @@ function ligarAcompanhamento({ estado, aplicar, etapas, ids }) {
     meus.title = EU.nome ? `Só os contatos de ${EU.nome}` : "Escolha em \"Você é\" quem está usando este aparelho";
   };
 }
+
+/* --- Médicos e clínicas vindos da API (com o JSON publicado de reserva) ------------------ */
+
+// Lista da API; se ela não responder, o arquivo JSON do site (sem os adicionados pela página).
+async function carregarItens(lista, { arquivo, meta, itens }) {
+  try {
+    const d = await chamarApi("GET", `/itens/${lista}`);
+    if (d.itens.length) return { meta: d.meta, itens: d.itens, daApi: true };
+  } catch (erro) {
+    console.error(erro);
+  }
+  const r = await fetch(arquivo, { cache: "no-cache" });
+  if (!r.ok) throw new Error(`${arquivo}: ${r.status}`);
+  const j = await r.json();
+  return { meta: meta(j), itens: itens(j), daApi: false };
+}
+
+const porNome = (a, b) => semAcento(a.nome).localeCompare(semAcento(b.nome), "pt-BR");
+
+// Selo dos itens adicionados pela página, com o botão de apagar.
+const htmlManual = item => item.origem === "manual"
+  ? `<div class="manual"><span>${svg('<path d="M12 5v14M5 12h14"/>')}Adicionado pela equipe</span><button type="button" class="limpar" data-apagar-id="${esc(item.id)}">Apagar</button></div>`
+  : "";
+
+// "(31) 99999-0000", "31 3333-4444", "999990000"... -> { tipo: "celular" | "fixo", texto: "(31) 99999-0000" } ou null.
+// Mesmas regras de telefones.py: DDD 31 se faltar; celular antigo de 8 dígitos ganha o 9.
+function lerTelefone(bruto) {
+  let d = String(bruto).replace(/\D/g, "").replace(/^0+/, "");
+  if ((d.length === 12 || d.length === 13) && d.startsWith("55")) d = d.slice(2);
+  if (d.length === 8 || d.length === 9) d = "31" + d;
+  if (d.length === 10 && /[6-9]/.test(d[2])) d = d.slice(0, 2) + "9" + d.slice(2);
+  if (d.length === 11 && d[2] === "9") return { tipo: "celular", texto: `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}` };
+  if (d.length === 10 && /[2-5]/.test(d[2])) return { tipo: "fixo", texto: `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}` };
+  return null;
+}
+
+/**
+ * Botão "Adicionar médico/clínica" e o formulário. Envia para a API e devolve o item criado.
+ *  tipo       "medicos" ou "clinicas"
+ *  botao      elemento que abre o formulário
+ *  bairros    () => [{ bairro, regiao }] já conhecidos (sugestões e região automática)
+ *  aoAdicionar item => void (a página põe o item na lista e mostra)
+ */
+function criarFormularioNovo({ tipo, botao, bairros, aoAdicionar }) {
+  const medico = tipo === "medicos";
+  const dialogo = document.createElement("dialog");
+  dialogo.className = "wa-config novo";
+  dialogo.setAttribute("aria-labelledby", "novo-titulo");
+  const campo = (id, rotulo, extra = "", dica = "") =>
+    `<label class="wa-campo">${rotulo}${dica ? ` <small>${dica}</small>` : ""}<input id="${id}" ${extra}></label>`;
+  dialogo.innerHTML = `
+    <form method="dialog" id="novo-form" novalidate>
+      <header class="wa-config-topo">
+        <h2 id="novo-titulo">${medico ? "Adicionar médico" : "Adicionar clínica"}</h2>
+        <button type="button" class="wa-fechar" data-fechar aria-label="Fechar sem salvar">×</button>
+      </header>
+      <div class="wa-config-corpo">
+        <section>
+          ${campo("novo-nome", medico ? "Nome do médico *" : "Nome da clínica *", 'required minlength="3" maxlength="200" autocomplete="off"')}
+          ${medico ? `
+          ${campo("novo-crm", "CRM", 'maxlength="20" placeholder="Ex.: 12345/MG" autocomplete="off"')}
+          <fieldset class="novo-esp"><legend>Especialidade *</legend>
+            <label class="wa-check"><input type="checkbox" value="Endocrinologia e Metabologia"> Endocrinologia</label>
+            <label class="wa-check"><input type="checkbox" value="Nutrologia"> Nutrologia</label>
+          </fieldset>` : ""}
+        </section>
+        <section>
+          <h3>${medico ? "Local de atendimento" : "Endereço"}</h3>
+          ${medico ? campo("novo-local", "Nome do local", 'maxlength="200" placeholder="Ex.: Clínica Bem-Estar"') : ""}
+          ${campo("novo-endereco", "Endereço", 'maxlength="200" placeholder="Rua, número, sala"')}
+          <div class="novo-linha">
+            ${campo("novo-bairro", "Bairro", 'maxlength="200" list="novo-bairros" autocomplete="off"')}
+            <label class="wa-campo">Região
+              <select id="novo-regiao">${["", ...REGIOES].map(r => `<option value="${r}">${r || "Não sei"}</option>`).join("")}</select></label>
+          </div>
+          <datalist id="novo-bairros"></datalist>
+          ${medico ? campo("novo-cep", "CEP", 'inputmode="numeric" maxlength="9" placeholder="00000-000"') : ""}
+        </section>
+        <section>
+          <h3>Contato</h3>
+          ${campo("novo-telefones", "Telefones", 'inputmode="tel" autocomplete="off" placeholder="(31) 99999-0000, (31) 3333-4444"', "separe por vírgula; celular libera o WhatsApp")}
+          <div class="novo-tels" id="novo-tels" aria-live="polite"></div>
+          ${medico ? campo("novo-email", "E-mail", 'type="email" maxlength="200" autocomplete="off"') : ""}
+          ${campo("novo-site", "Site", 'inputmode="url" maxlength="200" autocapitalize="off" spellcheck="false" placeholder="www.exemplo.com.br"')}
+          ${medico ? '<label class="wa-check"><input type="checkbox" id="novo-sus"> Atende pelo SUS neste local</label>' : ""}
+        </section>
+      </div>
+      <footer class="wa-config-pe">
+        <span class="wa-salvo" id="novo-status" role="status"></span>
+        <button type="button" class="wa-secundario" data-fechar>Cancelar</button>
+        <button type="submit" class="wa-botao" id="novo-salvar">Adicionar</button>
+      </footer>
+    </form>`;
+  document.body.append(dialogo);
+  const $ = id => dialogo.querySelector(`#${id}`);
+  const status = $("novo-status");
+
+  const telefones = () => $("novo-telefones").value.split(/[,;/]+/).map(t => t.trim()).filter(Boolean)
+    .map(t => ({ bruto: t, lido: lerTelefone(t) }));
+  function mostrarTelefones() {
+    $("novo-tels").innerHTML = telefones().map(({ bruto, lido }) => lido
+      ? `<span class="ok">${lido.tipo === "celular" ? icone.wa : icone.tel}${esc(lido.texto)} · ${lido.tipo === "celular" ? "celular (WhatsApp)" : "fixo"}</span>`
+      : `<span class="ruim">${esc(bruto)} · número incompleto</span>`).join("");
+  }
+  // Bairro conhecido: preenche a região sozinho.
+  const regiaoDe = {};
+  function sugerirBairros() {
+    for (const k of Object.keys(regiaoDe)) delete regiaoDe[k];
+    for (const { bairro, regiao } of bairros()) if (bairro && regiao) regiaoDe[semAcento(bairro)] ??= regiao;
+    const nomes = [...new Set(bairros().map(b => b.bairro).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+    $("novo-bairros").innerHTML = nomes.map(n => `<option value="${esc(titulo(n))}">`).join("");
+  }
+  $("novo-bairro").addEventListener("input", () => {
+    const r = regiaoDe[semAcento($("novo-bairro").value.trim())];
+    if (r) $("novo-regiao").value = r;
+  });
+  $("novo-telefones").addEventListener("input", mostrarTelefones);
+
+  function abrir() {
+    dialogo.querySelector("form").reset();
+    status.textContent = ""; status.className = "wa-salvo";
+    mostrarTelefones(); sugerirBairros();
+    dialogo.showModal();
+    $("novo-nome").focus();
+  }
+  const fechar = () => dialogo.close();
+  const erro = (mensagem, foco) => { status.className = "wa-salvo erro"; status.textContent = mensagem; foco?.focus(); };
+
+  async function salvar(e) {
+    e.preventDefault();
+    const nome = $("novo-nome").value.trim();
+    if (nome.length < 3) return erro("Escreva o nome (pelo menos 3 letras).", $("novo-nome"));
+    const especialidades = medico ? [...dialogo.querySelectorAll(".novo-esp input:checked")].map(i => i.value) : [];
+    if (medico && !especialidades.length) return erro("Marque pelo menos uma especialidade.", dialogo.querySelector(".novo-esp input"));
+    const tels = telefones();
+    if (tels.some(t => !t.lido)) return erro("Confira os telefones marcados como incompletos.", $("novo-telefones"));
+    const cep = medico ? $("novo-cep").value.replace(/\D/g, "") : "";
+    if (cep && cep.length !== 8) return erro("O CEP precisa ter 8 números.", $("novo-cep"));
+    const contato = {
+      endereco: $("novo-endereco").value.trim(), bairro: $("novo-bairro").value.trim(), regiao: $("novo-regiao").value,
+      celulares: tels.filter(t => t.lido.tipo === "celular").map(t => t.lido.texto),
+      fixos: tels.filter(t => t.lido.tipo === "fixo").map(t => t.lido.texto),
+      site: $("novo-site").value.trim(),
+    };
+    const dados = medico
+      ? { nome, crm: $("novo-crm").value.trim(), especialidades,
+          locais: [{ ...contato, estabelecimento: $("novo-local").value.trim(), cep, email: $("novo-email").value.trim(), atende_sus: $("novo-sus").checked }] }
+      : { nome, ...contato };
+    const salvarBtn = $("novo-salvar");
+    salvarBtn.disabled = true; status.className = "wa-salvo"; status.textContent = "Salvando…";
+    try {
+      const item = await chamarApi("POST", `/itens/${tipo}`, dados);
+      fechar();
+      aoAdicionar(item);
+    } catch (falha) {
+      console.error(falha);
+      erro("Não foi possível salvar. Confira a conexão e tente de novo.");
+    } finally {
+      salvarBtn.disabled = false;
+    }
+  }
+
+  botao.addEventListener("click", abrir);
+  dialogo.querySelectorAll("[data-fechar]").forEach(b => b.addEventListener("click", fechar));
+  dialogo.addEventListener("click", e => { if (e.target === dialogo) fechar(); });
+  dialogo.querySelector("form").addEventListener("submit", salvar);
+}
+
+// Sem a API: lista do JSON publicado; não dá para adicionar.
+function somenteLeitura(oque) {
+  const b = document.getElementById("adicionar");
+  b.disabled = true;
+  b.title = `Sem conexão com o banco: não dá para adicionar ${oque} agora. Recarregue a página para tentar de novo.`;
+}
+
+// Botão "Apagar" dos itens adicionados pela página (dentro de `el`).
+function ligarApagar(el, tipo, aoApagar) {
+  el.addEventListener("click", async e => {
+    const b = e.target.closest("[data-apagar-id]");
+    if (!b) return;
+    const nome = b.closest(".card")?.querySelector("h2, h3")?.textContent || "este contato";
+    if (!confirm(`Apagar ${nome}? Isso também apaga o consultor e a etapa dele, e não dá para desfazer.`)) return;
+    b.disabled = true;
+    try {
+      await chamarApi("DELETE", `/itens/${tipo}/${encodeURIComponent(b.dataset.apagarId)}`);
+      aoApagar(b.dataset.apagarId);
+    } catch (erro) {
+      console.error(erro);
+      b.disabled = false;
+      alert("Não foi possível apagar agora. Tente de novo.");
+    }
+  });
+}

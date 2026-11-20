@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=5ed3c7af">
+<link rel="stylesheet" href="estilo.css?v=16cbb3d1">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -60,7 +60,10 @@
 
   <div class="meta">
     <div id="count" aria-live="polite"></div>
-    <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+    <div class="meta-acoes">
+      <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+      <button type="button" class="adicionar" id="adicionar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar clínica</button>
+    </div>
   </div>
   <div class="clinicas-grid" id="grid"></div>
 
@@ -72,7 +75,7 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=98f831de"></script>
+<script src="comum.js?v=f55525d4"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
@@ -93,7 +96,9 @@ const responsaveis = criarResponsaveis({
   aoMudar: () => { if (clinicas.length) render(); },
 });
 
-const mapaHref = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`;
+const mapaHref = c => c.place_id
+  ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent([c.nome, c.endereco, c.bairro, "Belo Horizonte - MG"].filter(Boolean).join(", "))}`;
 
 const painel = criarPainelWhatsApp({
   el: document.getElementById("wa-painel"),
@@ -102,7 +107,7 @@ const painel = criarPainelWhatsApp({
   descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada clínica abre a conversa com o texto já personalizado. Em <b>Configurações</b> você define uma mensagem para cada consultor, a empresa e quem são os consultores.",
   campos: [{ token: "{nome}", rotulo: "Nome da clínica" }],
   montar: (texto, c) => texto.replaceAll("{nome}", c.nome),
-  responsavelDe: c => responsaveis.de(c.place_id),
+  responsavelDe: c => responsaveis.de(c.id),
   exemplo: () => {
     const c = filtrar(clinicas).find(x => x.celulares.length) || clinicas.find(x => x.celulares.length);
     return c ? { item: c, nome: c.nome } : null;
@@ -116,7 +121,7 @@ function htmlClinica(c) {
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  return `<article class="card clinica-card" data-etapa="${etapas.etapa(c.place_id)}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div><div class="card-acoes">${responsaveis.seletor(c.place_id, c.celulares.length > 0)}${etapas.seletor(c.place_id)}</div></div></article>`;
+  return `<article class="card clinica-card" data-etapa="${etapas.etapa(c.id)}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div>${htmlManual(c)}<div class="card-acoes">${responsaveis.seletor(c.id, c.celulares.length > 0)}${etapas.seletor(c.id)}</div></div></article>`;
 }
 
 function filtrar(lista) {
@@ -127,8 +132,8 @@ function filtrar(lista) {
     (!estado.regiao || c.regiao === estado.regiao) &&
     (!estado.bairro || c.bairro === estado.bairro) &&
     (!estado.cel || c.celulares.length) &&
-    etapas.passa(c.place_id, estado.etapa) &&
-    responsaveis.passa(c.place_id, estado.responsavel) &&
+    etapas.passa(c.id, estado.etapa) &&
+    responsaveis.passa(c.id, estado.responsavel) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
       : semAcento(estado.por === "bairro" ? (c.bairro || c.endereco || "") : c.nome).includes(termo)))
@@ -136,14 +141,14 @@ function filtrar(lista) {
 }
 
 function render() {
-  const lista = ordenar(filtrar(clinicas), estado.ordem, c => c.place_id, { etapas, responsaveis });
+  const lista = ordenar(filtrar(clinicas), estado.ordem, c => c.id, { etapas, responsaveis });
   document.getElementById("grid").innerHTML = lista.length
     ? lista.slice(0, estado.limite).map(htmlClinica).join("")
     : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
   document.getElementById("limpar").hidden = !(estado.q.trim() || estado.regiao || estado.bairro || estado.cel || estado.etapa || estado.responsavel);
   atualizarAcompanhamento();
-  responsaveis.preencherFiltro(document.getElementById("responsavel"), clinicas.map(c => c.place_id), estado.responsavel);
+  responsaveis.preencherFiltro(document.getElementById("responsavel"), clinicas.map(c => c.id), estado.responsavel);
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
@@ -160,7 +165,7 @@ function aplicar(mudanca) {
   render();
 }
 
-const atualizarAcompanhamento = ligarAcompanhamento({ estado, aplicar, etapas, ids: () => clinicas.map(c => c.place_id) });
+const atualizarAcompanhamento = ligarAcompanhamento({ estado, aplicar, etapas, ids: () => clinicas.map(c => c.id) });
 
 function stats() {
   const itens = [
@@ -185,17 +190,33 @@ document.getElementById("regiao").addEventListener("change", e => aplicar({ regi
 document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
 document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", regiao: "", bairro: "", cel: false, etapa: "", responsavel: "" }));
 etapas.ligar(document.getElementById("grid"));
+criarFormularioNovo({
+  tipo: "clinicas",
+  botao: document.getElementById("adicionar"),
+  bairros: () => clinicas.map(c => ({ bairro: c.bairro, regiao: c.regiao })),
+  aoAdicionar: c => { // mostra a clínica nova na lista
+    clinicas = [...clinicas, c].sort(porNome);
+    stats();
+    aplicar({ q: c.nome, por: "nome", regiao: "", bairro: "", cel: false, etapa: "", responsavel: "" });
+  },
+});
+ligarApagar(document.getElementById("grid"), "clinicas", id => { clinicas = clinicas.filter(c => c.id !== id); stats(); aplicar({}); });
 responsaveis.ligar(document.getElementById("grid"));
 document.getElementById("responsavel").addEventListener("change", e => aplicar({ responsavel: e.target.value }));
 document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 
 
-fetch("clinicas.json", { cache: "no-cache" })
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(dados => {
-    clinicas = dados.clinicas;
-    document.getElementById("fonte").textContent = `Fonte: ${dados.fonte}.`;
+// Lista do banco (API); sem conexão, o JSON publicado (só leitura).
+carregarItens("clinicas", {
+  arquivo: "clinicas.json",
+  meta: j => ({ fonte: j.fonte }),
+  itens: j => j.clinicas.map(c => ({ ...c, id: c.place_id, origem: "importado" })),
+})
+  .then(({ meta, itens, daApi }) => {
+    clinicas = itens.sort(porNome);
+    document.getElementById("fonte").textContent = `Fonte: ${meta.fonte || "Google Maps"}.`;
     stats(); localidades(); render();
+    if (!daApi) somenteLeitura("clínicas");
   })
   .catch(erro => {
     console.error(erro);

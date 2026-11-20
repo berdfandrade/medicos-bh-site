@@ -444,3 +444,32 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 @media (max-width: 640px) {
   .eu { margin-left: 0; width: 100%; justify-content: flex-end; }
 }
+
+/* Adicionar médico/clínica */
+.meta-acoes { display: flex; align-items: center; gap: 14px; }
+.adicionar {
+  display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px; border-radius: 10px;
+  border: 1px solid var(--accent); background: var(--accent-soft); color: var(--accent); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.adicionar:hover { background: var(--accent); color: var(--bg); }
+.adicionar:disabled { opacity: .5; cursor: not-allowed; background: var(--surface-2); }
+.manual { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12.5px; color: var(--ink-3); }
+.manual span { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; background: var(--surface-2); }
+.manual .limpar { padding: 0; font-size: 12.5px; color: #c2410c; }
+.clinica-corpo .manual { margin-top: 12px; }
+.novo .wa-campo select { width: 100%; min-width: 0; height: 44px; }
+.novo-linha { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 0 10px; }
+.novo-esp { border: 0; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.novo-esp legend { font-size: 13.5px; font-weight: 500; margin-bottom: 4px; padding: 0; }
+.novo-esp .wa-check { margin-top: 0; }
+.novo .wa-check { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+.novo .wa-check input { width: 18px; height: 18px; accent-color: var(--accent); }
+.novo-tels { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.novo-tels span { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; padding: 3px 9px; border-radius: 999px; }
+.novo-tels .ok { background: var(--accent-soft); color: var(--accent); }
+.novo-tels .ruim { background: #c2410c22; color: #c2410c; }
+.novo-tels:empty { display: none; }
+@media (max-width: 640px) {
+  .meta { flex-wrap: wrap; }
+  .novo-linha { grid-template-columns: 1fr; }
+}
