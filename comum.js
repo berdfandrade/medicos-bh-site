@@ -78,8 +78,12 @@ function htmlTelefones(celulares, fixos, mensagem) {
 }
 
 /* Configurações comuns às duas páginas, salvas na API (/configuracoes). */
-const CONFIG_PADRAO = { empresa: "", equipe: ["Luciano", "Mauro", "Marino"] };
-const soConfig = valor => ({ empresa: String(valor?.empresa ?? ""), equipe: Array.isArray(valor?.equipe) ? valor.equipe : CONFIG_PADRAO.equipe });
+const CONFIG_PADRAO = { empresa: "", equipe: ["Luciano", "Mauro", "Marino"], retorno_dias: 3 };
+const soConfig = valor => ({
+  empresa: String(valor?.empresa ?? ""),
+  equipe: Array.isArray(valor?.equipe) ? valor.equipe : CONFIG_PADRAO.equipe,
+  retorno_dias: Math.min(90, Math.max(1, Number(valor?.retorno_dias) || CONFIG_PADRAO.retorno_dias)),
+});
 const CONFIG = (() => { try { return soConfig({ ...CONFIG_PADRAO, ...JSON.parse(guardado.ler("config", "{}")) }); } catch { return { ...CONFIG_PADRAO }; } })();
 const guardarConfig = valor => { Object.assign(CONFIG, soConfig(valor)); guardado.gravar("config", JSON.stringify(CONFIG)); };
 
@@ -182,6 +186,11 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
               <input id="wa-empresa" maxlength="120" placeholder="Ex.: Clínica Bem-Estar"></label>
           </section>
           <section>
+            <h3>Retorno</h3>
+            <label class="wa-campo">Cobrar retorno depois de quantos dias sem resposta? <small>contatos em "Mensagem enviada" há mais tempo aparecem em <b>Retorno pendente</b></small>
+              <input id="wa-retorno" type="number" min="1" max="90" inputmode="numeric" class="wa-numero-curto"></label>
+          </section>
+          <section>
             <h3>Consultores</h3>
             <label class="wa-campo">Consultores que atendem os contatos <small>um nome por linha, vale nas duas páginas</small>
               <textarea id="wa-equipe" rows="4"></textarea></label>
@@ -241,10 +250,10 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   });
 
   // --- Janela de configurações: edita uma cópia; só vale depois de Salvar.
-  const form = { texto: $("wa-texto"), empresa: $("wa-empresa"), equipe: $("wa-equipe") };
+  const form = { texto: $("wa-texto"), empresa: $("wa-empresa"), equipe: $("wa-equipe"), retorno: $("wa-retorno") };
   let rascunho, aba;
   const equipeDoForm = () => [...new Set(form.equipe.value.split("\n").map(n => n.trim()).filter(Boolean))];
-  const configDoForm = () => ({ empresa: form.empresa.value.trim(), equipe: equipeDoForm() });
+  const configDoForm = () => soConfig({ empresa: form.empresa.value.trim(), equipe: equipeDoForm(), retorno_dias: form.retorno.value });
 
   function desenharAbas() {
     const equipe = equipeDoForm();
@@ -266,7 +275,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   function abrir() {
     rascunho = { geral: estado.textos.geral, por_responsavel: { ...estado.textos.por_responsavel } };
     aba = vendo;
-    form.empresa.value = CONFIG.empresa; form.equipe.value = CONFIG.equipe.join("\n");
+    form.empresa.value = CONFIG.empresa; form.equipe.value = CONFIG.equipe.join("\n"); form.retorno.value = CONFIG.retorno_dias;
     $("wa-config-status").textContent = "";
     desenharAbas();
     dialogo.showModal();
@@ -383,6 +392,8 @@ const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
 icone.ok = svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>');
 icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
 icone.cadeado = svg('<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>');
+icone.funil = svg('<path d="M3 4h18l-7 8.5V19l-4 2v-8.5L3 4z"/>');
+icone.relogio = svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>');
 icone.pessoa = svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
 
 /**
@@ -391,17 +402,17 @@ icone.pessoa = svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"
  * rápido, e ela é trocada pelo que vem da API. (Reenviar a cópia local fazia um aparelho com
  * cópia antiga remarcar o que outro aparelho tinha desmarcado.) Se uma alteração não puder
  * ser salva, ela é desfeita na tela e aparece o aviso.
- *  rota        ex. "/contatados/clinicas" (GET lista tudo; PUT/DELETE em rota/{id})
- *  parametro   nome do parâmetro do PUT que leva o valor (ex. "data", "nome")
+ *  rota        ex. "/etapas/clinicas" (GET lista tudo; PUT/DELETE em rota/{id})
+ *  query       valor => parâmetros do PUT (ex. v => `nome=${encodeURIComponent(v)}`)
  *  chaveLocal  chave da cópia no localStorage
  *  aviso       elemento que mostra um aviso só quando algo não pôde ser salvo
  *  aoMudar     chamado quando os valores mudam, para refazer os cards e contadores
  */
-function criarValoresNaApi({ rota, parametro, chaveLocal, aviso, aoMudar }) {
+function criarValoresNaApi({ rota, query, chaveLocal, aviso, aoMudar }) {
   const mapa = (() => { try { return JSON.parse(guardado.ler(chaveLocal, "{}")) || {}; } catch { return {}; } })();
   const salvarLocal = () => guardado.gravar(chaveLocal, JSON.stringify(mapa));
   const enviar = (id, valor) => valor
-    ? chamarApi("PUT", `${rota}/${encodeURIComponent(id)}?${parametro}=${encodeURIComponent(valor)}`)
+    ? chamarApi("PUT", `${rota}/${encodeURIComponent(id)}?${query(valor)}`)
     : chamarApi("DELETE", `${rota}/${encodeURIComponent(id)}`);
   let sincronizando = false;
 
@@ -453,40 +464,104 @@ function criarValoresNaApi({ rota, parametro, chaveLocal, aviso, aoMudar }) {
   return { valor: id => mapa[id], definir };
 }
 
-// Marcação de "já contatado": guarda a data do contato.
-// podeMarcar(id): só deixa marcar depois de escolhido o consultor (desmarcar é sempre possível).
-function criarContatos({ lista, chaveLocal, aviso, aoMudar, podeMarcar = () => true }) {
-  const valores = criarValoresNaApi({ rota: `/contatados/${lista}`, parametro: "data", chaveLocal, aviso, aoMudar });
+// Etapas do contato. "A contatar" é a ausência de registro na API.
+const ETAPAS = [
+  { id: "a_contatar", rotulo: "A contatar" },
+  { id: "enviada", rotulo: "Mensagem enviada" },
+  { id: "respondeu", rotulo: "Respondeu" },
+  { id: "interessado", rotulo: "Interessado" },
+  { id: "sem_interesse", rotulo: "Sem interesse" },
+  { id: "fechado", rotulo: "Fechado" },
+];
+const RETORNO_PENDENTE = "pendente"; // filtro do funil: mensagem enviada e sem resposta há CONFIG.retorno_dias
+const hojeISO = () => new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
+const diasDesde = iso => Math.round((new Date(hojeISO()) - new Date(iso)) / 86400000);
+const haDias = n => n <= 0 ? "hoje" : n === 1 ? "ontem" : `há ${n} dias`;
 
-  // Botão do card. feminino: "contatada" (clínica) ou "contatado" (médico).
-  function botao(id, feminino) {
-    const quando = valores.valor(id), fim = feminino ? "a" : "o";
-    if (!quando && !podeMarcar(id)) {
-      return `<button type="button" class="contato-btn bloqueado" data-escolher-consultor aria-disabled="true" title="Escolha o consultor do contato antes de marcar">`
+// podeMudar(id): só sai de "A contatar" depois de escolhido o consultor (voltar é sempre possível).
+function criarEtapas({ lista, chaveLocal, aviso, aoMudar, podeMudar = () => true }) {
+  const valores = criarValoresNaApi({ rota: `/etapas/${lista}`, query: v => `etapa=${v.etapa}&data=${v.desde}`, chaveLocal, aviso, aoMudar });
+  const etapa = id => valores.valor(id)?.etapa || "a_contatar";
+  const desde = id => valores.valor(id)?.desde || "";
+  const pendente = id => etapa(id) === "enviada" && diasDesde(desde(id)) >= CONFIG.retorno_dias;
+
+  // Campo do card: escolha da etapa, com há quanto tempo está nela.
+  function seletor(id) {
+    const atual = etapa(id);
+    if (atual === "a_contatar" && !podeMudar(id)) {
+      return `<button type="button" class="contato-btn bloqueado" data-escolher-consultor aria-disabled="true" title="Escolha o consultor do contato antes de mudar a etapa">`
         + `${icone.cadeado}<span>Escolha o consultor primeiro</span></button>`;
     }
-    return `<button type="button" class="contato-btn" data-contato-id="${esc(id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de fazer o contato"}">`
-      + (quando ? `${icone.ok}<span>Contatad${fim} em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatad${fim}</span>`) + `</button>`;
+    const info = atual === "a_contatar" ? ""
+      : `<em class="etapa-info${pendente(id) ? " atrasado" : ""}">${pendente(id) ? `sem resposta ${haDias(diasDesde(desde(id)))}` : `desde ${dataBR(desde(id))}`}</em>`;
+    return `<label class="etapa" data-etapa="${atual}">${icone.funil}<span>Etapa</span>${info}
+      <select data-etapa-id="${esc(id)}" aria-label="Etapa do contato">
+        ${ETAPAS.map(e => `<option value="${e.id}"${e.id === atual ? " selected" : ""}>${e.rotulo}</option>`).join("")}
+      </select></label>`;
   }
 
-  // Um clique em qualquer botão de contato dentro de `el` marca (com a data de hoje) ou desmarca.
   function ligar(el) {
-    el.addEventListener("click", e => {
-      const b = e.target.closest(".contato-btn:not(.bloqueado)");
-      if (!b) return;
-      const id = b.dataset.contatoId;
-      valores.definir(id, valores.valor(id) ? "" : new Date().toLocaleDateString("sv")); // AAAA-MM-DD no fuso local
+    el.addEventListener("change", e => {
+      const sel = e.target.closest("select[data-etapa-id]");
+      if (!sel) return;
+      valores.definir(sel.dataset.etapaId, sel.value === "a_contatar" ? "" : { etapa: sel.value, desde: hojeISO() });
     });
   }
 
-  return { quando: valores.valor, botao, ligar };
+  // O item passa no filtro do funil ("" = todas).
+  const passa = (id, filtro) => !filtro || (filtro === RETORNO_PENDENTE ? pendente(id) : etapa(id) === filtro);
+
+  // Funil da barra: quantos itens em cada etapa; tocar filtra.
+  function preencherFunil(el, ids, atual) {
+    const conta = Object.fromEntries(ETAPAS.map(e => [e.id, 0]));
+    let atrasados = 0;
+    for (const id of ids) { conta[etapa(id)]++; if (pendente(id)) atrasados++; }
+    const botao = (valor, rotulo, n, classe = "") =>
+      `<button type="button" class="${classe}" data-funil="${valor}" aria-pressed="${valor === atual}">${rotulo}<b>${n.toLocaleString("pt-BR")}</b></button>`;
+    el.innerHTML = botao("", "Todas", ids.length)
+      + ETAPAS.map(e => botao(e.id, e.rotulo, conta[e.id], `etapa-${e.id}`)).join("")
+      + botao(RETORNO_PENDENTE, `${icone.relogio}Retorno pendente`, atrasados, `retorno${atrasados ? " tem" : ""}`);
+  }
+
+  return { etapa, desde, pendente, seletor, ligar, passa, preencherFunil };
+}
+
+// "Você é": o consultor que usa este aparelho, para o botão "Meus contatos".
+const EU = { nome: guardado.ler("eu", "") };
+function ligarEu(sel, aoMudar) {
+  const desenhar = () => {
+    const nomes = CONFIG.equipe.includes(EU.nome) || !EU.nome ? CONFIG.equipe : [...CONFIG.equipe, EU.nome];
+    sel.innerHTML = '<option value="">escolher</option>' + nomes.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join("");
+    sel.value = EU.nome;
+  };
+  sel.addEventListener("change", () => { EU.nome = sel.value; guardado.gravar("eu", EU.nome); aoMudar(); });
+  desenhar();
+  return desenhar; // chamar de novo quando a equipe mudar
+}
+
+// Ordenação da lista. idDe: item => id; etapas e responsaveis: os módulos acima.
+const ORDENS = [
+  { id: "nome", rotulo: "Nome (A–Z)" },
+  { id: "sem_consultor", rotulo: "Sem consultor primeiro" },
+  { id: "antigo", rotulo: "Etapa mais antiga primeiro" },
+  { id: "recente", rotulo: "Etapa mais recente primeiro" },
+];
+function ordenar(lista, ordem, idDe, { etapas, responsaveis }) {
+  if (ordem === "nome") return lista;
+  const desde = i => etapas.desde(idDe(i));
+  const comparar = {
+    sem_consultor: (a, b) => (responsaveis.de(idDe(a)) ? 1 : 0) - (responsaveis.de(idDe(b)) ? 1 : 0),
+    antigo: (a, b) => (desde(a) || "9999").localeCompare(desde(b) || "9999"), // sem etapa vai para o fim
+    recente: (a, b) => desde(b).localeCompare(desde(a)),
+  }[ordem];
+  return [...lista].sort(comparar); // sort estável: no empate, segue a ordem por nome
 }
 
 // Quem da equipe (CONFIG.equipe, editável nas configurações) vai fazer o contato com cada item.
 const SEM_RESPONSAVEL = "-"; // valor do filtro "Sem responsável"
 
 function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
-  const valores = criarValoresNaApi({ rota: `/responsaveis/${lista}`, parametro: "nome", chaveLocal, aviso, aoMudar });
+  const valores = criarValoresNaApi({ rota: `/responsaveis/${lista}`, query: v => `nome=${encodeURIComponent(v)}`, chaveLocal, aviso, aoMudar });
 
   // temWhatsApp: só contatos com celular mostram a dica de que o consultor libera o WhatsApp.
   function seletor(id, temWhatsApp) {
@@ -565,4 +640,42 @@ function sincronizarBusca(por, exemplos, item) {
   const q = document.getElementById("q");
   q.placeholder = exemplos[por];
   q.setAttribute("aria-label", por === "bairro" ? `Buscar ${item} pelo bairro` : `Buscar ${item} pelo nome`);
+}
+
+/**
+ * Liga os controles de acompanhamento da barra: funil de etapas (#funil), ordenação (#ordem),
+ * "Você é" (#eu) e o botão "Meus contatos" (#meus). Os filtros ficam em estado.etapa,
+ * estado.ordem e estado.responsavel; aplicar(mudanca) é o da página.
+ * Devolve a função que atualiza esses controles; a página chama no render.
+ */
+function ligarAcompanhamento({ estado, aplicar, etapas, ids }) {
+  const ordem = document.getElementById("ordem"), eu = document.getElementById("eu"), meus = document.getElementById("meus");
+  ordem.innerHTML = ORDENS.map(o => `<option value="${o.id}">${o.rotulo}</option>`).join("");
+  ordem.addEventListener("change", () => aplicar({ ordem: ordem.value }));
+  document.getElementById("funil").addEventListener("click", e => {
+    const b = e.target.closest("button[data-funil]");
+    if (b) aplicar({ etapa: b.dataset.funil });
+  });
+  let euAntes = EU.nome;
+  const desenharEu = ligarEu(eu, () => {
+    const estavaEmMeus = euAntes && estado.responsavel === euAntes;
+    euAntes = EU.nome;
+    aplicar(estavaEmMeus ? { responsavel: EU.nome } : {});
+  });
+  meus.addEventListener("click", () => {
+    if (!EU.nome) { // ainda não disse quem é: leva até o "Você é"
+      eu.focus();
+      eu.parentElement.classList.remove("chamar"); void eu.offsetWidth; eu.parentElement.classList.add("chamar");
+      return;
+    }
+    aplicar({ responsavel: estado.responsavel === EU.nome ? "" : EU.nome });
+  });
+  return () => {
+    desenharEu();
+    ordem.value = estado.ordem;
+    etapas.preencherFunil(document.getElementById("funil"), ids(), estado.etapa);
+    const ativo = Boolean(EU.nome) && estado.responsavel === EU.nome;
+    meus.setAttribute("aria-pressed", String(ativo));
+    meus.title = EU.nome ? `Só os contatos de ${EU.nome}` : "Escolha em \"Você é\" quem está usando este aparelho";
+  };
 }

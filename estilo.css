@@ -268,8 +268,7 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .clinica-corpo .card-acoes { margin-top: 14px; }
 .contato-btn:hover { border-color: var(--accent); color: var(--accent); }
 .contato-btn[aria-pressed="true"] { border-style: solid; border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
-.card.contatada { border-color: var(--accent); }
-.card.contatada :is(h2, h3)::after { content: " ✓"; color: var(--accent); font-size: .8em; }
+
 
 /* Aviso quando as marcações não puderam ser salvas na API */
 .nuvem { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 16px; padding: 10px 14px; border: 1px solid #c2410c; border-radius: 12px; background: var(--surface); color: var(--ink-2); font-size: 14px; }
@@ -392,3 +391,56 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 }
 .busca-por button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); font-weight: 600; }
 .search input[type="search"]::-webkit-search-cancel-button { margin-right: 4px; }
+
+/* Etapas do contato: cor de cada uma */
+:root { --et-enviada: #2563eb; --et-respondeu: #7c3aed; --et-interessado: #d97706; --et-sem_interesse: #9a3412; --et-fechado: #15803d; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --et-enviada: #7aa2ff; --et-respondeu: #b69cff; --et-interessado: #f2b45a; --et-sem_interesse: #e0866a; --et-fechado: #5fd08a; } }
+:root[data-theme="dark"] { --et-enviada: #7aa2ff; --et-respondeu: #b69cff; --et-interessado: #f2b45a; --et-sem_interesse: #e0866a; --et-fechado: #5fd08a; }
+.card[data-etapa="enviada"] { --et: var(--et-enviada); }
+.card[data-etapa="respondeu"] { --et: var(--et-respondeu); }
+.card[data-etapa="interessado"] { --et: var(--et-interessado); }
+.card[data-etapa="sem_interesse"] { --et: var(--et-sem_interesse); }
+.card[data-etapa="fechado"] { --et: var(--et-fechado); }
+.card[data-etapa]:not([data-etapa="a_contatar"]) { border-color: var(--et); box-shadow: inset 4px 0 0 var(--et), var(--shadow); }
+
+/* Campo da etapa no card (mesmo desenho do campo do consultor) */
+.etapa { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 6px 7px; font-size: 13.5px; color: var(--ink-2); }
+.etapa svg { color: var(--ink-3); }
+.etapa select { grid-column: 1 / -1; width: 100%; min-width: 0; height: 42px; font-size: 15px; }
+.card[data-etapa]:not([data-etapa="a_contatar"]) .etapa select { border-color: var(--et); color: var(--et); font-weight: 600; }
+.card[data-etapa]:not([data-etapa="a_contatar"]) .etapa svg { color: var(--et); }
+.etapa-info { font-style: normal; font-size: 12px; color: var(--ink-3); }
+.etapa-info::before { content: "· "; }
+.etapa-info.atrasado { color: #c2410c; font-weight: 600; }
+
+/* Funil na barra: uma etapa por botão, com a contagem */
+.funil { display: flex; gap: 6px; flex: 1 1 100%; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
+.funil::-webkit-scrollbar { display: none; }
+.funil button {
+  flex: none; display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; white-space: nowrap;
+}
+.funil button b { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.funil button svg { margin-right: -2px; }
+.funil button[class^="etapa-"]::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
+.funil .etapa-enviada::before { background: var(--et-enviada) !important; }
+.funil .etapa-respondeu::before { background: var(--et-respondeu) !important; }
+.funil .etapa-interessado::before { background: var(--et-interessado) !important; }
+.funil .etapa-sem_interesse::before { background: var(--et-sem_interesse) !important; }
+.funil .etapa-fechado::before { background: var(--et-fechado) !important; }
+.funil button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.funil button[aria-pressed="true"] b { color: var(--bg); }
+.funil .retorno.tem { border-color: #c2410c; color: #c2410c; }
+.funil .retorno.tem b { color: #c2410c; }
+.funil .retorno[aria-pressed="true"] { background: #c2410c; border-color: #c2410c; color: #fff; }
+.funil .retorno[aria-pressed="true"] b { color: #fff; }
+
+/* "Você é" no topo */
+.eu { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: var(--ink-2); }
+.eu select { width: auto; min-width: 0; height: 34px; padding: 0 28px 0 10px; font-size: 14px; border-radius: 999px; }
+.eu.chamar select { animation: chamar 1.2s ease; }
+#ordem { min-width: 0; }
+.wa-numero-curto { max-width: 110px; }
+@media (max-width: 640px) {
+  .eu { margin-left: 0; width: 100%; justify-content: flex-end; }
+}

@@ -8,12 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=65b57c4e">
+<link rel="stylesheet" href="estilo.css?v=5dd160c9">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
   <a href="index.html">Médicos</a>
   <a href="clinicas.html" aria-current="page">Clínicas de emagrecimento</a>
+  <label class="eu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Você é <select id="eu" aria-label="Você é (consultor que usa este aparelho)"></select></label>
 </nav>
 <header class="wrap">
   <div class="eyebrow">Belo Horizonte · MG</div>
@@ -32,16 +33,17 @@
         <button type="button" data-por="bairro" aria-pressed="false">Bairro</button>
       </span>
     </label>
-    <div class="seg" role="group" aria-label="Contato" id="contato">
-      <button type="button" data-contato="" aria-pressed="true">Todas</button>
-      <button type="button" data-contato="nao" aria-pressed="false">A contatar</button>
-      <button type="button" data-contato="sim" aria-pressed="false">Contatadas</button>
-    </div>
+    <div class="funil" id="funil" role="group" aria-label="Etapa do contato"></div>
     <div class="filtros">
       <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
       <select id="responsavel" aria-label="Consultor do contato"><option value="">Todos os consultores</option></select>
+      <select id="ordem" aria-label="Ordenar a lista"></select>
       <div class="chips" role="group" aria-label="Filtros">
+        <button type="button" class="chip" id="meus" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          Meus contatos
+        </button>
         <button type="button" class="chip" id="cel" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
           Tem celular
@@ -70,19 +72,19 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=95106459"></script>
+<script src="comum.js?v=98f831de"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
-const estado = { q: "", por: "nome", regiao: "", bairro: "", cel: false, contato: "", responsavel: "", limite: PAGINA };
+const estado = { q: "", por: "nome", regiao: "", bairro: "", cel: false, etapa: "", responsavel: "", ordem: "nome", limite: PAGINA };
 let clinicas = [];
 
-const contatos = criarContatos({
+const etapas = criarEtapas({
   lista: "clinicas",
-  chaveLocal: "clinicas.contatadas",
+  chaveLocal: "clinicas.etapas",
   aviso: document.getElementById("nuvem"),
   aoMudar: () => { if (clinicas.length) render(); },
-  podeMarcar: id => Boolean(responsaveis.de(id)),
+  podeMudar: id => Boolean(responsaveis.de(id)),
 });
 const responsaveis = criarResponsaveis({
   lista: "clinicas",
@@ -114,7 +116,7 @@ function htmlClinica(c) {
   if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
   links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
   const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
-  return `<article class="card clinica-card${contatos.quando(c.place_id) ? " contatada" : ""}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div><div class="card-acoes">${responsaveis.seletor(c.place_id, c.celulares.length > 0)}${contatos.botao(c.place_id, true)}</div></div></article>`;
+  return `<article class="card clinica-card" data-etapa="${etapas.etapa(c.place_id)}"><div class="clinica-corpo"><h3>${esc(c.nome)}</h3>${endereco}<div class="links">${links.join("")}</div><div class="card-acoes">${responsaveis.seletor(c.place_id, c.celulares.length > 0)}${etapas.seletor(c.place_id)}</div></div></article>`;
 }
 
 function filtrar(lista) {
@@ -125,7 +127,7 @@ function filtrar(lista) {
     (!estado.regiao || c.regiao === estado.regiao) &&
     (!estado.bairro || c.bairro === estado.bairro) &&
     (!estado.cel || c.celulares.length) &&
-    (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(c.place_id))) &&
+    etapas.passa(c.place_id, estado.etapa) &&
     responsaveis.passa(c.place_id, estado.responsavel) &&
     (!termo || (porTelefone
       ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
@@ -134,15 +136,13 @@ function filtrar(lista) {
 }
 
 function render() {
-  const lista = filtrar(clinicas);
+  const lista = ordenar(filtrar(clinicas), estado.ordem, c => c.place_id, { etapas, responsaveis });
   document.getElementById("grid").innerHTML = lista.length
     ? lista.slice(0, estado.limite).map(htmlClinica).join("")
     : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
-  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.regiao || estado.bairro || estado.cel || estado.contato || estado.responsavel);
-  const feitas = clinicas.filter(c => contatos.quando(c.place_id)).length;
-  document.querySelector('[data-contato="nao"]').textContent = `A contatar (${clinicas.length - feitas})`;
-  document.querySelector('[data-contato="sim"]').textContent = `Contatadas (${feitas})`;
+  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.regiao || estado.bairro || estado.cel || estado.etapa || estado.responsavel);
+  atualizarAcompanhamento();
   responsaveis.preencherFiltro(document.getElementById("responsavel"), clinicas.map(c => c.place_id), estado.responsavel);
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
@@ -157,9 +157,10 @@ function aplicar(mudanca) {
   sincronizarBusca(estado.por, { nome: "Nome da clínica", bairro: "Nome do bairro" }, "clínica");
   localidades();
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
-  document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   render();
 }
+
+const atualizarAcompanhamento = ligarAcompanhamento({ estado, aplicar, etapas, ids: () => clinicas.map(c => c.place_id) });
 
 function stats() {
   const itens = [
@@ -182,9 +183,8 @@ document.querySelectorAll(".busca-por button").forEach(b => b.addEventListener("
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
 document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
 document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
-document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", regiao: "", bairro: "", cel: false, contato: "", responsavel: "" }));
-document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
-contatos.ligar(document.getElementById("grid"));
+document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", regiao: "", bairro: "", cel: false, etapa: "", responsavel: "" }));
+etapas.ligar(document.getElementById("grid"));
 responsaveis.ligar(document.getElementById("grid"));
 document.getElementById("responsavel").addEventListener("change", e => aplicar({ responsavel: e.target.value }));
 document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });

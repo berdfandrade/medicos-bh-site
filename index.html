@@ -8,12 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=65b57c4e">
+<link rel="stylesheet" href="estilo.css?v=5dd160c9">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
   <a href="index.html" aria-current="page">Médicos</a>
   <a href="clinicas.html">Clínicas de emagrecimento</a>
+  <label class="eu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Você é <select id="eu" aria-label="Você é (consultor que usa este aparelho)"></select></label>
 </nav>
 <header class="wrap">
   <div class="eyebrow">Belo Horizonte · MG</div>
@@ -37,16 +38,17 @@
       <button type="button" data-esp="Endocrinologia e Metabologia" aria-pressed="false">Endocrinologia</button>
       <button type="button" data-esp="Nutrologia" aria-pressed="false">Nutrologia</button>
     </div>
-    <div class="seg" role="group" aria-label="Contato" id="contato">
-      <button type="button" data-contato="" aria-pressed="true">Todos</button>
-      <button type="button" data-contato="nao" aria-pressed="false">A contatar</button>
-      <button type="button" data-contato="sim" aria-pressed="false">Contatados</button>
-    </div>
+    <div class="funil" id="funil" role="group" aria-label="Etapa do contato"></div>
     <div class="filtros">
       <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
       <select id="responsavel" aria-label="Consultor do contato"><option value="">Todos os consultores</option></select>
+      <select id="ordem" aria-label="Ordenar a lista"></select>
       <div class="chips" role="group" aria-label="Filtros">
+        <button type="button" class="chip" id="meus" aria-pressed="false">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          Meus contatos
+        </button>
         <button type="button" class="chip" id="sus" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>
           Atende SUS
@@ -78,7 +80,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=95106459"></script>
+<script src="comum.js?v=98f831de"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -92,16 +94,16 @@ const mapaHref = l => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 };
 
-const estado = { q: "", por: "nome", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "", limite: PAGINA };
+const estado = { q: "", por: "nome", esp: "", regiao: "", bairro: "", sus: false, cel: false, etapa: "", responsavel: "", ordem: "nome", limite: PAGINA };
 let medicos = [];
 
 const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
-const contatos = criarContatos({
+const etapas = criarEtapas({
   lista: "medicos",
-  chaveLocal: "medicos.contatados",
+  chaveLocal: "medicos.etapas",
   aviso: document.getElementById("nuvem"),
   aoMudar: () => { if (medicos.length) render(); },
-  podeMarcar: id => Boolean(responsaveis.de(id)),
+  podeMudar: id => Boolean(responsaveis.de(id)),
 });
 const responsaveis = criarResponsaveis({
   lista: "medicos",
@@ -162,7 +164,7 @@ function htmlCard(m) {
     ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(local).join("")}</ul></details>`
     : "";
   const id = idMedico(m);
-  return `<article class="card${contatos.quando(id) ? " contatada" : ""}">
+  return `<article class="card" data-etapa="${etapas.etapa(id)}">
     <div class="card-head">
       <div class="avatar${nutro ? " nutro" : ""}" aria-hidden="true">${esc(iniciais(m.nome))}</div>
       <div>
@@ -175,7 +177,7 @@ function htmlCard(m) {
     ${extra}
     <div class="card-acoes">
       ${responsaveis.seletor(id, m.locais.some(l => l.celulares.length))}
-      ${contatos.botao(id, false)}
+      ${etapas.seletor(id)}
     </div>
   </article>`;
 }
@@ -189,23 +191,21 @@ function filtrar() {
       (!estado.regiao || l.regiao === estado.regiao) && (!estado.bairro || l.bairro === estado.bairro))) &&
     (!estado.sus || m.locais.some(l => l.atende_sus)) &&
     (!estado.cel || m.locais.some(l => l.celulares.length)) &&
-    (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(idMedico(m)))) &&
+    etapas.passa(idMedico(m), estado.etapa) &&
     responsaveis.passa(idMedico(m), estado.responsavel) &&
     (!termos.length || (estado.por === "bairro" ? m.locais.some(l => achou(l.bairro)) : achou(m.nome)))
   );
 }
 
 function render() {
-  const lista = filtrar();
+  const lista = ordenar(filtrar(), estado.ordem, idMedico, { etapas, responsaveis });
   const grid = document.getElementById("grid");
   grid.innerHTML = lista.length
     ? lista.slice(0, estado.limite).map(htmlCard).join("")
     : '<div class="empty">Nenhum médico encontrado com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "médico" : "médicos"}`;
-  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.regiao || estado.bairro || estado.sus || estado.cel || estado.contato || estado.responsavel);
-  const feitos = medicos.filter(m => contatos.quando(idMedico(m))).length;
-  document.querySelector('[data-contato="nao"]').textContent = `A contatar (${medicos.length - feitos})`;
-  document.querySelector('[data-contato="sim"]').textContent = `Contatados (${feitos})`;
+  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.regiao || estado.bairro || estado.sus || estado.cel || estado.etapa || estado.responsavel);
+  atualizarAcompanhamento();
   responsaveis.preencherFiltro(document.getElementById("responsavel"), medicos.map(idMedico), estado.responsavel);
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
@@ -220,12 +220,13 @@ function aplicar(mudanca) {
   if (q.value !== estado.q) q.value = estado.q;
   sincronizarBusca(estado.por, { nome: "Nome do médico", bairro: "Nome do bairro" }, "médico");
   document.querySelectorAll("#esp button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
-  document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   localidades();
   document.getElementById("sus").setAttribute("aria-pressed", String(estado.sus));
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   render();
 }
+
+const atualizarAcompanhamento = ligarAcompanhamento({ estado, aplicar, etapas, ids: () => medicos.map(idMedico) });
 
 function stats(dados) {
   const conta = esp => medicos.filter(m => m.especialidades.includes(esp)).length;
@@ -257,15 +258,14 @@ function ligar() {
   }));
 
   document.querySelectorAll("#esp button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
-  document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
-  contatos.ligar(document.getElementById("grid"));
+  etapas.ligar(document.getElementById("grid"));
   responsaveis.ligar(document.getElementById("grid"));
   document.getElementById("responsavel").addEventListener("change", e => aplicar({ responsavel: e.target.value }));
   document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
   document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
   document.getElementById("sus").addEventListener("click", () => aplicar({ sus: !estado.sus }));
   document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
-  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "" }));
+  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false, etapa: "", responsavel: "" }));
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
 
