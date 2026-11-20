@@ -8,13 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=16cbb3d1">
+<link rel="stylesheet" href="estilo.css?v=bb5a5355">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
   <a href="index.html">Médicos</a>
   <a href="clinicas.html" aria-current="page">Clínicas de emagrecimento</a>
-  <label class="eu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Você é <select id="eu" aria-label="Você é (consultor que usa este aparelho)"></select></label>
 </nav>
 <header class="wrap">
   <div class="eyebrow">Belo Horizonte · MG</div>
@@ -39,11 +38,11 @@
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
       <select id="responsavel" aria-label="Consultor do contato"><option value="">Todos os consultores</option></select>
       <select id="ordem" aria-label="Ordenar a lista"></select>
+      <div class="quem" role="group" aria-label="Seus contatos">
+        <label class="eu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Você é <select id="eu" aria-label="Você é (consultor que usa este aparelho)"></select></label>
+        <button type="button" class="meus" id="meus" aria-pressed="false">Meus contatos</button>
+      </div>
       <div class="chips" role="group" aria-label="Filtros">
-        <button type="button" class="chip" id="meus" aria-pressed="false">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
-          Meus contatos
-        </button>
         <button type="button" class="chip" id="cel" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
           Tem celular

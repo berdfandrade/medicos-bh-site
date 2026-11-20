@@ -435,14 +435,36 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .funil .retorno[aria-pressed="true"] { background: #c2410c; border-color: #c2410c; color: #fff; }
 .funil .retorno[aria-pressed="true"] b { color: #fff; }
 
-/* "Você é" no topo */
-.eu { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: var(--ink-2); }
-.eu select { width: auto; min-width: 0; height: 34px; padding: 0 28px 0 10px; font-size: 14px; border-radius: 999px; }
-.eu.chamar select { animation: chamar 1.2s ease; }
+/* "Você é" + "Meus contatos": uma pílula só, porque um controla o outro */
+.quem {
+  display: inline-flex; align-items: stretch; height: 42px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); overflow: hidden;
+}
+.eu { display: inline-flex; align-items: center; gap: 7px; padding-left: 13px; font-size: 14px; color: var(--ink-3); white-space: nowrap; }
+.eu svg { flex: none; }
+.eu select {
+  min-width: 0; width: auto; height: 100%; border: 0; border-radius: 0; background: transparent; padding: 0 8px 0 2px;
+  color: var(--ink); font-weight: 600; font-size: 14px;
+}
+.eu.chamar { animation: chamar-eu 1.2s ease; }
+@keyframes chamar-eu { 0%, 60% { background: color-mix(in srgb, var(--wa) 22%, transparent); } 100% { background: none; } }
+.meus {
+  border: 0; border-left: 1px solid var(--line); background: none; padding: 0 14px; font: inherit; font-size: 14px;
+  font-weight: 500; color: var(--ink-2); cursor: pointer; white-space: nowrap; transition: background .15s, color .15s;
+}
+.meus:hover { color: var(--ink); background: var(--surface-2); }
+.meus[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.quem:has(.meus[aria-pressed="true"]) { border-color: var(--accent); }
 #ordem { min-width: 0; }
 .wa-numero-curto { max-width: 110px; }
 @media (max-width: 640px) {
-  .eu { margin-left: 0; width: 100%; justify-content: flex-end; }
+  .quem { width: 100%; }
+  .eu { flex: 1; }
+  .eu select { flex: 1; width: 100%; }
+}
+/* Com mouse, o funil quebra linha em vez de rolar (a rolagem lateral só funciona bem no toque) */
+@media (hover: hover) and (pointer: fine) {
+  .funil { flex-wrap: wrap; overflow: visible; }
 }
 
 /* Adicionar médico/clínica */
