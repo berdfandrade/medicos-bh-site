@@ -385,9 +385,11 @@ icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
 icone.pessoa = svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
 
 /**
- * Um valor por item (data do contato, nome do responsável...) salvo na API, para aparecer em
- * qualquer aparelho. Este navegador guarda uma cópia para abrir rápido; o que for alterado sem
- * conexão sobe na próxima sincronização.
+ * Um valor por item (data do contato, nome do consultor...) salvo na API, para aparecer em
+ * qualquer aparelho. A API é a fonte da verdade: este navegador só guarda uma cópia para abrir
+ * rápido, e ela é trocada pelo que vem da API. (Reenviar a cópia local fazia um aparelho com
+ * cópia antiga remarcar o que outro aparelho tinha desmarcado.) Se uma alteração não puder
+ * ser salva, ela é desfeita na tela e aparece o aviso.
  *  rota        ex. "/contatados/clinicas" (GET lista tudo; PUT/DELETE em rota/{id})
  *  parametro   nome do parâmetro do PUT que leva o valor (ex. "data", "nome")
  *  chaveLocal  chave da cópia no localStorage
@@ -409,16 +411,14 @@ function criarValoresNaApi({ rota, parametro, chaveLocal, aviso, aoMudar }) {
     aviso.querySelector("button")?.addEventListener("click", sincronizar);
   }
 
-  // Traz os valores salvos; os que só existem neste aparelho são enviados junto.
+  // Troca a cópia local pelos valores salvos na API.
   async function sincronizar() {
     if (sincronizando) return;
     sincronizando = true;
     try {
       const remotos = await chamarApi("GET", rota);
-      const locais = Object.entries(mapa).filter(([id]) => !(id in remotos));
-      await Promise.all(locais.map(([id, v]) => enviar(id, v)));
       for (const id of Object.keys(mapa)) delete mapa[id];
-      Object.assign(mapa, remotos, Object.fromEntries(locais));
+      Object.assign(mapa, remotos);
       salvarLocal();
       avisar(false);
     } catch (erro) {
@@ -486,7 +486,7 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     const atual = valores.valor(id) || "";
     const nomes = CONFIG.equipe;
     const opcoes = ["", ...nomes, ...(atual && !nomes.includes(atual) ? [atual] : [])];
-    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>${atual ? "" : '<em class="responsavel-dica">libera o WhatsApp</em>'}
+    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Consultor</span>${atual ? "" : '<em class="responsavel-dica">escolha para liberar o WhatsApp</em>'}
       <select data-responsavel-id="${esc(id)}" aria-label="Consultor do contato">
         ${opcoes.map(n => `<option value="${esc(n)}"${n === atual ? " selected" : ""}>${n ? esc(n) : "Ninguém ainda"}</option>`).join("")}
       </select></label>`;
