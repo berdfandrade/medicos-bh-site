@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=002c74a9">
+<link rel="stylesheet" href="estilo.css?v=956d915d">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -66,7 +66,7 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=f4a23d77"></script>
+<script src="comum.js?v=3190e015"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
@@ -92,7 +92,7 @@ const painel = criarPainelWhatsApp({
   el: document.getElementById("wa-painel"),
   chave: "wa.clinicas",
   textoPadrao: MENSAGEM_PADRAO,
-  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada clínica abre a conversa com o texto já personalizado. Em <b>Configurações</b> você muda a mensagem, a empresa, o link da campanha e a equipe.",
+  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada clínica abre a conversa com o texto já personalizado. Em <b>Configurações</b> você define uma mensagem para cada responsável, a empresa e a equipe.",
   campos: [{ token: "{nome}", rotulo: "Nome da clínica" }],
   montar: (texto, c) => texto.replaceAll("{nome}", c.nome),
   responsavelDe: c => responsaveis.de(c.place_id),

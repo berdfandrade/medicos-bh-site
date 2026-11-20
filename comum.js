@@ -74,62 +74,51 @@ function htmlTelefones(celulares, fixos, mensagem) {
   return links.join("");
 }
 
-/* Configurações de marketing, comuns às duas páginas e salvas na API (/configuracoes). */
-const CONFIG_PADRAO = { empresa: "", link: "", campanha: "", utm: true, equipe: ["Luciano", "Mauro", "Marino"] };
-const CONFIG = (() => {
-  try { return { ...CONFIG_PADRAO, ...JSON.parse(guardado.ler("config", "{}")) }; } catch { return { ...CONFIG_PADRAO }; }
-})();
-const guardarConfig = valor => { Object.assign(CONFIG, valor); guardado.gravar("config", JSON.stringify(CONFIG)); };
+/* Configurações comuns às duas páginas, salvas na API (/configuracoes). */
+const CONFIG_PADRAO = { empresa: "", equipe: ["Luciano", "Mauro", "Marino"] };
+const soConfig = valor => ({ empresa: String(valor?.empresa ?? ""), equipe: Array.isArray(valor?.equipe) ? valor.equipe : CONFIG_PADRAO.equipe });
+const CONFIG = (() => { try { return soConfig({ ...CONFIG_PADRAO, ...JSON.parse(guardado.ler("config", "{}")) }); } catch { return { ...CONFIG_PADRAO }; } })();
+const guardarConfig = valor => { Object.assign(CONFIG, soConfig(valor)); guardado.gravar("config", JSON.stringify(CONFIG)); };
 
-const slug = s => semAcento(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-
-// Link da campanha com UTM, para o Google Analytics (ou similar) mostrar quantos cliques vieram do WhatsApp.
-function linkCampanha(pagina, config = CONFIG) {
-  if (!config.link.trim()) return "";
-  let url;
-  try { url = new URL(siteHref(config.link.trim())); } catch { return config.link.trim(); }
-  if (config.utm) {
-    url.searchParams.set("utm_source", "whatsapp");
-    url.searchParams.set("utm_medium", "mensagem");
-    url.searchParams.set("utm_campaign", slug(config.campanha) || "contato");
-    url.searchParams.set("utm_content", pagina);
-  }
-  return url.toString();
-}
-
-// Troca os campos comuns às duas páginas: {responsavel}, {empresa}, {link}.
-function completarCampos(texto, { responsavel = "", pagina, config = CONFIG }) {
+// Troca os campos comuns às duas páginas: {responsavel} e {empresa}.
+function completarCampos(texto, { responsavel = "", config = CONFIG }) {
   return texto
     .replaceAll("{responsavel}", responsavel)
     .replaceAll("{empresa}", config.empresa.trim())
-    .replaceAll("{link}", linkCampanha(pagina, config))
     .replace(/[ \t]{2,}/g, " ").replace(/ ([,.!?])/g, "$1"); // campo vazio não deixa espaço sobrando
 }
 
 const CAMPOS_COMUNS = [
   { token: "{responsavel}", rotulo: "Responsável", dica: "quem está com o contato" },
   { token: "{empresa}", rotulo: "Empresa", dica: "definida abaixo" },
-  { token: "{link}", rotulo: "Link da campanha", dica: "com UTM" },
 ];
+
+// Mensagens de uma página: a geral e, opcionalmente, uma de cada responsável.
+const textoPara = (textos, responsavel) => (responsavel && textos.por_responsavel[responsavel]?.trim()) ? textos.por_responsavel[responsavel] : textos.geral;
 
 /**
  * Painel "Mensagem padrão do WhatsApp": prévia e teste; o botão Configurações abre a janela
- * onde se muda a mensagem, a empresa, o link da campanha e a equipe.
+ * onde se mudam as mensagens (geral e de cada responsável), a empresa e a equipe.
  *  el            elemento <section class="wa-painel"> onde o painel é montado
- *  chave         prefixo no localStorage (cópia do texto e painel aberto/fechado)
- *  textoPadrao   mensagem inicial
+ *  chave         prefixo no localStorage (cópia das mensagens e painel aberto/fechado)
+ *  textoPadrao   mensagem geral inicial
  *  campos        campos desta página: [{ token: "{nome}", rotulo: "Nome da clínica" }, ...]
  *  montar        (texto, item) => mensagem com os campos desta página trocados pelos dados do item
  *  responsavelDe item => nome do responsável pelo contato (ou "")
  *  exemplo       () => { item, nome } usado na prévia, ou null enquanto não há dados
- *  aoMudar       chamado quando a mensagem ou as configurações mudam, para refazer os cards
- *  lista         "clinicas" ou "medicos": a mensagem desta página fica salva na API
+ *  aoMudar       chamado quando as mensagens ou as configurações mudam, para refazer os cards
+ *  lista         "clinicas" ou "medicos": as mensagens desta página ficam salvas na API
  */
 function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar, responsavelDe, exemplo, aoMudar, lista }) {
-  const estado = {
-    texto: guardado.ler(`${chave}.texto`, textoPadrao),
-    numero: guardado.ler("wa.numero", NUMERO_TESTE_PADRAO),
+  const lerTextos = () => {
+    try {
+      const t = JSON.parse(guardado.ler(`${chave}.textos`, "null"));
+      if (t && typeof t.geral === "string") return { geral: t.geral, por_responsavel: t.por_responsavel || {} };
+    } catch { /* cópia corrompida: usa o padrão */ }
+    return { geral: guardado.ler(`${chave}.texto`, textoPadrao), por_responsavel: {} }; // versão anterior guardava só um texto
   };
+  const estado = { textos: lerTextos(), numero: guardado.ler("wa.numero", NUMERO_TESTE_PADRAO) };
+  const guardarTextos = () => guardado.gravar(`${chave}.textos`, JSON.stringify(estado.textos));
   const todosCampos = [...campos, ...CAMPOS_COMUNS];
   const engrenagem = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>';
   el.setAttribute("aria-labelledby", "wa-titulo");
@@ -146,6 +135,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
       <div class="wa-corpo">
         <div class="wa-previa">
           <div class="wa-rotulo">Prévia <span class="wa-exemplo">exemplo com <b id="wa-exemplo"></b></span></div>
+          <div class="wa-quem" id="wa-quem" role="group" aria-label="Ver a mensagem de"></div>
           <div class="wa-tela"><div class="wa-bolha" id="wa-bolha"></div></div>
           <div class="wa-resumo" id="wa-resumo"></div>
           <button type="button" class="wa-config-btn" id="wa-abrir">${engrenagem}Configurações da mensagem</button>
@@ -170,29 +160,22 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
         </header>
         <div class="wa-config-corpo">
           <section>
-            <h3>Mensagem</h3>
-            <p class="wa-dica">Vale para esta página. Os campos entre chaves são trocados pelos dados de cada contato; use <code>*texto*</code> para negrito.</p>
+            <h3>Mensagens desta página</h3>
+            <p class="wa-dica">Cada contato recebe a mensagem do seu responsável. Quem não tiver mensagem própria, ou o contato sem responsável, usa a <b>Geral</b>.</p>
+            <div class="wa-abas" id="wa-abas" role="tablist" aria-label="Mensagem de"></div>
             <textarea id="wa-texto" rows="7" spellcheck="true" aria-label="Texto da mensagem"></textarea>
+            <div class="wa-aba-acoes" id="wa-aba-acoes"></div>
             <div class="wa-tokens" role="group" aria-label="Inserir campo personalizado">
               <span>Inserir:</span>
               ${todosCampos.map(c => `<button type="button" data-token="${esc(c.token)}" title="${esc(c.dica || "")}">${esc(c.rotulo)}</button>`).join("")}
             </div>
+            <p class="wa-dica">Os campos entre chaves são trocados pelos dados de cada contato; use <code>*texto*</code> para negrito.</p>
             <div class="wa-tela wa-tela-mini"><div class="wa-bolha" id="wa-bolha-config"></div></div>
-            <button type="button" class="limpar" id="wa-restaurar">Restaurar texto padrão</button>
           </section>
           <section>
             <h3>Empresa</h3>
             <label class="wa-campo">Nome da empresa ou marca <small>campo {empresa}</small>
               <input id="wa-empresa" maxlength="120" placeholder="Ex.: Clínica Bem-Estar"></label>
-          </section>
-          <section>
-            <h3>Link da campanha</h3>
-            <label class="wa-campo">Site ou página de destino <small>campo {link}</small>
-              <input id="wa-link" type="text" inputmode="url" autocapitalize="off" spellcheck="false" maxlength="500" placeholder="Ex.: https://seusite.com.br/parcerias"></label>
-            <label class="wa-campo">Nome da campanha
-              <input id="wa-campanha" maxlength="120" placeholder="Ex.: Parceria médicos 2026"></label>
-            <label class="wa-check"><input type="checkbox" id="wa-utm"> Adicionar UTM ao link, para medir no Google Analytics quantas visitas vieram do WhatsApp</label>
-            <code class="wa-link-final" id="wa-link-final"></code>
           </section>
           <section>
             <h3>Equipe</h3>
@@ -214,81 +197,117 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   if (guardado.ler(`${chave}.aberto`, "1") === "0") details.open = false;
   details.addEventListener("toggle", () => guardado.gravar(`${chave}.aberto`, details.open ? "1" : "0"));
 
-  const exemploAtual = () => exemplo();
-  const mensagemDe = (texto, item, config = CONFIG) =>
-    completarCampos(montar(texto, item), { responsavel: responsavelDe(item) || "", pagina: lista, config });
-  // Na prévia, um contato sem responsável mostra o primeiro nome da equipe como exemplo.
-  const previa = (texto, config = CONFIG) => {
-    const ex = exemploAtual();
-    if (!ex) return texto;
-    return completarCampos(montar(texto, ex.item), { responsavel: responsavelDe(ex.item) || config.equipe[0] || "", pagina: lista, config });
-  };
   const bolha = (alvo, mensagem) => { alvo.innerHTML = formatarWhatsApp(mensagem) || '<span class="wa-vazio">Sua mensagem aparece aqui.</span>'; };
+  // Mensagem que `quem` mandaria para o contato de exemplo ("" = geral, sem responsável).
+  const previa = (textos, quem, config = CONFIG) => {
+    const ex = exemplo();
+    const texto = textoPara(textos, quem);
+    return ex ? completarCampos(montar(texto, ex.item), { responsavel: quem, config }) : texto;
+  };
 
+  // --- Painel: prévia, com botões para ver a mensagem de cada responsável.
+  let vendo = "";
   function atualizar() {
-    const ex = exemploAtual();
-    const mensagem = previa(estado.texto);
+    if (vendo && !CONFIG.equipe.includes(vendo)) vendo = "";
+    $("wa-quem").innerHTML = ["", ...CONFIG.equipe].map(n =>
+      `<button type="button" data-quem="${esc(n)}" aria-pressed="${n === vendo}">${n ? esc(n) : "Geral"}</button>`).join("");
+    const ex = exemplo();
+    const mensagem = previa(estado.textos, vendo);
     bolha($("wa-bolha"), mensagem);
     $("wa-exemplo").textContent = ex ? ex.nome : "";
-    const resumo = [
+    const proprias = CONFIG.equipe.filter(n => estado.textos.por_responsavel[n]?.trim());
+    $("wa-resumo").innerHTML = [
       CONFIG.empresa && `Empresa: <b>${esc(CONFIG.empresa)}</b>`,
-      CONFIG.link && `Campanha: <b>${esc(CONFIG.campanha || "sem nome")}</b>${CONFIG.utm ? " · com UTM" : ""}`,
-      `Equipe: ${CONFIG.equipe.map(esc).join(", ") || "ninguém"}`,
-    ].filter(Boolean);
-    $("wa-resumo").innerHTML = resumo.join("<br>");
+      `Mensagem própria: ${proprias.map(esc).join(", ") || "ninguém (todos usam a Geral)"}`,
+    ].filter(Boolean).join("<br>");
     const botao = $("wa-testar"), ajuda = $("wa-numero-ajuda");
-    const href = estado.texto.trim() ? waHref(estado.numero, mensagem) : null;
+    const href = mensagem.trim() ? waHref(estado.numero, mensagem) : null;
     if (href) {
       botao.href = href; botao.removeAttribute("aria-disabled");
-      ajuda.textContent = "Abre o WhatsApp com a prévia para este número de teste.";
+      ajuda.textContent = `Abre o WhatsApp com a mensagem ${vendo ? `de ${vendo}` : "geral"} para este número de teste.`;
     } else {
       botao.removeAttribute("href"); botao.setAttribute("aria-disabled", "true");
-      ajuda.textContent = estado.texto.trim() ? "Digite um celular com DDD, por exemplo (31) 99163-9519." : "Escreva a mensagem nas configurações para poder testar.";
+      ajuda.textContent = mensagem.trim() ? "Digite um celular com DDD, por exemplo (31) 99163-9519." : "Escreva a mensagem nas configurações para poder testar.";
     }
     ajuda.classList.toggle("erro-campo", !href);
   }
+  $("wa-quem").addEventListener("click", e => {
+    const b = e.target.closest("button[data-quem]");
+    if (b) { vendo = b.dataset.quem; atualizar(); }
+  });
 
   // --- Janela de configurações: edita uma cópia; só vale depois de Salvar.
-  const form = {
-    texto: $("wa-texto"), empresa: $("wa-empresa"), link: $("wa-link"), campanha: $("wa-campanha"),
-    utm: $("wa-utm"), equipe: $("wa-equipe"),
-  };
-  const lerForm = () => ({
-    texto: form.texto.value,
-    config: {
-      empresa: form.empresa.value.trim(), link: form.link.value.trim(), campanha: form.campanha.value.trim(),
-      utm: form.utm.checked, equipe: [...new Set(form.equipe.value.split("\n").map(n => n.trim()).filter(Boolean))],
-    },
-  });
-  function atualizarForm() {
-    const { texto, config } = lerForm();
-    bolha($("wa-bolha-config"), previa(texto, config));
-    const link = linkCampanha(lista, config);
-    $("wa-link-final").textContent = link ? `Link enviado: ${link}` : "Sem link: o campo {link} fica vazio.";
+  const form = { texto: $("wa-texto"), empresa: $("wa-empresa"), equipe: $("wa-equipe") };
+  let rascunho, aba;
+  const equipeDoForm = () => [...new Set(form.equipe.value.split("\n").map(n => n.trim()).filter(Boolean))];
+  const configDoForm = () => ({ empresa: form.empresa.value.trim(), equipe: equipeDoForm() });
+
+  function desenharAbas() {
+    const equipe = equipeDoForm();
+    if (aba && !equipe.includes(aba)) aba = "";
+    $("wa-abas").innerHTML = ["", ...equipe].map(n => {
+      const propria = n && rascunho.por_responsavel[n]?.trim();
+      return `<button type="button" role="tab" data-aba="${esc(n)}" aria-selected="${n === aba}">${n ? esc(n) : "Geral"}${n ? `<small>${propria ? "própria" : "usa a Geral"}</small>` : ""}</button>`;
+    }).join("");
+    form.texto.value = aba ? (rascunho.por_responsavel[aba] || "") : rascunho.geral;
+    form.texto.placeholder = aba ? `Vazio: ${aba} usa a mensagem Geral. Escreva aqui para ter uma mensagem própria.` : "";
+    $("wa-aba-acoes").innerHTML = aba
+      ? `<button type="button" class="limpar" data-acao="copiar">Começar a partir da Geral</button>${rascunho.por_responsavel[aba]?.trim() ? '<button type="button" class="limpar" data-acao="apagar">Voltar a usar a Geral</button>' : ""}`
+      : '<button type="button" class="limpar" data-acao="restaurar">Restaurar texto padrão</button>';
+    atualizarPrevia();
+  }
+  function atualizarPrevia() {
+    bolha($("wa-bolha-config"), previa(rascunho, aba, configDoForm()));
   }
   function abrir() {
-    form.texto.value = estado.texto;
-    form.empresa.value = CONFIG.empresa; form.link.value = CONFIG.link; form.campanha.value = CONFIG.campanha;
-    form.utm.checked = CONFIG.utm; form.equipe.value = CONFIG.equipe.join("\n");
+    rascunho = { geral: estado.textos.geral, por_responsavel: { ...estado.textos.por_responsavel } };
+    aba = vendo;
+    form.empresa.value = CONFIG.empresa; form.equipe.value = CONFIG.equipe.join("\n");
     $("wa-config-status").textContent = "";
-    atualizarForm();
+    desenharAbas();
     dialogo.showModal();
     form.texto.focus();
   }
   const fechar = () => dialogo.close();
 
+  form.texto.addEventListener("input", () => {
+    if (aba) rascunho.por_responsavel[aba] = form.texto.value; else rascunho.geral = form.texto.value;
+    const marca = el.querySelector(`#wa-abas [data-aba="${CSS.escape(aba)}"] small`);
+    if (marca) marca.textContent = form.texto.value.trim() ? "própria" : "usa a Geral";
+    atualizarPrevia();
+  });
+  form.empresa.addEventListener("input", atualizarPrevia);
+  form.equipe.addEventListener("input", desenharAbas);
+  $("wa-abas").addEventListener("click", e => {
+    const b = e.target.closest("button[data-aba]");
+    if (b) { aba = b.dataset.aba; desenharAbas(); form.texto.focus(); }
+  });
+  $("wa-aba-acoes").addEventListener("click", e => {
+    const acao = e.target.closest("button[data-acao]")?.dataset.acao;
+    if (acao === "copiar") rascunho.por_responsavel[aba] = rascunho.geral;
+    if (acao === "apagar") delete rascunho.por_responsavel[aba];
+    if (acao === "restaurar") rascunho.geral = textoPadrao;
+    if (acao) { desenharAbas(); form.texto.focus(); }
+  });
+
   async function salvar(e) {
     e.preventDefault();
-    const { texto, config } = lerForm();
+    const config = configDoForm();
+    const textos = {
+      geral: rascunho.geral,
+      por_responsavel: Object.fromEntries(Object.entries(rascunho.por_responsavel)
+        .filter(([n, t]) => config.equipe.includes(n) && t.trim())),
+    };
     const status = $("wa-config-status"), botao = $("wa-salvar");
     status.className = "wa-salvo"; status.textContent = "Salvando…"; botao.disabled = true;
     try {
       await Promise.all([
-        chamarApi("PUT", `/mensagens/${lista}`, { texto }),
+        chamarApi("PUT", `/mensagens/${lista}`, { texto: textos.geral, por_responsavel: textos.por_responsavel }),
         chamarApi("PUT", "/configuracoes", config),
       ]);
-      estado.texto = texto; guardado.gravar(`${chave}.texto`, texto);
+      estado.textos = textos; guardarTextos();
       guardarConfig(config);
+      vendo = aba;
       fechar();
       mostrarSalvo("salvo");
       atualizar(); aoMudar();
@@ -304,24 +323,23 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   function mostrarSalvo(tipo) {
     salvo.className = `wa-salvo ${tipo}`;
     salvo.innerHTML = tipo === "salvo"
-      ? `${icone.ok}Mensagem e configurações salvas para todos os aparelhos`
+      ? `${icone.ok}Mensagens e configurações salvas para todos os aparelhos`
       : 'Sem conexão: usando a última versão salva neste aparelho. <button type="button" class="limpar">Tentar de novo</button>';
     salvo.querySelector("button")?.addEventListener("click", carregarDaApi);
   }
 
-  // Traz mensagem e configurações salvas (por exemplo, alteradas em outro aparelho).
+  // Traz mensagens e configurações salvas (por exemplo, alteradas em outro aparelho).
   async function carregarDaApi() {
     if (dialogo.open) return; // não troca o que está sendo editado
     try {
       const [msg, config] = await Promise.all([chamarApi("GET", `/mensagens/${lista}`), chamarApi("GET", "/configuracoes")]);
       if (dialogo.open) return;
       let mudou = false;
-      if (msg.texto !== null && msg.texto !== estado.texto) {
-        estado.texto = msg.texto; guardado.gravar(`${chave}.texto`, msg.texto); mudou = true;
+      if (msg.texto !== null) {
+        const remotos = { geral: msg.texto, por_responsavel: msg.por_responsavel || {} };
+        if (JSON.stringify(remotos) !== JSON.stringify(estado.textos)) { estado.textos = remotos; guardarTextos(); mudou = true; }
       }
-      if (config && JSON.stringify({ ...CONFIG_PADRAO, ...config }) !== JSON.stringify(CONFIG)) {
-        guardarConfig({ ...CONFIG_PADRAO, ...config }); mudou = true;
-      }
+      if (config && JSON.stringify(soConfig(config)) !== JSON.stringify(soConfig(CONFIG))) { guardarConfig(config); mudou = true; }
       mostrarSalvo("salvo");
       if (mudou) { atualizar(); aoMudar(); }
     } catch (erro) {
@@ -335,19 +353,24 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   $("wa-cancelar").addEventListener("click", fechar);
   $("wa-form").addEventListener("submit", salvar);
   dialogo.addEventListener("click", e => { if (e.target === dialogo) fechar(); }); // clique fora da janela
-  $("wa-form").addEventListener("input", atualizarForm);
-  $("wa-restaurar").addEventListener("click", () => { form.texto.value = textoPadrao; atualizarForm(); });
   el.querySelectorAll(".wa-tokens button").forEach(b => b.addEventListener("click", () => {
     form.texto.focus();
     form.texto.setRangeText(b.dataset.token, form.texto.selectionStart, form.texto.selectionEnd, "end");
-    atualizarForm();
+    form.texto.dispatchEvent(new Event("input"));
   }));
   numero.addEventListener("input", () => { estado.numero = numero.value; guardado.gravar("wa.numero", estado.numero); atualizar(); });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) carregarDaApi(); });
   atualizar();
   carregarDaApi();
 
-  return { mensagem: item => mensagemDe(estado.texto, item), atualizar };
+  // Mensagem do card: a do responsável pelo contato, ou a geral.
+  return {
+    mensagem: item => {
+      const responsavel = responsavelDe(item) || "";
+      return completarCampos(montar(textoPara(estado.textos, responsavel), item), { responsavel });
+    },
+    atualizar,
+  };
 }
 
 const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");

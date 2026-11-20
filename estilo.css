@@ -329,9 +329,6 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .wa-config textarea:focus-visible, .wa-campo input:focus-visible { outline: 2px solid var(--wa); outline-offset: 1px; }
 .wa-campo { display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; font-weight: 500; margin-top: 10px; }
 .wa-campo small { font-weight: 400; color: var(--ink-3); }
-.wa-check { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; font-size: 13.5px; color: var(--ink-2); cursor: pointer; }
-.wa-check input { margin-top: 3px; accent-color: var(--wa); }
-.wa-link-final { display: block; margin-top: 10px; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
 .wa-tela-mini { margin: 12px 0 8px; padding: 12px; }
 .wa-config-pe { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); }
 .wa-config-pe .wa-salvo { flex: 1; min-width: 0; }
@@ -346,3 +343,20 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
   .wa-config-pe .wa-salvo { flex-basis: 100%; }
   .wa-config-pe .wa-secundario, .wa-config-pe .wa-botao { flex: 1; }
 }
+
+/* Uma mensagem por responsável: abas na janela e botões na prévia */
+.wa-abas { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.wa-abas button {
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 1px; padding: 7px 12px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.wa-abas button small { font-size: 11.5px; font-weight: 400; color: var(--ink-3); }
+.wa-abas button[aria-selected="true"] { border-color: var(--wa); background: var(--wa-soft); color: var(--ink); box-shadow: inset 0 -2px 0 var(--wa); }
+.wa-aba-acoes { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 6px; }
+.wa-aba-acoes .limpar { font-size: 13px; }
+.wa-quem { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.wa-quem button {
+  height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink-2); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
+}
+.wa-quem button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
