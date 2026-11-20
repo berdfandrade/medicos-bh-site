@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=6a64eafc">
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -18,397 +18,148 @@
 <header class="wrap">
   <div class="eyebrow">Belo Horizonte · MG</div>
   <h1>Clínicas de emagrecimento</h1>
-  <p class="lede">Encontre clínicas e consultórios de Belo Horizonte. Toque no telefone para ligar ou abra o mapa para planejar a visita. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
+  <p class="lede">Encontre clínicas e consultórios de Belo Horizonte. Toque no telefone para ligar, no WhatsApp para mandar sua mensagem padrão, ou abra o mapa para planejar a visita.</p>
+  <div class="stats" id="stats"></div>
 </header>
-<main class="wrap">
-<h2 class="clinicas-titulo">Com telefone publicado (70)</h2>
-<p class="lede">Contatos de atendimento divulgados pelos próprios estabelecimentos.</p>
-<label class="busca-clinicas">Buscar nas fichas com telefone
-  <input id="busca-clinica" type="search" placeholder="Nome ou telefone">
-</label>
-<p id="resultado-clinicas" role="status"></p>
-<div class="clinicas-grid">
-<article class="card clinica-card"><figure><img src="fotos-clinicas/139.webp" alt="Clínica Credidio" loading="lazy"><figcaption><a href="https://www.clinicacredidio.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Clínica Credidio</h3><a class="telefone" href="tel:+553133183838">(31) 3318-3838</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJZ4hbUgSZpgARDJZl-AC1FjI">Ver no mapa</a> <a href="https://www.clinicacredidio.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/196.webp" alt="Recepção da Clínica Delavie" loading="lazy"><figcaption><a href="https://clinicadelavie.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Clínica Delavie</h3><a class="telefone" href="tel:+553125517930">(31) 2551-7930</a> <a class="telefone" href="tel:+5531999497930">(31) 99949-7930</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKdslCRyZpgARV_-VK5x8qnc">Ver no mapa</a> <a href="https://clinicadelavie.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/279.webp" alt="Recepção e corredor da Clínica Guarani" loading="lazy"><figcaption><a href="https://clinicaguarani.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Clínica Guarani</h3><a class="telefone" href="tel:+553134332530">(31) 3433-2530</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJHTwgf7aapgARIuf1tCsJkvw">Ver no mapa</a> <a href="https://clinicaguarani.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/136.webp" alt="Dr. Getúlio Santos sentado à mesa do consultório, com a vista de Belo Horizonte ao fundo" loading="lazy"><figcaption><a href="https://drgetuliosantos.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Dr. Getúlio Santos</h3><a class="telefone" href="tel:+5531994781025">(31) 99478-1025</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJN8F_8-WZpgAR6CS6xemF3x4">Ver no mapa</a> <a href="https://drgetuliosantos.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/12.webp" alt="Recepção da Clínica Essence Health, consultório do Dr. Vinícius Andrade em Belo Horizonte" loading="lazy"><figcaption><a href="https://drviniciusandrade.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Dr. Vinícius Andrade</h3><a class="telefone" href="tel:+5531996000316">(31) 99600-0316</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJxzQhehiZpgARm0N4bxqUXKg">Ver no mapa</a> <a href="https://drviniciusandrade.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/275.webp" alt="Interior da Clínica" loading="lazy"><figcaption><a href="https://www.esteticaraissarodrigues.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Estética Raíssa Rodrigues</h3><a class="telefone" href="tel:+5531991619422">(31) 99161-9422</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJo71GQXqRpgAR6y52dlKL6xs">Ver no mapa</a> <a href="https://www.esteticaraissarodrigues.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/234.webp" alt="Dra. Lumma Menezes no consultório, em Belo Horizonte" loading="lazy"><figcaption><a href="https://dralummamenezes.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>LM Clinic · Dra. Lumma Menezes</h3><a class="telefone" href="tel:+5531995360020">(31) 99536-0020</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJcVmsedGXpgARGIjsKjomS84">Ver no mapa</a> <a href="https://dralummamenezes.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/262.webp" alt="Luanna Kayris no consultório, de vestido azul, sorrindo com um tablet e uma caneta na mão." loading="lazy"><figcaption><a href="https://luannakayrisnutri.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Luanna Kayris</h3><a class="telefone" href="tel:+5531999909358">(31) 99990-9358</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJyW4jfyeXpgARBxICHYQsvuE">Ver no mapa</a> <a href="https://luannakayrisnutri.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><figure><img src="fotos-clinicas/91.webp" alt="Dr. Pedro Miguel, nutricionista clínico e esportivo em seu consultório em Belo Horizonte" loading="lazy"><figcaption><a href="https://drpedromiguel.com.br/">Foto do site oficial</a></figcaption></figure><div class="clinica-corpo"><h3>Pedro Miguel · Nutrição</h3><a class="telefone" href="tel:+5531971218523">(31) 97121-8523</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ9cCkcc2XpgARfk0OUYoLZUo">Ver no mapa</a> <a href="https://drpedromiguel.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Alita Kfuri</h3><a class="telefone" href="tel:+5531992487265">(31) 99248-7265</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ7en5FHq9pgARrjDZHZWkorM">Ver no mapa</a> <a href="https://nutricao.info/alitakfuri">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>BellaStima</h3><a class="telefone" href="tel:+5531983092754">(31) 98309-2754</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJ7pgszaZpgARk8sp2bJ2lcQ">Ver no mapa</a> <a href="https://www.bellastima.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>CEDUS</h3><a class="telefone" href="tel:+553132985500">(31) 3298-5500</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJPy_CP-6PpgARqqGaEgnKooU">Ver no mapa</a> <a href="https://www.cedus.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Centro Médico Dr. Buritis</h3><a class="telefone" href="tel:+553133373000">(31) 3337-3000</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJIfFW2dyXpgAR4drBfiIOBOE">Ver no mapa</a> <a href="https://drburitis.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Cintia Laignier</h3><a class="telefone" href="tel:+5531988223923">(31) 98822-3923</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJEzM4Pr2XpgARTw0XxNAakP8">Ver no mapa</a> <a href="https://clinicaesteticabh.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Climédica BH</h3><a class="telefone" href="tel:+5531971805616">(31) 97180-5616</a> <a class="telefone" href="tel:+5531991111398">(31) 99111-1398</a> <a class="telefone" href="tel:+5531991431483">(31) 99143-1483</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJoUJm5GCZpgARYB66i1U2e4I">Ver no mapa</a> <a href="https://www.climedicabh.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clinica de Estética em BH</h3><a class="telefone" href="tel:+5531975610131">(31) 97561-0131</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYeFAUDKRpgARZx7wUhPlwTg">Ver no mapa</a> <a href="https://clinicadeesteticaembh.com/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clinica Vellise</h3><a class="telefone" href="tel:+5531971711009">(31) 97171-1009</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJrdpIXYSFpgARVkFMLRSgnwU">Ver no mapa</a> <a href="https://clinicavellise.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clinlife Medicina Integrativa</h3><a class="telefone" href="tel:+553135647111">(31) 3564-7111</a> <a class="telefone" href="tel:+5531996733358">(31) 99673-3358</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOQyA1mWXpgARcBuwNaHeA6w">Ver no mapa</a> <a href="https://clinlife.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Bhariátrica</h3><a class="telefone" href="tel:+553132737489">(31) 3273-7489</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ_1hnMuyZpgARPN79qJTGI_o">Ver no mapa</a> <a href="https://bhariatrica.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Cirúrgica Traumaone</h3><a class="telefone" href="tel:+553132925929">(31) 3292-5929</a> <a class="telefone" href="tel:+553133372000">(31) 3337-2000</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ0YXR82eXpgARFOUk4ccmEGg">Ver no mapa</a> <a href="https://clinicacirurgicatraumaone.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Cirúrgica Traumaone</h3><a class="telefone" href="tel:+553132925929">(31) 3292-5929</a> <a class="telefone" href="tel:+553133372000">(31) 3337-2000</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKYc3z4KXpgARVFZifAwJ39g">Ver no mapa</a> <a href="https://clinicacirurgicatraumaone.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Dra. Ellen Durães</h3><a class="telefone" href="tel:+5531984012843">(31) 98401-2843</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ2aLkPcCXpgARk80MCwXUs3Q">Ver no mapa</a> <a href="https://draellenduraes.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Esense</h3><a class="telefone" href="tel:+553125171577">(31) 2517-1577</a> <a class="telefone" href="tel:+5531995821969">(31) 99582-1969</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJBSChg7SRpgARU3qLbCN8TbI">Ver no mapa</a> <a href="https://clinicaesense.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Especialmed</h3><a class="telefone" href="tel:+553135466767">(31) 3546-6767</a> <a class="telefone" href="tel:+5531972314094">(31) 97231-4094</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ322V116XpgARheHjuLesCjk">Ver no mapa</a> <a href="https://www.especialmed.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Lev</h3><a class="telefone" href="tel:+5531986471779">(31) 98647-1779</a> <a class="telefone" href="tel:+5531986471781">(31) 98647-1781</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJt2DucNuZpgARApKm37scXLw">Ver no mapa</a> <a href="https://www.clinicalev.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Natália Souto</h3><a class="telefone" href="tel:+5531994343543">(31) 99434-3543</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJxc3YP7C_pgAR1bT3ZdEkgHw">Ver no mapa</a> <a href="https://clini.site/nataliasclinica">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Olá Saúde</h3><a class="telefone" href="tel:+553125267070">(31) 2526-7070</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJg7__SHO-pgARk2K83OxI4HI">Ver no mapa</a> <a href="https://www.clinicaolasaude.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Clínica Santé Saúde</h3><a class="telefone" href="tel:+553132818063">(31) 3281-8063</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAQDQqeqZpgARsUmBw_IyP68">Ver no mapa</a> <a href="https://clinicasantesaude.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Complexo de Saúde Vida Nova</h3><a class="telefone" href="tel:+553134574424">(31) 3457-4424</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJLfqWWe6PpgAR0ULRjTf7zss">Ver no mapa</a> <a href="https://www.clinicavidanova.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Consultório BH</h3><a class="telefone" href="tel:+5531989450466">(31) 98945-0466</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJi12iR72ZpgARpAW9GQu-7lk">Ver no mapa</a> <a href="https://consultoriobh.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Deborah Bacelar</h3><a class="telefone" href="tel:+5531994615769">(31) 99461-5769</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJlTEaUCS_pgARQ2N4xG0TC84">Ver no mapa</a> <a href="https://nutribacelar.vercel.app/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dr Adriano Franco</h3><a class="telefone" href="tel:+5531990903375">(31) 99090-3375</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAe33cT2ZpgARKrkis-YSyy8">Ver no mapa</a> <a href="https://dradrianofranco.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dr. Eduardo Garcia</h3><a class="telefone" href="tel:+553132682169">(31) 3268-2169</a> <a class="telefone" href="tel:+5531997242957">(31) 99724-2957</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJqbXpJNCXpgAR3davd3h45SA">Ver no mapa</a> <a href="https://eduardogarcia.med.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dr. René Berindoague</h3><a class="telefone" href="tel:+5531995224747">(31) 99522-4747</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJe3a3i7-ZpgARVMu2qzEvZxg">Ver no mapa</a> <a href="https://drreneberindoague.bhariatrica.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dr. Vinícius Magno</h3><a class="telefone" href="tel:+5531989550884">(31) 98955-0884</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ337JbVKZpgARNsINglIURIw">Ver no mapa</a> <a href="https://drviniciusmagno.med.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra Isabella Marx</h3><a class="telefone" href="tel:+5531982185640">(31) 98218-5640</a> <a class="telefone" href="tel:+5531983355381">(31) 98335-5381</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJU_jGOaZpgARukhJmJWZ4e8">Ver no mapa</a> <a href="https://draisabellamarx.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra Renata Braga</h3><a class="telefone" href="tel:+5531988688099">(31) 98868-8099</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJPXTWV_WXpgARyP0w95OVrUc">Ver no mapa</a> <a href="https://drarenatasaudedamulher.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra Sheyla Cordeiro</h3><a class="telefone" href="tel:+5531990601100">(31) 99060-1100</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkTx6jleXpgARAVMBMw3TLaU">Ver no mapa</a> <a href="https://sheylacordeironutri.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Gisele Werneck</h3><a class="telefone" href="tel:+5531997801872">(31) 99780-1872</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ5VAsJcCZpgARI2_460iUXr8">Ver no mapa</a> <a href="https://giselewerneck.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Letícia Brant</h3><a class="telefone" href="tel:+553121185555">(31) 2118-5555</a> <a class="telefone" href="tel:+5531996515760">(31) 99651-5760</a> <a class="telefone" href="tel:+5531998753555">(31) 99875-3555</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-784FEeZpgARlX5MJcbodfs">Ver no mapa</a> <a href="https://leticiabrantendocrinologia.com/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Marcela Camargo</h3><a class="telefone" href="tel:+5531995589065">(31) 99558-9065</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJbV9U1yePpgARysjT8jfSHek">Ver no mapa</a> <a href="https://www.dramarcelacamargo.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Mari Araujo</h3><a class="telefone" href="tel:+553133744422">(31) 3374-4422</a> <a class="telefone" href="tel:+5531989886316">(31) 98988-6316</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJUzROYqXpgARZHSd6_eQAD0">Ver no mapa</a> <a href="https://www.medicinadeprecisao.net/home">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Maria Tereza</h3><a class="telefone" href="tel:+5531996061335">(31) 99606-1335</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJdxStyBa9pgARvC6kZYRK_Nc">Ver no mapa</a> <a href="https://doutoramariatereza.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Natália Laender</h3><a class="telefone" href="tel:+5531971249939">(31) 97124-9939</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOTw1n12ZpgARSx8dRLppdJA">Ver no mapa</a> <a href="https://dranatalialaender.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Paula Haass</h3><a class="telefone" href="tel:+5531991703003">(31) 99170-3003</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJH2RtCPGZpgARHIP2CCle7KM">Ver no mapa</a> <a href="https://drapaulahaass.com/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Rafaela Oliveira</h3><a class="telefone" href="tel:+5531992147399">(31) 99214-7399</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJBf9AxJWXpgARP95-yoc3MiY">Ver no mapa</a> <a href="https://rafaelaoliveira.com/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Dra. Verena Bartkowiak</h3><a class="telefone" href="tel:+5531999748356">(31) 99974-8356</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ4ae32UCZpgARUFClSxONngQ">Ver no mapa</a> <a href="https://conversa-direta-nutri.lovable.app/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Espaço Plenitude</h3><a class="telefone" href="tel:+5531973389513">(31) 97338-9513</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJXayv19OPpgARMylMO7qjwsQ">Ver no mapa</a> <a href="https://www.espacoplenitudebh.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Hellen Vale Nutricionista Bariátrica</h3><a class="telefone" href="tel:+5531982565452">(31) 98256-5452</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd7EiSuqZpgAR0-MpjvbrMP4">Ver no mapa</a> <a href="https://www.hellenvalenutricionista.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Americano de Emagrecimento e Performance</h3><a class="telefone" href="tel:+5531984117288">(31) 98411-7288</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJsd2r-M2ZpgARpnNPD0QoBK4">Ver no mapa</a> <a href="https://institutoamericano.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Faustino</h3><a class="telefone" href="tel:+5531986150030">(31) 98615-0030</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJc25bK2-XpgARLv7bWg2UM2U">Ver no mapa</a> <a href="https://institutofaustino.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Florença</h3><a class="telefone" href="tel:+5531982145972">(31) 98214-5972</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJWSiHtWyXpgARYwGtbGTQtVc">Ver no mapa</a> <a href="https://draclara.lovable.app/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Klein</h3><a class="telefone" href="tel:+5531989508925">(31) 98950-8925</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJi4hhhOWXpgAR6HqhK75ZVGo">Ver no mapa</a> <a href="https://institutoklein.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Mineiro de Endocrinologia</h3><a class="telefone" href="tel:+553132623220">(31) 3262-3220</a> <a class="telefone" href="tel:+5531998753555">(31) 99875-3555</a> <a class="telefone" href="tel:+5531999433555">(31) 99943-3555</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw9SNI92ZpgAR38FdsbSEjVE">Ver no mapa</a> <a href="https://www.endocrinologia.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Mineiro de Obesidade</h3><a class="telefone" href="tel:+5531986033576">(31) 98603-3576</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ2-G7Kl6XpgARQDiEQgvSTQo">Ver no mapa</a> <a href="https://imobesidade.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Nankran e Abreu</h3><a class="telefone" href="tel:+553132435951">(31) 3243-5951</a> <a class="telefone" href="tel:+5531987419604">(31) 98741-9604</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJE6gAAe2ZpgARqZnNvMJvlKg">Ver no mapa</a> <a href="https://nankran.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Saúde</h3><a class="telefone" href="tel:+553132441818">(31) 3244-1818</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ3aEce6a9pgARJaWKqby5UJk">Ver no mapa</a> <a href="https://www.clinicasinstitutosaude.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Saúde</h3><a class="telefone" href="tel:+553132441818">(31) 3244-1818</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ84qF_FS9pgARUVHosg3NNGU">Ver no mapa</a> <a href="https://www.clinicasinstitutosaude.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Instituto Saúde</h3><a class="telefone" href="tel:+553132441818">(31) 3244-1818</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkY6U6Fm9pgARg5RaHvlmi_E">Ver no mapa</a> <a href="https://www.clinicasinstitutosaude.com.br/cidade/belo-horizonte">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>La Clinique</h3><a class="telefone" href="tel:+5531998933004">(31) 99893-3004</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-a1-_X0fbYsRAQvv0INzzBA">Ver no mapa</a> <a href="https://www.lacliniquebh.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Lorena Layla</h3><a class="telefone" href="tel:+553130236558">(31) 3023-6558</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUxeuqBmXpgARW2pSPScLKEQ">Ver no mapa</a> <a href="https://www.lorenalaylaestetica.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Melissa Freitas</h3><a class="telefone" href="tel:+5531984425731">(31) 98442-5731</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJRaZlgXmNpgARS-UZI9KlmCQ">Ver no mapa</a> <a href="https://www.dramelissafreitas.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Metabólica</h3><a class="telefone" href="tel:+553132839773">(31) 3283-9773</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOy4PZSSYpgARakozj5fAUvY">Ver no mapa</a> <a href="https://metabolica.med.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Micaele Ramos Nutricionista</h3><a class="telefone" href="tel:+5531994143120">(31) 99414-3120</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJr6ZrPo2XpgARh2vJbUUOXZU">Ver no mapa</a> <a href="https://micaeleramosnutricionista.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Pri Souza Clínica de Estética</h3><a class="telefone" href="tel:+5531987183653">(31) 98718-3653</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJzbU98O6XpgARt18rND2fpqs">Ver no mapa</a> <a href="https://esteticasouzapri.wixsite.com/pri-souza-clinica-es">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>SIGMA ESTETICA</h3><a class="telefone" href="tel:+553125553324">(31) 2555-3324</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd4j8SkiXpgAR3C4fvQINXdI">Ver no mapa</a> <a href="https://www.sigmaestetica.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Spa Training</h3><a class="telefone" href="tel:+5531987540960">(31) 98754-0960</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJvzGbe9-ZpgARvJzxdSk1N5E">Ver no mapa</a> <a href="https://www.spatraining.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Sílvia Ferolla</h3><a class="telefone" href="tel:+5531972010090">(31) 97201-0090</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJh26ubGeXpgARhOeIp6v76MY">Ver no mapa</a> <a href="https://www.silviaferolla.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Ville Corpus</h3><a class="telefone" href="tel:+553125516612">(31) 2551-6612</a> <a class="telefone" href="tel:+5531925516612">(31) 92551-6612</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJNwbc4MaZpgARdIcFOt3zlqY">Ver no mapa</a> <a href="https://villecorpus.com.br/">Site oficial</a></div></div></article>
-<article class="card clinica-card"><div class="clinica-corpo"><h3>Vitta Forma Estética</h3><a class="telefone" href="tel:+5531995134257">(31) 99513-4257</a><div class="links"><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-UDZq6yXpgARTAGxQAAvIpk">Ver no mapa</a> <a href="https://www.vittaformaestetica.com.br/">Site oficial</a></div></div></article>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Nome da clínica ou telefone" aria-label="Buscar clínica">
+    </label>
+    <div class="chips" role="group" aria-label="Filtros">
+      <button type="button" class="chip" id="cel" aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        Tem celular
+      </button>
+    </div>
+  </div>
 </div>
-<details><summary>Outros 291 locais · consultar no Google Maps</summary>
-<ul class="fichas"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJobbq9ZiXpgAROr5DDqmVJ9A">Local 001</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJNwXB7kOZpgARudGjk4lIHak">Local 003</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJCQ5tcj-XpgARGc1A-vWfIwo">Local 004</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ6ROAWteZpgAR5AeFMI54zMU">Local 005</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-34ysCGXpgARdZgwuty-EFk">Local 006</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJASqF7UeRpgARBlF4WrKrc9g">Local 007</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJrbL3QwCXpgARbFM8mPTsYD8">Local 008</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKeXnDEmXpgARkoUTsV_WhT8">Local 009</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJVVWFf-6XpgARLrQB5ovD_kw">Local 010</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJF3AN0GeXpgARscRQGhvpmjU">Local 011</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJtUIGf8uXpgARk44anRxai4c">Local 012</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJI4N7Gwe9pgARPYy43ylpeRA">Local 014</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJF8kb53ORpgARSMvNQNLawx0">Local 015</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJScewnMGZpgARg8rIGkuGwu0">Local 016</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJO_uhd_aZpgARTbA4dJSMG-0">Local 017</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJG1HcMvmapgARhQUOntyh53M">Local 018</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJdfcQZTSYpgARNw-yMK_fOfo">Local 019</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJE4jnfLKXpgARsZV3-iJpFyk">Local 020</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYwoG1pmXpgAR0saIEQlZ3tc">Local 022</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJo12qtqSXpgAR9rHg21qOQbU">Local 023</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJv872TfGbpgARaOy7wVjU-2E">Local 024</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJIyGaqeSXpgAR2ZnEC2tkN1Q">Local 026</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkRp1TLKRpgART7oKNGe2Dxg">Local 027</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-eOT7tqXpgAR8FJMOGg2bUg">Local 028</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJSwAx0uuZpgAR9oX_n25i5Ow">Local 029</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJb-kyX5-ZpgAR1mtJSfTs_aE">Local 030</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJwVL32FiXpgARgEoYkkN9faQ">Local 031</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJtYPbsiGZpgARYg8dbXXG0c0">Local 033</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOe2UKmmZpgARUX7VD-M8yqw">Local 034</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJm2T-DlGZpgARg4mbn3sQSdI">Local 035</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJo-iJznuXpgARGwxD2Rk4a4s">Local 036</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJs0VRBk2XpgAR198J8N4clTs">Local 037</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJVf-RwFiZpgARS-Yn4yaWty4">Local 038</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJMYVeO7SZpgAR95R1UZiLX5g">Local 039</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd25ukzeXpgARGiugr5dA-IE">Local 040</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOZ5vlpCZpgAR3AmATxqvYTE">Local 041</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJpz2mp5OXpgARuuBNVUw_l88">Local 042</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ29MsjeCZpgARBimbQfgT9Mw">Local 044</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJTbgVvraRpgARjlsAfk5Jl50">Local 045</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkd-guViZpgAR1D7Hwhoov7A">Local 046</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJs4sDA-GZpgARYvOjd9h7zd0">Local 047</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJTyY17kmbpgAR88y5WNWVzxk">Local 048</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ67MVoeGZpgAREobFPeVEdDE">Local 049</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJNZ025UOZpgARmkStaTG2ddQ">Local 052</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-WKQoreZpgARsSkrDDnAOQM">Local 054</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJZaosHKWZpgARAoiCzHCY6B8">Local 055</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ3eafdNKZpgAR4LSFsir7rxo">Local 056</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJgyim8VCXpgARRRx7WrfMq60">Local 057</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ4wl5k6qZpgAR7-7-WctHtXY">Local 059</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ2VpQmmiXpgARyDypO5Bv8-4">Local 060</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ86YOne6ZpgARllj0Sx3qzbs">Local 062</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJiUAxq-2ZpgAR_HNxxpf_y4o">Local 063</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJfWtaKl-XpgAR4Wt1TZv20rM">Local 064</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ441QTkqZpgAREWB_nOI5yLA">Local 065</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJP7JmBeCZpgARB1E-7NrpXqo">Local 066</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJs2D-Tx-XpgARi7EcRSF2UCs">Local 067</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJiZPPJfuXpgARoj5pxEIqMXY">Local 069</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJWQZJu_-XpgAR6BTrvrF9k00">Local 071</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ2xjv-7KXpgARBCyYOufXrzU">Local 072</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkWnEjqdRpgARQwKUCOQmY2Y">Local 075</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJFQY7z66XpgARO4lcn-ZOGkM">Local 076</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJ8syU3SZpgARM-Gn98TkMdc">Local 077</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ0YXR82eXpgAR74-GD0mObyo">Local 079</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJnzAeUmyXpgAR0npQtoEokb8">Local 081</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkRp-M2qXpgAR89LhfMwbN1A">Local 082</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJuy4jYKqZpgARxCNdqP1X1ds">Local 083</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJLy09sGeXpgARkS7RyZnvcAg">Local 084</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJD30BxIyZpgARq0z_1ErqvuE">Local 085</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJGZrwL-OZpgARonydA-oDufs">Local 086</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUdl__3KXpgARG1hqSQrSQls">Local 088</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJt0FhfFaXpgARAInINLgnfSQ">Local 089</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ74fZmVCZpgARDnOXQriWlAo">Local 090</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ75O4jJ6XpgAR5BCdp99uALs">Local 091</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAQAwmmiXpgARGtmGSFB0CvI">Local 093</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUVcAw8mZpgARD9mEA1q6VmM">Local 096</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ15_AF4CZpgAR3o_pL6aQupQ">Local 099</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJuQ9Iqo6ZpgARtl_UhAUEuzg">Local 100</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJeVdChauZpgARSbzPi37x3Kg">Local 101</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJo7PIQcWbpgARym80nQO3_HA">Local 102</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJLaeLTV-XpgAR68r7QgtCxQo">Local 103</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAYbHao-XpgARie4O82SNIkg">Local 104</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ4TEy1pKVpgARnceGwTbBLcc">Local 106</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJDQqAWx6ZpgAR6CoIUGpOlUg">Local 107</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYYxK29CZpgARYWwb-BCg0RQ">Local 109</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJv0qW7DWXpgARo0QNSc1WbRI">Local 110</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJxw8czveZpgARzAz66JPc960">Local 111</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJibaOXF2XpgAREFIcuke4KoA">Local 113</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ5z4kUpOZpgARe5tqekiEkQ4">Local 114</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJE1PobwKZpgARuXMG17K9-H8">Local 115</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJmTmTc9uRpgAR7B0WlkFLvRM">Local 116</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw5mR3fFi-a4RaYA2nqsCDKw">Local 117</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJuQKDOWGZpgARwo7EaLbAM7s">Local 118</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq-v7mFWZpgAReebIN_Uy0rQ">Local 119</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkSej6QiXpgARCcpnWvJ9MJE">Local 120</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYR8y1meXpgARU6DCJ6jJeCo">Local 121</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJIeBGXF2XpgARQeOOnGTrcF4">Local 122</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw4Dfn36XpgARNCuG1GrQG2Q">Local 123</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJx5xj1vSXpgARywTfiM8b32o">Local 124</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ6RjQu46XpgARqO9k_-qhk6g">Local 125</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ__8PZtCZpgAR6XGxL4tjyl0">Local 126</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJFYn0W1KXpgARNm133rTCSzc">Local 127</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw6v6DWabpgARZu0kFAZi9NQ">Local 129</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhebpV7GZpgARsLQJBqq9Kwc">Local 130</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJd__GV6XpgAR4c21cwTeU1s">Local 131</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJEZGlPzSXpgARQsLoSR5pxlo">Local 132</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJy8siAyaXpgARwc_ui5Po3-k">Local 133</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ103Heh2ZpgARyc-1wMY_gVY">Local 134</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ27ULl0GZpgARoy-kkrYyiZI">Local 135</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJt3q5RQCXpgARQ0v69szSFfI">Local 136</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJGVVm2rI4mGQRsCRdPLY7yYQ">Local 138</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJCQ8LW3KZpgARZP_pZdwEyfU">Local 141</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq4ZxM3C9pgARsgxEqVMlT2I">Local 142</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJzUWQGwC9pgARBzEAzo_Maw4">Local 143</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJTU1us-O9pgARWEzLJcXFDXM">Local 144</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJb4g4yMKXpgARSLXj5B4epbg">Local 145</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJzftZEi-9pgARb0Zm3lHh-IE">Local 146</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJvVnGTgu-pgARyeiAR8hyP6s">Local 147</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJe6C_SkG_pgAR_pxBsI8Zxvo">Local 148</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJEX51DZa9pgARQ2e0u03Mp7A">Local 149</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKfU_7Gi9pgAR98OVcE5zKZM">Local 150</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJNxbWfL29pgARPotlNDQ4B3M">Local 151</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJh7PtueO9pgARpYo_FXRV1fg">Local 155</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJj4A5xuG9pgARzMmmtAqCSWk">Local 156</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJa-diD5OXpgARx8df9QUK1Tc">Local 157</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ7QfIQpu9pgARzFXfF0wPWgU">Local 159</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJmwWVs-O9pgARduXqX6dlW6w">Local 160</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhY4Sd3aWpgARDwC4dQxoaE4">Local 162</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ-T1MQM6XpgARE9Mtt3ScxmQ">Local 163</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ_chq7oK9pgARXDCT76Rh9Hw">Local 164</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJXa5TIeK9pgARajYDVjdk-iI">Local 165</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJs1JBI-S9pgARFLnNYJItaAE">Local 166</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJr4lEoIa9pgAR2CB379zlNC8">Local 167</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJnfeSPka9pgARXRuff-Dj_T0">Local 169</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJ3r-ueO9pgARKB9L0VFIyfE">Local 170</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJW_DP0iG9pgARWs_mEfvkMLQ">Local 172</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJE61tSHO-pgARE6IOsag32qM">Local 173</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJZRZtMdiXpgAREZqXp2b9q-A">Local 174</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ0_dbVOiZpgAR0WLBekc2QeQ">Local 177</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw8Mbp4DceQ0RZ_9O0stRwVs">Local 178</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ98rGVdyZpgAR7kVuRVNniNw">Local 179</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ5ShRZ1iZpgARJ9nA6ZcOF_M">Local 180</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJTRaa0aaXpgARBTHChOCR27A">Local 181</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJuYKNQAmZpgARXFMgz26Exco">Local 182</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJXb-6UuiZpgARKccM5NVfjJ8">Local 184</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhWJH46eXpgARnH8LXWcZ4Jw">Local 185</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJVX7UtuiZpgARqqNw3LHDSHo">Local 186</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ___vM-qZpgARQ4cKDZsn9Qw">Local 187</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJX0PyXv6ZpgARa3c5vZSUQVU">Local 188</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJIWwhMACZpgARLz7O_nLBYeM">Local 189</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ5z5--2eXpgARhDG8WsjHTDg">Local 190</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJO018aMaZpgARTTpq2uAFHLw">Local 193</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJWVd-Hl6XpgARjN19Q4Dw8S4">Local 195</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJpcsEnPKZpgARcOcJYzidi-A">Local 196</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJW62QHaeZpgARHRL6K30l1s4">Local 198</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJdfDwmbuZpgARksVlXNy4O5E">Local 199</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJD8OzsIyZpgARmxhNwFFQTHA">Local 202</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKzjOFO6XpgAR2eY4XJNC-I0">Local 203</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ3eDClmeXpgAReX6YPS2djzw">Local 205</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ4fF_DbGZpgARbgHt6-WA9Wo">Local 207</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJIYleRWeZpgARIVQYGRNxnT4">Local 209</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJB7JAeZCbpgARdAGdvc6RM5M">Local 210</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJTxzFO7ebpgARVCufInF7APA">Local 211</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJMRf3J1OapgARBYv8muHrWRs">Local 212</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJl2U4u2ybpgARg9ObDVaBayw">Local 213</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJkyROMiSZpgARbP2xS2ZcoDQ">Local 215</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJqeUsouyZpgARxu7ldoHsKn0">Local 216</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJOQ6WEPSbpgARUf3wBhh5hm4">Local 217</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJQVs7G7GZpgAR2zg0M3jzy1w">Local 218</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJaeJGb_eZpgARnol9GNqXihs">Local 219</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd8zmB4yZpgARysiNAl1Fwes">Local 220</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJX2WOUNObpgARb5KJSht6utg">Local 221</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJketFYpmRpgARLfdg7nDz1Qs">Local 222</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd5qIPpuXpgAR11wGJ-jUpac">Local 223</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAy3oXj6ZpgARn1Gs_QEy5xs">Local 224</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJu3O3Jd2XpgARJHgjzJ2dYSQ">Local 225</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJPcS-kHuQpgARrTPudqBzGh8">Local 226</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJd6EKN-VpgARoPzXpdH66lE">Local 227</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ02vvKKybpgARxoZiYFAhVOo">Local 229</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJz4TA4vqRpgARNvDbVlV7UVs">Local 230</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJfSmeHnObpgARc9jva_O4B3w">Local 231</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJe25RM1ebpgARFShfV5BIIwU">Local 232</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJrUoLU1mXpgARHmZZ_62_aUA">Local 233</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ8Z2zAo2bpgARf1Ry88k2SfI">Local 234</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJEwCKQ-SWpgARkRY1Nx9bJv4">Local 236</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ32oQwMeXpgAR96mTZzjeYkE">Local 238</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ1bqX6HaXpgARmgdJtVMDGB4">Local 239</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJdwzkdKbpgARVpZHLhWCk6c">Local 240</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJX7cxMLKXpgARP5kBi6UPo1E">Local 241</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq6p6_WeXpgARWjPYXqUPefY">Local 242</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ8Yu7zIKXpgARS60t2MbkB_s">Local 243</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJxzpRT2-XpgARWgj1PKNdCkk">Local 244</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJr4adfrWXpgARKYzAYJ-5wJ0">Local 245</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJvXA3KdCQpgARTtJNfZbbbdI">Local 246</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ7RMTAfmTpgARfVL8ctnfsRU">Local 247</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJD-woKT2XpgARFYfr2ZGFh4I">Local 248</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJRcqTSQGXpgARsOhQZqFBgLI">Local 250</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJB4z8ZsuWpgARWpq4kg7_6wo">Local 252</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ26YDzZ2XpgARBEjkmXviDTw">Local 253</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJwWnIYx2XpgARULa_4M_JAp8">Local 254</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJleQ_SMOXpgAR5Hy2GX4l5uY">Local 255</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq6paG2WXpgARXcQ_tMqwxSY">Local 257</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhzKLdWiXpgARl8MIA1hsEq0">Local 258</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJlfyKwyiXpgAR3FoxAFEXDak">Local 259</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAUZj9meZpgARWVyulglYOqU">Local 260</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJM6lmi9WZpgARJKslKHmAdlc">Local 262</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ38qbAi-ZpgARwdPg046D3Ac">Local 265</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJbToQdGyXpgARMLvD-OM_4Do">Local 266</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJf49pY5WXpgARPga7s9aC6Xc">Local 267</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJE2bwo0qFpgARVzlHIRlB2tE">Local 268</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJcxwhJ_uRpgARY3SgVEBjeg4">Local 269</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJRWDUo4-apgARoMdpq6hy8-0">Local 270</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhUXV6UuQpgARjalHjkQQOEY">Local 272</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ3eMbT4CbpgARH850DBPScd8">Local 273</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ15rcGxuRpgARfFK-Dqbe3Cg">Local 274</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ__PprR6PpgARmnndi81BUgY">Local 275</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJsRtoLtORpgARg61ONx_v1qw">Local 277</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJEUF6e4abpgARuctXxparzHc">Local 278</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq6o6XWmapgARw4UWHS43IBw">Local 279</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJoURr9NCZpgARjAalJcu0g5U">Local 281</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJSd3CyyqRpgARVpEQ1pCPl5c">Local 282</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJv-tGRuSbpgARjcchfTN-CO8">Local 283</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJz-8349ObpgARonuRBipfy44">Local 284</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJdrmjs-bpgARNfeUdmMKv6o">Local 285</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ4-Pw8AqRpgARevKaaOguAQQ">Local 286</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJX3N3MT-bpgARvsiXk0v504U">Local 287</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ87jhWe6PpgAReXXP8OYm0zQ">Local 288</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ5Xr2fhxgKGcRPFZIh-X1NYA">Local 289</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJSci7Bn-XpgARP1BOTO-gSAQ">Local 290</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJpYd1ISCXpgAREUamzYC5-RY">Local 291</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJHWJd2caXpgARs7DhHZZMl5o">Local 292</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJO46dpPyXpgARx2uPuHUvShg">Local 293</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJQaHKLlSXpgARo7Yp4fCec2g">Local 295</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJvVpeT6SXpgARHm7fbfsKFYI">Local 296</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJjao2S4SXpgARgtk2_BnEdac">Local 297</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJw2tOPQ7-MgIRbbusZCYsLOI">Local 298</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ3Zvxq4qXpgAR3JsVHBJTBO4">Local 299</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJrwvTQWmXpgARivhUfJaXGtI">Local 300</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJxz8YariXpgARKC16di4Rr4o">Local 302</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJveFxQuiXpgARM2sKfI4VEFk">Local 303</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJ09JCwiXpgARBbKBnEZpNxU">Local 304</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUQ59VPmRpgARC5SNcrGJ3Wg">Local 305</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhZYxaoWRpgARVZrkGK8cyMQ">Local 306</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUbP07yjNBIURWAhiqDZkaAA">Local 307</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJx9dJZACRpgARuVFlgn2x00o">Local 308</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJrzgfRCSRpgARlWqN0VHJmCI">Local 309</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJwfnbzZORpgARyWdH6TxeQRs">Local 310</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJPXM3FweRpgARujwCVT5It04">Local 311</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJj9S1JRyQpgARcAcu4QYLMX4">Local 312</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJB7BmLm2RpgARSTzpJU3LRA4">Local 314</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJX-OMnIWRpgARclZvLwJ164U">Local 315</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ1RHsMeqPpgARUemCb1ncm6Y">Local 316</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJD8cqIReVpgARQc8Y0x5cC2w">Local 317</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ_UO0O5yRpgARdwyK6-4O-Pc">Local 318</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJr7yHAeqXpgAR--weytQhv7o">Local 319</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJlc-IysebpgAR1nlLox5Tbjc">Local 320</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ46LrFhyPpgAReu9E9KQ5gdU">Local 321</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJf4Cpr8aRpgARH78sdsfOuIg">Local 322</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJT-Hh8eyRpgARqLdeuAMga1E">Local 323</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJPTRgSPORpgARIdBwxlq4mSM">Local 324</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJqYd2eTmRpgAR8ecayxtetJ0">Local 325</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJlVaEIUmQpgAR3-rTTm_V1SM">Local 326</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJiT_0dFyRpgARZVVAaQm3ilA">Local 327</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJtW0dZsSRpgARbNrjJnCY6GU">Local 328</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJj3OruLKRpgARARgrKJAHgRA">Local 329</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJAxJdLauZpgARHUTqqjOOQws">Local 330</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJixQmW_GPpgARQzTuq7xf_7g">Local 333</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJUWMHk-mPpgARoiJa2MFmc-o">Local 334</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq3UjxvqPpgARn-GcZg3Sv5o">Local 335</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJhaBJ9MqPpgAReQV-BoGgtnQ">Local 336</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJmygUluWPpgAR-yB7MLMgNUA">Local 337</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJq7M-yu-PpgARHvCKlzIYFJs">Local 338</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJuxKMoyCQpgAR7rMlhz4SUFU">Local 339</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ1WSHJYSPpgARWOFqMfJtfWg">Local 340</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJS0tbXTGPpgARFCnztU91kTA">Local 341</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJM074oJGPpgARgbSaRT7PJ4w">Local 342</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJN6ucdwCPpgAR1VG2uRvhDis">Local 343</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJWcacRPwWDIARSS_ybFGYcs0">Local 344</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYeMzJe6PpgARs6ZBK-zQl1k">Local 345</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJDdREv_uPpgARzb0-zhhEJuY">Local 346</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJd0mjheyPpgARSVAHltpyhZE">Local 347</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJDZdjaM6RpgARHn8vmEBTO-A">Local 348</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJYaUsTuWPpgARonIrbcvubrw">Local 349</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJsRl6e9KXpgARDtHGks3tQL8">Local 350</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJjYlRzYqPpgARscLG_AOZNRw">Local 351</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJb4YzutSPpgAR_uMgXKbn0Ok">Local 352</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJ57Re03mPpgARACtof1p_VUM">Local 353</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJJXHWrNGPpgAR5OY-8mIHmHY">Local 354</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJKcteNjuZpgARuOdMSD06GP4">Local 356</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJb7p_Jo6PpgARxSOmSsFkL9M">Local 358</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJRTGAgMCZpgARPHpXDG-ZPOw">Local 360</a></li>
-<li><a href="https://www.google.com/maps/search/?api=1&amp;query=cl%C3%ADnica+em+Belo+Horizonte&amp;query_place_id=ChIJp1mU_Z-XpgAR-hFpuLCP4RA">Local 361</a></li></ul></details>
+
+<main class="wrap">
+  <section class="wa-painel" id="wa-painel"></section>
+
+  <div class="meta">
+    <div id="count" aria-live="polite"></div>
+    <button type="button" class="limpar" id="limpar" hidden>Limpar filtros</button>
+  </div>
+  <div class="clinicas-grid" id="grid"></div>
+
+  <details class="sem-nome" id="sem-nome">
+    <summary>
+      <span class="sem-nome-titulo" id="sem-nome-titulo"></span>
+      <span class="sem-nome-sub">Locais encontrados no Google Maps sem nome nem telefone cadastrados. Abra o mapa para ver os dados de cada um.</span>
+    </summary>
+    <div class="clinicas-grid" id="grid-sem-nome"></div>
+  </details>
 </main>
+
+<footer class="wrap">
+  <p id="fonte"></p>
+  <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
+</footer>
+
+<script src="comum.js"></script>
 <script>
-const busca = document.querySelector("#busca-clinica");
-const fichas = [...document.querySelectorAll(".clinica-card")];
-const normalizar = texto => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-busca.addEventListener("input", () => {
-  const termo = normalizar(busca.value.trim());
-  const numero = termo.replace(/[^0-9]/g, "");
-  const porTelefone = numero && /^[0-9 ()+-]+$/.test(termo);
-  let total = 0;
-  for (const ficha of fichas) {
-    const nome = ficha.querySelector("h3").textContent;
-    const numeros = [...ficha.querySelectorAll(".telefone")].map(a => a.href.slice(5));
-    ficha.hidden = porTelefone ? !numeros.some(n => n.includes(numero)) : !normalizar(nome).includes(termo);
-    if (!ficha.hidden) total++;
-  }
-  document.querySelector("#resultado-clinicas").textContent = termo ? total + (total === 1 ? " ficha encontrada" : " fichas encontradas") : "";
+const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
+const estado = { q: "", cel: false };
+let clinicas = [];
+
+const mapaHref = c => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.nome || "clínica em Belo Horizonte")}&query_place_id=${encodeURIComponent(c.place_id)}`;
+
+const painel = criarPainelWhatsApp({
+  el: document.getElementById("wa-painel"),
+  chave: "wa.clinicas",
+  textoPadrao: MENSAGEM_PADRAO,
+  descricao: "Escreva uma vez: o botão <b>WhatsApp</b> de cada clínica abre a conversa com o texto já personalizado.",
+  campos: [{ token: "{nome}", rotulo: "Nome da clínica" }],
+  montar: (texto, c) => texto.replaceAll("{nome}", c.nome),
+  exemplo: () => {
+    const c = filtrar(clinicas).find(x => x.nome && x.celulares.length) || clinicas.find(x => x.celulares.length);
+    return c ? { item: c, nome: c.nome } : null;
+  },
+  aoMudar: () => render(),
 });
+
+function htmlClinica(c) {
+  const foto = c.foto
+    ? `<figure><img src="${esc(c.foto)}" alt="${esc(c.foto_alt)}" loading="lazy">${c.foto_credito ? `<figcaption><a href="${esc(c.foto_credito)}" target="_blank" rel="noopener">Foto do site oficial</a></figcaption>` : ""}</figure>`
+    : "";
+  const links = [htmlTelefones(c.celulares, c.fixos, painel.mensagem(c))];
+  if (c.site) links.push(`<a href="${esc(siteHref(c.site))}" target="_blank" rel="noopener">${icone.web}<span>Site</span></a>`);
+  links.push(`<a href="${esc(mapaHref(c))}" target="_blank" rel="noopener">${icone.map}<span>Mapa</span></a>`);
+  const cabeca = c.nome
+    ? `<h3>${esc(c.nome)}</h3>`
+    : `<h3 class="sem-nome-h3">Local ${esc(c.codigo)}</h3><div class="crm">Nome não cadastrado · veja no mapa</div>`;
+  const endereco = c.endereco ? `<div class="addr">${esc(c.endereco)}</div>` : "";
+  return `<article class="card clinica-card${c.nome ? "" : " clinica-sem-nome"}">${foto}<div class="clinica-corpo">${cabeca}${endereco}<div class="links">${links.join("")}</div></div></article>`;
+}
+
+function filtrar(lista) {
+  const termo = semAcento(estado.q.trim());
+  const numero = termo.replace(/\D/g, "");
+  const porTelefone = numero && /^[\d ()+-]+$/.test(termo);
+  return lista.filter(c =>
+    (!estado.cel || c.celulares.length) &&
+    (!termo || (porTelefone
+      ? [...c.celulares, ...c.fixos].some(t => t.replace(/\D/g, "").includes(numero))
+      : semAcento(c.nome).includes(termo)))
+  );
+}
+
+function render() {
+  const comNome = filtrar(clinicas.filter(c => c.nome));
+  const semNome = filtrar(clinicas.filter(c => !c.nome));
+  document.getElementById("grid").innerHTML = comNome.length
+    ? comNome.map(htmlClinica).join("")
+    : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
+  document.getElementById("count").innerHTML = `<strong>${comNome.length}</strong> ${comNome.length === 1 ? "clínica" : "clínicas"} com telefone`;
+  document.getElementById("limpar").hidden = !(estado.q || estado.cel);
+
+  const secao = document.getElementById("sem-nome");
+  secao.hidden = !semNome.length;
+  document.getElementById("sem-nome-titulo").textContent = `Outros ${semNome.length} locais sem nome cadastrado`;
+  // monta os cards escondidos só quando a seção é aberta
+  document.getElementById("grid-sem-nome").innerHTML = secao.open ? semNome.map(htmlClinica).join("") : "";
+  painel.atualizar();
+}
+
+function aplicar(mudanca) {
+  Object.assign(estado, mudanca);
+  const q = document.getElementById("q");
+  if (q.value !== estado.q) q.value = estado.q;
+  document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
+  render();
+}
+
+function stats() {
+  const comNome = clinicas.filter(c => c.nome);
+  const itens = [
+    [comNome.length, "clínicas com telefone"],
+    [comNome.filter(c => c.celulares.length).length, "com celular"],
+    [clinicas.length - comNome.length, "outros locais no mapa"],
+  ];
+  document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
+}
+
+let t;
+document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
+document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
+document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", cel: false }));
+document.getElementById("sem-nome").addEventListener("toggle", render);
+
+fetch("clinicas.json", { cache: "no-cache" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(dados => {
+    clinicas = dados.clinicas;
+    document.getElementById("fonte").textContent = `Fonte: ${dados.fonte}.`;
+    stats(); render();
+  })
+  .catch(erro => {
+    console.error(erro);
+    document.getElementById("grid").innerHTML = '<div class="erro">Não foi possível carregar a lista de clínicas.<br>Recarregue a página para tentar de novo.</div>';
+  });
 </script>
 </body>
 </html>
