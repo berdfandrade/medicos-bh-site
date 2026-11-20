@@ -170,8 +170,8 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
   .seg button { flex: 1; padding: 0 8px; }
   .filtros { width: 100%; }
   select { width: 100%; }
-  .chips { width: 100%; }
-  .chip { flex: 1; padding: 0 10px; }
+  .chips { width: 100%; flex-wrap: wrap; }
+  .chip { flex: 1 1 auto; padding: 0 12px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
