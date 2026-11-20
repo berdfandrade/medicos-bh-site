@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=55818042">
+<link rel="stylesheet" href="estilo.css?v=61a0661e">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -39,7 +39,9 @@
       <button type="button" data-contato="sim" aria-pressed="false">Contatados</button>
     </div>
     <div class="filtros">
+      <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
+      <select id="responsavel" aria-label="Responsável pelo contato"><option value="">Todos os responsáveis</option></select>
       <div class="chips" role="group" aria-label="Filtros">
         <button type="button" class="chip" id="sus" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>
@@ -72,7 +74,7 @@
   <p>A especialidade vem do cadastro do estabelecimento no CNES e não substitui a consulta ao registro de especialista (RQE) no CFM. Dados pessoais protegidos pela LGPD: use apenas para contato profissional.</p>
 </footer>
 
-<script src="comum.js?v=93c4bac6"></script>
+<script src="comum.js?v=79df057d"></script>
 <script>
 const ESP_CURTA = { "Endocrinologia e Metabologia": "Endocrinologia", "Nutrologia": "Nutrologia" };
 const PAGINA = 60;
@@ -86,13 +88,22 @@ const mapaHref = l => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 };
 
-const estado = { q: "", esp: "", bairro: "", sus: false, cel: false, contato: "", limite: PAGINA };
+const estado = { q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "", limite: PAGINA };
 let medicos = [];
 
 const idMedico = m => m.crm.replace("/", "-"); // "61873/MG" -> "61873-MG"
+const EQUIPE = ["Luciano", "Mauro", "Marino"]; // quem pode ficar responsável pelo contato
+const SEM_RESPONSAVEL = "-";
 const contatos = criarContatos({
   lista: "medicos",
   chaveLocal: "medicos.contatados",
+  aviso: document.getElementById("nuvem"),
+  aoMudar: () => { if (medicos.length) render(); },
+});
+const responsaveis = criarResponsaveis({
+  lista: "medicos",
+  nomes: EQUIPE,
+  chaveLocal: "medicos.responsaveis",
   aviso: document.getElementById("nuvem"),
   aoMudar: () => { if (medicos.length) render(); },
 });
@@ -159,7 +170,10 @@ function htmlCard(m) {
     <div class="tags">${tags}</div>
     <ul class="locais">${visiveis}</ul>
     ${extra}
-    ${contatos.botao(id, false)}
+    <div class="card-acoes">
+      ${responsaveis.seletor(id)}
+      ${contatos.botao(id, false)}
+    </div>
   </article>`;
 }
 
@@ -167,10 +181,12 @@ function filtrar() {
   const termos = semAcento(estado.q).split(/\s+/).filter(Boolean);
   return medicos.filter(m =>
     (!estado.esp || m.especialidades.includes(estado.esp)) &&
-    (!estado.bairro || m.locais.some(l => l.bairro === estado.bairro)) &&
+    ((!estado.regiao && !estado.bairro) || m.locais.some(l =>
+      (!estado.regiao || l.regiao === estado.regiao) && (!estado.bairro || l.bairro === estado.bairro))) &&
     (!estado.sus || m.locais.some(l => l.atende_sus)) &&
     (!estado.cel || m.locais.some(l => l.celulares.length)) &&
     (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(idMedico(m)))) &&
+    (!estado.responsavel || (responsaveis.de(idMedico(m)) || SEM_RESPONSAVEL) === estado.responsavel) &&
     termos.every(t => m._busca.includes(t))
   );
 }
@@ -182,10 +198,11 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlCard).join("")
     : '<div class="empty">Nenhum médico encontrado com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "médico" : "médicos"}`;
-  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.bairro || estado.sus || estado.cel || estado.contato);
+  document.getElementById("limpar").hidden = !(estado.q || estado.esp || estado.regiao || estado.bairro || estado.sus || estado.cel || estado.contato || estado.responsavel);
   const feitos = medicos.filter(m => contatos.quando(idMedico(m))).length;
   document.querySelector('[data-contato="nao"]').textContent = `A contatar (${medicos.length - feitos})`;
   document.querySelector('[data-contato="sim"]').textContent = `Contatados (${feitos})`;
+  opcoesResponsavel();
   const restantes = lista.length - estado.limite;
   document.getElementById("more").hidden = restantes <= 0;
   document.querySelector("#more button").textContent = `Mostrar mais ${Math.min(restantes, PAGINA)} de ${restantes}`;
@@ -199,10 +216,22 @@ function aplicar(mudanca) {
   if (q.value !== estado.q) q.value = estado.q;
   document.querySelectorAll("#esp button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.esp === estado.esp)));
   document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
-  document.getElementById("bairro").value = estado.bairro;
+  localidades();
   document.getElementById("sus").setAttribute("aria-pressed", String(estado.sus));
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   render();
+}
+
+// Filtro por responsável, com quantos médicos cada um tem.
+function opcoesResponsavel() {
+  const sel = document.getElementById("responsavel");
+  const conta = {};
+  for (const m of medicos) { const r = responsaveis.de(idMedico(m)) || SEM_RESPONSAVEL; conta[r] = (conta[r] || 0) + 1; }
+  const nomes = [...EQUIPE, ...Object.keys(conta).filter(n => n !== SEM_RESPONSAVEL && !EQUIPE.includes(n))];
+  sel.innerHTML = '<option value="">Todos os responsáveis</option>'
+    + nomes.map(n => `<option value="${esc(n)}">${esc(n)} (${conta[n] || 0})</option>`).join("")
+    + `<option value="${SEM_RESPONSAVEL}">Sem responsável (${conta[SEM_RESPONSAVEL] || 0})</option>`;
+  sel.value = estado.responsavel;
 }
 
 function stats(dados) {
@@ -220,12 +249,8 @@ function stats(dados) {
     `Fonte: ${dados.fonte}${c ? `, competência ${c.slice(4)}/${c.slice(0, 4)}` : ""}.`;
 }
 
-function bairros() {
-  const nomes = [...new Set(medicos.flatMap(m => m.locais.map(l => l.bairro)).filter(Boolean))]
-    .sort((a, b) => a.localeCompare(b, "pt-BR"));
-  document.getElementById("bairro").insertAdjacentHTML("beforeend",
-    nomes.map(b => `<option value="${esc(b)}">${esc(titulo(b))}</option>`).join(""));
-}
+const localidades = () => preencherLocalidades(
+  document.getElementById("regiao"), document.getElementById("bairro"), medicos, m => m.locais, estado, titulo);
 
 function ligar() {
   let t;
@@ -236,10 +261,13 @@ function ligar() {
   document.querySelectorAll("#esp button").forEach(b => b.addEventListener("click", () => aplicar({ esp: b.dataset.esp })));
   document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
   contatos.ligar(document.getElementById("grid"));
+  responsaveis.ligar(document.getElementById("grid"));
+  document.getElementById("responsavel").addEventListener("change", e => aplicar({ responsavel: e.target.value }));
+  document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
   document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
   document.getElementById("sus").addEventListener("click", () => aplicar({ sus: !estado.sus }));
   document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
-  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", bairro: "", sus: false, cel: false, contato: "" }));
+  document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", esp: "", regiao: "", bairro: "", sus: false, cel: false, contato: "", responsavel: "" }));
   document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
 }
 
@@ -250,9 +278,9 @@ fetch("medicos_bh.json", { cache: "no-cache" })
   .then(dados => {
     medicos = dados.medicos.map(m => ({
       ...m,
-      _busca: semAcento([m.nome, m.crm, ...m.especialidades, ...m.locais.flatMap(l => [l.estabelecimento, l.bairro, l.endereco])].join(" ")),
+      _busca: semAcento([m.nome, m.crm, ...m.especialidades, ...m.locais.flatMap(l => [l.estabelecimento, l.bairro, l.endereco, l.regiao])].join(" ")),
     }));
-    stats(dados); bairros(); ligar(); render();
+    stats(dados); localidades(); ligar(); render();
   })
   .catch(erro => {
     console.error(erro);

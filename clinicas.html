@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=55818042">
+<link rel="stylesheet" href="estilo.css?v=61a0661e">
 </head>
 <body>
 <nav class="wrap diretorios" aria-label="Diretórios">
@@ -34,6 +34,7 @@
       <button type="button" data-contato="sim" aria-pressed="false">Contatadas</button>
     </div>
     <div class="filtros">
+      <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
       <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
       <div class="chips" role="group" aria-label="Filtros">
         <button type="button" class="chip" id="cel" aria-pressed="false">
@@ -64,15 +65,12 @@
   <p>Contatos de atendimento divulgados pelos próprios estabelecimentos. Confirme com a equipe quais serviços estão disponíveis na unidade.</p>
 </footer>
 
-<script src="comum.js?v=93c4bac6"></script>
+<script src="comum.js?v=79df057d"></script>
 <script>
 const MENSAGEM_PADRAO = "Olá! Tudo bem?\n\nEncontrei o contato de *{nome}* e gostaria de saber mais sobre os atendimentos de emagrecimento.\n\nPodemos conversar por aqui?";
 const PAGINA = 60;
-const estado = { q: "", bairro: "", cel: false, contato: "", limite: PAGINA };
+const estado = { q: "", regiao: "", bairro: "", cel: false, contato: "", limite: PAGINA };
 let clinicas = [];
-
-// "R. da Bahia, 2696 - Sl 904 - Lourdes, Belo Horizonte - MG, ..." -> "Lourdes"
-const bairroDe = endereco => (String(endereco ?? "").match(/ - ([^,]+), Belo Horizonte\b/)?.[1] ?? "").split(" - ").pop().trim();
 
 const contatos = criarContatos({
   lista: "clinicas",
@@ -111,6 +109,7 @@ function filtrar(lista) {
   const numero = termo.replace(/\D/g, "");
   const porTelefone = numero && /^[\d ()+-]+$/.test(termo);
   return lista.filter(c =>
+    (!estado.regiao || c.regiao === estado.regiao) &&
     (!estado.bairro || c.bairro === estado.bairro) &&
     (!estado.cel || c.celulares.length) &&
     (!estado.contato || (estado.contato === "sim") === Boolean(contatos.quando(c.place_id))) &&
@@ -126,7 +125,7 @@ function render() {
     ? lista.slice(0, estado.limite).map(htmlClinica).join("")
     : '<div class="empty">Nenhuma clínica encontrada com esses filtros.</div>';
   document.getElementById("count").innerHTML = `<strong>${lista.length}</strong> ${lista.length === 1 ? "clínica" : "clínicas"}`;
-  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.bairro || estado.cel || estado.contato);
+  document.getElementById("limpar").hidden = !(estado.q.trim() || estado.regiao || estado.bairro || estado.cel || estado.contato);
   const feitas = clinicas.filter(c => contatos.quando(c.place_id)).length;
   document.querySelector('[data-contato="nao"]').textContent = `A contatar (${clinicas.length - feitas})`;
   document.querySelector('[data-contato="sim"]').textContent = `Contatadas (${feitas})`;
@@ -140,7 +139,7 @@ function aplicar(mudanca) {
   Object.assign(estado, mudanca, { limite: PAGINA });
   const q = document.getElementById("q");
   if (q.value !== estado.q) q.value = estado.q;
-  document.getElementById("bairro").value = estado.bairro;
+  localidades();
   document.getElementById("cel").setAttribute("aria-pressed", String(estado.cel));
   document.querySelectorAll("#contato button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.contato === estado.contato)));
   render();
@@ -155,19 +154,15 @@ function stats() {
   document.getElementById("stats").innerHTML = itens.map(([n, t]) => `<div class="stat"><b>${n.toLocaleString("pt-BR")}</b><span>${t}</span></div>`).join("");
 }
 
-function bairros() {
-  const contagem = {};
-  for (const c of clinicas) if (c.bairro) contagem[c.bairro] = (contagem[c.bairro] || 0) + 1;
-  document.getElementById("bairro").insertAdjacentHTML("beforeend", Object.keys(contagem)
-    .sort((a, b) => a.localeCompare(b, "pt-BR"))
-    .map(b => `<option value="${esc(b)}">${esc(b)} (${contagem[b]})</option>`).join(""));
-}
+const localidades = () => preencherLocalidades(
+  document.getElementById("regiao"), document.getElementById("bairro"), clinicas, c => [c], estado);
 
 let t;
 document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => aplicar({ q: e.target.value }), 120); });
 document.getElementById("cel").addEventListener("click", () => aplicar({ cel: !estado.cel }));
+document.getElementById("regiao").addEventListener("change", e => aplicar({ regiao: e.target.value, bairro: "" }));
 document.getElementById("bairro").addEventListener("change", e => aplicar({ bairro: e.target.value }));
-document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", bairro: "", cel: false, contato: "" }));
+document.getElementById("limpar").addEventListener("click", () => aplicar({ q: "", regiao: "", bairro: "", cel: false, contato: "" }));
 document.querySelectorAll("#contato button").forEach(b => b.addEventListener("click", () => aplicar({ contato: b.dataset.contato })));
 contatos.ligar(document.getElementById("grid"));
 document.querySelector("#more button").addEventListener("click", () => { estado.limite += PAGINA; render(); });
@@ -176,9 +171,9 @@ document.querySelector("#more button").addEventListener("click", () => { estado.
 fetch("clinicas.json", { cache: "no-cache" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(dados => {
-    clinicas = dados.clinicas.map(c => ({ ...c, bairro: bairroDe(c.endereco) }));
+    clinicas = dados.clinicas;
     document.getElementById("fonte").textContent = `Fonte: ${dados.fonte}.`;
-    stats(); bairros(); render();
+    stats(); localidades(); render();
   })
   .catch(erro => {
     console.error(erro);

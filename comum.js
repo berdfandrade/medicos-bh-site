@@ -229,43 +229,46 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   return { mensagem: item => montar(estado.texto, item), atualizar };
 }
 
-/**
- * Marcação de "já contatado", salva na API (Postgres) para aparecer em qualquer aparelho.
- * Este navegador guarda uma cópia para abrir rápido; o que for marcado sem conexão sobe na próxima sincronização.
- *  lista       "clinicas" ou "medicos" (rota da API)
- *  chaveLocal  chave da cópia no localStorage
- *  aviso       elemento que mostra um aviso só quando algo não pôde ser salvo
- *  aoMudar     chamado quando as marcações mudam, para refazer os cards e contadores
- */
 const dataBR = iso => iso.split("-").reverse().slice(0, 2).join("/");
 icone.ok = svg('<circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/>');
 icone.marcar = svg('<circle cx="12" cy="12" r="10"/>');
+icone.pessoa = svg('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>');
 
-function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
+/**
+ * Um valor por item (data do contato, nome do responsável...) salvo na API, para aparecer em
+ * qualquer aparelho. Este navegador guarda uma cópia para abrir rápido; o que for alterado sem
+ * conexão sobe na próxima sincronização.
+ *  rota        ex. "/contatados/clinicas" (GET lista tudo; PUT/DELETE em rota/{id})
+ *  parametro   nome do parâmetro do PUT que leva o valor (ex. "data", "nome")
+ *  chaveLocal  chave da cópia no localStorage
+ *  aviso       elemento que mostra um aviso só quando algo não pôde ser salvo
+ *  aoMudar     chamado quando os valores mudam, para refazer os cards e contadores
+ */
+function criarValoresNaApi({ rota, parametro, chaveLocal, aviso, aoMudar }) {
   const mapa = (() => { try { return JSON.parse(guardado.ler(chaveLocal, "{}")) || {}; } catch { return {}; } })();
   const salvarLocal = () => guardado.gravar(chaveLocal, JSON.stringify(mapa));
+  const enviar = (id, valor) => valor
+    ? chamarApi("PUT", `${rota}/${encodeURIComponent(id)}?${parametro}=${encodeURIComponent(valor)}`)
+    : chamarApi("DELETE", `${rota}/${encodeURIComponent(id)}`);
   let sincronizando = false;
-
-  const chamar = (metodo, id = "", data = "") =>
-    chamarApi(metodo, `/contatados/${lista}${id ? `/${encodeURIComponent(id)}` : ""}${data ? `?data=${data}` : ""}`);
 
   function avisar(mostrar) {
     aviso.innerHTML = mostrar
-      ? `${svg('<circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/>')}<span>Não foi possível salvar as marcações agora.</span><button type="button" class="limpar">Tentar de novo</button>`
+      ? `${svg('<circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/>')}<span>Não foi possível salvar as alterações agora.</span><button type="button" class="limpar">Tentar de novo</button>`
       : "";
     aviso.querySelector("button")?.addEventListener("click", sincronizar);
   }
 
-  // Traz as marcações salvas; as que só existem neste aparelho são enviadas junto.
+  // Traz os valores salvos; os que só existem neste aparelho são enviados junto.
   async function sincronizar() {
     if (sincronizando) return;
     sincronizando = true;
     try {
-      const remotas = await chamar("GET");
-      const locais = Object.entries(mapa).filter(([id]) => !(id in remotas));
-      await Promise.all(locais.map(([id, d]) => chamar("PUT", id, d)));
+      const remotos = await chamarApi("GET", rota);
+      const locais = Object.entries(mapa).filter(([id]) => !(id in remotos));
+      await Promise.all(locais.map(([id, v]) => enviar(id, v)));
       for (const id of Object.keys(mapa)) delete mapa[id];
-      Object.assign(mapa, remotas, Object.fromEntries(locais));
+      Object.assign(mapa, remotos, Object.fromEntries(locais));
       salvarLocal();
       avisar(false);
     } catch (erro) {
@@ -277,15 +280,15 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
     aoMudar();
   }
 
-  function alternar(id) {
+  // valor vazio apaga. Se a API falhar, desfaz na tela para não mostrar algo que não foi salvo.
+  function definir(id, valor) {
     const antes = mapa[id];
-    if (antes) delete mapa[id];
-    else mapa[id] = new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
+    if (valor) mapa[id] = valor; else delete mapa[id];
     salvarLocal();
     aoMudar();
-    chamar(antes ? "DELETE" : "PUT", id, antes ? "" : mapa[id])
+    enviar(id, valor)
       .then(() => avisar(false))
-      .catch(erro => { // desfaz na tela para não mostrar algo que não foi salvo
+      .catch(erro => {
         console.error(erro);
         if (antes) mapa[id] = antes; else delete mapa[id];
         salvarLocal();
@@ -294,22 +297,79 @@ function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
       });
   }
 
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) sincronizar(); }); // traz o que mudou em outro aparelho
+  sincronizar();
+  return { valor: id => mapa[id], definir };
+}
+
+// Marcação de "já contatado": guarda a data do contato.
+function criarContatos({ lista, chaveLocal, aviso, aoMudar }) {
+  const valores = criarValoresNaApi({ rota: `/contatados/${lista}`, parametro: "data", chaveLocal, aviso, aoMudar });
+
   // Botão do card. feminino: "contatada" (clínica) ou "contatado" (médico).
   function botao(id, feminino) {
-    const quando = mapa[id], fim = feminino ? "a" : "o";
+    const quando = valores.valor(id), fim = feminino ? "a" : "o";
     return `<button type="button" class="contato-btn" data-contato-id="${esc(id)}" aria-pressed="${Boolean(quando)}" title="${quando ? "Toque para desmarcar" : "Marque depois de fazer o contato"}">`
       + (quando ? `${icone.ok}<span>Contatad${fim} em ${dataBR(quando)}</span>` : `${icone.marcar}<span>Marcar como contatad${fim}</span>`) + `</button>`;
   }
 
-  // Um clique em qualquer botão de contato dentro de `el` marca ou desmarca.
+  // Um clique em qualquer botão de contato dentro de `el` marca (com a data de hoje) ou desmarca.
   function ligar(el) {
     el.addEventListener("click", e => {
       const b = e.target.closest(".contato-btn");
-      if (b) alternar(b.dataset.contatoId);
+      if (!b) return;
+      const id = b.dataset.contatoId;
+      valores.definir(id, valores.valor(id) ? "" : new Date().toLocaleDateString("sv")); // AAAA-MM-DD no fuso local
     });
   }
 
-  document.addEventListener("visibilitychange", () => { if (!document.hidden) sincronizar(); }); // traz o que foi marcado em outro aparelho
-  sincronizar();
-  return { quando: id => mapa[id], botao, ligar };
+  return { quando: valores.valor, botao, ligar };
+}
+
+// Quem da equipe vai fazer o contato com cada item.
+function criarResponsaveis({ lista, nomes, chaveLocal, aviso, aoMudar }) {
+  const valores = criarValoresNaApi({ rota: `/responsaveis/${lista}`, parametro: "nome", chaveLocal, aviso, aoMudar });
+
+  function seletor(id) {
+    const atual = valores.valor(id) || "";
+    const opcoes = ["", ...nomes, ...(atual && !nomes.includes(atual) ? [atual] : [])];
+    return `<label class="responsavel${atual ? " definido" : ""}">${icone.pessoa}<span>Responsável</span>
+      <select data-responsavel-id="${esc(id)}" aria-label="Responsável pelo contato">
+        ${opcoes.map(n => `<option value="${esc(n)}"${n === atual ? " selected" : ""}>${n ? esc(n) : "Ninguém ainda"}</option>`).join("")}
+      </select></label>`;
+  }
+
+  function ligar(el) {
+    el.addEventListener("change", e => {
+      const sel = e.target.closest("select[data-responsavel-id]");
+      if (sel) valores.definir(sel.dataset.responsavelId, sel.value);
+    });
+  }
+
+  return { de: valores.valor, seletor, ligar };
+}
+
+// Regionais administrativas de BH (regioes.py preenche "regiao" nos JSON).
+const REGIOES = ["Barreiro", "Centro-Sul", "Leste", "Nordeste", "Noroeste", "Norte", "Oeste", "Pampulha", "Venda Nova", "Fora de BH"];
+
+/**
+ * Preenche os <select> de região e bairro; o de bairro mostra só os bairros da região escolhida.
+ *  itens         clínicas ou médicos
+ *  locaisDe      item => [{ regiao, bairro }, ...] (uma clínica tem um local; um médico, vários)
+ *  rotuloBairro  como mostrar o nome do bairro
+ * Entre parênteses: quantos itens têm algum local ali.
+ */
+function preencherLocalidades(selRegiao, selBairro, itens, locaisDe, { regiao, bairro }, rotuloBairro = b => b) {
+  const conta = teste => itens.filter(i => locaisDe(i).some(teste)).length;
+  const opcao = (valor, texto, n) => `<option value="${esc(valor)}">${esc(texto)} (${n})</option>`;
+  const regioes = REGIOES.filter(r => itens.some(i => locaisDe(i).some(l => l.regiao === r)));
+  selRegiao.innerHTML = '<option value="">Todas as regiões</option>'
+    + regioes.map(r => opcao(r, r, conta(l => l.regiao === r))).join("");
+  selRegiao.value = regiao;
+  const bairros = [...new Set(itens.flatMap(i => locaisDe(i)
+    .filter(l => l.bairro && (!regiao || l.regiao === regiao)).map(l => l.bairro)))]
+    .sort((a, b) => rotuloBairro(a).localeCompare(rotuloBairro(b), "pt-BR"));
+  selBairro.innerHTML = `<option value="">${regiao ? `Todos os bairros (${esc(regiao)})` : "Todos os bairros"}</option>`
+    + bairros.map(b => opcao(b, rotuloBairro(b), conta(l => l.bairro === b && (!regiao || l.regiao === regiao)))).join("");
+  selBairro.value = bairro;
 }
