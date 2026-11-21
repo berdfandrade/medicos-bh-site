@@ -108,7 +108,7 @@ const textoPara = (textos, responsavel) => (responsavel && textos.por_responsave
  * Painel "Mensagem padrão do WhatsApp": prévia e teste; o botão Configurações abre a janela
  * onde se mudam as mensagens (geral e de cada responsável), a empresa e a equipe.
  *  el            elemento <section class="wa-painel"> onde o painel é montado
- *  chave         prefixo no localStorage (cópia das mensagens e painel aberto/fechado)
+ *  chave         prefixo no localStorage (cópia das mensagens)
  *  textoPadrao   mensagem geral inicial
  *  campos        campos desta página: [{ token: "{nome}", rotulo: "Nome da clínica" }, ...]
  *  montar        (texto, item) => mensagem com os campos desta página trocados pelos dados do item
@@ -131,7 +131,7 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
   const engrenagem = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>';
   el.setAttribute("aria-labelledby", "wa-titulo");
   el.innerHTML = `
-    <details id="wa-details" open>
+    <details id="wa-details">
       <summary>
         <span class="wa-selo" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.7-4.6A9 9 0 1 1 8.2 19.6L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-1 .8a4 4 0 0 1-2.1-2.1l.8-1-1-2L9 9.5z"/></svg></span>
         <span class="wa-cabeca">
@@ -205,10 +205,8 @@ function criarPainelWhatsApp({ el, chave, textoPadrao, descricao, campos, montar
     </dialog>`;
 
   const $ = id => el.querySelector(`#${id}`);
-  const details = $("wa-details"), dialogo = $("wa-config"), numero = $("wa-numero");
+  const dialogo = $("wa-config"), numero = $("wa-numero");
   numero.value = estado.numero;
-  if (guardado.ler(`${chave}.aberto`, "1") === "0") details.open = false;
-  details.addEventListener("toggle", () => guardado.gravar(`${chave}.aberto`, details.open ? "1" : "0"));
 
   const bolha = (alvo, mensagem) => { alvo.innerHTML = formatarWhatsApp(mensagem) || '<span class="wa-vazio">Sua mensagem aparece aqui.</span>'; };
   // Mensagem que `quem` mandaria para o contato de exemplo ("" = geral, sem responsável).
