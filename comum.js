@@ -471,7 +471,7 @@ const ETAPAS = [
   { id: "sem_interesse", rotulo: "Sem interesse" },
   { id: "fechado", rotulo: "Fechado" },
 ];
-const RETORNO_PENDENTE = "pendente"; // filtro do funil: mensagem enviada e sem resposta há CONFIG.retorno_dias
+const RETORNO_PENDENTE = "pendente"; // filtro de etapa: mensagem enviada e sem resposta há CONFIG.retorno_dias
 const hojeISO = () => new Date().toLocaleDateString("sv"); // AAAA-MM-DD no fuso local
 const diasDesde = iso => Math.round((new Date(hojeISO()) - new Date(iso)) / 86400000);
 const haDias = n => n <= 0 ? "hoje" : n === 1 ? "ontem" : `há ${n} dias`;
@@ -506,22 +506,31 @@ function criarEtapas({ lista, chaveLocal, aviso, aoMudar, podeMudar = () => true
     });
   }
 
-  // O item passa no filtro do funil ("" = todas).
+  // O item passa no filtro de etapa ("" = todas).
   const passa = (id, filtro) => !filtro || (filtro === RETORNO_PENDENTE ? pendente(id) : etapa(id) === filtro);
 
   // Funil da barra: quantos itens em cada etapa; tocar filtra.
-  function preencherFunil(el, ids, atual) {
+  // Filtro de etapa da barra: um seletor com quantos contatos há em cada etapa, e o botão
+  // "Retorno pendente", que só aparece quando há retorno atrasado (ou quando está ligado).
+  function preencherFiltro(sel, botao, ids, atual) {
     const conta = Object.fromEntries(ETAPAS.map(e => [e.id, 0]));
     let atrasados = 0;
     for (const id of ids) { conta[etapa(id)]++; if (pendente(id)) atrasados++; }
-    const botao = (valor, rotulo, n, classe = "") =>
-      `<button type="button" class="${classe}" data-funil="${valor}" aria-pressed="${valor === atual}">${rotulo}<b>${n.toLocaleString("pt-BR")}</b></button>`;
-    el.innerHTML = botao("", "Todas", ids.length)
-      + ETAPAS.map(e => botao(e.id, e.rotulo, conta[e.id], `etapa-${e.id}`)).join("")
-      + botao(RETORNO_PENDENTE, `${icone.relogio}Retorno pendente`, atrasados, `retorno${atrasados ? " tem" : ""}`);
+    const n = v => v.toLocaleString("pt-BR");
+    const opcao = (valor, rotulo) => `<option value="${valor}">${rotulo}</option>`;
+    sel.innerHTML = opcao("", "Etapa")
+      + ETAPAS.map(e => opcao(e.id, `${e.rotulo} (${n(conta[e.id])})`)).join("")
+      + opcao(RETORNO_PENDENTE, `Retorno pendente (${n(atrasados)})`);
+    sel.value = atual;
+    sel.classList.toggle("ativo", Boolean(atual));
+    const ligado = atual === RETORNO_PENDENTE;
+    botao.hidden = !atrasados && !ligado;
+    botao.innerHTML = `${icone.relogio}${atrasados === 1 ? "1 retorno pendente" : `${n(atrasados)} retornos pendentes`}`;
+    botao.setAttribute("aria-pressed", String(ligado));
+    botao.title = `Mensagem enviada e sem resposta há ${CONFIG.retorno_dias} dias ou mais`;
   }
 
-  return { etapa, desde, pendente, seletor, ligar, passa, preencherFunil };
+  return { etapa, desde, pendente, seletor, ligar, passa, preencherFiltro };
 }
 
 // "Você é": o consultor que usa este aparelho, para o botão "Meus contatos".
@@ -595,7 +604,7 @@ function criarResponsaveis({ lista, chaveLocal, aviso, aoMudar }) {
     for (const id of ids) { const r = valores.valor(id) || SEM_RESPONSAVEL; conta[r] = (conta[r] || 0) + 1; }
     const nomes = CONFIG.equipe;
     const todos = [...nomes, ...Object.keys(conta).filter(n => n !== SEM_RESPONSAVEL && !nomes.includes(n))];
-    sel.innerHTML = '<option value="">Todos os consultores</option>'
+    sel.innerHTML = '<option value="">Consultor</option>'
       + todos.map(n => `<option value="${esc(n)}">${esc(n)} (${conta[n] || 0})</option>`).join("")
       + `<option value="${SEM_RESPONSAVEL}">Sem consultor (${conta[SEM_RESPONSAVEL] || 0})</option>`;
     sel.value = atual;
@@ -621,13 +630,13 @@ function preencherLocalidades(selRegiao, selBairro, itens, locaisDe, { regiao, b
   const conta = teste => itens.filter(i => locaisDe(i).some(teste)).length;
   const opcao = (valor, texto, n) => `<option value="${esc(valor)}">${esc(texto)} (${n})</option>`;
   const regioes = REGIOES.filter(r => itens.some(i => locaisDe(i).some(l => l.regiao === r)));
-  selRegiao.innerHTML = '<option value="">Todas as regiões</option>'
+  selRegiao.innerHTML = '<option value="">Região</option>'
     + regioes.map(r => opcao(r, r, conta(l => l.regiao === r))).join("");
   selRegiao.value = regiao;
   const bairros = [...new Set(itens.flatMap(i => locaisDe(i)
     .filter(l => l.bairro && (!regiao || l.regiao === regiao)).map(l => l.bairro)))]
     .sort((a, b) => rotuloBairro(a).localeCompare(rotuloBairro(b), "pt-BR"));
-  selBairro.innerHTML = `<option value="">${regiao ? `Todos os bairros (${esc(regiao)})` : "Todos os bairros"}</option>`
+  selBairro.innerHTML = `<option value="">${regiao ? `Bairro (${esc(regiao)})` : "Bairro"}</option>`
     + bairros.map(b => opcao(b, rotuloBairro(b), conta(l => l.bairro === b && (!regiao || l.regiao === regiao)))).join("");
   selBairro.value = bairro;
 }
@@ -641,7 +650,7 @@ function sincronizarBusca(por, exemplos, item) {
 }
 
 /**
- * Liga os controles de acompanhamento da barra: funil de etapas (#funil), ordenação (#ordem),
+ * Liga os controles de acompanhamento da barra: etapa (#etapa e o botão #retorno), ordenação (#ordem),
  * "Você é" (#eu) e o botão "Meus contatos" (#meus). Os filtros ficam em estado.etapa,
  * estado.ordem e estado.responsavel; aplicar(mudanca) é o da página.
  * Devolve a função que atualiza esses controles; a página chama no render.
@@ -650,10 +659,9 @@ function ligarAcompanhamento({ estado, aplicar, etapas, ids }) {
   const ordem = document.getElementById("ordem"), eu = document.getElementById("eu"), meus = document.getElementById("meus");
   ordem.innerHTML = ORDENS.map(o => `<option value="${o.id}">${o.rotulo}</option>`).join("");
   ordem.addEventListener("change", () => aplicar({ ordem: ordem.value }));
-  document.getElementById("funil").addEventListener("click", e => {
-    const b = e.target.closest("button[data-funil]");
-    if (b) aplicar({ etapa: b.dataset.funil });
-  });
+  const etapa = document.getElementById("etapa"), retorno = document.getElementById("retorno");
+  etapa.addEventListener("change", () => aplicar({ etapa: etapa.value }));
+  retorno.addEventListener("click", () => aplicar({ etapa: estado.etapa === RETORNO_PENDENTE ? "" : RETORNO_PENDENTE }));
   let euAntes = EU.nome;
   const desenharEu = ligarEu(eu, () => {
     const estavaEmMeus = euAntes && estado.responsavel === euAntes;
@@ -671,7 +679,7 @@ function ligarAcompanhamento({ estado, aplicar, etapas, ids }) {
   return () => {
     desenharEu();
     ordem.value = estado.ordem;
-    etapas.preencherFunil(document.getElementById("funil"), ids(), estado.etapa);
+    etapas.preencherFiltro(etapa, retorno, ids(), estado.etapa);
     const ativo = Boolean(EU.nome) && estado.responsavel === EU.nome;
     meus.setAttribute("aria-pressed", String(ativo));
     meus.title = EU.nome ? `Só os contatos de ${EU.nome}` : "Escolha em \"Você é\" quem está usando este aparelho";

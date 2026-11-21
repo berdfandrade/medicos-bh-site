@@ -61,11 +61,10 @@ h1 {
 .stat b { display: block; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .stat span { font-size: 13px; color: var(--ink-3); }
 
+[hidden] { display: none !important; } /* o atributo vale mesmo em quem tem display próprio (.chip) */
+
 /* Barra de filtros */
-.toolbar {
-  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
-}
+.toolbar { border-bottom: 1px solid var(--line); } /* não fica presa no topo: com todos os filtros cobria 1/4 da tela */
 .toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-top: 14px; padding-bottom: 14px; }
 .search { flex: 1 1 360px; position: relative; }
 .search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--ink-3); pointer-events: none; }
@@ -85,6 +84,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: var(--shadow); }
 .filtros { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.filtros > select { flex: 1 1 180px; min-width: 0; }
 .chips { display: flex; gap: 8px; }
 .chip {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px; height: 42px; padding: 0 14px;
@@ -100,9 +100,8 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 /* Resultados */
 .meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 32px; margin: 18px 0 12px; color: var(--ink-3); font-size: 14px; }
 .limpar { border: 0; background: none; padding: 6px 0; font: inherit; font-size: 14px; font-weight: 500; color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
-.limpar[hidden] { display: none; }
 .meta strong { color: var(--ink); font-weight: 600; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; padding-bottom: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; padding-bottom: 40px; align-items: start; } /* cada card na altura do seu conteúdo: sem vão vazio dentro */
 .card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
   padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
@@ -146,7 +145,6 @@ details[open] > summary { margin-bottom: 4px; }
 .empty, .erro { text-align: center; padding: 64px 20px; color: var(--ink-2); grid-column: 1 / -1; }
 .erro code { background: var(--surface-2); padding: 2px 6px; border-radius: 6px; }
 .more { display: flex; justify-content: center; padding-bottom: 48px; }
-.more[hidden] { display: none; }
 .more button {
   font: inherit; font-weight: 500; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
   height: 44px; padding: 0 22px; border-radius: 10px; cursor: pointer;
@@ -162,13 +160,13 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
   .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; }
   .stat b { font-size: 22px; }
   .stat span { font-size: 12.5px; }
-  .toolbar { position: static; backdrop-filter: none; -webkit-backdrop-filter: none; background: none; }
   .toolbar .wrap { padding-top: 4px; }
   .search { flex-basis: 100%; }
   .grid { grid-template-columns: 1fr; }
   .seg { width: 100%; }
   .seg button { flex: 1; padding: 0 8px; }
   .filtros { width: 100%; }
+  .filtros > select { flex: 1 1 calc(50% - 5px); padding: 0 8px 0 10px; font-size: 15px; } /* dois por linha */
   select { width: 100%; }
   .chips { width: 100%; flex-wrap: wrap; }
   .chip { flex: 1 1 auto; padding: 0 12px; }
@@ -189,7 +187,6 @@ footer p { margin: 0 0 6px; max-width: 80ch; }
 .clinica-corpo { padding: 20px; flex: 1; display: flex; flex-direction: column; }
 .clinica-corpo h3 { font: 500 23px/1.15 Fraunces, Georgia, serif; margin: 0 0 14px; }
 .clinicas-titulo { font: 500 27px/1.2 Fraunces, Georgia, serif; }
-.clinica-card[hidden] { display: none; }
 main:has(.clinicas-grid) { padding-bottom: 48px; }
 .clinica-corpo h3 { overflow-wrap: anywhere; }
 
@@ -413,27 +410,12 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
 .etapa-info::before { content: "· "; }
 .etapa-info.atrasado { color: #c2410c; font-weight: 600; }
 
-/* Funil na barra: uma etapa por botão, com a contagem */
-.funil { display: flex; gap: 6px; flex: 1 1 100%; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
-.funil::-webkit-scrollbar { display: none; }
-.funil button {
-  flex: none; display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; border-radius: 999px;
-  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 13.5px; font-weight: 500; cursor: pointer; white-space: nowrap;
-}
-.funil button b { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
-.funil button svg { margin-right: -2px; }
-.funil button[class^="etapa-"]::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
-.funil .etapa-enviada::before { background: var(--et-enviada) !important; }
-.funil .etapa-respondeu::before { background: var(--et-respondeu) !important; }
-.funil .etapa-interessado::before { background: var(--et-interessado) !important; }
-.funil .etapa-sem_interesse::before { background: var(--et-sem_interesse) !important; }
-.funil .etapa-fechado::before { background: var(--et-fechado) !important; }
-.funil button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-.funil button[aria-pressed="true"] b { color: var(--bg); }
-.funil .retorno.tem { border-color: #c2410c; color: #c2410c; }
-.funil .retorno.tem b { color: #c2410c; }
-.funil .retorno[aria-pressed="true"] { background: #c2410c; border-color: #c2410c; color: #fff; }
-.funil .retorno[aria-pressed="true"] b { color: #fff; }
+/* Filtro de etapa: destacado quando escolhido; "Retorno pendente" em laranja de alerta */
+#etapa.ativo { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.chip.retorno { border-color: #c2410c; color: #c2410c; }
+.chip.retorno svg { color: currentColor; }
+.chip.retorno:hover { border-color: #c2410c; color: #c2410c; background: color-mix(in srgb, #c2410c 10%, transparent); }
+.chip.retorno[aria-pressed="true"] { background: #c2410c; border-color: #c2410c; color: #fff; }
 
 /* "Você é" + "Meus contatos": uma pílula só, porque um controla o outro */
 .quem {
@@ -465,10 +447,6 @@ main:has(.clinicas-grid) { padding-bottom: 48px; }
   .quem { width: 100%; }
   .eu { flex: 1; }
   .eu select { flex: 1; width: 100%; }
-}
-/* Com mouse, o funil quebra linha em vez de rolar (a rolagem lateral só funciona bem no toque) */
-@media (hover: hover) and (pointer: fine) {
-  .funil { flex-wrap: wrap; overflow: visible; }
 }
 
 /* Adicionar médico/clínica */

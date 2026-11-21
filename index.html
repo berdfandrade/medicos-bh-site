@@ -39,17 +39,18 @@
       <button type="button" data-esp="Endocrinologia e Metabologia" aria-pressed="false">Endocrinologia</button>
       <button type="button" data-esp="Nutrologia" aria-pressed="false">Nutrologia</button>
     </div>
-    <div class="funil" id="funil" role="group" aria-label="Etapa do contato"></div>
     <div class="filtros">
-      <select id="regiao" aria-label="Região de BH"><option value="">Todas as regiões</option></select>
-      <select id="bairro" aria-label="Bairro"><option value="">Todos os bairros</option></select>
-      <select id="responsavel" aria-label="Consultor do contato"><option value="">Todos os consultores</option></select>
+      <select id="regiao" aria-label="Região de BH"><option value="">Região</option></select>
+      <select id="bairro" aria-label="Bairro"><option value="">Bairro</option></select>
+      <select id="responsavel" aria-label="Consultor do contato"><option value="">Consultor</option></select>
+      <select id="etapa" aria-label="Etapa do contato"></select>
       <select id="ordem" aria-label="Ordenar a lista"></select>
       <div class="quem" role="group" aria-label="Seus contatos">
         <label class="eu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Você é <select id="eu" aria-label="Você é (consultor que usa este aparelho)"></select></label>
         <button type="button" class="meus" id="meus" aria-pressed="false">Meus contatos</button>
       </div>
       <div class="chips" role="group" aria-label="Filtros">
+        <button type="button" class="chip retorno" id="retorno" aria-pressed="false" hidden></button>
         <button type="button" class="chip" id="sus" aria-pressed="false">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>
           Atende SUS
@@ -162,8 +163,8 @@ function htmlCard(m) {
   const nutro = m.especialidades.length === 1 && m.especialidades[0] === "Nutrologia";
   const tags = m.especialidades.map(e => `<span class="tag${e === "Nutrologia" ? " nutro" : ""}">${esc(ESP_CURTA[e] || e)}</span>`).join("");
   const local = l => htmlLocal(l, m);
-  const visiveis = m.locais.slice(0, 2).map(local).join("");
-  const resto = m.locais.slice(2);
+  const visiveis = m.locais.slice(0, 1).map(local).join("");
+  const resto = m.locais.slice(1);
   const extra = resto.length
     ? `<details><summary>+ ${resto.length} ${resto.length === 1 ? "local" : "locais"}</summary><ul class="locais">${resto.map(local).join("")}</ul></details>`
     : "";
